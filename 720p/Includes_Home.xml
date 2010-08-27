@@ -72,7 +72,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(301) + !Control.HasFocus(3001) + Library.HasContent(Movies) + !Skin.HasSetting(Home_Hide_Movies)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Movies focused</description>
                     <width min="20" max="200">auto</width>
@@ -80,7 +80,7 @@
                     <textcolor>blue</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>Control.HasFocus(301) | Control.HasFocus(3001) + Library.HasContent(Movies) + !Skin.HasSetting(Home_Hide_Movies)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>TV Shows unfocused</description>
                     <width min="20" max="200">auto</width>
@@ -88,7 +88,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(302) + !Control.HasFocus(3002) + Library.HasContent(TVShows) + !Skin.HasSetting(Home_Hide_TVShows)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>TV Shows focused</description>
                     <width min="20" max="200">auto</width>
@@ -104,7 +104,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(3003) + !Skin.HasSetting(Home_Hide_Videos)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Videos focused</description>
                     <width min="20" max="200">auto</width>
@@ -112,7 +112,7 @@
                     <textcolor>blue</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>Control.HasFocus(3003) + !Skin.HasSetting(Home_Hide_Videos)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Music unfocused</description>
                     <width min="20" max="200">auto</width>
@@ -120,7 +120,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(303) + !Control.HasFocus(3004) + !Skin.HasSetting(Home_Hide_Music)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Music focused</description>
                     <width min="20" max="200">auto</width>
@@ -128,7 +128,7 @@
                     <textcolor>blue</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>Control.HasFocus(303) | Control.HasFocus(3004) + !Skin.HasSetting(Home_Hide_Music)</visible>
-                </control> 
+                </control>
                 <control type="label">
                     <description>Programs unfocused</description>
                     <width min="20" max="200">auto</width>
@@ -136,7 +136,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(3005) + !Skin.HasSetting(Home_Hide_Programs)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Programs focused</description>
                     <width min="20" max="200">auto</width>
@@ -152,7 +152,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(3006) + !Skin.HasSetting(Home_Hide_Pictures)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Pictures focused</description>
                     <width min="20" max="200">auto</width>
@@ -160,7 +160,7 @@
                     <textcolor>blue</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>Control.HasFocus(3006) + !Skin.HasSetting(Home_Hide_Pictures)</visible>
-                </control> 
+                </control>
                 <control type="label">
                     <description>Weather unfocused</description>
                     <width min="20" max="200">auto</width>
@@ -168,7 +168,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(3007) + !Skin.HasSetting(Home_Hide_Weather)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Weather focused</description>
                     <width min="20" max="200">auto</width>
@@ -176,7 +176,7 @@
                     <textcolor>blue</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>Control.HasFocus(3007) + !Skin.HasSetting(Home_Hide_Weather)</visible>
-                </control> 
+                </control>
                 <control type="label">
                     <description>Settings unfocused</description>
                     <width min="20" max="200">auto</width>
@@ -184,7 +184,7 @@
                     <textcolor>white</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>!Control.HasFocus(3008) + !Skin.HasSetting(Home_Hide_Settings)</visible>
-                </control>  
+                </control>
                 <control type="label">
                     <description>Settings focused</description>
                     <width min="20" max="200">auto</width>
@@ -192,7 +192,7 @@
                     <textcolor>blue</textcolor>
                     <font>Font_Top_Menu</font>
                     <visible>Control.HasFocus(3008) + !Skin.HasSetting(Home_Hide_Settings)</visible>
-                </control> 
+                </control>
             </control>
         </control>
     </include>
@@ -227,7 +227,7 @@
         </control>
         <control type="group">
             <description>RecentlyAdded for Movies</description>
-            <posx>520</posx>
+            <posx>675</posx>
             <posy>90</posy>
             <animation effect="slide" time="300" start="520,0">Visible</animation>
             <animation effect="fade" time="200">Hidden</animation>
@@ -254,34 +254,34 @@
             </control>
             <control type="label">
                 <description>Movie title</description>
-                <posy>400</posy>
-                <posx>50</posx>
-                <width>660</width>
+                <posy>370</posy>
+                <posx>25</posx>
+                <width>553</width>
                 <font>Font_Home_RecentlyAdded_3</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(301).ListItem.Label]</label>
-                <wrapmultiline>true</wrapmultiline>
+                <wrapmultiline>false</wrapmultiline>
+                <scroll>true</scroll>
                 <align>center</align>
                 <visible>Control.HasFocus(301)</visible>
             </control>
             <control type="label">
                 <description>Movie runtime</description>
-                <posy>430</posy>
-                <posx>50</posx>
-                <width>660</width>
+                <posy>400</posy>
+                <posx>25</posx>
+                <width>553</width>
                 <font>Font_Home_RecentlyAdded_4</font>
                 <textcolor>ffaaaaaa</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(301).ListItem.Label2,, $LOCALIZE[12391]]</label>
-                <wrapmultiline>true</wrapmultiline>
                 <align>center</align>
                 <visible>Control.HasFocus(301)</visible>
             </control>
             <control type="list" id="301">
-                <posy>0</posy>
+                <posy>30</posy>
                 <height>1000</height>
-                <width>756</width>
+                <width>603</width>
                 <onup>300</onup>
                 <onleft>301</onleft>
                 <onright>301</onright>
@@ -289,13 +289,13 @@
                 <orientation>horizontal</orientation>
                 <focusposition>0</focusposition>
                 <preloaditems>2</preloaditems>
-                <itemlayout width="252">
+                <itemlayout width="201">
                     <control type="image">
                         <description>Latest cover reflection</description>
                         <posx>0</posx>
-                        <posy>340</posy>
-                        <width>224</width>
-                        <height>340</height>
+                        <posy>275</posy>
+                        <width>181</width>
+                        <height>275</height>
                         <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
@@ -303,19 +303,19 @@
                         <description>Latest cover</description>
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>224</width>
-                        <height>340</height>
+                        <width>181</width>
+                        <height>275</height>
                         <texture>$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
-                <focusedlayout width="252">
+                <focusedlayout width="201">
                     <control type="image">
                         <description>Latest cover reflection</description>
                         <posx>0</posx>
-                        <posy>340</posy>
-                        <width>224</width>
-                        <height>340</height>
+                        <posy>275</posy>
+                        <width>181</width>
+                        <height>275</height>
                         <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
@@ -323,15 +323,15 @@
                         <description>Latest cover</description>
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>224</width>
-                        <height>340</height>
+                        <width>181</width>
+                        <height>275</height>
                         <texture>$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <control type="image">
                         <description>Latest cover overlay arrow</description>
-                        <posx>92</posx>
-                        <posy>160</posy>
+                        <posx>75</posx>
+                        <posy>117</posy>
                         <height>40</height>
                         <width>50</width>
                         <texture>special://skin/media/recentlyaddednext.png</texture>
@@ -340,8 +340,8 @@
                     </control>
                     <control type="image">
                         <description>Latest cover overlay arrow focused</description>
-                        <posx>92</posx>
-                        <posy>160</posy>
+                        <posx>75</posx>
+                        <posy>117</posy>
                         <height>40</height>
                         <width>50</width>
                         <texture>special://skin/media/recentlyaddednext.png</texture>
@@ -355,7 +355,7 @@
                         <label>$INFO[Window.Property(LatestMovie.1.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.1.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.1.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.1.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.1.Title))</visible>
                     </item>
                     <item id="2">
@@ -363,7 +363,7 @@
                         <label>$INFO[Window.Property(LatestMovie.2.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.2.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.2.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.2.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.2.Title))</visible>
                     </item>
                     <item id="3">
@@ -371,7 +371,7 @@
                         <label>$INFO[Window.Property(LatestMovie.3.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.3.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.3.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.3.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.3.Title))</visible>
                     </item>
                     <item id="4">
@@ -379,7 +379,7 @@
                         <label>$INFO[Window.Property(LatestMovie.4.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.4.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.4.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.4.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.4.Title))</visible>
                     </item>
                     <item id="5">
@@ -387,7 +387,7 @@
                         <label>$INFO[Window.Property(LatestMovie.5.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.5.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.5.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.5.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.5.Title))</visible>
                     </item>
                     <item id="6">
@@ -395,7 +395,7 @@
                         <label>$INFO[Window.Property(LatestMovie.6.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.6.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.6.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.6.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.6.Title))</visible>
                     </item>
                     <item id="7">
@@ -403,7 +403,7 @@
                         <label>$INFO[Window.Property(LatestMovie.7.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.7.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.7.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.7.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.7.Title))</visible>
                     </item>
                     <item id="8">
@@ -411,7 +411,7 @@
                         <label>$INFO[Window.Property(LatestMovie.8.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.8.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.8.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.8.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.8.Title))</visible>
                     </item>
                     <item id="9">
@@ -419,7 +419,7 @@
                         <label>$INFO[Window.Property(LatestMovie.9.Title)]</label>
                         <label2>$INFO[Window.Property(LatestMovie.9.RunningTime)]</label2>
                         <thumb>$INFO[Window.Property(LatestMovie.9.Thumb)]</thumb>
-                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <onclick>PlayMedia($INFO[Window.Property(LatestMovie.9.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(LatestMovie.9.Title))</visible>
                     </item>
                 </content>
@@ -1141,7 +1141,7 @@
             <description>Current weather</description>
             <posx>25</posx>
             <posy>220</posy>
-			<visible>Control.HasFocus(3007) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+            <visible>Control.HasFocus(3007) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
             <animation effect="slide" time="300" start="-500,0">VisibleChange</animation>
             <animation effect="fade" time="200">Hidden</animation>
             <control type="label">
@@ -1700,7 +1700,7 @@
                 </control>
             </control>
         </control>
-		
+
         <!-- slut väder -->
         <control type="group">
             <description>Settings category label</description>
