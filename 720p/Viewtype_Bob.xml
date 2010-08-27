@@ -244,7 +244,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="Unavailable">$INFO[ListItem.Year]</label>
+                    <label fallback="$LOCALIZE[161]">$INFO[ListItem.Year]</label>
                 </control>
                 <control type="label">
                     <description>Movie duration value</description>
@@ -258,7 +258,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="Unavailable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                    <label fallback="$LOCALIZE[161]">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                 </control>
                 <control type="label">
                     <description>Movie genre value</description>
@@ -272,7 +272,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="Unavailable">$INFO[ListItem.Genre]</label>
+                    <label fallback="$LOCALIZE[161]">$INFO[ListItem.Genre]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Movie director value</description>
@@ -288,7 +288,7 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="Unavailable">$INFO[ListItem.Director]</label>
+                    <label fallback="$LOCALIZE[161]">$INFO[ListItem.Director]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Movie writer value</description>
@@ -304,7 +304,7 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="Unavailable">$INFO[ListItem.Writer]</label>
+                    <label fallback="$LOCALIZE[161]">$INFO[ListItem.Writer]</label>
                 </control>
             </control>
             <control type="image">
