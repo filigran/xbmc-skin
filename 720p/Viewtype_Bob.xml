@@ -1,5 +1,17 @@
 ﻿<includes>
     <include name="Viewtype_Bob">
+        <control type="image">
+            <description>Fanart image</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio aligny="top">scale</aspectratio>
+            <fadetime>IconCrossfadeTime</fadetime>
+            <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
+            <visible>Skin.HasSetting(Viewtype_Bob_Show_Fanart)</visible>
+        </control>
+        <include>Global_Backgrounds</include>
         <control type="group">
             <visible>Control.IsVisible(512)</visible>
             <include>VisibleFadeEffect</include>
@@ -47,7 +59,8 @@
                         <posy>275</posy>
                         <width>181</width>
                         <height>275</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Icon]</texture>
+                        <animation tween="back" reversible="false" effect="zoom" center="100,140" start="90" end="110" time="400">focus</animation>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <control type="image">
@@ -79,48 +92,99 @@
         </control>
         <control type="group">
             <visible>Control.IsVisible(512) + Window.IsVisible(VideoFiles)</visible>
-            <control type="label">
-                <posx>30</posx>
-                <posy>530</posy>
-                <width>1220</width>
+            <control type="fadelabel">
+                <description>Movie title</description>
+                <posx>300</posx>
+                <posy>460</posy>
+                <width>950</width>
                 <height>35</height>
-                <font>font30_title</font>
-                <textcolor>yellow</textcolor>
+                <font>Font_Movie_Title</font>
+                <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>true</scroll>
-                <align>center</align>
+                <align>left</align>
                 <aligny>center</aligny>
+                <scrollout>false</scrollout>
+                <pauseatend>5000</pauseatend>
                 <label>$INFO[ListItem.Label]</label>
             </control>
-            <control type="label">
+            <control type="image">
+                <description>Small fanart border</description>
+                <posx>21</posx>
+                <posy>509</posy>
+                <width>258</width>
+                <height>146</height>
+                <aspectratio>scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true">special://skin/media/white.png</texture>
+                <colordiffuse>55ffffff</colordiffuse>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+            </control>
+            <control type="image">
+                <description>Small fanart image</description>
+                <posx>22</posx>
+                <posy>510</posy>
+                <width>256</width>
+                <height>144</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+            </control>
+            <control type="grouplist">
+                <description>Media Codec Flagging Images</description>
                 <posx>0</posx>
-                <posy>580</posy>
+                <posy>670</posy>
                 <width>1280</width>
-                <height>35</height>
-                <font>font30</font>
-                <textcolor>yellow</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <scroll>true</scroll>
                 <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Label2]</label>
+                <itemgap>0</itemgap>
+                <orientation>horizontal</orientation>
+                <include>VideoCodecFlaggingConditions</include>
+                <include>AudioCodecFlaggingConditions</include>
+                <include>AspectCodecFlaggingConditions</include>
+                <include>VideoTypeHackFlaggingConditions</include>
             </control>
         </control>
         <control type="group">
             <visible>[Control.IsVisible(512) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies)</visible>
-            <control type="label">
+            <control type="fadelabel">
                 <description>Movie title</description>
-                <posx>30</posx>
+                <posx>300</posx>
                 <posy>460</posy>
-                <width>1220</width>
+                <width>950</width>
                 <height>35</height>
-                <font>font30_title</font>
+                <font>Font_Movie_Title</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>true</scroll>
-                <align>center</align>
+                <align>left</align>
                 <aligny>center</aligny>
+                <scrollout>false</scrollout>
+                <pauseatend>5000</pauseatend>
                 <label>$INFO[ListItem.Label]</label>
+            </control>
+            <control type="image">
+                <description>Small fanart border</description>
+                <posx>21</posx>
+                <posy>509</posy>
+                <width>258</width>
+                <height>146</height>
+                <aspectratio>scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true">special://skin/media/white.png</texture>
+                <colordiffuse>55ffffff</colordiffuse>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+            </control>
+            <control type="image">
+                <description>Small fanart image</description>
+                <posx>22</posx>
+                <posy>510</posy>
+                <width>256</width>
+                <height>144</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
             </control>
             <control type="group">
                 <description>Plot + scrollbar</description>
@@ -131,7 +195,7 @@
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>500</width>
-                    <height>160</height>
+                    <height>145</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
@@ -143,7 +207,7 @@
                     <posx>510</posx>
                     <posy>0</posy>
                     <width>5</width>
-                    <height>160</height>
+                    <height>145</height>
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
@@ -260,7 +324,7 @@
                     <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                 </control>
-                <control type="label">
+                <control type="fadelabel">
                     <description>Movie genre value</description>
                     <posx>0</posx>
                     <posy>60</posy>
@@ -269,7 +333,9 @@
                     <font>Font_Movie_Info</font>
                     <textcolor>grey</textcolor>
                     <shadowcolor>black</shadowcolor>
-                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
+                    <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Genre]</label>

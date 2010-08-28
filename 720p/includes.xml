@@ -14,11 +14,11 @@
         <control type="image">
             <description>Center background</description>
             <posx>0</posx>
-            <posy>70</posy>
+            <posy>0</posy>
             <width>1280</width>
-            <height>700</height>
+            <height>720</height>
             <texture>special://skin/media/white.png</texture>
-            <colordiffuse>ff97AFC4</colordiffuse>
+            <colordiffuse>8897AFC4</colordiffuse>
         </control>
         <control type="image">
             <description>Top background image</description>
@@ -27,6 +27,7 @@
             <width>1280</width>
             <height>85</height>
             <texture>special://skin/media/topbg.png</texture>
+            <colordiffuse>aa2d2d2d</colordiffuse>
         </control>
         <control type="image">
             <description>Bottom background</description>
@@ -36,6 +37,7 @@
             <width>1280</width>
             <height>295</height>
             <texture>special://skin/media/bottombg.png</texture>
+            <colordiffuse>aa2d2d2d</colordiffuse>
         </control>
     </include>
     <include name="Global_Time">
@@ -126,7 +128,7 @@
                 <width>100</width>
                 <height>70</height>
                 <texture>special://skin/media/RSS_fade.png</texture>
-                <colordiffuse>ff2d2d2d</colordiffuse>
+                <colordiffuse>aa2d2d2d</colordiffuse>
             </control>
             <control type="image">
                 <description>RSS background right</description>
@@ -135,7 +137,7 @@
                 <width>100</width>
                 <height>70</height>
                 <texture flipx="true">special://skin/media/RSS_fade.png</texture>
-                <colordiffuse>ff2d2d2d</colordiffuse>
+                <colordiffuse>aa2d2d2d</colordiffuse>
             </control>
         </control>
     </include>
