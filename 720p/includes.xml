@@ -18,7 +18,18 @@
             <width>1280</width>
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
-            <colordiffuse>8897AFC4</colordiffuse>
+            <colordiffuse>ff97AFC4</colordiffuse>
+            <visible>Window.IsActive(Home) | !Skin.HasSetting(Viewtype_Bob_Show_Fanart)</visible>
+        </control>
+        <control type="image">
+            <description>Center background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>884677b9</colordiffuse>
+            <visible>!Window.IsActive(Home) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)</visible>
         </control>
         <control type="image">
             <description>Top background image</description>
@@ -34,6 +45,7 @@
             <posx>0</posx>
             <posy>430</posy>
             <animation effect="slide" time="300" end="0,80" condition="Window.IsActive(Home) + Skin.HasSetting(Home_Show_WeatherInfo) + Control.HasFocus(3007)">Conditional</animation>
+            <animation effect="slide" time="300" end="0,190" condition="Container.Content(TVShows)">Conditional</animation>
             <width>1280</width>
             <height>295</height>
             <texture>special://skin/media/bottombg.png</texture>

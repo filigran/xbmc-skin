@@ -1,17 +1,5 @@
 ﻿<includes>
     <include name="Viewtype_Bob">
-        <control type="image">
-            <description>Fanart image</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-            <visible>Skin.HasSetting(Viewtype_Bob_Show_Fanart)</visible>
-        </control>
-        <include>Global_Backgrounds</include>
         <control type="group">
             <visible>Control.IsVisible(512)</visible>
             <include>VisibleFadeEffect</include>

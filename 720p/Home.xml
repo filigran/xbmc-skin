@@ -1,6 +1,7 @@
 ﻿<window id="0"> <!-- delta window id för Home är 0 -->
     <defaultcontrol always="true">5043</defaultcontrol> <!-- vilken control som ska ha focus från början -->
     <allowoverlay>yes</allowoverlay> <!-- tillåt video/vizualisation att spela i bakgrunden -->
+    <backgroundcolor>ff97AFC4</backgroundcolor>
     <controls>
         <control type="button" id="5043">
             <description>Run Recently added</description>
@@ -41,7 +42,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">$INFO[Skin.String(home_custom_back_video_folder)]</imagepath>
             <visible>Control.HasFocus(3001)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu tvshows fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -53,7 +54,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">special://skin/media/tvshows.jpg</imagepath>
             <visible>Control.HasFocus(3002)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu videos fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -65,7 +66,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/videos.jpg</imagepath>
             <visible>Control.HasFocus(3003)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu music fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -77,7 +78,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/music.jpg</imagepath>
             <visible>Control.HasFocus(3004)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu programs fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -89,7 +90,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/programs.jpg</imagepath>
             <visible>Control.HasFocus(3005)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu pictures fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -101,7 +102,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/pictures.jpg</imagepath>
             <visible>Control.HasFocus(3006)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu weather fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -113,7 +114,7 @@
             <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/weather.jpg</imagepath>
             <visible>Control.HasFocus(3007)</visible>
         </control>
-		<control type="multiimage">
+        <control type="multiimage">
             <description>Home menu settings fanart</description>
             <posy>0</posy>
             <posx>0</posx>
@@ -130,8 +131,8 @@
             <description>Gradient image behind category name</description>
             <posx>60</posx>
             <posy>90</posy>
-            <width>383</width>
-            <height>383</height>
+            <width>340</width>
+            <height>340</height>
             <texture>special://skin/media/gradient_home.png</texture>
             <colordiffuse>aaffffff</colordiffuse>
         </control>
@@ -139,8 +140,8 @@
             <description>Gradient image behind category icon</description>
             <posx>680</posx>
             <posy>90</posy>
-            <width>383</width>
-            <height>383</height>
+            <width>340</width>
+            <height>340</height>
             <texture>special://skin/media/gradient_home.png</texture>
             <colordiffuse>aaffffff</colordiffuse>
         </control>
