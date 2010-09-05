@@ -1,7 +1,7 @@
 ﻿<window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,500,501,508,504,503,505,511,512</views>
+    <views>50,500,501,508,504,503,505,511,512,513</views>
     <controls>
         <control type="image">
             <description>Fanart image</description>
@@ -26,6 +26,7 @@
             <include>WideIconView</include> <!-- view id = 505 -->
             <include>MusicVideoInfoListView</include> <!-- view id = 511 -->
             <include>Viewtype_Bob</include> <!-- view id = 512 -->
+            <include>Viewtype_Boblist</include> <!-- view id = 513 -->
         </control>
         <!-- Top menu -->
         <control type="grouplist" id="9000">

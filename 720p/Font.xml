@@ -171,6 +171,16 @@
             <size>16</size>
         </font>
         <font>
+            <name>Font_Movie_List</name>
+            <filename>Tahoma.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
+            <name>Font_Movie_List_Bold</name>
+            <filename>tahomabd.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
             <name>Font_Movie_Info</name>
             <filename>Tahoma.ttf</filename>
             <size>16</size>
