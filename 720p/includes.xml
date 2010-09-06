@@ -45,7 +45,7 @@
             <posx>0</posx>
             <posy>430</posy>
             <animation effect="slide" time="300" end="0,80" condition="Window.IsActive(Home) + Skin.HasSetting(Home_Show_WeatherInfo) + Control.HasFocus(3007)">Conditional</animation>
-            <animation effect="slide" time="300" end="0,190" condition="Container.Content(TVShows)">Conditional</animation>
+            <animation effect="slide" time="300" end="0,190" condition="Container.Content(TVShows) + Control.IsVisible(51)">Conditional</animation>
             <width>1280</width>
             <height>295</height>
             <texture>special://skin/media/bottombg.png</texture>

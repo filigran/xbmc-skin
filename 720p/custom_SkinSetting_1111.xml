@@ -274,8 +274,8 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(TVShowsUsePosters)</onclick>
-						<selected>Skin.HasSetting(TVShowsUsePosters)</selected>
+						<onclick>Skin.ToggleSetting(TVShows_Use_Posters)</onclick>
+						<selected>Skin.HasSetting(TVShows_Use_Posters)</selected>
 					</control>
 					<control type="label" id="106">
 						<width>750</width>
