@@ -1,21 +1,11 @@
 ﻿<includes>
-    <include name="Viewtype_Boblist">
+    <include name="Viewtype_Bobbanner">
         <control type="group">
-            <visible>Control.IsVisible(513)</visible>
+            <visible>Control.IsVisible(514)</visible>
             <include>VisibleFadeEffect</include>
             <posx>259</posx>
             <posy>65</posy>
-            <control type="image">
-                <posx>0</posx>
-                <posy>53</posy>
-                <width>952</width>
-                <height>274</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>55ffffff</colordiffuse>
-            </control>
-            <control type="list" id="513">
+            <control type="list" id="514">
                 <visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Episodes) | Window.IsVisible(VideoFiles)</visible>
                 <posx>0</posx>
                 <posy>55</posy>
@@ -23,46 +13,13 @@
                 <height>270</height>
                 <onleft>300</onleft>
                 <onright>60</onright>
-                <onup>513</onup>
-                <ondown>513</ondown>
-                <viewtype label="Boblist">list</viewtype>
+                <onup>514</onup>
+                <ondown>514</ondown>
+                <viewtype label="Bobbanner">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <focusposition>1</focusposition>
-                <itemlayout height="30">
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>0</posy>
-                        <width>720</width>
-                        <height>30</height>
-                        <aligny>center</aligny>
-                        <label>$INFO[Listitem.Label]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>white</textcolor>
-                        <visible>Container.Content(Movies)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>0</posy>
-                        <width>800</width>
-                        <height>30</height>
-                        <aligny>center</aligny>
-                        <label>$INFO[Listitem.Label]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>white</textcolor>
-                        <visible>Container.Content(TVShows)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>740</posx>
-                        <posy>0</posy>
-                        <width>60</width>
-                        <height>30</height>
-                        <aspectratio>keep</aspectratio>
-                        <aligny>center</aligny>
-                        <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
-                        <colordiffuse>ffeaf188</colordiffuse>
-                        <visible>Container.Content(Movies)</visible>
-                    </control>
+                <itemlayout height="140">
                     <control type="image">
                         <posx>820</posx>
                         <posy>0</posy>
@@ -72,7 +29,6 @@
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                         <colordiffuse>ffeaf188</colordiffuse>
-                        <visible>Container.Content(TVShows)</visible>
                     </control>
                     <control type="image">
                         <posx>810</posx>
@@ -83,71 +39,9 @@
                         <aligny>center</aligny>
                         <texture>$INFO[Listitem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>Container.Content(Movies)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>890</posx>
-                        <posy>5</posy>
-                        <width>20</width>
-                        <height>20</height>
-                        <aspectratio>keep</aspectratio>
-                        <aligny>center</aligny>
-                        <texture>$INFO[Listitem.Overlay]</texture>
-                        <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>Container.Content(TVShows)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>940</posx>
-                        <posy>-2</posy>
-                        <width>100</width>
-                        <height>30</height>
-                        <align>right</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>white</textcolor>
-                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout height="30">
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>950</width>
-                        <height>30</height>
-                        <aspectratio>stretch</aspectratio>
-                        <aligny>center</aligny>
-                        <texture>special://skin/media/white.png</texture>
-                        <colordiffuse>cc2d2d2d</colordiffuse>
-                        <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-					    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>-2</posy>
-                        <width>720</width>
-                        <height>30</height>
-                        <aligny>center</aligny>
-                        <label>$INFO[Listitem.Label]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
-                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>-2</posy>
-                        <width>800</width>
-                        <height>30</height>
-                        <aligny>center</aligny>
-                        <label>$INFO[Listitem.Label]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
-                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(TVShows)</visible>
-                    </control>
+                <focusedlayout height="140">
                     <control type="image">
                         <posx>740</posx>
                         <posy>0</posy>
@@ -158,21 +52,7 @@
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                         <colordiffuse>ffeaf188</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>820</posx>
-                        <posy>0</posy>
-                        <width>60</width>
-                        <height>30</height>
-                        <aspectratio>keep</aspectratio>
-                        <aligny>center</aligny>
-                        <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
-                        <colordiffuse>ffeaf188</colordiffuse>
-                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(TVShows)</visible>
+          					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                     <control type="image">
                         <posx>810</posx>
@@ -184,35 +64,7 @@
                         <texture>$INFO[Listitem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>890</posx>
-                        <posy>5</posy>
-                        <width>20</width>
-                        <height>20</height>
-                        <aspectratio>keep</aspectratio>
-                        <aligny>center</aligny>
-                        <texture>$INFO[Listitem.Overlay]</texture>
-                        <colordiffuse>ff00ff00</colordiffuse>
-                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(TVshows)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>940</posx>
-                        <posy>-2</posy>
-                        <width>500</width>
-                        <height>30</height>
-                        <align>right</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>white</textcolor>
-                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
-					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+          					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                 </focusedlayout>
             </control>
@@ -224,7 +76,7 @@
                 <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                 <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                 <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                <onleft>513</onleft>
+                <onleft>514</onleft>
                 <onright>600</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
@@ -232,7 +84,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(513) + Window.IsVisible(VideoFiles)</visible>
+            <visible>Control.IsVisible(514) + Window.IsVisible(VideoFiles)</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -287,27 +139,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(513) + !Window.IsVisible(VideoFiles) + Container.Content(Movies) | Container.Content(Episodes)</visible>
-            <control type="image">
-                <description>Latest cover reflection</description>
-                <posx>60</posx>
-                <posy>407</posy>
-                <width>199</width>
-                <height>302</height>
-                <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Icon]</texture>
-                <animation tween="back" reversible="false" effect="zoom" center="100,140" start="90" end="110" time="400">focus</animation>
-                <aspectratio>stretch</aspectratio>
-            </control>
-            <control type="image">
-                <posx>60</posx>
-                <posy>105</posy>
-                <width>199</width>
-                <height>302</height>
-                <aspectratio>stretch</aspectratio>
-                <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="110" time="400">focus</animation>
-                <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
-                <texture background="true">$INFO[ListItem.Icon]</texture>
-            </control>
+            <visible>Control.IsVisible(514) + !Window.IsVisible(VideoFiles) + Container.Content(Movies) | Container.Content(Episodes)</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -375,7 +207,7 @@
                     <onleft>60</onleft>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
-                    <visible>Control.IsVisible(513)</visible>
+                    <visible>Control.IsVisible(514)</visible>
                 </control>
             </control>
             <control type="group">
@@ -558,7 +390,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.IsVisible(513) + !Window.IsVisible(VideoFiles)] + Container.Content(Seasons)</visible>
+            <visible>[Control.IsVisible(514) + !Window.IsVisible(VideoFiles)] + Container.Content(Seasons)</visible>
             <control type="label">
                 <posx>30</posx>
                 <posy>530</posy>
@@ -609,27 +441,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(513) + !Window.IsVisible(VideoFiles) + Container.Content(TVShows)</visible>
-            <control type="image">
-                <description>Latest cover reflection</description>
-                <posx>60</posx>
-                <posy>407</posy>
-                <width>199</width>
-                <height>302</height>
-                <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Icon]</texture>
-                <animation tween="back" reversible="false" effect="zoom" center="100,140" start="90" end="110" time="400">focus</animation>
-                <aspectratio>stretch</aspectratio>
-            </control>
-            <control type="image">
-                <posx>60</posx>
-                <posy>105</posy>
-                <width>199</width>
-                <height>302</height>
-                <aspectratio>stretch</aspectratio>
-                <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="110" time="400">focus</animation>
-                <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
-                <texture background="true">$INFO[ListItem.Icon]</texture>
-            </control>
+            <visible>Control.IsVisible(514) + !Window.IsVisible(VideoFiles) + Container.Content(TVShows)</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -697,7 +509,7 @@
                     <onleft>60</onleft>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
-                    <visible>Control.IsVisible(513)</visible>
+                    <visible>Control.IsVisible(514)</visible>
                 </control>
             </control>
             <control type="group">
