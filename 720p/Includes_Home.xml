@@ -1704,8 +1704,8 @@
                 </control>
             </control>
         </control>
-
         <!-- slut väder -->
+
         <control type="group">
             <description>Settings category label</description>
             <posx>-55</posx>

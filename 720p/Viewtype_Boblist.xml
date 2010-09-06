@@ -4,22 +4,22 @@
             <visible>Control.IsVisible(513)</visible>
             <include>VisibleFadeEffect</include>
             <posx>259</posx>
-            <posy>80</posy>
+            <posy>65</posy>
             <control type="image">
                 <posx>0</posx>
                 <posy>53</posy>
-                <width>902</width>
+                <width>952</width>
                 <height>274</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
                 <texture>special://skin/media/white.png</texture>
-                <colordiffuse>552d2d2d</colordiffuse>
+                <colordiffuse>55ffffff</colordiffuse>
             </control>
             <control type="list" id="513">
                 <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Window.IsVisible(VideoFiles)</visible>
                 <posx>0</posx>
                 <posy>55</posy>
-                <width>900</width>
+                <width>950</width>
                 <height>270</height>
                 <onleft>300</onleft>
                 <onright>60</onright>
@@ -30,20 +30,10 @@
                 <scrolltime>200</scrolltime>
                 <focusposition>1</focusposition>
                 <itemlayout height="30">
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>900</width>
-                        <height>30</height>
-                        <aspectratio>stretch</aspectratio>
-                        <aligny>center</aligny>
-                        <texture>special://skin/media/white.png</texture>
-                        <colordiffuse>55ffffff</colordiffuse>
-                    </control>
                     <control type="label">
                         <posx>10</posx>
                         <posy>0</posy>
-                        <width>500</width>
+                        <width>720</width>
                         <height>30</height>
                         <aligny>center</aligny>
                         <label>$INFO[Listitem.Label]</label>
@@ -51,44 +41,98 @@
                         <textcolor>white</textcolor>
                     </control>
                     <control type="image">
-                        <posx>530</posx>
+                        <posx>740</posx>
                         <posy>0</posy>
                         <width>60</width>
                         <height>30</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
+                        <colordiffuse>ffeaf188</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>810</posx>
+                        <posy>5</posy>
+                        <width>20</width>
+                        <height>20</height>
+                        <aspectratio>keep</aspectratio>
+                        <aligny>center</aligny>
+                        <texture>$INFO[Listitem.Overlay]</texture>
+                        <colordiffuse>ff00ff00</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>940</posx>
+                        <posy>-2</posy>
+                        <width>100</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>white</textcolor>
                     </control>
                 </itemlayout>
                 <focusedlayout height="30">
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>900</width>
+                        <width>950</width>
                         <height>30</height>
                         <aspectratio>stretch</aspectratio>
                         <aligny>center</aligny>
                         <texture>special://skin/media/white.png</texture>
                         <colordiffuse>cc2d2d2d</colordiffuse>
+                        <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
+					    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                     </control>
                     <control type="label">
                         <posx>10</posx>
                         <posy>-2</posy>
-                        <width>500</width>
+                        <width>720</width>
                         <height>30</height>
                         <aligny>center</aligny>
                         <label>$INFO[Listitem.Label]</label>
-                        <font>Font_Movie_List_Bold</font>
+                        <font>Font_Movie_List</font>
                         <textcolor>blue</textcolor>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                     <control type="image">
-                        <posx>530</posx>
+                        <posx>740</posx>
                         <posy>0</posy>
                         <width>60</width>
                         <height>30</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
+                        <colordiffuse>ffeaf188</colordiffuse>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>810</posx>
+                        <posy>5</posy>
+                        <width>20</width>
+                        <height>20</height>
+                        <aspectratio>keep</aspectratio>
+                        <aligny>center</aligny>
+                        <texture>$INFO[Listitem.Overlay]</texture>
+                        <colordiffuse>ff00ff00</colordiffuse>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                    <control type="label">
+                        <posx>940</posx>
+                        <posy>-2</posy>
+                        <width>500</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>white</textcolor>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                 </focusedlayout>
             </control>
@@ -167,7 +211,7 @@
             <control type="image">
                 <description>Latest cover reflection</description>
                 <posx>60</posx>
-                <posy>422</posy>
+                <posy>407</posy>
                 <width>199</width>
                 <height>302</height>
                 <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Icon]</texture>
@@ -176,7 +220,7 @@
             </control>
             <control type="image">
                 <posx>60</posx>
-                <posy>120</posy>
+                <posy>105</posy>
                 <width>199</width>
                 <height>302</height>
                 <aspectratio>stretch</aspectratio>
