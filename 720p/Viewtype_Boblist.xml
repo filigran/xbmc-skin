@@ -5,11 +5,21 @@
             <include>VisibleFadeEffect</include>
             <posx>259</posx>
             <posy>80</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>53</posy>
+                <width>902</width>
+                <height>274</height>
+                <aspectratio>stretch</aspectratio>
+                <aligny>center</aligny>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>552d2d2d</colordiffuse>
+            </control>
             <control type="list" id="513">
                 <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Window.IsVisible(VideoFiles)</visible>
                 <posx>0</posx>
                 <posy>55</posy>
-                <width>1441</width>
+                <width>900</width>
                 <height>270</height>
                 <onleft>300</onleft>
                 <onright>60</onright>
@@ -28,7 +38,7 @@
                         <aspectratio>stretch</aspectratio>
                         <aligny>center</aligny>
                         <texture>special://skin/media/white.png</texture>
-                        <colordiffuse>cccccccc</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>10</posx>
@@ -47,7 +57,7 @@
                         <height>30</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
-                        <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating,,.png]</texture>
+                        <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                     </control>
                 </itemlayout>
                 <focusedlayout height="30">
@@ -78,7 +88,7 @@
                         <height>30</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
-                        <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating,,.png]</texture>
+                        <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                     </control>
                 </focusedlayout>
             </control>

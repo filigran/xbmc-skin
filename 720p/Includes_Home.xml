@@ -1363,18 +1363,19 @@
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>500</width>
-                <control type="label">
+                <control type="fadelabel">
                     <description>Day label</description>
                     <posx>0</posx>
                     <posy>10</posy>
-                    <width>400</width>
+                    <width>350</width>
                     <height>35</height>
                     <font>Font_Home_Weather_Labels</font>
                     <label>$LOCALIZE[33006]$INFO[Window(Weather).Property(Day0.Outlook),: ]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <textcolor>blue</textcolor>
-                    <scroll>yes</scroll>
+                    <pauseatend>3000</pauseatend>
+                    <scrollout>false</scrollout>
                 </control>
                 <control type="image">
                     <description>day icon</description>
@@ -1450,18 +1451,19 @@
                 <posx>0</posx>
                 <posy>110</posy>
                 <width>500</width>
-                <control type="label">
+                <control type="fadelabel">
                     <description>Day label</description>
                     <posx>0</posx>
                     <posy>10</posy>
-                    <width>400</width>
+                    <width>350</width>
                     <height>35</height>
                     <font>Font_Home_Weather_Labels</font>
                     <label>$INFO[Window(Weather).Property(Day1.Title)]$INFO[Window(Weather).Property(Day1.Outlook),: ]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <textcolor>blue</textcolor>
-                    <scroll>yes</scroll>
+                    <pauseatend>3000</pauseatend>
+                    <scrollout>false</scrollout>
                 </control>
                 <control type="image">
                     <description>day icon</description>
@@ -1537,18 +1539,19 @@
                 <posx>0</posx>
                 <posy>220</posy>
                 <width>500</width>
-                <control type="label">
+                <control type="fadelabel">
                     <description>Day label</description>
                     <posx>0</posx>
                     <posy>10</posy>
-                    <width>400</width>
+                    <width>350</width>
                     <height>35</height>
                     <font>Font_Home_Weather_Labels</font>
                     <label>$INFO[Window(Weather).Property(Day2.Title)]$INFO[Window(Weather).Property(Day2.Outlook),: ]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <textcolor>blue</textcolor>
-                    <scroll>yes</scroll>
+                    <pauseatend>3000</pauseatend>
+                    <scrollout>false</scrollout>
                 </control>
                 <control type="image">
                     <description>day icon</description>
@@ -1624,18 +1627,19 @@
                 <posx>0</posx>
                 <posy>330</posy>
                 <width>500</width>
-                <control type="label">
+                <control type="fadelabel">
                     <description>Day label</description>
                     <posx>0</posx>
                     <posy>10</posy>
-                    <width>400</width>
+                    <width>350</width>
                     <height>35</height>
                     <font>Font_Home_Weather_Labels</font>
                     <label>$INFO[Window(Weather).Property(Day3.Title)]$INFO[Window(Weather).Property(Day3.Outlook),: ]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <textcolor>blue</textcolor>
-                    <scroll>yes</scroll>
+                    <pauseatend>3000</pauseatend>
+                    <scrollout>false</scrollout>
                 </control>
                 <control type="image">
                     <description>day icon</description>
