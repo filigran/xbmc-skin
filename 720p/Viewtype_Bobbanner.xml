@@ -287,7 +287,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(514) + !Window.IsVisible(VideoFiles) + Container.Content(Movies) | Container.Content(Episodes)</visible>
+            <visible>Control.IsVisible(514) + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(Episodes)]</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>

@@ -287,7 +287,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(513) + !Window.IsVisible(VideoFiles) + Container.Content(Movies) | Container.Content(Episodes)</visible>
+            <visible>Control.IsVisible(513) + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(Episodes)]</visible>
             <control type="image">
                 <description>Latest cover reflection</description>
                 <posx>60</posx>
