@@ -252,7 +252,7 @@
                 <angle>90</angle>
                 <visible>Control.HasFocus(301)</visible>
             </control>
-            <control type="label">
+            <control type="fadelabel">
                 <description>Movie title</description>
                 <posy>370</posy>
                 <posx>25</posx>
@@ -262,7 +262,8 @@
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(301).ListItem.Label]</label>
                 <wrapmultiline>false</wrapmultiline>
-                <scroll>true</scroll>
+                <scrolltoend>false</scrolltoend>
+                <pauseatend>3000</pauseatend>
                 <align>center</align>
                 <visible>Control.HasFocus(301)</visible>
             </control>

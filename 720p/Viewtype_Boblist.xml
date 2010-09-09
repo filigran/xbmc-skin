@@ -36,10 +36,10 @@
                         <width>720</width>
                         <height>30</height>
                         <aligny>center</aligny>
-                        <label>$INFO[Listitem.Label]</label>
+                        <label>$INFO[Listitem.Title]</label>
                         <font>Font_Movie_List</font>
                         <textcolor>white</textcolor>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                     <control type="label">
                         <posx>10</posx>
@@ -61,7 +61,7 @@
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                         <colordiffuse>ffeaf188</colordiffuse>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                     <control type="image">
                         <posx>820</posx>
@@ -83,7 +83,7 @@
                         <aligny>center</aligny>
                         <texture>$INFO[Listitem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                     <control type="image">
                         <posx>890</posx>
@@ -128,12 +128,12 @@
                         <width>720</width>
                         <height>30</height>
                         <aligny>center</aligny>
-                        <label>$INFO[Listitem.Label]</label>
+                        <label>$INFO[Listitem.Title]</label>
                         <font>Font_Movie_List</font>
                         <textcolor>blue</textcolor>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
 					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                     <control type="label">
                         <posx>10</posx>
@@ -159,7 +159,7 @@
                         <colordiffuse>ffeaf188</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
 					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                     <control type="image">
                         <posx>820</posx>
@@ -185,7 +185,7 @@
                         <colordiffuse>ff00ff00</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
 					    <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                     </control>
                     <control type="image">
                         <posx>890</posx>
@@ -270,7 +270,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart) + Container.Content(Movies)</visible>
             </control>
             <control type="grouplist">
                 <description>Media Codec Flagging Images</description>
@@ -306,7 +306,19 @@
                 <aspectratio>stretch</aspectratio>
                 <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="110" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
+                <texture background="true">$INFO[ListItem.Property(SeasonThumb)]</texture>
+                <visible>Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <posx>60</posx>
+                <posy>105</posy>
+                <width>199</width>
+                <height>302</height>
+                <aspectratio>stretch</aspectratio>
+                <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="110" time="400">focus</animation>
+                <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
                 <texture background="true">$INFO[ListItem.Icon]</texture>
+                <visible>Container.Content(Movies)</visible>
             </control>
             <control type="fadelabel">
                 <description>Movie title</description>
@@ -344,8 +356,19 @@
                 <height>144</height>
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Icon]</texture>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart) + Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <description>Small fanart image</description>
+                <posx>22</posx>
+                <posy>510</posy>
+                <width>256</width>
+                <height>144</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart) + Container.Content(Movies)</visible>
             </control>
             <control type="group">
                 <description>Plot + scrollbar</description>

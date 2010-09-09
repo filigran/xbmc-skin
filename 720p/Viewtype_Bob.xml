@@ -39,6 +39,15 @@
                         <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
+                    <control type="image">
+                        <posx>156</posx>
+                        <posy>250</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture background="true">$INFO[ListItem.Overlay]</texture>
+                        <colordiffuse>lime</colordiffuse>
+                    </control>
                 </itemlayout>
                 <focusedlayout height="275" width="199">
                 <control type="image">
@@ -60,6 +69,15 @@
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="110" time="400">focus</animation>
                         <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
                         <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>156</posx>
+                        <posy>250</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture background="true">$INFO[ListItem.Overlay]</texture>
+                        <colordiffuse>lime</colordiffuse>
                     </control>
                 </focusedlayout>
             </control>
