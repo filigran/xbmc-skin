@@ -1,7 +1,7 @@
 <includes>
     <include file="Viewtype_Bob.xml" />
     <include file="Viewtype_Boblist.xml" />
-    <include file="Viewtype_Bobbanner.xml" />
+    <include file="Viewtype_Bobbannerlist.xml" />
     <include name="PosterWrapView">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>

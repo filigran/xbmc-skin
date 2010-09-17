@@ -1,11 +1,11 @@
 ﻿<includes>
     <include name="Viewtype_Bob">
         <control type="group">
-            <visible>Control.IsVisible(512)</visible>
+            <visible>Control.IsVisible(500)</visible>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>80</posy>
-            <control type="wraplist" id="512">
+            <control type="wraplist" id="500">
                 <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Window.IsVisible(VideoFiles)</visible>
                 <posx>-50</posx>
                 <posy>40</posy>
@@ -71,13 +71,15 @@
                         <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                     <control type="image">
-                        <posx>156</posx>
-                        <posy>250</posy>
+                        <posx>155</posx>
+                        <posy>255</posy>
                         <width>40</width>
                         <height>40</height>
                         <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>lime</colordiffuse>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="140" time="400">focus</animation>
+                        <animation reversible="false" effect="zoom" center="auto" end="100" start="140" time="200">unfocus</animation>
                     </control>
                 </focusedlayout>
             </control>
@@ -89,7 +91,7 @@
                 <texturesliderbackground>special://skin/media/scrollbar_horizontal_background.png</texturesliderbackground>
                 <texturesliderbar>special://skin/media/scrollbar_horizontal_bar.png</texturesliderbar>
                 <texturesliderbarfocus>special://skin/media/scrollbar_horizontal_bar_focus.png</texturesliderbarfocus>
-                <onup>512</onup>
+                <onup>500</onup>
                 <ondown>600</ondown>
                 <showonepage>false</showonepage>
                 <orientation>horizontal</orientation>
@@ -97,7 +99,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(512) + Window.IsVisible(VideoFiles)</visible>
+            <visible>Control.IsVisible(500) + Window.IsVisible(VideoFiles)</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -152,7 +154,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.IsVisible(512) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies)</visible>
+            <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies)</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -201,7 +203,7 @@
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>500</width>
-                    <height>145</height>
+                    <height>140</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
@@ -213,14 +215,14 @@
                     <posx>510</posx>
                     <posy>0</posy>
                     <width>5</width>
-                    <height>145</height>
+                    <height>140</height>
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
                     <onleft>60</onleft>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
-                    <visible>Control.IsVisible(512)</visible>
+                    <visible>Control.IsVisible(500)</visible>
                 </control>
             </control>
             <control type="group">
@@ -391,7 +393,7 @@
             <control type="grouplist">
                 <description>Media Codec Flagging Images</description>
                 <posx>0</posx>
-                <posy>670</posy>
+                <posy>660</posy>
                 <width>1280</width>
                 <align>center</align>
                 <itemgap>0</itemgap>
@@ -403,7 +405,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.IsVisible(512) + !Window.IsVisible(VideoFiles)] + Container.Content(Seasons)</visible>
+            <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(Seasons)</visible>
             <control type="label">
                 <posx>30</posx>
                 <posy>530</posy>
@@ -454,7 +456,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.IsVisible(512) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible>
+            <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible>
             <control type="label">
                 <posx>30</posx>
                 <posy>530</posy>

@@ -11,7 +11,7 @@
             <height>1</height>
             <label>-</label>
             <font>-</font>
-            <onfocus>XBMC.RunScript(script.recentlyadded,totals=True&amp;limit=10)</onfocus>
+            <onfocus>XBMC.RunScript(script.recentlyadded,totals=True&amp;limit=5)</onfocus>
             <onfocus>SetFocus(300)</onfocus>
             <texturenofocus>-</texturenofocus>
             <texturefocus>-</texturefocus>

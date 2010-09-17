@@ -12,22 +12,22 @@
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>IconCrossfadeTime</fadetime>
             <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-            <visible>Skin.HasSetting(Viewtype_Bob_Show_Fanart)</visible>
+            <visible>[Control.IsVisible(50) + Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]</visible>
         </control>
         <include>Global_Backgrounds</include>
         <control type="group">
             <include>Window_OpenClose_Animation</include>
-            <include>CommonRootView</include> <!-- view id = 50 -->
-            <include>ThumbnailView</include> <!-- view id = 500 -->
-            <include>PosterWrapView</include> <!-- view id = 501 -->
-            <include>PosterWrapView2_Fanart</include> <!-- view id = 508 -->
-            <include>MediaListView3</include> <!-- view id = 503 -->
-            <include>MediaListView2</include> <!-- view id = 504 -->
-            <include>WideIconView</include> <!-- view id = 505 -->
-            <include>MusicVideoInfoListView</include> <!-- view id = 511 -->
-            <include>Viewtype_Bob</include> <!-- view id = 512 -->
-            <include>Viewtype_Boblist</include> <!-- view id = 513 -->
-            <include>Viewtype_Bobbanner</include> <!-- view id = 514 -->
+            <include>Viewtype_Boblist</include> <!-- view id = 50 -->
+            <!--<include>CommonRootView</include> <!-- view id = 50 -->
+            <include>Viewtype_Bob</include> <!-- view id = 500 -->
+            <!--<include>ThumbnailView</include> <!-- view id = 500 -->
+            <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
+            <!--<include>PosterWrapView</include> <!-- view id = 501 -->
+            <!--<include>PosterWrapView2_Fanart</include> <!-- view id = 508 -->
+            <!--<include>MediaListView3</include> <!-- view id = 503 -->
+            <!--<include>MediaListView2</include> <!-- view id = 504 -->
+            <!--<include>WideIconView</include> <!-- view id = 505 -->
+            <!--<include>MusicVideoInfoListView</include> <!-- view id = 511 -->
         </control>
         <!-- Top menu -->
         <control type="grouplist" id="9000">
@@ -35,7 +35,7 @@
             <posx>0</posx>
             <posy>-200</posy>
             <orientation>horizontal</orientation>
-            <ondown>512</ondown>
+            <ondown>50</ondown>
             <control type="button" id="2">
                 <description>Viewtype toggle</description>
                 <label>-</label>
@@ -72,18 +72,46 @@
                 <label>587</label>
             </control>
             <control type="togglebutton" id="100">
-                <description>Toggle fanart</description>
-                <label>Fanart</label>
-                <altlabel>Ingen fanart</altlabel>
-                <onclick>Skin.ToggleSetting(Viewtype_Bob_Show_Fanart)</onclick>
-                <visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+                <description>Toggle fanart boblist</description>
+                <label>Fanart boblist</label>
+                <altlabel>Ingen fanart boblist</altlabel>
+                <onclick>Skin.ToggleSetting(Viewtype_Boblist_Show_Fanart)</onclick>
+                <visible>Control.IsVisible(50) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
             <control type="togglebutton" id="101">
-                <description>Toggle small fanart</description>
+                <description>Toggle fanart bob</description>
+                <label>Fanart bob</label>
+                <altlabel>Ingen fanart bob</altlabel>
+                <onclick>Skin.ToggleSetting(Viewtype_Bob_Show_Fanart)</onclick>
+                <visible>Control.IsVisible(500) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            </control>
+            <control type="togglebutton" id="102">
+                <description>Toggle fanart bobbanner</description>
+                <label>Fanart bobbanner</label>
+                <altlabel>Ingen fanart bobbanner</altlabel>
+                <onclick>Skin.ToggleSetting(Viewtype_Bobbannerlist_Show_Fanart)</onclick>
+                <visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            </control>
+            <control type="togglebutton" id="103">
+                <description>Toggle small fanart boblist</description>
+                <label>Liten fanart</label>
+                <altlabel>Ingen liten fanart</altlabel>
+                <onclick>Skin.ToggleSetting(Viewtype_Boblist_Show_Small_Fanart)</onclick>
+                <visible>Control.IsVisible(50) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            </control>
+            <control type="togglebutton" id="104">
+                <description>Toggle small fanart bob</description>
                 <label>Liten fanart</label>
                 <altlabel>Ingen liten fanart</altlabel>
                 <onclick>Skin.ToggleSetting(Viewtype_Bob_Show_Small_Fanart)</onclick>
-                <visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+                <visible>Control.IsVisible(500) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            </control>
+            <control type="togglebutton" id="105">
+                <description>Toggle small fanart bobbanner</description>
+                <label>Liten fanart</label>
+                <altlabel>Ingen liten fanart</altlabel>
+                <onclick>Skin.ToggleSetting(Viewtype_Bobbanner_Show_Small_Fanart)</onclick>
+                <visible>Control.IsVisible(501) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
         </control>
         <control type="grouplist">
@@ -206,36 +234,100 @@
                 <visible>Control.HasFocus(19)</visible>
             </control>
             <control type="label">
-                <description>Fanart unfocused</description>
+                <description>Fanart unfocused boblist</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(100)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.HasFocus(100)</visible>
+                <visible>Control.IsVisible(50) + !Control.HasFocus(100)</visible>
             </control>
             <control type="label">
-                <description>Fanart focused</description>
+                <description>Fanart focused boblist</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(100)]</label>
                 <textcolor>blue</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>Control.HasFocus(100)</visible>
+                <visible>Control.IsVisible(50) + Control.HasFocus(100)</visible>
             </control>
             <control type="label">
-                <description>Small fanart unfocused</description>
+                <description>Small fanart unfocused boblist</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(103)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(50) + !Control.HasFocus(103)</visible>
+            </control>
+            <control type="label">
+                <description>Small fanart focused boblist</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(103)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(50) + Control.HasFocus(103)</visible>
+            </control>
+            <control type="label">
+                <description>Fanart unfocused bob</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(101)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.HasFocus(101)</visible>
+                <visible>Control.IsVisible(500) + !Control.HasFocus(101)</visible>
             </control>
             <control type="label">
-                <description>Small fanart focused</description>
+                <description>Fanart focused bob</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(101)]</label>
                 <textcolor>blue</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>Control.HasFocus(101)</visible>
+                <visible>Control.IsVisible(500) + Control.HasFocus(101)</visible>
+            </control>
+            <control type="label">
+                <description>Small fanart unfocused bob</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(104)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(500) + !Control.HasFocus(104)</visible>
+            </control>
+            <control type="label">
+                <description>Small fanart focused bob</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(104)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(500) + Control.HasFocus(104)</visible>
+            </control>
+            <control type="label">
+                <description>Fanart unfocused bobbanner</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(102)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(501) + !Control.HasFocus(102)</visible>
+            </control>
+            <control type="label">
+                <description>Fanart focused bobbanner</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(102)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(501) + Control.HasFocus(102)</visible>
+            </control>
+            <control type="label">
+                <description>Small fanart unfocused bobbanner</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(105)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(501) + !Control.HasFocus(105)</visible>
+            </control>
+            <control type="label">
+                <description>Small fanart focused bobbanner</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(105)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(501) + Control.HasFocus(105)</visible>
             </control>
         </control>
         <include>Home_Menu</include>
