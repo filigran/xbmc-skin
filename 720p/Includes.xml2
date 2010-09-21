@@ -19,10 +19,7 @@
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>ff97AFC4</colordiffuse>
-            <visible>!Player.HasVideo + [Window.IsActive(Home) | [Control.IsVisible(50)  + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
-                                                               | [Control.IsVisible(500) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Bob_Show_Fanart)]]]
-                                                               | [Control.IsVisible(501) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]]
-            </visible>
+            <visible>Window.IsActive(Home) | [Control.IsVisible(50) + !Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + !Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + !Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]</visible>
         </control>
         <control type="image">
             <description>Center background</description>
@@ -32,10 +29,7 @@
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>884677b9</colordiffuse>
-            <visible>Player.HasVideo | [!Window.IsActive(Home) + [[Control.IsVisible(50)  + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
-                                                               | [Control.IsVisible(500) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)]]]
-                                                               | [Control.IsVisible(501) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]]]
-            </visible>
+            <visible>!Window.IsActive(Home) + [[Control.IsVisible(50) + Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]]</visible>
         </control>
         <control type="image">
             <description>Top background image</description>

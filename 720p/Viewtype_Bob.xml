@@ -40,8 +40,8 @@
                         <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                     <control type="image">
-                        <posx>156</posx>
-                        <posy>250</posy>
+                        <posx>150</posx>
+                        <posy>245</posy>
                         <width>40</width>
                         <height>40</height>
                         <aspectratio>stretch</aspectratio>
@@ -181,7 +181,8 @@
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true">special://skin/media/white.png</texture>
                 <colordiffuse>55ffffff</colordiffuse>
-                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)">conditional</animation>
+                <visible>Skin.HasSetting(Movies_Viewtype_Bob_Show_Small_Fanart)</visible>
             </control>
             <control type="image">
                 <description>Small fanart image</description>
@@ -192,12 +193,15 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)">conditional</animation>
+                <visible>Skin.HasSetting(Movies_Viewtype_Bob_Show_Small_Fanart)</visible>
             </control>
             <control type="group">
-                <description>Plot + scrollbar</description>
+                <description>Plot</description>
                 <posx>300</posx>
                 <posy>510</posy>
+                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="!Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)">conditional</animation>
+                <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)">conditional</animation>
                 <control type="textbox">
                     <description>Plot</description>
                     <posx>0</posx>
@@ -210,7 +214,27 @@
                     <label>$INFO[ListItem.Plot]</label>
                     <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>Skin.HasSetting(Movies_Viewtype_Bob_Show_small_fanart)</visible>
                 </control>
+                <control type="textbox">
+                    <description>Plot</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>756</width>
+                    <height>140</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <pagecontrol>600</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>!Skin.HasSetting(Movies_Viewtype_Bob_Show_small_fanart)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <description>Plot scrollbar</description>
+                <posx>300</posx>
+                <posy>510</posy>
                 <control type="scrollbar" id="600">
                     <posx>510</posx>
                     <posy>0</posy>
@@ -220,9 +244,9 @@
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
                     <onleft>60</onleft>
-                    <showonepage>false</showonepage>
+                    <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
-                    <visible>Control.IsVisible(500)</visible>
+                    <visible allowhiddenfocus="true">Control.IsVisible(500) + Control.HasFocus(600)</visible>
                 </control>
             </control>
             <control type="group">

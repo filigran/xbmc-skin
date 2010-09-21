@@ -6,10 +6,10 @@
             <posx>346</posx>
             <posy>212</posy>
             <control type="image">
-                <posx>0</posx>
+                <posx>-2</posx>
                 <posy>0</posy>
-                <width>586</width>
-                <height>210</height>
+                <width>590</width>
+                <height>212</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
                 <texture>special://skin/media/white.png</texture>
@@ -50,10 +50,10 @@
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                         <colordiffuse>ffeaf188</colordiffuse>
-                        <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
+                        <visible>Container.Content(TVShows)</visible>
                     </control>
                     <control type="image">
-                        <posx>550</posx>
+                        <posx>555</posx>
                         <posy>5</posy>
                         <width>20</width>
                         <height>20</height>
@@ -101,10 +101,10 @@
                         <colordiffuse>ffeaf188</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
+                        <visible>Container.Content(TVShows)</visible>
                     </control>
                     <control type="image">
-                        <posx>550</posx>
+                        <posx>555</posx>
                         <posy>5</posy>
                         <width>20</width>
                         <height>20</height>
@@ -171,7 +171,7 @@
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true">special://skin/media/white.png</texture>
                 <colordiffuse>55ffffff</colordiffuse>
-                <visible>Skin.HasSetting(Viewtype_Bobbanner_Show_Small_Fanart)</visible>
+                <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Small_Fanart)]</visible>
             </control>
             <control type="image">
                 <description>Small fanart image</description>
@@ -182,7 +182,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Viewtype_Bobbanner_Show_Small_Fanart)</visible>
+                <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Small_Fanart)]</visible>
             </control>
             <control type="group">
                 <description>Plot + scrollbar</description>
@@ -212,7 +212,7 @@
                     <onleft>60</onleft>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
-                    <visible>Control.IsVisible(501)</visible>
+                    <visible allowhiddenfocus="true">Control.IsVisible(501) + Control.HasFocus(600)</visible>
                 </control>
             </control>
             <control type="group">
