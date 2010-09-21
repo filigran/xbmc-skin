@@ -19,7 +19,7 @@
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>ff97AFC4</colordiffuse>
-            <visible>Window.IsActive(Home) | [Control.IsVisible(50) + !Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + !Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + !Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]</visible>
+            <visible>!Player.HasVideo + [Window.IsActive(Home) | [Control.IsVisible(50) + !Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + !Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + !Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]]</visible>
         </control>
         <control type="image">
             <description>Center background</description>
@@ -29,7 +29,7 @@
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>884677b9</colordiffuse>
-            <visible>!Window.IsActive(Home) + [[Control.IsVisible(50) + Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]]</visible>
+            <visible>Player.HasVideo | [!Window.IsActive(Home) + [[Control.IsVisible(50) + Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]]]</visible>
         </control>
         <control type="image">
             <description>Top background image</description>

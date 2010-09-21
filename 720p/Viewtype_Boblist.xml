@@ -380,7 +380,21 @@
                 <onright>600</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
-                <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+                <visible>Container.Content(Episodes)</visible>
+            </control>
+            <control type="scrollbar" id="60">
+                <posx>60r</posx>
+                <posy>53</posy>
+                <width>5</width>
+                <height>274</height>
+                <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                <onleft>50</onleft>
+                <onright>600</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Container.Content(Movies)</visible>
             </control>
         </control>
         <control type="group">

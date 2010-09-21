@@ -3,6 +3,7 @@
     <allowoverlay>no</allowoverlay>
     <views>50,500,501,508,504,503,505,511,512,513,514</views>
     <controls>
+        <include>CommonMediaPlayingBackground</include>
         <control type="image">
             <description>Fanart image</description>
             <posx>0</posx>
@@ -12,7 +13,7 @@
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>IconCrossfadeTime</fadetime>
             <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-            <visible>[Control.IsVisible(50) + Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]</visible>
+            <visible>!Player.HasVideo + [Control.IsVisible(50) + Skin.HasSetting(Viewtype_Boblist_Show_Fanart)] | [Control.IsVisible(500) + Skin.HasSetting(Viewtype_Bob_Show_Fanart)] | [Control.IsVisible(501) + Skin.HasSetting(Viewtype_Bobbannerlist_Show_Fanart)]</visible>
         </control>
         <include>Global_Backgrounds</include>
         <control type="group">
