@@ -42,10 +42,10 @@
                         <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
                     </control>
                     <control type="image">
-                        <posx>480</posx>
-                        <posy>0</posy>
-                        <width>60</width>
-                        <height>30</height>
+                        <posx>420</posx>
+                        <posy>7</posy>
+                        <width>144</width>
+                        <height>16</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
@@ -91,10 +91,10 @@
                         <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
                     </control>
                     <control type="image">
-                        <posx>480</posx>
-                        <posy>0</posy>
-                        <width>60</width>
-                        <height>30</height>
+                        <posx>420</posx>
+                        <posy>7</posy>
+                        <width>144</width>
+                        <height>16</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
@@ -185,34 +185,111 @@
                 <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Small_Fanart)]</visible>
             </control>
             <control type="group">
-                <description>Plot + scrollbar</description>
+                <description>Plot</description>
                 <posx>300</posx>
                 <posy>510</posy>
+                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="!Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_small_Fanart)">conditional</animation>
+                <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_small_Fanart)">conditional</animation>
+                <visible>Container.Content(TVShows)</visible>
                 <control type="textbox">
                     <description>Plot</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>500</width>
-                    <height>145</height>
+                    <height>140</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
                     <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_small_fanart)</visible>
                 </control>
+                <control type="textbox">
+                    <description>Plot</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>756</width>
+                    <height>140</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <pagecontrol>600</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>!Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_small_fanart)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <description>Plot scrollbar</description>
+                <posx>300</posx>
+                <posy>510</posy>
                 <control type="scrollbar" id="600">
                     <posx>510</posx>
                     <posy>0</posy>
                     <width>5</width>
-                    <height>145</height>
+                    <height>140</height>
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
                     <onleft>60</onleft>
-                    <showonepage>false</showonepage>
+                    <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
                     <visible allowhiddenfocus="true">Control.IsVisible(501) + Control.HasFocus(600)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <description>Plot</description>
+                <posx>300</posx>
+                <posy>510</posy>
+                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="!Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_small_Fanart)">conditional</animation>
+                <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_small_Fanart)">conditional</animation>
+                <visible>Container.Content(Seasons)</visible>
+                <control type="textbox">
+                    <description>Plot</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>500</width>
+                    <height>140</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[Container.ShowPlot]</label>
+                    <pagecontrol>601</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_small_fanart)</visible>
+                </control>
+                <control type="textbox">
+                    <description>Plot</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>756</width>
+                    <height>140</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[Container.ShowPlot]</label>
+                    <pagecontrol>601</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>!Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_small_fanart)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <description>Plot scrollbar</description>
+                <posx>300</posx>
+                <posy>510</posy>
+                <control type="scrollbar" id="601">
+                    <posx>510</posx>
+                    <posy>0</posy>
+                    <width>5</width>
+                    <height>140</height>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <onleft>60</onleft>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">Control.IsVisible(501) + Control.HasFocus(601)</visible>
                 </control>
             </control>
             <control type="group">
@@ -371,15 +448,6 @@
                     <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Writer]</label>
                 </control>
-            </control>
-            <control type="image">
-                <description>Rating value</description>
-                <posx>580</posx>
-                <posy>590</posy>
-                <width>120</width>
-                <height>24</height>
-                <texture>$INFO[ListItem.StarRating]</texture>
-                <visible>Skin.HasSetting(Movies_Show_StarRating)</visible>
             </control>
             <control type="grouplist">
                 <description>Media Codec Flagging Images</description>
