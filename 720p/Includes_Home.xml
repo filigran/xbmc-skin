@@ -552,7 +552,7 @@
                         <posy>0</posy>
                         <width>360</width>
                         <height>203</height>
-                        <texture fallback="special://skin/media/white.png">$INFO[ListItem.Thumb]</texture>
+                        <texture fallback="special://skin/media/white.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>

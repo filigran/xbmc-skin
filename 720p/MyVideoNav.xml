@@ -243,6 +243,13 @@
                 <onclick>Skin.ToggleSetting(Episodes_Viewtype_Bobbannerlist_Show_Small_Fanart)</onclick>
                 <visible>Control.IsVisible(501) + Container.Content(Episodes)</visible>
             </control>
+            <control type="togglebutton" id="124">
+                <description>Toggle star rating boblist movies</description>
+                <label>Star rating</label>
+                <altlabel>Ingen star rating</altlabel>
+                <onclick>Skin.ToggleSetting(Movies_Viewtype_Boblist_Show_Star_Rating)</onclick>
+                <visible>Control.IsVisible(50) + Container.Content(Movies)</visible>
+            </control>
         </control>
         <control type="grouplist">
             <description>The visible part of the menu for movies</description>
@@ -746,6 +753,22 @@
                 <textcolor>blue</textcolor>
                 <font>Font_Top_Menu</font>
                 <visible>Control.IsVisible(501) + Control.HasFocus(123) + Container.Content(Episodes)</visible>
+            </control>
+            <control type="label"> <!-- 124 -->
+                <description>Star rating unfocused boblist movies</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(124)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(50) + !Control.HasFocus(124) + Container.Content(Movies)</visible>
+            </control>
+            <control type="label"> <!-- 124 -->
+                <description>Star rating focused boblist movies</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(124)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(50) + Control.HasFocus(124) + Container.Content(Movies)</visible>
             </control>
         </control>
         <include>Home_Menu</include>

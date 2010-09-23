@@ -107,7 +107,7 @@
                         <aligny>center</aligny>
                         <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                         <colordiffuse>ffFFFF96</colordiffuse>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Boblist_Show_Star_Rating)</visible>
                     </control>
                     <control type="image">
                         <posx>850</posx>
@@ -168,14 +168,13 @@
                     <control type="label">
                         <posx>940</posx>
                         <posy>-2</posy>
-                        <width>110</width>
+                        <width>115</width>
                         <height>30</height>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                         <font>Font_Movie_List</font>
                         <textcolor>white</textcolor>
-                        <shadowcolor>gray</shadowcolor>
                         <visible>Container.Content(Movies)</visible>
                     </control>
                 </itemlayout>
@@ -285,7 +284,7 @@
                         <colordiffuse>ffFFFF96</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies)</visible>
+                        <visible>Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Boblist_Show_Star_Rating)</visible>
                     </control>
                     <control type="image">
                         <posx>850</posx>
@@ -356,7 +355,7 @@
                     <control type="label">
                         <posx>940</posx>
                         <posy>-2</posy>
-                        <width>110</width>
+                        <width>115</width>
                         <height>30</height>
                         <align>right</align>
                         <aligny>center</aligny>
