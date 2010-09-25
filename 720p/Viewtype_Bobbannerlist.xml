@@ -85,7 +85,7 @@
                         <aligny>center</aligny>
                         <label>$INFO[Listitem.Label]</label>
                         <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
+                        <textcolor>white</textcolor>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                         <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
