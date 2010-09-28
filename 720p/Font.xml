@@ -190,5 +190,15 @@
             <filename>Tahoma.ttf</filename>
             <size>30</size>
         </font>
+        <font>
+            <name>Font_TVShows_Logowrap_Episodes</name>
+            <filename>tahomabd.ttf</filename>
+            <size>30</size>
+        </font>
+        <font>
+            <name>Font_TVShows_Logowrap_Episodes_Smaller</name>
+            <filename>tahomabd.ttf</filename>
+            <size>24</size>
+        </font>
     </fontset>
 </fonts>

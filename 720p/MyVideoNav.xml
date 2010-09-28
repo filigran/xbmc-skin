@@ -1,7 +1,7 @@
 ﻿<window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,500,501,508,504,503,505,511,512,513,514</views>
+    <views>50,500,501,502,508,504,503,505,511,512,513,514</views>
     <controls>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
@@ -15,7 +15,8 @@
             <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
             <visible>!Player.HasVideo + [[Control.IsVisible(50) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
                                        | [Control.IsVisible(500) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)]]]
-                                       | [Control.IsVisible(501) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]]
+                                       | [Control.IsVisible(501) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]
+                                       | [Control.IsVisible(508) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Logowrap_Show_Fanart)]]]]
             </visible>
         </control>
         <include>Global_Backgrounds</include>
@@ -27,6 +28,7 @@
             <!--<include>ThumbnailView</include> --><!-- view id = 500 -->
             <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
             <!--<include>PosterWrapView</include> --><!-- view id = 501 -->
+            <include>Viewtype_Logowrap</include> <!-- view id = 508 -->
             <!--<include>PosterWrapView2_Fanart</include> --><!-- view id = 508 -->
             <!--<include>MediaListView3</include> --><!-- view id = 503 -->
             <!--<include>MediaListView2</include> --><!-- view id = 504 -->
@@ -249,6 +251,13 @@
                 <altlabel>Ingen star rating</altlabel>
                 <onclick>Skin.ToggleSetting(Movies_Viewtype_Boblist_Show_Star_Rating)</onclick>
                 <visible>Control.IsVisible(50) + Container.Content(Movies)</visible>
+            </control>
+            <control type="togglebutton" id="125">
+                <description>Toggle centered/bottom logos logowrap</description>
+                <label>Centered</label>
+                <altlabel>Bottom</altlabel>
+                <onclick>Skin.ToggleSetting(TVShows_Viewtype_Logowrap_Logos_centered)</onclick>
+                <visible>Control.IsVisible(508) + Container.Content(TVShows)</visible>
             </control>
         </control>
         <control type="grouplist">
@@ -770,8 +779,23 @@
                 <font>Font_Top_Menu</font>
                 <visible>Control.IsVisible(50) + Control.HasFocus(124) + Container.Content(Movies)</visible>
             </control>
+            <control type="label"> <!-- 125 -->
+                <description>Logowrap centered/bottom aligned logos unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(125)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(508) + !Control.HasFocus(125) + Container.Content(TVShows)</visible>
+            </control>
+            <control type="label"> <!-- 125 -->
+                <description>Logowrap centered/bottom aligned logos focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(125)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.IsVisible(508) + Control.HasFocus(125) + Container.Content(TVShows)</visible>
+            </control>
         </control>
-        <include>Home_Menu</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>
         <include>RSS_Feed</include>
