@@ -1,7 +1,7 @@
 ﻿<window id="0"> <!-- delta window id för Home är 0 -->
     <defaultcontrol always="true">5043</defaultcontrol> <!-- vilken control som ska ha focus från början -->
     <allowoverlay>yes</allowoverlay> <!-- tillåt video/vizualisation att spela i bakgrunden -->
-    <backgroundcolor>ff97AFC4</backgroundcolor>
+    <backgroundcolor>ff000000</backgroundcolor>
     <controls>
         <control type="button" id="5043">
             <description>Run Recently added</description>
@@ -30,126 +30,34 @@
             <texturefocus>-</texturefocus>
             <visible>!Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + !Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + !Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
         </control>
-        <!--<control type="multiimage">
-            <description>Home menu movies fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">$INFO[Skin.String(home_custom_back_video_folder)]</imagepath>
-            <visible>Control.HasFocus(3001)</visible>
-        </control>
         <control type="multiimage">
-            <description>Home menu tvshows fanart</description>
+			<posx>0</posx>
             <posy>0</posy>
-            <posx>0</posx>
             <width>1280</width>
             <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/media/tvshows.jpg</imagepath>
-            <visible>Control.HasFocus(3002)</visible>
-        </control>
-        <control type="multiimage">
-            <description>Home menu videos fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/videos.jpg</imagepath>
-            <visible>Control.HasFocus(3003)</visible>
-        </control>
-        <control type="multiimage">
-            <description>Home menu music fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/music.jpg</imagepath>
-            <visible>Control.HasFocus(3004)</visible>
-        </control>
-        <control type="multiimage">
-            <description>Home menu programs fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/programs.jpg</imagepath>
-            <visible>Control.HasFocus(3005)</visible>
-        </control>
-        <control type="multiimage">
-            <description>Home menu pictures fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/pictures.jpg</imagepath>
-            <visible>Control.HasFocus(3006)</visible>
-        </control>
-        <control type="multiimage">
-            <description>Home menu weather fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/weather.jpg</imagepath>
-            <visible>Control.HasFocus(3007)</visible>
-        </control>
-        <control type="multiimage">
-            <description>Home menu settings fanart</description>
-            <posy>0</posy>
-            <posx>0</posx>
-            <width>1280</width>
-            <height>720</height>
-            <timeperimage>5000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>400</fadetime>
-            <imagepath background="true" fallback="special://skin/media/white.png">special://skin/backgrounds/settings.jpg</imagepath>
-            <visible>Control.HasFocus(3008)</visible>
-        </control>-->
-        <include>Global_Backgrounds</include>
+			<randomize>true</randomize>
+			<timeperimage>12000</timeperimage>
+			<fadetime>1000</fadetime>
+			<pauseatend>0</pauseatend>
+			<loop>true</loop>
+			<aspectratio background="true" aligny="top">scale</aspectratio>
+			<imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
+			<include>Animation_CommonFade</include>
+		</control>		
         <control type="image">
-            <description>Gradient image behind category name</description>
-            <posx>60</posx>
-            <posy>90</posy>
-            <width>340</width>
-            <height>340</height>
-            <texture>special://skin/media/gradient_home.png</texture>
-            <colordiffuse>aaffffff</colordiffuse>
-        </control>
-        <control type="image">
-            <description>Gradient image behind category icon</description>
-            <posx>680</posx>
-            <posy>90</posy>
-            <width>340</width>
-            <height>340</height>
-            <texture>special://skin/media/gradient_home.png</texture>
-            <colordiffuse>aaffffff</colordiffuse>
+            <description>Fanart overlay</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>white.png</texture>
+            <colordiffuse>88000000</colordiffuse>
         </control>
         <include>Global_Time</include>
         <include>Global_Weather</include>
         <include>Home_Menu</include>
         <include>Home_RecentlyAdded</include>
-        <include>Home_Icons</include>
+        <include>Home_Weather</include>
         <include>RSS_Feed</include>
     </controls>
 </window>
