@@ -1,237 +1,213 @@
 ﻿<includes>
+    <include name="Home_Menu_pos130r">
+        <posy>130r</posy>
+    </include>
+    <include name="Home_Menu_pos100r">
+        <posy>100r</posy>
+    </include>
     <include name="Home_Menu">
-        <control type="group">
-            <visible allowhiddenfocus="true">!ControlGroup(9000).HasFocus</visible>
-            <!-- Top menu -->
-            <control type="grouplist" id="300">
-                <description>Hidden button top menu</description>
-                <posx>0</posx>
-                <posy>-200</posy>
-                <orientation>horizontal</orientation>
-                <onup>9000</onup>
-                <ondown>301</ondown>
-                <control type="button" id="3001">
-                    <description>Movies</description>
-                    <label>342</label>
-                    <onclick>ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
-                    <visible>Library.HasContent(Movies) + !Skin.HasSetting(Home_Hide_Movies)</visible>
-                </control>
-                <control type="button" id="3002">
-                    <description>TV Shows</description>
-                    <label>20343</label>
-                    <onclick>ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
-                    <visible>Library.HasContent(TVShows) + !Skin.HasSetting(Home_Hide_TVShows)</visible>
-                </control>
-                <control type="button" id="3003">
-                    <description>Videos</description>
-                    <label>31334</label>
-                    <onclick>ActivateWindow(MyVideoFiles)</onclick>
-                    <visible>!Skin.HasSetting(Home_Hide_Videos)</visible>
-                </control>
-                <control type="button" id="3004">
-                    <description>Music</description>
-                    <label>2</label>
-                    <onclick>ActivateWindow(Music)</onclick>
-                    <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
-                </control>
-                <control type="button" id="3005">
-                    <description>Programs</description>
-                    <label>0</label>
-                    <onclick>ActivateWindow(Programs)</onclick>
-                    <visible>!Skin.HasSetting(Home_Hide_Programs)</visible>
-                </control>
-                <control type="button" id="3006">
-                    <description>Pictures</description>
-                    <label>1</label>
-                    <onclick>ActivateWindow(Pictures)</onclick>
-                    <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
-                </control>
-                <control type="button" id="3007">
-                    <description>Weather</description>
-                    <label>8</label>
-                    <onclick>ActivateWindow(Weather)</onclick>
-                    <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
-                </control>
-                <control type="button" id="3008">
-                    <description>Settings</description>
-                    <label>5</label>
-                    <onclick>ActivateWindow(Settings)</onclick>
-                    <visible>!Skin.HasSetting(Home_Hide_Settings)</visible>
-                </control>
+        <control type="group" id="900">
+            <description>Buttons for recently added visibility (onup/down conditions)</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+                <onfocus>SetFocus(301)</onfocus>
             </control>
-            <control type="grouplist">
-                <description>The visible part of the menu</description>
-                <posx>20</posx>
-                <posy>25</posy>
+            <control type="button">
+                <visible>Container(300).HasFocus(4) + Skin.HasSetting(Home_Show_RecentlyAdded_TVShows)</visible>
+                <onfocus>SetFocus(302)</onfocus>
+            </control>
+            <control type="button">
+                <visible>Container(300).HasFocus(2) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+                <onfocus>SetFocus(303)</onfocus>
+            </control>
+            <control type="button">
+                <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+                <onfocus>SetFocus(304)</onfocus>
+            </control>
+        </control>
+        <control type="group">
+            <posx>0</posx>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_Menu_pos130r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_Menu_pos100r</include>
+            <control type="image">
+                <description>Menu background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>100</height>
+                <texture>white.png</texture>
+                <colordiffuse>88000000</colordiffuse>
+            </control>
+            <control type="image">
+                <description>Menu item icon</description>
+                <posx>512</posx>
+                <posy>-266</posy>
+                <width>256</width>
+                <height>256</height>
+                <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+                <animation type="conditional" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">
+                    <effect type="zoom" center="auto" tween="back" easing="out" time="400" start="80" end="100" />
+                </animation> <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+                <animation effect="slide" time="300" start="0,0" end="-1000,0" condition="!Control.HasFocus(300)">conditional</animation>
+            </control>
+            <control type="wraplist" id="300">
+                <posx>-219</posx>
+                <posy>0</posy>
+                <width>1510</width>
+                <height>100</height>
+                <onleft>300</onleft>
+                <onright>300</onright>
+                <onup>900</onup>
+                <ondown>-</ondown>
+                <viewtype>list</viewtype>
                 <orientation>horizontal</orientation>
-                <itemgap>10</itemgap>
-                <control type="label">
-                    <description>Movies unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3001)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(301) + !Control.HasFocus(3001) + Library.HasContent(Movies) + !Skin.HasSetting(Home_Hide_Movies)</visible>
-                </control>
-                <control type="label">
-                    <description>Movies focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3001)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(301) | Control.HasFocus(3001) + Library.HasContent(Movies) + !Skin.HasSetting(Home_Hide_Movies)</visible>
-                </control>
-                <control type="label">
-                    <description>TV Shows unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3002)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(302) + !Control.HasFocus(3002) + Library.HasContent(TVShows) + !Skin.HasSetting(Home_Hide_TVShows)</visible>
-                </control>
-                <control type="label">
-                    <description>TV Shows focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3002)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(302) | Control.HasFocus(3002) + Library.HasContent(TVShows) + !Skin.HasSetting(Home_Hide_TVShows)</visible>
-                </control>
-                <control type="label">
-                    <description>Videos unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3003)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(3003) + !Skin.HasSetting(Home_Hide_Videos)</visible>
-                </control>
-                <control type="label">
-                    <description>Videos focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3003)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(3003) + !Skin.HasSetting(Home_Hide_Videos)</visible>
-                </control>
-                <control type="label">
-                    <description>Music unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3004)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(303) + !Control.HasFocus(3004) + !Skin.HasSetting(Home_Hide_Music)</visible>
-                </control>
-                <control type="label">
-                    <description>Music focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3004)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(303) | Control.HasFocus(3004) + !Skin.HasSetting(Home_Hide_Music)</visible>
-                </control>
-                <control type="label">
-                    <description>Programs unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3005)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(3005) + !Skin.HasSetting(Home_Hide_Programs)</visible>
-                </control>
-                <control type="label">
-                    <description>Programs focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3005)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(3005) + !Skin.HasSetting(Home_Hide_Programs)</visible>
-                </control>
-                <control type="label">
-                    <description>Pictures unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3006)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(3006) + !Skin.HasSetting(Home_Hide_Pictures)</visible>
-                </control>
-                <control type="label">
-                    <description>Pictures focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3006)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(3006) + !Skin.HasSetting(Home_Hide_Pictures)</visible>
-                </control>
-                <control type="label">
-                    <description>Weather unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3007)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(3007) + !Skin.HasSetting(Home_Hide_Weather)</visible>
-                </control>
-                <control type="label">
-                    <description>Weather focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3007)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(3007) + !Skin.HasSetting(Home_Hide_Weather)</visible>
-                </control>
-                <control type="label">
-                    <description>Settings unfocused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3008)]</label>
-                    <textcolor>white</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>!Control.HasFocus(3008) + !Skin.HasSetting(Home_Hide_Settings)</visible>
-                </control>
-                <control type="label">
-                    <description>Settings focused</description>
-                    <width min="20" max="200">auto</width>
-                    <label>$INFO[Control.GetLabel(3008)]</label>
-                    <textcolor>blue</textcolor>
-                    <font>Font_Top_Menu</font>
-                    <visible>Control.HasFocus(3008) + !Skin.HasSetting(Home_Hide_Settings)</visible>
-                </control>
+                <focusposition>2</focusposition>
+                <scrolltime>200</scrolltime>
+                <itemlayout width="430" height="100">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>-5</posy>
+                        <width>430</width>
+                        <height>100</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Home_Category</font>
+                        <textcolor>22ffffff</textcolor>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="430" height="100">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>-5</posy>
+                        <width>430</width>
+                        <height>100</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Home_Category</font>
+                        <textcolor>blue</textcolor>
+                        <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item id="1">
+                        <description>Videos</description>
+                        <label>3</label>
+                        <icon>special://skin/media/videos.png</icon>
+                        <thumb fallback="special://skin/media/videos.jpg">$INFO[Skin.String(home_custom_back_video_folder)]</thumb>
+                        <onclick>ActivateWindow(VideoFiles)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Videos)</visible>
+                    </item>
+                    <item id="2">
+                        <description>Music</description>
+                        <label>2</label>
+                        <icon>special://skin/media/music.png</icon>
+                        <thumb fallback="special://skin/media/music.jpg">$INFO[Skin.String(home_custom_back_music_folder)]</thumb>
+                        <onclick>ActivateWindow(Music)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
+                    </item>
+                    <item id="3">
+                        <description>Movies</description>
+                        <label>342</label>
+                        <icon>special://skin/media/movies.png</icon>
+                        <thumb fallback="special://skin/media/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
+                        <onclick>ActivateWindow(VideoLibrary,movietitles)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
+                    </item>
+                    <item id="4">
+                        <description>TV Shows</description>
+                        <label>20343</label>
+                        <icon>special://skin/media/tvshows.png</icon>
+                        <thumb fallback="special://skin/media/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
+                        <onclick>ActivateWindow(VideoLibrary,tvshowtitles)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
+                    </item>
+                    <item id="5">
+                        <description>Pictures</description>
+                        <label>1</label>
+                        <icon>special://skin/media/pictures.png</icon>
+                        <thumb fallback="special://skin/media/pictures.jpg">$INFO[Skin.String(home_custom_back_pictures_folder)]</thumb>
+                        <onclick>ActivateWindow(Pictures)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
+                    </item>
+                    <item id="6">
+                        <description>Weather</description>
+                        <label>8</label>
+                        <icon>special://skin/media/weather.png</icon>
+                        <thumb fallback="special://skin/media/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
+                        <onclick>ActivateWindow(weather)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
+                    </item>
+                    <item id="7">
+                        <description>Programs</description>
+                        <label>24001</label>
+                        <icon>special://skin/media/addons.png</icon>
+                        <thumb fallback="special://skin/media/addons.jpg">$INFO[Skin.String(home_custom_back_addons_folder)]</thumb>
+                        <onclick>ActivateWindow(Programs,Addons,return)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Addons)</visible>
+                    </item>
+                    <item id="8">
+                        <description>Settings</description>
+                        <label>5</label>
+                        <icon>special://skin/media/settings.png</icon>
+                        <thumb fallback="special://skin/media/settings.jpg">$INFO[Skin.String(home_custom_back_settings_folder)]</thumb>
+                        <onclick>ActivateWindow(settings)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Settings)</visible>
+                    </item>
+                    <item id="10">
+                        <description>Shutdown</description>
+                        <label>13005</label>
+                        <icon>special://skin/media/shutdown.png</icon>
+                        <thumb fallback="special://skin/media/shutdown.jpg">$INFO[Skin.String(home_custom_back_shutdown_folder)]</thumb>
+                        <onclick>Shutdown()</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Shutdown)</visible>
+                    </item>
+                    <item id="11">
+                        <description>Play Disc</description>
+                        <label>341</label>
+                        <icon>special://skin/media/playdisc.png</icon>
+                        <thumb fallback="special://skin/media/playdisc.jpg">$INFO[Skin.String(home_custom_back_playdisc_folder)]</thumb>
+                        <onclick>PlayDVD</onclick>
+                        <visible>System.HasMediadvd</visible>
+                    </item>
+                    <item id="12">
+                        <description>Favourites</description>
+                        <label>1036</label>
+                        <icon>special://skin/media/favourites.png</icon>
+                        <thumb fallback="special://skin/media/favourites.jpg">$INFO[Skin.String(home_custom_back_favourites_folder)]</thumb>
+                        <onclick>ActivateWindow(Favourites)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Favourites)</visible>
+                    </item>
+                    <item id="13">
+                        <description>Profiles</description>
+                        <label>13200</label>
+                        <icon>special://skin/media/profiles.png</icon>
+                        <thumb fallback="special://skin/media/profiles.jpg">$INFO[Skin.String(home_custom_back_profiles_folder)]</thumb>
+                        <onclick>ActivateWindow(Profiles)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Profiles)</visible>
+                    </item>
+                </content>
             </control>
         </control>
     </include>
     <include name="Home_RecentlyAdded">
         <control type="group">
             <description>RecentlyAdded for Movies</description>
-            <posx>25</posx>
-            <posy>280</posy>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + [Control.HasFocus(3001) | Control.HasFocus(301)]</visible>
-            <control type="label">
-                <description>Movies total count</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>470</width>
-                <font>Font_Home_RecentlyAdded_1</font>
-                <textcolor>blue</textcolor>
-                <align>center</align>
-                <label>$INFO[Window.Property(Movies.Count),, [LOWERCASE]$LOCALIZE[342][/LOWERCASE]]</label>
+            <posx>350</posx>
+            <posy>450r</posy>
+            <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
+            <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + Control.HasFocus(301)</visible>
+            <control type="image">
+                <description>Movies background</description>
+                <posx>-350</posx>
+                <posy>-60</posy>
+                <width>1280</width>
+                <height>410</height>
+                <texture>white.png</texture>
+                <colordiffuse>88000000</colordiffuse>
             </control>
-            <control type="label">
-                <description>Movies watched/unwatched count</description>
-                <posx>0</posx>
-                <posy>30</posy>
-                <width>470</width>
-                <align>center</align>
-                <font>Font_Home_RecentlyAdded_2</font>
-                <textcolor>blue</textcolor>
-                <label>$INFO[Window.Property(Movies.Watched),(, $LOCALIZE[31332]], $INFO[Window.Property(Movies.Unwatched),, $LOCALIZE[31333])]</label>
-            </control>
-        </control>
-        <control type="group">
-            <description>RecentlyAdded for Movies</description>
-            <posx>675</posx>
-            <posy>90</posy>
-            <animation effect="slide" time="300" start="520,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + [Control.HasFocus(3001) | Control.HasFocus(301)]</visible>
             <control type="label">
                 <description>Latest movies 90 deg label</description>
                 <posx>-30</posx>
@@ -240,7 +216,7 @@
                 <textcolor>white</textcolor>
                 <label>31323</label>
                 <angle>90</angle>
-                <visible>Control.HasFocus(3001)</visible>
+                <visible>!Control.HasFocus(301)</visible>
             </control>
             <control type="label">
                 <description>Latest movies 90 deg label, focused</description>
@@ -254,7 +230,7 @@
             </control>
             <control type="fadelabel">
                 <description>Movie title</description>
-                <posy>370</posy>
+                <posy>-50</posy>
                 <posx>25</posx>
                 <width>553</width>
                 <font>Font_Home_RecentlyAdded_3</font>
@@ -269,7 +245,7 @@
             </control>
             <control type="label">
                 <description>Movie runtime</description>
-                <posy>400</posy>
+                <posy>-20</posy>
                 <posx>25</posx>
                 <width>553</width>
                 <font>Font_Home_RecentlyAdded_4</font>
@@ -283,7 +259,7 @@
                 <posy>30</posy>
                 <height>1000</height>
                 <width>603</width>
-                <onup>300</onup>
+                <ondown>300</ondown>
                 <onleft>301</onleft>
                 <onright>301</onright>
                 <viewtype>list</viewtype>
@@ -427,60 +403,20 @@
             </control>
         </control>
         <control type="group">
-            <description>RecentlyAdded for TV Shows</description>
-            <posx>25</posx>
-            <posy>280</posy>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + [Control.HasFocus(3002) | Control.HasFocus(302)]</visible>
-            <control type="label">
-                <description>TV Shows total count</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>470</width>
-                <font>Font_Home_RecentlyAdded_1</font>
-                <textcolor>blue</textcolor>
-                <align>center</align>
-                <label>$INFO[Window.Property(TVShows.Count),, $LOCALIZE[20343]]</label>
+            <description>RecentlyAdded for TVShows</description>
+            <posx>270</posx>
+            <posy>420r</posy>
+            <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
+            <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + Control.HasFocus(302)</visible>
+            <control type="image">
+                <description>TVShows background</description>
+                <posx>-270</posx>
+                <posy>-10</posy>
+                <width>1280</width>
+                <height>330</height>
+                <texture>white.png</texture>
+                <colordiffuse>88000000</colordiffuse>
             </control>
-            <control type="label">
-                <description>TV Shows watched/unwatched count</description>
-                <posx>0</posx>
-                <posy>30</posy>
-                <width>470</width>
-                <align>center</align>
-                <font>Font_Home_RecentlyAdded_2</font>
-                <textcolor>blue</textcolor>
-                <label>$INFO[Window.Property(TVShows.Watched),(, $LOCALIZE[31332]], $INFO[Window.Property(TVShows.Unwatched),, $LOCALIZE[31333])]</label>
-            </control>
-            <control type="label">
-                <description>Episodes total count</description>
-                <posx>0</posx>
-                <posy>60</posy>
-                <width>470</width>
-                <font>Font_Home_RecentlyAdded_1</font>
-                <textcolor>blue</textcolor>
-                <align>center</align>
-                <label>$INFO[Window.Property(Episodes.Count),, [LOWERCASE]$LOCALIZE[20359][/LOWERCASE]]</label>
-            </control>
-            <control type="label">
-                <description>TV Show episodes watched/unwatched count</description>
-                <posx>0</posx>
-                <posy>90</posy>
-                <width>470</width>
-                <align>center</align>
-                <font>Font_Home_RecentlyAdded_2</font>
-                <textcolor>blue</textcolor>
-                <label>$INFO[Window.Property(Episodes.Watched),(, $LOCALIZE[31332]], $INFO[Window.Property(Episodes.Unwatched),, $LOCALIZE[31333])]</label>
-            </control>
-        </control>
-        <control type="group">
-            <description>RecentlyAdded for TV Shows</description>
-            <posx>520</posx>
-            <posy>90</posy>
-            <animation effect="slide" time="300" start="520,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + [Control.HasFocus(3002) | Control.HasFocus(302)]</visible>
             <control type="label">
                 <description>Latest episodes 90deg label</description>
                 <posx>-30</posx>
@@ -489,7 +425,7 @@
                 <textcolor>white</textcolor>
                 <label>31324</label>
                 <angle>90</angle>
-                <visible>Control.HasFocus(3002)</visible>
+                <visible>!Control.HasFocus(302)</visible>
             </control>
             <control type="label">
                 <description>Latest episodes 90 deg label, focused</description>
@@ -503,8 +439,8 @@
             </control>
             <control type="label">
                 <description>Latest episode title</description>
-                <posy>400</posy>
-                <posx>50</posx>
+                <posy>0</posy>
+                <posx>40</posx>
                 <width>660</width>
                 <font>Font_Home_RecentlyAdded_3</font>
                 <textcolor>white</textcolor>
@@ -515,8 +451,8 @@
             </control>
             <control type="label">
                 <description>Latest tvshow title</description>
-                <posy>430</posy>
-                <posx>50</posx>
+                <posy>30</posy>
+                <posx>40</posx>
                 <width>660</width>
                 <font>Font_Home_RecentlyAdded_4</font>
                 <textcolor>ffaaaaaa</textcolor>
@@ -530,6 +466,7 @@
                 <height>1000</height>
                 <width>756</width>
                 <onup>300</onup>
+                <ondown>300</ondown>
                 <onleft>302</onleft>
                 <onright>302</onright>
                 <viewtype>list</viewtype>
@@ -674,39 +611,19 @@
         </control>
         <control type="group">
             <description>RecentlyAdded for Music</description>
-            <posx>455</posx>
-            <posy>90</posy>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_Music) + [Control.HasFocus(3004) | Control.HasFocus(303)]</visible>
-            <control type="label">
-                <description>Music albums total count</description>
-                <posx>-435</posx>
-                <posy>200</posy>
-                <width>470</width>
-                <font>Font_Home_RecentlyAdded_1</font>
-                <textcolor>blue</textcolor>
-                <align>center</align>
-                <label>$INFO[Window.Property(Music.AlbumsCount),, [LOWERCASE]$LOCALIZE[132][/LOWERCASE]]</label>
+            <posx>240</posx>
+            <posy>450r</posy>
+            <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
+            <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_Music) + Control.HasFocus(303)</visible>
+            <control type="image">
+                <description>Music background</description>
+                <posx>-240</posx>
+                <posy>-60</posy>
+                <width>1280</width>
+                <height>410</height>
+                <texture>white.png</texture>
+                <colordiffuse>88000000</colordiffuse>
             </control>
-            <control type="label">
-                <description>Music songs total count</description>
-                <posx>-435</posx>
-                <posy>230</posy>
-                <width>470</width>
-                <font>Font_Home_RecentlyAdded_1</font>
-                <textcolor>blue</textcolor>
-                <align>center</align>
-                <label>$INFO[Window.Property(Music.SongsCount),, [LOWERCASE]$LOCALIZE[134][/LOWERCASE]]</label>
-            </control>
-        </control>
-        <control type="group">
-            <description>RecentlyAdded for Music</description>
-            <posx>455</posx>
-            <posy>90</posy>
-            <animation effect="slide" time="300" start="520,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_Music) + [Control.HasFocus(3004) | Control.HasFocus(303)]</visible>
             <control type="label">
                 <description>Latest albums 90deg label</description>
                 <posx>-30</posx>
@@ -715,7 +632,7 @@
                 <textcolor>white</textcolor>
                 <label>31331</label>
                 <angle>90</angle>
-                <visible>Control.HasFocus(3004)</visible>
+                <visible>!Control.HasFocus(303)</visible>
             </control>
             <control type="label">
                 <description>Latest albums 90 deg label, focused</description>
@@ -729,8 +646,8 @@
             </control>
             <control type="label">
                 <description>Latest song title</description>
-                <posy>400</posy>
-                <posx>120</posx>
+                <posy>-50</posy>
+                <posx>105</posx>
                 <width>600</width>
                 <font>Font_Home_RecentlyAdded_3</font>
                 <textcolor>white</textcolor>
@@ -741,8 +658,8 @@
             </control>
             <control type="label">
                 <description>Latest album and artist title</description>
-                <posy>430</posy>
-                <posx>120</posx>
+                <posy>-20</posy>
+                <posx>105</posx>
                 <width>600</width>
                 <font>Font_Home_RecentlyAdded_4</font>
                 <textcolor>aaeeeeee</textcolor>
@@ -755,6 +672,7 @@
                 <posy>50</posy>
                 <height>1000</height>
                 <width>822</width>
+                <ondown>300</ondown>
                 <onup>300</onup>
                 <onleft>303</onleft>
                 <onright>303</onright>
@@ -906,245 +824,32 @@
             </control>
         </control>
     </include>
-    <include name="Home_Icons">
-        <control type="group">
-            <description>Movie category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3001) | Control.HasFocus(301)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>342</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Movie category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>[Control.HasFocus(3001) | Control.HasFocus(301)] + !Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/movies.png</texture>
-            </control>
-        </control>
-        <control type="group">
-            <description>TV shows category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3002) | Control.HasFocus(302)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>20343</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>TV shows category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>[Control.HasFocus(3002) | Control.HasFocus(302)] + !Skin.HasSetting(Home_Show_RecentlyAdded_TVShows)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/tvshows.png</texture>
-            </control>
-        </control>
-        <control type="group">
-            <description>Videos category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3003)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>31334</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Videos category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3003)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/videos.png</texture>
-            </control>
-        </control>
-        <control type="group">
-            <description>Music category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3004) | Control.HasFocus(303)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>2</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Music category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>[Control.HasFocus(3004) | Control.HasFocus(303)] + !Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/music.png</texture>
-            </control>
-        </control>
-        <control type="group">
-            <description>Programs category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3005)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>0</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Programs category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3005)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-                <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/programs.png</texture>
-            </control>
-        </control>
-        <control type="group">
-            <description>Pictures category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3006)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>1</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Pictures category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3006)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-                <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/pictures.png</texture>
-            </control>
-        </control>
-        <control type="group">
-            <description>Weather category label</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3007) + !Skin.HasSetting(Home_Show_WeatherInfo)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>8</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Weather category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3007) + !Skin.HasSetting(Home_Show_WeatherInfo)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-                <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/weather.png</texture>
-            </control>
+    <include name="Home_Weather">
+        <control type="button" id="304">
+            <description>Hidden focus button for weather info</description>
+            <visible allowhiddenfocus="true">Control.HasFocus(304) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+            <posx>-1000</posx>
+            <onclick>-</onclick>
+            <onup>300</onup>
+            <ondown>300</ondown>
+            <onleft>300</onleft>
+            <onright>300</onright>
         </control>
         <control type="group">
             <description>Current weather</description>
-            <posx>25</posx>
-            <posy>220</posy>
-            <visible>Control.HasFocus(3007) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
-            <animation effect="slide" time="300" start="-500,0">VisibleChange</animation>
-            <animation effect="fade" time="200">Hidden</animation>
+            <posx>150</posx>
+            <posy>450r</posy>
+            <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
+            <visible allowhiddenfocus="true">Control.HasFocus(304) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+            <control type="image">
+                <description>Weather background</description>
+                <posx>-150</posx>
+                <posy>-125</posy>
+                <width>1280</width>
+                <height>475</height>
+                <texture>white.png</texture>
+                <colordiffuse>88000000</colordiffuse>
+            </control>
             <control type="label">
                 <description>Weather category label</description>
                 <posx>0</posx>
@@ -1330,12 +1035,10 @@
         </control>
         <control type="group">
             <description>Forecast</description>
-            <posx>680</posx>
-            <posy>85</posy>
-            <width>500</width>
-            <visible>Control.HasFocus(3007) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
+            <posx>650r</posx>
+            <posy>550r</posy>
+            <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
+            <visible allowhiddenfocus="true">Control.HasFocus(304) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
             <control type="group">
                 <description>day 0 (today)</description>
                 <posx>0</posx>
@@ -1683,38 +1386,5 @@
             </control>
         </control>
         <!-- slut väder -->
-
-        <control type="group">
-            <description>Settings category label</description>
-            <posx>-55</posx>
-            <posy>220</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3008)</visible>
-            <animation effect="slide" time="300" start="-500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-            <control type="label">
-                <posy>0</posy>
-                <font>Font_Home_Category</font>
-                <textcolor>blue</textcolor>
-                <label>5</label>
-                <width>470</width>
-                <align>center</align>
-            </control>
-        </control>
-        <control type="group">
-            <description>Settings category icon</description>
-            <posx>720</posx>
-            <posy>120</posy>
-            <width>1000</width>
-            <visible>Control.HasFocus(3008)</visible>
-            <animation effect="slide" time="300" start="500,0">Visible</animation>
-            <animation effect="fade" time="200">Hidden</animation>
-                <control type="image">
-                <height>300</height>
-                <width>300</width>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="special://skin/media/white.png">special://skin/media/settings.png</texture>
-            </control>
-        </control>
     </include>
 </includes>

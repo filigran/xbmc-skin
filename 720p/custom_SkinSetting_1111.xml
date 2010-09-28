@@ -554,6 +554,58 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
+					<control type="radiobutton" id="213">
+						<description>Hide Addons Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[24001]</label>
+						<onclick>Skin.ToggleSetting(Home_Hide_Addons)</onclick>
+						<selected>Skin.HasSetting(Home_Hide_Addons)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+                    <control type="radiobutton" id="214">
+						<description>Hide Shut down Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[13005]</label>
+						<onclick>Skin.ToggleSetting(Home_Hide_ShutDown)</onclick>
+						<selected>Skin.HasSetting(Home_Hide_ShutDown)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+                    <control type="radiobutton" id="215">
+						<description>Hide Favourites Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[1036]</label>
+						<onclick>Skin.ToggleSetting(Home_Hide_Favourites)</onclick>
+						<selected>Skin.HasSetting(Home_Hide_Favourites)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+                    <control type="radiobutton" id="216">
+						<description>Hide Profiles Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[13200]</label>
+						<onclick>Skin.ToggleSetting(Home_Hide_Profiles)</onclick>
+						<selected>Skin.HasSetting(Home_Hide_Profiles)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
                 </control>
 				<control type="scrollbar" id="60">
 					<posx>1060</posx>

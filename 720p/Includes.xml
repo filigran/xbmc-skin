@@ -10,65 +10,17 @@
     <include file="Includes_Home.xml" />
     <constant name="FanartCrossfadeTime">500</constant>
     <constant name="IconCrossfadeTime">400</constant>
-    <include name="Global_Backgrounds">
-        <control type="image">
-            <description>Center background</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture>special://skin/media/white.png</texture>
-            <colordiffuse>ff97AFC4</colordiffuse>
-            <visible>!Player.HasVideo + [Window.IsActive(Home) | [Control.IsVisible(50)  + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
-                                                               | [Control.IsVisible(500) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Bob_Show_Fanart)]]]
-                                                               | [Control.IsVisible(501) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]]
-            </visible>
-        </control>
-        <control type="image">
-            <description>Center background</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture>special://skin/media/white.png</texture>
-            <colordiffuse>884677b9</colordiffuse>
-            <visible>Player.HasVideo | [!Window.IsActive(Home) + [[Control.IsVisible(50)  + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
-                                                               | [Control.IsVisible(500) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)]]]
-                                                               | [Control.IsVisible(501) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]]]
-            </visible>
-        </control>
-        <control type="image">
-            <description>Top background image</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>85</height>
-            <texture>special://skin/media/topbg.png</texture>
-            <colordiffuse>aa2d2d2d</colordiffuse>
-        </control>
-        <control type="image">
-            <description>Bottom background</description>
-            <posx>0</posx>
-            <posy>430</posy>
-            <animation effect="slide" time="300" end="0,80" condition="Window.IsActive(Home) + Skin.HasSetting(Home_Show_WeatherInfo) + Control.HasFocus(3007)">Conditional</animation>
-            <animation effect="slide" time="300" end="0,190" condition="Container.Content(TVShows) + Control.IsVisible(51)">Conditional</animation>
-            <width>1280</width>
-            <height>295</height>
-            <texture>special://skin/media/bottombg.png</texture>
-            <colordiffuse>aa2d2d2d</colordiffuse>
-        </control>
-    </include>
     <include name="Global_Time">
         <!-- Time and date -->
         <control type="group">
             <description>Time and date</description>
-            <posx>135r</posx>
+            <posx>150r</posx>
             <posy>25</posy>
             <control type="label">
                 <description>Time</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>130</width>
+                <width>135</width>
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>Font_Top_Time</font>
@@ -80,7 +32,7 @@
                 <description>Date</description>
                 <posx>0</posx>
                 <posy>20</posy>
-                <width>130</width>
+                <width>135</width>
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>Font_Top_Date</font>
@@ -94,10 +46,9 @@
         <!-- Weather -->
         <control type="group">
             <description>Weather</description>
-            <posx>273r</posx>
+            <posx>300r</posx>
             <posy>11</posy>
             <width>150</width>
-
             <control type="image">
                 <description>Conditions image</description>
                 <height>45</height>
@@ -123,22 +74,24 @@
         <control type="group">
             <description>RSS feed</description>
             <posx>0</posx>
-            <posy>25r</posy>
+            <posy>30r</posy>
             <width>1255</width>
             <visible>System.Getbool(lookandfeel.enablerssfeeds)</visible>
             <control type="image">
                 <description>RSS background</description>
                 <posx>0</posx>
-                <posy>30r</posy>
+                <posy>0</posy>
                 <width>1280</width>
-                <height>50</height>
+                <height>30</height>
                 <texture>special://skin/media/white.png</texture>
-                <colordiffuse>aa2d2d2d</colordiffuse>
+                <colordiffuse>88000000</colordiffuse>
             </control>
             <control type="rss">
                 <description>RSS feed</description>
+                <posx>0</posx>
+                <posy>5</posy>
                 <width>1280</width>
-                <height>40</height>
+                <height>30</height>
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>Font_RSS_Feed</font>
