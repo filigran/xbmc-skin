@@ -771,7 +771,6 @@
                 <visible>Control.IsVisible(50) + Control.HasFocus(124) + Container.Content(Movies)</visible>
             </control>
         </control>
-        <include>Home_Menu</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>
         <include>RSS_Feed</include>
