@@ -105,7 +105,7 @@
                         <label>2</label>
                         <icon>special://skin/media/music.png</icon>
                         <thumb fallback="special://skin/media/music.jpg">$INFO[Skin.String(home_custom_back_music_folder)]</thumb>
-                        <onclick>ActivateWindow(Music)</onclick>
+                        <onclick>ActivateWindow(Music,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
                     </item>
                     <item id="3">
@@ -113,7 +113,7 @@
                         <label>342</label>
                         <icon>special://skin/media/movies.png</icon>
                         <thumb fallback="special://skin/media/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
-                        <onclick>ActivateWindow(VideoLibrary,movietitles)</onclick>
+                        <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
                     </item>
                     <item id="4">
@@ -121,7 +121,7 @@
                         <label>20343</label>
                         <icon>special://skin/media/tvshows.png</icon>
                         <thumb fallback="special://skin/media/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
-                        <onclick>ActivateWindow(VideoLibrary,tvshowtitles)</onclick>
+                        <onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
                     </item>
                     <item id="5">
@@ -129,7 +129,7 @@
                         <label>1</label>
                         <icon>special://skin/media/pictures.png</icon>
                         <thumb fallback="special://skin/media/pictures.jpg">$INFO[Skin.String(home_custom_back_pictures_folder)]</thumb>
-                        <onclick>ActivateWindow(Pictures)</onclick>
+                        <onclick>ActivateWindow(Pictures,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
                     </item>
                     <item id="6">
@@ -137,7 +137,7 @@
                         <label>8</label>
                         <icon>special://skin/media/weather.png</icon>
                         <thumb fallback="special://skin/media/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
-                        <onclick>ActivateWindow(weather)</onclick>
+                        <onclick>ActivateWindow(weather,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
                     </item>
                     <item id="7">
@@ -153,7 +153,7 @@
                         <label>5</label>
                         <icon>special://skin/media/settings.png</icon>
                         <thumb fallback="special://skin/media/settings.jpg">$INFO[Skin.String(home_custom_back_settings_folder)]</thumb>
-                        <onclick>ActivateWindow(settings)</onclick>
+                        <onclick>ActivateWindow(settings,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Settings)</visible>
                     </item>
                     <item id="10">
@@ -177,7 +177,7 @@
                         <label>1036</label>
                         <icon>special://skin/media/favourites.png</icon>
                         <thumb fallback="special://skin/media/favourites.jpg">$INFO[Skin.String(home_custom_back_favourites_folder)]</thumb>
-                        <onclick>ActivateWindow(Favourites)</onclick>
+                        <onclick>ActivateWindow(Favourites,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Favourites)</visible>
                     </item>
                     <item id="13">
@@ -185,7 +185,7 @@
                         <label>13200</label>
                         <icon>special://skin/media/profiles.png</icon>
                         <thumb fallback="special://skin/media/profiles.jpg">$INFO[Skin.String(home_custom_back_profiles_folder)]</thumb>
-                        <onclick>ActivateWindow(Profiles)</onclick>
+                        <onclick>ActivateWindow(Profiles,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Profiles)</visible>
                     </item>
                 </content>
@@ -282,7 +282,7 @@
                         <posy>0</posy>
                         <width>181</width>
                         <height>275</height>
-                        <texture>$INFO[ListItem.Thumb]</texture>
+                        <texture fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
@@ -302,7 +302,7 @@
                         <posy>0</posy>
                         <width>181</width>
                         <height>275</height>
-                        <texture>$INFO[ListItem.Thumb]</texture>
+                        <texture fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <control type="image">
@@ -489,7 +489,7 @@
                         <posy>0</posy>
                         <width>360</width>
                         <height>203</height>
-                        <texture fallback="special://skin/media/white.png">$INFO[ListItem.Icon]</texture>
+                        <texture fallback="special://skin/media/nothumb.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
@@ -509,7 +509,7 @@
                         <posy>0</posy>
                         <width>360</width>
                         <height>203</height>
-                        <texture fallback="special://skin/media/white.png">$INFO[ListItem.Thumb]</texture>
+                        <texture fallback="special://skin/media/nothumb.png">$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <control type="image">

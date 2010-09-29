@@ -1,87 +1,111 @@
 ﻿<includes>
+    <include name="Bob_listcontent">
+        <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Window.IsVisible(VideoFiles)</visible>
+        <posx>-65</posx>
+        <posy>40</posy>
+        <width>1441</width>
+        <height>720</height>
+        <onleft>500</onleft>
+        <onright>500</onright>
+        <onup>9000</onup>
+        <ondown>60</ondown>
+        <viewtype label="Bob">bigwrap</viewtype>
+        <pagecontrol>60</pagecontrol>
+        <scrolltime>200</scrolltime>
+        <focusposition>5</focusposition>
+        <orientation>horizontal</orientation>
+        <preloaditems>4</preloaditems>
+        <itemlayout height="176" width="126">
+            <control type="image">
+                <description>Cover reflection</description>
+                <posx>0</posx>
+                <posy>176</posy>
+                <width>116</width>
+                <height>176</height>
+                <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <description>Cover</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>116</width>
+                <height>176</height>
+                <aspectratio>stretch</aspectratio>
+                <texture background="true">$INFO[ListItem.Icon]</texture>
+            </control>
+            <control type="image">
+                <posx>90</posx>
+                <posy>145</posy>
+                <width>40</width>
+                <height>40</height>
+                <aspectratio>stretch</aspectratio>
+                <texture background="true">$INFO[ListItem.Overlay]</texture>
+                <colordiffuse>lime</colordiffuse>
+            </control>
+        </itemlayout>
+        <focusedlayout height="200" width="156">
+            <control type="image">
+                <description>Cover reflection</description>
+                <posx>0</posx>
+                <posy>176</posy>
+                <width>116</width>
+                <height>176</height>
+                <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Icon]</texture>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400">focus</animation>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <description>Cover</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>116</width>
+                <height>176</height>
+                <aspectratio>stretch</aspectratio>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400">focus</animation>
+                <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
+                <texture background="true">$INFO[ListItem.Icon]</texture>
+            </control>
+            <control type="image">
+                <posx>90</posx>
+                <posy>145</posy>
+                <width>40</width>
+                <height>40</height>
+                <aspectratio>stretch</aspectratio>
+                <texture background="true">$INFO[ListItem.Overlay]</texture>
+                <colordiffuse>lime</colordiffuse>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400">focus</animation>
+                <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
+            </control>
+        </focusedlayout>
+    </include>
     <include name="Viewtype_Bob">
+        <control type="image">
+            <description>Background diffuser</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>55000000</colordiffuse>
+            <visible>Control.IsVisible(500)</visible>
+        </control>
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
-            <posy>80</posy>
+            <posy>120</posy>
+            <control type="image">
+                <description>List background</description>
+                <posx>0</posx>
+                <posy>-10</posy>
+                <width>1280</width>
+                <height>340</height>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
             <control type="wraplist" id="500">
-                <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Window.IsVisible(VideoFiles)</visible>
-                <posx>-50</posx>
-                <posy>40</posy>
-                <width>1441</width>
-                <height>720</height>
-                <onleft>57</onleft>
-                <onright>57</onright>
-                <onup>9000</onup>
-                <ondown>60</ondown>
-                <viewtype label="Bob">bigwrap</viewtype>
-                <pagecontrol>60</pagecontrol>
-                <scrolltime>200</scrolltime>
-                <focusposition>3</focusposition>
-                <orientation>horizontal</orientation>
-                <preloaditems>4</preloaditems>
-                <itemlayout height="275" width="199">
-                    <control type="image">
-                        <description>Latest cover reflection</description>
-                        <posx>0</posx>
-                        <posy>275</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>150</posx>
-                        <posy>245</posy>
-                        <width>40</width>
-                        <height>40</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Overlay]</texture>
-                        <colordiffuse>lime</colordiffuse>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="275" width="199">
-                <control type="image">
-                        <description>Latest cover reflection</description>
-                        <posx>0</posx>
-                        <posy>275</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Icon]</texture>
-                        <animation tween="back" reversible="false" effect="zoom" center="100,140" start="90" end="110" time="400">focus</animation>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <aspectratio>stretch</aspectratio>
-                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="110" time="400">focus</animation>
-                        <animation reversible="false" effect="zoom" center="auto" end="100" start="110" time="200">unfocus</animation>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>155</posx>
-                        <posy>255</posy>
-                        <width>40</width>
-                        <height>40</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Overlay]</texture>
-                        <colordiffuse>lime</colordiffuse>
-                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="140" time="400">focus</animation>
-                        <animation reversible="false" effect="zoom" center="auto" end="100" start="140" time="200">unfocus</animation>
-                    </control>
-                </focusedlayout>
+                <include>Bob_listcontent</include>
             </control>
             <control type="scrollbar" id="60">
                 <posx>200</posx>
@@ -155,6 +179,15 @@
         </control>
         <control type="group">
             <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies)</visible>
+            <control type="image">
+                <description>Info background</description>
+                <posx>0</posx>
+                <posy>270r</posy>
+                <width>1280</width>
+                <height>270</height>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -430,6 +463,15 @@
         </control>
         <control type="group">
             <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + [Container.Content(Seasons) | Container.Content(TVShows)]</visible>
+            <control type="image">
+                <description>Info background</description>
+                <posx>0</posx>
+                <posy>270r</posy>
+                <width>1280</width>
+                <height>270</height>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -750,7 +792,17 @@
         </control>
         <control type="group">
             <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible>
+            <control type="image">
+                <description>Info background</description>
+                <posx>0</posx>
+                <posy>270r</posy>
+                <width>1280</width>
+                <height>270</height>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
             <control type="label">
+                <description>TVShow title</description>
                 <posx>30</posx>
                 <posy>530</posy>
                 <width>1220</width>

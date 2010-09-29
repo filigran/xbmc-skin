@@ -137,6 +137,114 @@
                 <visible>Control.IsVisible(508)</visible>
             </control>
             <control type="label">
+                <description>Totals label</description>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>300</width>
+                <height>35</height>
+                <font>Font_Home_Weather_Labels</font>
+                <textcolor>white</textcolor>
+                <scroll>true</scroll>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$INFO[Container(TVShows).NumItems,, TV-serier totalt:]</label>
+            </control>
+            <control type="group">
+                <description>Totals labels and values</description>
+                <posx>20</posx>
+                <posy>30</posy>
+                <control type="group">
+                    <description>Totals labels</description>
+                    <control type="label">
+                        <description>Total episodes count</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>140</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffcccccc</textcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>Avsnitt totalt:</label>
+                    </control>
+                    <control type="label">
+                        <description>Watched episodes count</description>
+                        <posx>0</posx>
+                        <posy>30</posy>
+                        <width>140</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffcccccc</textcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>Visade totalt:</label>
+                    </control>
+                    <control type="label">
+                        <description>Total unwatched count</description>
+                        <posx>0</posx>
+                        <posy>60</posy>
+                        <width>140</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffcccccc</textcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>Inte visade totalt:</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Totals values</description>
+                    <posx>150</posx>
+                    <posy>0</posy>
+                    <control type="label">
+                        <description>Total episodes value</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>200</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffcccccc</textcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label fallback="-">$INFO[Window(Home).Property(Episodes.Count),, st]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Total watched value</description>
+                        <posx>0</posx>
+                        <posy>30</posy>
+                        <width>200</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffcccccc</textcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label fallback="-">$INFO[Window(Home).Property(Episodes.Watched),, st]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Total unwatched value</description>
+                        <posx>0</posx>
+                        <posy>60</posy>
+                        <width>200</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffcccccc</textcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label fallback="-">$INFO[Window(Home).Property(Episodes.UnWatched),, st]</label>
+                    </control>
+                </control>
+            </control>
+            <control type="label">
                 <description>Info label</description>
                 <posx>330r</posx>
                 <posy>0</posy>

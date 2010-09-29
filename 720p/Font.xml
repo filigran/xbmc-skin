@@ -200,5 +200,10 @@
             <filename>tahomabd.ttf</filename>
             <size>24</size>
         </font>
+        <font>
+            <name>Font_TVShows_Logowrap_TVShows_count</name>
+            <filename>DejaVuSans-Bold.ttf</filename>
+            <size>32</size>
+        </font>
     </fontset>
 </fonts>
