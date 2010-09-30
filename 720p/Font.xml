@@ -187,8 +187,8 @@
         </font>
         <font>
             <name>Font_Movie_Title</name>
-            <filename>Tahoma.ttf</filename>
-            <size>30</size>
+            <filename>HelveticaNeueCondensedBold.ttf</filename>
+            <size>38</size>
         </font>
         <font>
             <name>Font_TVShows_Logowrap_Episodes</name>
