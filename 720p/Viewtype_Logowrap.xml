@@ -132,7 +132,7 @@
                 <posy>0</posy>
                 <width>300</width>
                 <height>35</height>
-                <font>Font_Home_Weather_Labels</font>
+                <font>Font_Details_Header</font>
                 <textcolor>white</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
@@ -240,7 +240,7 @@
                 <posy>0</posy>
                 <width>300</width>
                 <height>35</height>
-                <font>Font_Home_Weather_Labels</font>
+                <font>Font_Details_Header</font>
                 <textcolor>white</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>

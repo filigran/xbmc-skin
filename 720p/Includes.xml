@@ -239,8 +239,38 @@
             <control type="group">
                 <description>Movie / episode info labels</description>
                 <posx>350r</posx>
-                <posy>510</posy>
+                <posy>550</posy>
                 <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+                <control type="fadelabel">
+                     <description>Info header</description>
+                     <posx>0</posx>
+                     <posy>-30</posy>
+                     <width>300</width>
+                     <height>68</height>
+                     <font>Font_Details_Header</font>
+                     <textcolor>ffdddddd</textcolor>
+                     <scroll>true</scroll>
+                     <align>left</align>
+                     <scrollout>false</scrollout>
+                     <pauseatend>5000</pauseatend>
+                     <label>Filminformation:</label>
+                     <visible>Container.Content(Movies)</visible>
+                 </control>
+                 <control type="fadelabel">
+                     <description>Info header</description>
+                     <posx>0</posx>
+                     <posy>-30</posy>
+                     <width>300</width>
+                     <height>68</height>
+                     <font>Font_Details_Header</font>
+                     <textcolor>ffdddddd</textcolor>
+                     <scroll>true</scroll>
+                     <align>left</align>
+                     <scrollout>false</scrollout>
+                     <pauseatend>5000</pauseatend>
+                     <label>Avsnittsinformation:</label>
+                     <visible>Container.Content(Episodes)</visible>
+                 </control>
                  <control type="label">
                     <description>Movie / episode year label</description>
                     <posx>0</posx>
@@ -310,7 +340,7 @@
             <control type="group">
                 <description>Movie / episode info values</description>
                 <posx>250r</posx>
-                <posy>510</posy>
+                <posy>550</posy>
                 <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                 <control type="label">
                     <description>Movie / episode year value</description>
@@ -387,8 +417,38 @@
             <control type="group">
                 <description>Seasons info labels</description>
                 <posx>400r</posx>
-                <posy>510</posy>
+                <posy>550</posy>
                 <visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
+                 <control type="fadelabel">
+                     <description>Info header</description>
+                     <posx>0</posx>
+                     <posy>-30</posy>
+                     <width>300</width>
+                     <height>68</height>
+                     <font>Font_Details_Header</font>
+                     <textcolor>ffdddddd</textcolor>
+                     <scroll>true</scroll>
+                     <align>left</align>
+                     <scrollout>false</scrollout>
+                     <pauseatend>5000</pauseatend>
+                     <label>Säsongsinformation:</label>
+                     <visible>Container.Content(Seasons)</visible>
+                 </control>
+                 <control type="fadelabel">
+                     <description>Info header</description>
+                     <posx>0</posx>
+                     <posy>-30</posy>
+                     <width>300</width>
+                     <height>68</height>
+                     <font>Font_Details_Header</font>
+                     <textcolor>ffdddddd</textcolor>
+                     <scroll>true</scroll>
+                     <align>left</align>
+                     <scrollout>false</scrollout>
+                     <pauseatend>5000</pauseatend>
+                     <label>TV-serieinformation:</label>
+                     <visible>Container.Content(TVShows)</visible>
+                 </control>
                  <control type="label">
                     <description>Season premiered label</description>
                     <posx>0</posx>
@@ -458,7 +518,7 @@
             <control type="group">
                 <description>Season info values</description>
                 <posx>300r</posx>
-                <posy>510</posy>
+                <posy>550</posy>
                 <visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
                 <control type="label">
                     <description>Season premiered value</description>

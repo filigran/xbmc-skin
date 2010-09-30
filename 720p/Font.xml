@@ -215,6 +215,10 @@
             <filename>HelveticaNeueCondensedBold.ttf</filename>
             <size>32</size>
         </font>
-        
+        <font>
+            <name>Font_Details_Header</name>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
+            <size>18</size>
+        </font>
     </fontset>
 </fonts>
