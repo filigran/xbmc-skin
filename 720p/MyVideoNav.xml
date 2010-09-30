@@ -270,6 +270,16 @@
                 <visible>Control.IsVisible(508) + Container.Content(TVShows)</visible>
             </control>
         </control>
+        <control type="image">
+            <description>Top menu background</description>
+            <posx>0</posx>
+            <posy>20</posy>
+            <width>1280</width>
+            <height>30</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>55000000</colordiffuse>
+            <visible>ControlGroup(9000).HasFocus</visible>
+        </control>
         <control type="grouplist">
             <description>The visible part of the menu for movies</description>
             <posx>20</posx>
