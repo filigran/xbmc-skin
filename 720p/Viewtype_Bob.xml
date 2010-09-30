@@ -217,7 +217,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + [Container.Content(Movies) | Container.Content(Seasons)]</visible>
+            <visible>[[Control.IsVisible(500) | Control.IsVisible(504)] + !Window.IsVisible(VideoFiles)] + [Container.Content(Movies) | Container.Content(Seasons)]</visible>
             <include>VideoLibrary_bottom_info</include>
         </control>
         <control type="group">

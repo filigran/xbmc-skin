@@ -105,7 +105,7 @@
     </include>
     <include name="VideoLibrary_bottom_info">
         <control type="group">
-            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
