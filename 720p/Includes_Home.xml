@@ -67,7 +67,7 @@
                 <itemlayout width="430" height="100">
                     <control type="label">
                         <posx>0</posx>
-                        <posy>-5</posy>
+                        <posy>0</posy>
                         <width>430</width>
                         <height>100</height>
                         <align>center</align>
@@ -80,7 +80,7 @@
                 <focusedlayout width="430" height="100">
                     <control type="label">
                         <posx>0</posx>
-                        <posy>-5</posy>
+                        <posy>0</posy>
                         <width>430</width>
                         <height>100</height>
                         <align>center</align>
@@ -212,17 +212,7 @@
                 <description>Latest movies 90 deg label</description>
                 <posx>-30</posx>
                 <posy>250</posy>
-                <font>Font_Top_Menu</font>
-                <textcolor>white</textcolor>
-                <label>31323</label>
-                <angle>90</angle>
-                <visible>!Control.HasFocus(301)</visible>
-            </control>
-            <control type="label">
-                <description>Latest movies 90 deg label, focused</description>
-                <posx>-30</posx>
-                <posy>250</posy>
-                <font>Font_Top_Menu</font>
+                <font>Font_Home_RecentlyAdded_90deg</font>
                 <textcolor>blue</textcolor>
                 <label>31323</label>
                 <angle>90</angle>
@@ -233,7 +223,7 @@
                 <posy>-50</posy>
                 <posx>25</posx>
                 <width>553</width>
-                <font>Font_Home_RecentlyAdded_3</font>
+                <font>Font_Home_RecentlyAdded_Title</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(301).ListItem.Label]</label>
@@ -248,7 +238,7 @@
                 <posy>-20</posy>
                 <posx>25</posx>
                 <width>553</width>
-                <font>Font_Home_RecentlyAdded_4</font>
+                <font>Font_Home_RecentlyAdded_Line2</font>
                 <textcolor>ffaaaaaa</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(301).ListItem.Label2,, $LOCALIZE[12391]]</label>
@@ -418,20 +408,10 @@
                 <colordiffuse>88000000</colordiffuse>
             </control>
             <control type="label">
-                <description>Latest episodes 90deg label</description>
+                <description>Latest episodes 90 deg label</description>
                 <posx>-30</posx>
                 <posy>255</posy>
-                <font>Font_Top_Menu</font>
-                <textcolor>white</textcolor>
-                <label>31324</label>
-                <angle>90</angle>
-                <visible>!Control.HasFocus(302)</visible>
-            </control>
-            <control type="label">
-                <description>Latest episodes 90 deg label, focused</description>
-                <posx>-30</posx>
-                <posy>255</posy>
-                <font>Font_Top_Menu</font>
+                <font>Font_Home_RecentlyAdded_90deg</font>
                 <textcolor>blue</textcolor>
                 <label>31324</label>
                 <angle>90</angle>
@@ -442,7 +422,7 @@
                 <posy>0</posy>
                 <posx>40</posx>
                 <width>660</width>
-                <font>Font_Home_RecentlyAdded_3</font>
+                <font>Font_Home_RecentlyAdded_Title</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(302).ListItem.Label2]</label>
@@ -450,11 +430,11 @@
                 <visible>Control.HasFocus(302)</visible>
             </control>
             <control type="label">
-                <description>Latest tvshow title</description>
+                <description>Latest tvshow name</description>
                 <posy>30</posy>
                 <posx>40</posx>
                 <width>660</width>
-                <font>Font_Home_RecentlyAdded_4</font>
+                <font>Font_Home_RecentlyAdded_Line2</font>
                 <textcolor>ffaaaaaa</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(302).ListItem.Label]</label>
@@ -625,20 +605,10 @@
                 <colordiffuse>88000000</colordiffuse>
             </control>
             <control type="label">
-                <description>Latest albums 90deg label</description>
+                <description>Latest albums 90 deg label</description>
                 <posx>-30</posx>
                 <posy>255</posy>
-                <font>Font_Top_Menu</font>
-                <textcolor>white</textcolor>
-                <label>31331</label>
-                <angle>90</angle>
-                <visible>!Control.HasFocus(303)</visible>
-            </control>
-            <control type="label">
-                <description>Latest albums 90 deg label, focused</description>
-                <posx>-30</posx>
-                <posy>255</posy>
-                <font>Font_Top_Menu</font>
+                <font>Font_Home_RecentlyAdded_90deg</font>
                 <textcolor>blue</textcolor>
                 <label>31331</label>
                 <angle>90</angle>
@@ -649,7 +619,7 @@
                 <posy>-50</posy>
                 <posx>105</posx>
                 <width>600</width>
-                <font>Font_Home_RecentlyAdded_3</font>
+                <font>Font_Home_RecentlyAdded_Title</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(303).ListItem.Label]</label>
@@ -657,11 +627,11 @@
                 <visible>Control.HasFocus(303)</visible>
             </control>
             <control type="label">
-                <description>Latest album and artist title</description>
+                <description>Latest album and artist name</description>
                 <posy>-20</posy>
                 <posx>105</posx>
                 <width>600</width>
-                <font>Font_Home_RecentlyAdded_4</font>
+                <font>Font_Home_RecentlyAdded_Line2</font>
                 <textcolor>aaeeeeee</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(303).ListItem.Label2]</label>
@@ -865,7 +835,7 @@
                 <posx>0</posx>
                 <posy>60</posy>
                 <width>470</width>
-                <font>Font_Home_RecentlyAdded_3</font>
+                <font>Font_Home_RecentlyAdded_Title</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <align>center</align>

@@ -1,4 +1,4 @@
-<window id="2003">
+﻿<window id="2003">
 	<defaultcontrol always="true">5</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
@@ -1119,6 +1119,12 @@
 						<label>20410</label>
 						<onclick>PlayMedia($INFO[ListItem.Trailer],1)</onclick>
 						<visible>!IsEmpty(ListItem.Trailer) + Skin.HasSetting(WindowedTrailer)</visible>
+					</control>
+					<control type="button" id="16">
+						<description>Get logo</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>Hämta logo</label>
+                        <onclick>XBMC.RunScript(script.logo-downloader,mode=solo,logo=True,clearart=True,showthumb=True,showname=$INFO[ListItem.TVShowTitle])</onclick>
 					</control>
 				</control>
 			</control>

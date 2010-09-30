@@ -97,17 +97,17 @@
         </font>
         <font>
             <name>Font_Top_Time</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>24</size>
         </font>
         <font>
             <name>Font_Top_Date</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>12</size>
         </font>
         <font>
             <name>Font_Top_Temp</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>18</size>
         </font>
         <font>
@@ -122,27 +122,27 @@
         </font>
         <font>
             <name>Font_Home_Category</name>
-            <filename>TahomaCapsBold.ttf</filename>
-            <size>50</size>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>60</size>
         </font>
         <font>
-            <name>Font_Home_RecentlyAdded_1</name>
-            <filename>Tahoma.ttf</filename>
-            <size>24</size>
+            <name>Font_Home_RecentlyAdded_90deg</name>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>20</size>
         </font>
         <font>
             <name>Font_Home_RecentlyAdded_2</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>18</size>
         </font>
         <font>
-            <name>Font_Home_RecentlyAdded_3</name>
-            <filename>TahomaCapsBold.ttf</filename>
+            <name>Font_Home_RecentlyAdded_Title</name>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>24</size>
         </font>
         <font>
-            <name>Font_Home_RecentlyAdded_4</name>
-            <filename>Tahoma.ttf</filename>
+            <name>Font_Home_RecentlyAdded_Line2</name>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>18</size>
         </font>
         <font>
@@ -162,7 +162,7 @@
         </font>
         <font>
             <name>Font_RSS_Feed</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>16</size>
         </font>
         <font>
@@ -172,7 +172,7 @@
         </font>
         <font>
             <name>Font_Movie_List</name>
-            <filename>DejaVuSans.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>18</size>
         </font>
         <font>
@@ -210,5 +210,11 @@
             <filename>DejaVuSans-Bold.ttf</filename>
             <size>32</size>
         </font>
+        <font>
+            <name>Font_Episodes_Title</name>
+            <filename>HelveticaNeueCondensedBold.ttf</filename>
+            <size>32</size>
+        </font>
+        
     </fontset>
 </fonts>

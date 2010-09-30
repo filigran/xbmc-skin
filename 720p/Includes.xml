@@ -105,7 +105,7 @@
     </include>
     <include name="VideoLibrary_bottom_info">
         <control type="group">
-            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
@@ -140,8 +140,8 @@
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true">special://skin/media/white.png</texture>
                 <colordiffuse>55ffffff</colordiffuse>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_Fanart)]">conditional</animation>
-                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_Fanart)]</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
             </control>
             <control type="image">
                 <description>Small fanart image</description>
@@ -152,70 +152,70 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_Fanart)]">conditional</animation>
-                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_Fanart)]</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
             </control>
             <control type="group">
                 <description>Plot</description>
                 <posx>300</posx>
                 <posy>510</posy>
-                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_Fanart)]">conditional</animation>
-                <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_Fanart)]">conditional</animation>
+                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
                 <control type="textbox">
                     <description>Movie Plot if small fanart</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>500</width>
-                    <height>140</height>
+                    <height>147</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
                     <pagecontrol>600</pagecontrol>
-                    <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Autoscroll_plot)]</autoscroll>
-                    <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_fanart)]</visible>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
                 </control>
                 <control type="textbox">
                     <description>Movie Plot if not small fanart</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>756</width>
-                    <height>140</height>
+                    <height>147</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
                     <pagecontrol>600</pagecontrol>
-                    <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Bob_Autoscroll_plot)]</autoscroll>
-                    <visible>[Container.Content(Movies) + !Skin.HasSetting(Movies_Viewtype_Bob_Show_small_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Bob_Show_small_fanart)]</visible>
+                    <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
+                    <visible>[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
                 </control>
                 <control type="textbox">
                     <description>Season plot if small fanart</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>500</width>
-                    <height>140</height>
+                    <height>147</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[Container.ShowPlot]</label>
                     <pagecontrol>600</pagecontrol>
-                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Viewtype_Bob_Autoscroll_plot)</autoscroll>
-                    <visible>Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_fanart)</visible>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Autoscroll_plot)</autoscroll>
+                    <visible>Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_fanart)</visible>
                 </control>
                 <control type="textbox">
                     <description>Season plot if not small fanart</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>756</width>
-                    <height>140</height>
+                    <height>147</height>
                     <font>Font_Movie_Plot</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[Container.ShowPlot]</label>
                     <pagecontrol>601</pagecontrol>
-                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Viewtype_Bob_Autoscroll_plot)</autoscroll>
-                    <visible>Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_Bob_Show_small_fanart)</visible>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Autoscroll_plot)</autoscroll>
+                    <visible>Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_fanart)</visible>
                 </control>
             </control>
             <control type="group">
@@ -226,7 +226,7 @@
                     <posx>510</posx>
                     <posy>0</posy>
                     <width>5</width>
-                    <height>140</height>
+                    <height>147</height>
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
@@ -388,7 +388,7 @@
                 <description>Seasons info labels</description>
                 <posx>400r</posx>
                 <posy>510</posy>
-                <visible>Container.Content(Seasons)</visible>
+                <visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
                  <control type="label">
                     <description>Season premiered label</description>
                     <posx>0</posx>
@@ -459,7 +459,7 @@
                 <description>Season info values</description>
                 <posx>300r</posx>
                 <posy>510</posy>
-                <visible>Container.Content(Seasons)</visible>
+                <visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
                 <control type="label">
                     <description>Season premiered value</description>
                     <posx>0</posx>

@@ -1,166 +1,156 @@
 <includes>
-<include name="Animation_EpisodePlot">
-		<animation effect="slide" end="0,60" time="0" condition="Container(503).Row(1)">Conditional</animation>
-		<animation effect="slide" end="0,120" time="0" condition="Container(503).Row(2)">Conditional</animation>
-		<animation effect="slide" end="0,180" time="0" condition="Container(503).Row(3)">Conditional</animation>
-		<animation effect="slide" end="0,240" time="0" condition="Container(503).Row(4)">Conditional</animation>
-		<animation effect="slide" end="0,300" time="0" condition="Container(503).Row(5)">Conditional</animation>
-	</include>
-	<include name="Viewtype_Episode">
-
-		<!-- Browser -->
-
-		<control type="fixedlist" id="503">
-			<viewtype label="Episode">list</viewtype>
-			<posx>327</posx>
-			<posy>130</posy>
-			<width>933</width>
-			<height>467</height>
-			<scrolltime>0</scrolltime>
-			<orientation>vertical</orientation>
-			<movement>3</movement>
-			<focusposition>2</focusposition>
-			<onup>503</onup>
-			<ondown>503</ondown>
-			<onleft>9000</onleft>
-			<onright>600</onright>
-			<pagecontrol>60</pagecontrol>
-			<visible>Window.IsActive(videolibrary) + Container.Content(episodes)</visible>
-			<itemlayout width="633" height="60">
-				<control type="label">
-					<posx>100</posx>
-					<posy>0</posy>
-					<width>80</width>
-					<height>60</height>
-					<align>right</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Episode]</label>
-					<font>Font_Movie_Title</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>blue</selectedcolor>
-				</control>
-				<control type="label">
-					<posx>125</posx>
-					<posy>8</posy>
-					<width>633</width>
-					<height>60</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Label]</label>
-					<font>Font_Movie_Title</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>blue</selectedcolor>
-                    <visible>IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="label">
-					<posx>125</posx>
-					<posy>8</posy>
-					<width>633</width>
-					<height>60</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Title]</label>
-					<font>Font_Movie_Title</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>blue</selectedcolor>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="image">
-					<posx>117</posx>
-					<posy>50</posy>
-					<width>100</width>
-					<height>15</height>
-					<texture>$INFO[ListItem.StarRating]</texture>
-                    <colordiffuse>ffffff00</colordiffuse>
-                </control>				
-			</itemlayout>
-			<focusedlayout width="633" height="164">
-				<control type="image">
-					<posx>13</posx>
-					<posy>23</posy>
-					<width>253</width>
-					<height>139</height>
-					<texture background="true" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<animation type="Focus" reversible="false">
-						<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
-					</animation>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>10</posy>
-					<width>278</width>
-					<height>164</height>
-					<texture>episodeframe.png</texture>
-					<animation type="Focus" reversible="false">
-						<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
-						<effect type="fade" start="0" end="100" time="200" />
-					</animation>
-                </control>
-				<control type="label">
-					<posx>292</posx>
-					<posy>35</posy>
-					<width>633</width>
-					<label>$INFO[ListItem.Episode]. $INFO[ListItem.Title]</label>
-					<font>Font_Movie_Title</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>blue</selectedcolor>
-					<animation type="Focus" reversible="false">
-						<effect type="fade" start="0" end="100" time="200" />
-					</animation>
-					<visible>!IsEmpty(ListItem.Title)</visible>					
-				</control>
-			</focusedlayout>
-		</control>
-
-		<control type="textbox">
-			<posx>621</posx>
-			<posy>192</posy>
-			<width>628</width>
-			<height>80</height>
-			<align>left</align>
-			<info>Container(503).ListItem.Plot</info>
-			<font>Font_Movie_Plot</font>
-			<textcolor>white</textcolor>
-            <selectedcolor>blue</selectedcolor>
-			<include>Animation_EpisodePlot</include>
-            <pagecontrol>600</pagecontrol>
-			<animation type="Conditional" reversible="false" condition="Control.HasFocus(51) + [!Container(51).OnNext + !Container(51).OnPrevious]">
-				<effect type="fade" start="0" end="100" time="200" />
-			</animation>
-			<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-		</control>
-
-		<!-- Scroll Bar -->
-
-        <control type="scrollbar" id="60">
-            <posx>1270</posx>
-            <posy>110</posy>
-            <width>5</width>
-            <height>468</height>
-            <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-            <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-            <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-            <onleft>503</onleft>
-            <onright>-</onright>
-            <showonepage>false</showonepage>
-            <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+    <include name="Animation_EpisodePlot">
+        <animation effect="slide" end="0,60" time="0" condition="Container(503).Row(1)">Conditional</animation>
+        <animation effect="slide" end="0,120" time="0" condition="Container(503).Row(2)">Conditional</animation>
+        <animation effect="slide" end="0,180" time="0" condition="Container(503).Row(3)">Conditional</animation>
+        <animation effect="slide" end="0,240" time="0" condition="Container(503).Row(4)">Conditional</animation>
+        <animation effect="slide" end="0,300" time="0" condition="Container(503).Row(5)">Conditional</animation>
+    </include>
+    <include name="Viewtype_Episode">
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <visible>Control.IsVisible(503)</visible>
+            <control type="fixedlist" id="503">
+                <viewtype label="Episode">list</viewtype>
+                <posx>327</posx>
+                <posy>130</posy>
+                <width>933</width>
+                <height>467</height>
+                <scrolltime>0</scrolltime>
+                <orientation>vertical</orientation>
+                <movement>3</movement>
+                <focusposition>2</focusposition>
+                <onup>503</onup>
+                <ondown>503</ondown>
+                <onleft>9000</onleft>
+                <onright>600</onright>
+                <pagecontrol>60</pagecontrol>
+                <visible>Window.IsActive(videolibrary) + Container.Content(episodes)</visible>
+                <itemlayout width="633" height="60">
+                    <control type="label">
+                        <posx>100</posx>
+                        <posy>0</posy>
+                        <width>80</width>
+                        <height>60</height>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Episode]</label>
+                        <font>Font_Episodes_Title</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                    </control>
+                    <control type="label">
+                        <posx>125</posx>
+                        <posy>0</posy>
+                        <width>633</width>
+                        <height>60</height>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Title]</label>
+                        <font>Font_Episodes_Title</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                    </control>
+                    <control type="image">
+                        <posx>117</posx>
+                        <posy>40</posy>
+                        <width>100</width>
+                        <height>15</height>
+                        <texture>$INFO[ListItem.StarRating]</texture>
+                        <colordiffuse>ffeaf188</colordiffuse>
+                    </control>				
+                </itemlayout>
+                <focusedlayout width="633" height="164">
+                    <control type="image">
+                        <posx>269</posx>
+                        <posy>15</posy>
+                        <width>655</width>
+                        <height>133</height>
+                        <texture>white.png</texture>
+                        <colordiffuse>55000000</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>278</width>
+                        <height>164</height>
+                        <texture>episoderoundedmatte.png</texture>
+                        <colordiffuse>ff00B8F5</colordiffuse>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="200" />
+                        </animation>
+                    </control>		
+                    <control type="image">
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>266</width>
+                        <height>152</height>
+                        <texture background="true" diffuse="episoderoundedmatte.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+                        </animation>
+                    </control>
+                    <control type="label">
+                        <posx>292</posx>
+                        <posy>10</posy>
+                        <width>633</width>
+                        <label>$INFO[ListItem.Episode]. $INFO[ListItem.Title]</label>
+                        <font>Font_Episodes_Title</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                        <animation type="Focus" reversible="false">
+                            <effect type="fade" start="0" end="100" time="200" />
+                        </animation>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="textbox">
+                <posx>620</posx>
+                <posy>177</posy>
+                <width>620</width>
+                <height>100</height>
+                <align>left</align>
+                <info>Container(503).ListItem.Plot</info>
+                <font>Font_Movie_Plot</font>
+                <textcolor>white</textcolor>
+                <selectedcolor>blue</selectedcolor>
+                <include>Animation_EpisodePlot</include>
+                <pagecontrol>600</pagecontrol>
+                <animation type="Conditional" reversible="false" condition="Control.HasFocus(51) + [!Container(51).OnNext + !Container(51).OnPrevious]">
+                    <effect type="fade" start="0" end="100" time="200" />
+                </animation>
+                <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+            </control>
+            <control type="scrollbar" id="60">
+                <posx>1270</posx>
+                <posy>110</posy>
+                <width>5</width>
+                <height>468</height>
+                <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                <onleft>503</onleft>
+                <onright>-</onright>
+                <showonepage>false</showonepage>
+                <orientation>vertical</orientation>
+                <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+            </control>
+            <control type="scrollbar" id="600">
+                <posx>1260</posx>
+                <posy>145</posy>
+                <width>5</width>
+                <height>133</height>
+                <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                <include>Animation_EpisodePlot</include>
+                <onleft>503</onleft>
+                <onright>-</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible allowhiddenfocus="true">Control.HasFocus(600)</visible>
+            </control>
         </control>
-        <control type="scrollbar" id="600">
-            <posx>1270</posx>
-            <posy>192</posy>
-            <width>5</width>
-            <height>80</height>
-            <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-            <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-            <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-            <include>Animation_EpisodePlot</include>
-            <onleft>503</onleft>
-            <onright>-</onright>
-            <showonepage>true</showonepage>
-            <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.HasFocus(600)</visible>
-        </control>
-        
-	</include>
-
+    </include>
 </includes>

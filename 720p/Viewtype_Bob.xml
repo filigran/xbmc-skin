@@ -39,7 +39,7 @@
                 <height>182</height>
                 <texture>special://skin/media/roundedmatte.png</texture>
                 <colordiffuse>ff00B8F5</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
                 <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
             </control>
@@ -50,7 +50,7 @@
                 <height>174</height>
                 <texture background="true" diffuse="special://skin/media/roundedmatte.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
                 <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
             </control>
@@ -62,7 +62,7 @@
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>lime</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
                 <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
             </control>
@@ -81,7 +81,7 @@
                 <width>1280</width>
                 <height>281</height>
                 <texture>special://skin/media/white.png</texture>
-                <colordiffuse>550000000</colordiffuse>
+                <colordiffuse>55000000</colordiffuse>
             </control>
             <control type="wraplist" id="500">
                 <onleft>500</onleft>
@@ -97,7 +97,7 @@
             </control>
             <control type="scrollbar" id="60">
                 <posx>200</posx>
-                <posy>250</posy>
+                <posy>265</posy>
                 <width>880</width>
                 <height>5</height>
                 <texturesliderbackground>special://skin/media/scrollbar_horizontal_background.png</texturesliderbackground>
@@ -138,7 +138,7 @@
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true">special://skin/media/white.png</texture>
                 <colordiffuse>55ffffff</colordiffuse>
-                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+                <visible>Skin.HasSetting(Show_Small_Fanart)</visible>
             </control>
             <control type="image">
                 <description>Small fanart image</description>
@@ -149,7 +149,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Viewtype_Bob_Show_Small_Fanart)</visible>
+                <visible>Skin.HasSetting(Show_Small_Fanart)</visible>
             </control>
             <control type="grouplist">
                 <description>Media Codec Flagging Images</description>
