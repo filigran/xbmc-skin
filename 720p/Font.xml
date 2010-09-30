@@ -168,7 +168,7 @@
         <font>
             <name>Font_Movie_Plot</name>
             <filename>Tahoma.ttf</filename>
-            <size>16</size>
+            <size>20</size>
         </font>
         <font>
             <name>Font_Movie_List</name>

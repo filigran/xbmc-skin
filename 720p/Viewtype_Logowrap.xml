@@ -1,16 +1,6 @@
 ﻿<includes>
     <include name="Viewtype_Logowrap">
         <control type="image">
-            <description>Background diffuser</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture>special://skin/media/white.png</texture>
-            <colordiffuse>55000000</colordiffuse>
-            <visible>Control.IsVisible(508)</visible>
-        </control>
-        <control type="image">
             <description>List background</description>
             <posx>0</posx>
             <posy>270r</posy>

@@ -16,10 +16,19 @@
             <visible>!Player.HasVideo + [[Control.IsVisible(50) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
                                        | [Control.IsVisible(500) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)]]]
                                        | [Control.IsVisible(501) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]
-                                       | [Control.IsVisible(508) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Logowrap_Show_Fanart)]]]]
+                                       | [Control.IsVisible(508) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Logowrap_Show_Fanart)]]]
+                                       | [Control.IsVisible(503) + [[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Episode_Show_Fanart)]]]]
             </visible>
         </control>
-        <include>Global_Backgrounds</include>
+        <control type="image">
+            <description>Background diffuser</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>55000000</colordiffuse>
+        </control>
         <control type="group">
             <include>Window_OpenClose_Animation</include>
             <include>Viewtype_Boblist</include> <!-- view id = 50 -->
@@ -30,6 +39,7 @@
             <!--<include>PosterWrapView</include> --><!-- view id = 501 -->
             <include>Viewtype_Logowrap</include> <!-- view id = 508 -->
             <!--<include>PosterWrapView2_Fanart</include> --><!-- view id = 508 -->
+            <include>Viewtype_Episode</include> <!-- view id = 503 -->
             <!--<include>MediaListView3</include> --><!-- view id = 503 -->
             <!--<include>MediaListView2</include> --><!-- view id = 504 -->
             <!--<include>WideIconView</include> --><!-- view id = 505 -->

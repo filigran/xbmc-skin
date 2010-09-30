@@ -3,6 +3,7 @@
     <include file="Viewtype_Boblist.xml" />
     <include file="Viewtype_Bobbannerlist.xml" />
     <include file="Viewtype_Logowrap.xml" />
+    <include file="Viewtype_Episode.xml" />
     <include name="PosterWrapView">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>

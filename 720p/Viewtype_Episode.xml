@@ -1,0 +1,117 @@
+<includes>
+    <include name="Viewtype_Episode">
+        <control type="group">
+            <visible>Control.IsVisible(503)</visible>
+            <include>VisibleFadeEffect</include>
+            <posx>300</posx>
+            <posy>0</posy>
+            <control type="list" id="503">
+                <visible>Container.Content(Episodes)</visible>
+                <posx>0</posx>
+                <posy>55</posy>
+                <width>970</width>
+                <height>500</height>
+                <onleft>9000</onleft>
+                <onright>60</onright>
+                <onup>50</onup>
+                <ondown>50</ondown>
+                <viewtype label="Episode">list</viewtype>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <focusposition>1</focusposition>
+                <itemlayout height="30">
+                    <control type="label">
+                        <posx>30</posx>
+                        <posy>0</posy>
+                        <width>25</width>
+                        <height>30</height>
+                        <aligny>center</aligny>
+                        <align>right</align>
+                        <label>$INFO[Listitem.Episode]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                    </control>
+                    <control type="label">
+                        <posx>30</posx>
+                        <posy>0</posy>
+                        <width>390</width>
+                        <height>30</height>
+                        <aligny>center</aligny>
+                        <label>$INFO[Listitem.Title]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                    </control>
+                    <control type="image">
+                        <posx>400</posx>
+                        <posy>5</posy>
+                        <width>20</width>
+                        <height>20</height>
+                        <aspectratio>keep</aspectratio>
+                        <aligny>center</aligny>
+                        <texture>$INFO[Listitem.Overlay]</texture>
+                        <colordiffuse>ff00ff00</colordiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="60">
+                    <control type="fadelabel">
+                        <posx>30</posx>
+                        <posy>-2</posy>
+                        <width>25</width>
+                        <height>30</height>
+                        <aligny>center</aligny>
+                        <align>right</align>
+                        <label>$INFO[Listitem.Episode]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>blue</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                    <control type="fadelabel">
+                        <posx>70</posx>
+                        <posy>-2</posy>
+                        <width>400</width>
+                        <height>30</height>
+                        <aligny>center</aligny>
+                        <label>$INFO[Listitem.Title]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>blue</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                        <pauseatend>1000</pauseatend>
+                        <scrolltoend>false</scrolltoend>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>410</posx>
+                        <posy>5</posy>
+                        <width>20</width>
+                        <height>20</height>
+                        <aspectratio>keep</aspectratio>
+                        <aligny>center</aligny>
+                        <texture>$INFO[Listitem.Overlay]</texture>
+                        <colordiffuse>ff00ff00</colordiffuse>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                    <control type="textbox">
+                        <posx>0</posx>
+                        <posy>30</posy>
+                        <width>800</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <aligny>top</aligny>
+                        <label fallback="-">$INFO[ListItem.Plot]</label>
+                        <font>Font_Movie_List</font>
+                        <textcolor>blue</textcolor>
+                        <selectedcolor>blue</selectedcolor>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+                        <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </include>
+</includes>
