@@ -117,15 +117,15 @@
             </control>
             <control type="fadelabel">
                 <description>Title</description>
-                <posx>300</posx>
+                <posx>0</posx>
                 <posy>460</posy>
-                <width>950</width>
+                <width>1280</width>
                 <height>35</height>
                 <font>Font_Movie_Title</font>
-                <textcolor>white</textcolor>
+                <textcolor>ffcccccc</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>true</scroll>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <scrollout>false</scrollout>
                 <pauseatend>5000</pauseatend>
