@@ -4,13 +4,13 @@
             <visible>Control.IsVisible(503)</visible>
             <include>VisibleFadeEffect</include>
             <posx>300</posx>
-            <posy>0</posy>
-            <control type="list" id="503">
+            <posy>200</posy>
+            <control type="fixedlist" id="503">
                 <visible>Container.Content(Episodes)</visible>
                 <posx>0</posx>
-                <posy>55</posy>
+                <posy>0</posy>
                 <width>970</width>
-                <height>500</height>
+                <height>720</height>
                 <onleft>9000</onleft>
                 <onright>60</onright>
                 <onup>503</onup>
@@ -19,6 +19,7 @@
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <focusposition>1</focusposition>
+                <movement>1</movement>
                 <itemlayout height="40">
                     <control type="label">
                         <posx>130</posx>
@@ -56,6 +57,30 @@
                 </itemlayout>
                 <focusedlayout height="165">
                     <control type="image">
+                        <posx>13</posx>
+                        <posy>13</posy>
+                        <width>253</width>
+                        <height>139</height>
+                        <texture background="true" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+                        </animation>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>278</width>
+                        <height>164</height>
+                        <texture>episodeframe.png</texture>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="200" />
+                        </animation>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                <!--<control type="image">
                         <posx>10</posx>
                         <posy>2</posy>
                         <height>156</height>
@@ -73,7 +98,7 @@
                         <aspectratio>stretch</aspectratio>
                         <aligny>center</aligny>
                         <texture>$INFO[Listitem.Thumb]</texture>
-                    </control>
+                    </control>-->
                     <control type="label">
                         <posx>315</posx>
                         <posy>-2</posy>
@@ -129,23 +154,22 @@
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
-                    <control type="scrollbar" id="60">
-                        <posx>600</posx>
-                        <posy>0</posy>
-                        <height>150</height>
-                        <width>5</width>
-                        <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-                        <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-                        <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                        <onleft>503</onleft>
-                        <onright>9000</onright>
-                        <showonepage>true</showonepage>
-                        <orientation>vertical</orientation>
-                        <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
-                    </control>
                 </focusedlayout>
             </control>
-            
+            <control type="scrollbar" id="60">
+                <posx>820</posx>
+                <posy>0</posy>
+                <height>150</height>
+                <width>5</width>
+                <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                <onleft>503</onleft>
+                <onright>9000</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+            </control>
         </control>
     </include>
 </includes>
