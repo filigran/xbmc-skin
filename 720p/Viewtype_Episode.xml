@@ -13,39 +13,39 @@
                 <height>500</height>
                 <onleft>9000</onleft>
                 <onright>60</onright>
-                <onup>50</onup>
-                <ondown>50</ondown>
+                <onup>503</onup>
+                <ondown>503</ondown>
                 <viewtype label="Episode">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <focusposition>1</focusposition>
-                <itemlayout height="30">
+                <itemlayout height="40">
                     <control type="label">
-                        <posx>30</posx>
+                        <posx>130</posx>
                         <posy>0</posy>
                         <width>25</width>
                         <height>30</height>
                         <aligny>center</aligny>
                         <align>right</align>
                         <label>$INFO[Listitem.Episode]</label>
-                        <font>Font_Movie_List</font>
+                        <font>Font_Movie_Title</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <selectedcolor>white</selectedcolor>
                     </control>
                     <control type="label">
-                        <posx>30</posx>
+                        <posx>140</posx>
                         <posy>0</posy>
                         <width>390</width>
                         <height>30</height>
                         <aligny>center</aligny>
                         <label>$INFO[Listitem.Title]</label>
-                        <font>Font_Movie_List</font>
+                        <font>Font_Movie_Title</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <selectedcolor>white</selectedcolor>
                     </control>
                     <control type="image">
-                        <posx>400</posx>
-                        <posy>5</posy>
+                        <posx>80</posx>
+                        <posy>10</posy>
                         <width>20</width>
                         <height>20</height>
                         <aspectratio>keep</aspectratio>
@@ -54,64 +54,98 @@
                         <colordiffuse>ff00ff00</colordiffuse>
                     </control>
                 </itemlayout>
-                <focusedlayout height="60">
-                    <control type="fadelabel">
-                        <posx>30</posx>
+                <focusedlayout height="165">
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>2</posy>
+                        <height>156</height>
+                        <width>279</width>
+                        <aspectratio>keep</aspectratio>
+                        <aligny>center</aligny>
+                        <texture>white.png</texture>
+                        <colordiffuse>blue</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>15</posx>
+                        <posy>6</posy>
+                        <height>148</height>
+                        <width>270</width>
+                        <aspectratio>stretch</aspectratio>
+                        <aligny>center</aligny>
+                        <texture>$INFO[Listitem.Thumb]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>315</posx>
                         <posy>-2</posy>
                         <width>25</width>
                         <height>30</height>
                         <aligny>center</aligny>
                         <align>right</align>
                         <label>$INFO[Listitem.Episode]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <font>Font_Movie_Title</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                     <control type="fadelabel">
-                        <posx>70</posx>
+                        <posx>325</posx>
                         <posy>-2</posy>
                         <width>400</width>
                         <height>30</height>
                         <aligny>center</aligny>
                         <label>$INFO[Listitem.Title]</label>
-                        <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <font>Font_Movie_Title</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <pauseatend>1000</pauseatend>
                         <scrolltoend>false</scrolltoend>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                     <control type="image">
-                        <posx>410</posx>
-                        <posy>5</posy>
-                        <width>20</width>
-                        <height>20</height>
+                        <posx>250</posx>
+                        <posy>120</posy>
+                        <width>40</width>
+                        <height>40</height>
                         <aspectratio>keep</aspectratio>
                         <aligny>center</aligny>
                         <texture>$INFO[Listitem.Overlay]</texture>
-                        <colordiffuse>ff00ff00</colordiffuse>
+                        <colordiffuse>lime</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
                     <control type="textbox">
-                        <posx>0</posx>
+                        <posx>300</posx>
                         <posy>30</posy>
-                        <width>800</width>
-                        <height>30</height>
-                        <align>right</align>
+                        <width>500</width>
+                        <height>125</height>
+                        <align>justify</align>
                         <aligny>top</aligny>
                         <label fallback="-">$INFO[ListItem.Plot]</label>
                         <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                     </control>
+                    <control type="scrollbar" id="60">
+                        <posx>600</posx>
+                        <posy>0</posy>
+                        <height>150</height>
+                        <width>5</width>
+                        <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                        <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                        <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                        <onleft>503</onleft>
+                        <onright>9000</onright>
+                        <showonepage>true</showonepage>
+                        <orientation>vertical</orientation>
+                        <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+                    </control>
                 </focusedlayout>
             </control>
+            
         </control>
     </include>
 </includes>
