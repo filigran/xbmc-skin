@@ -167,7 +167,7 @@
         </font>
         <font>
             <name>Font_Movie_Plot</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>20</size>
         </font>
         <font>
@@ -181,14 +181,19 @@
             <size>16</size>
         </font>
         <font>
-            <name>Font_Movie_Info</name>
-            <filename>Tahoma.ttf</filename>
-            <size>16</size>
-        </font>
-        <font>
             <name>Font_Movie_Title</name>
             <filename>HelveticaNeueCondensedBold.ttf</filename>
-            <size>38</size>
+            <size>40</size>
+        </font>
+        <font>
+            <name>Font_Movie_totals</name>
+            <filename>HelveticaNeueCondensedBold.ttf</filename>
+            <size>28</size>
+        </font>
+        <font>
+            <name>Font_Movie_Info</name>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
+            <size>14</size>
         </font>
         <font>
             <name>Font_TVShows_Logowrap_Episodes</name>

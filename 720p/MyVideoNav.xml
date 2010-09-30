@@ -14,10 +14,11 @@
             <fadetime>IconCrossfadeTime</fadetime>
             <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
             <visible>!Player.HasVideo + [[Control.IsVisible(50) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Boblist_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Boblist_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Viewtype_Boblist_Show_Fanart)]]]
-                                       | [Control.IsVisible(500) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_Bob_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bob_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bob_Show_Fanart)]]]
+                                       | [Control.IsVisible(500) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_BobWrap_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_BobWrap_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_BobWrap_Show_Fanart)]]]
                                        | [Control.IsVisible(501) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Viewtype_Bobbannerlist_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Viewtype_Bobbannerlist_Show_Fanart)]]]
                                        | [Control.IsVisible(508) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Viewtype_Logowrap_Show_Fanart)]]]
-                                       | [Control.IsVisible(503) + [[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Episode_Show_Fanart)]]]]
+                                       | [Control.IsVisible(503) + [[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Viewtype_Episode_Show_Fanart)]]]
+                                       | [Control.IsVisible(504) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Viewtype_BobFixed_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Viewtype_BobFixed_Show_Fanart)]]]]
             </visible>
         </control>
         <control type="image">
@@ -33,7 +34,7 @@
             <include>Window_OpenClose_Animation</include>
             <include>Viewtype_Boblist</include> <!-- view id = 50 -->
             <!--<include>CommonRootView</include> --> <!-- view id = 50 -->
-            <include>Viewtype_Bob</include> <!-- view id = 500 -->
+            <include>Viewtype_Bob</include> <!-- view id = 500 & 504 -->
             <!--<include>ThumbnailView</include> --><!-- view id = 500 -->
             <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
             <!--<include>PosterWrapView</include> --><!-- view id = 501 -->
@@ -95,11 +96,18 @@
                 <visible>Control.IsVisible(50) + Container.Content(Movies)</visible>
             </control>
             <control type="togglebutton" id="101">
-                <description>Toggle fanart bob movies</description>
-                <label>Fanart bob</label>
-                <altlabel>Ingen fanart bob</altlabel>
-                <onclick>Skin.ToggleSetting(Movies_Viewtype_Bob_Show_Fanart)</onclick>
+                <description>Toggle fanart bobwrap movies</description>
+                <label>Fanart bobwrap</label>
+                <altlabel>Ingen fanart bobwrap</altlabel>
+                <onclick>Skin.ToggleSetting(Movies_Viewtype_Bobwrap_Show_Fanart)</onclick>
                 <visible>Control.IsVisible(500) + Container.Content(Movies)</visible>
+            </control>
+            <control type="togglebutton" id="126">
+                <description>Toggle fanart bobfixed movies</description>
+                <label>Fanart bobfixed</label>
+                <altlabel>Ingen fanart bobfixed</altlabel>
+                <onclick>Skin.ToggleSetting(Movies_Viewtype_Bobfixed_Show_Fanart)</onclick>
+                <visible>Control.IsVisible(504) + Container.Content(Movies)</visible>
             </control>
             <control type="togglebutton" id="102">
                 <description>Toggle fanart bobbannerlist movies</description>
@@ -116,10 +124,17 @@
                 <visible>Control.IsVisible(50) + Container.Content(Movies)</visible>
             </control>
             <control type="togglebutton" id="104">
-                <description>Toggle small fanart bob movies</description>
+                <description>Toggle small fanart bobwrap movies</description>
                 <label>Liten fanart</label>
                 <altlabel>Ingen liten fanart</altlabel>
-                <onclick>Skin.ToggleSetting(Movies_Viewtype_Bob_Show_Small_Fanart)</onclick>
+                <onclick>Skin.ToggleSetting(Movies_Viewtype_BobWrap_Show_Small_Fanart)</onclick>
+                <visible>Control.IsVisible(500) + Container.Content(Movies)</visible>
+            </control>
+            <control type="togglebutton" id="127">
+                <description>Toggle small fanart bobfixed movies</description>
+                <label>Liten fanart</label>
+                <altlabel>Ingen liten fanart</altlabel>
+                <onclick>Skin.ToggleSetting(Movies_Viewtype_BobFixed_Show_Small_Fanart)</onclick>
                 <visible>Control.IsVisible(500) + Container.Content(Movies)</visible>
             </control>
             <control type="togglebutton" id="105">

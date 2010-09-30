@@ -1,30 +1,18 @@
 ﻿<includes>
     <include name="Bob_listcontent">
         <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Window.IsVisible(VideoFiles)</visible>
-        <posx>-65</posx>
+        <posx>-123</posx>
         <posy>40</posy>
         <width>1441</width>
         <height>720</height>
-        <onleft>500</onleft>
-        <onright>500</onright>
         <onup>9000</onup>
         <ondown>60</ondown>
-        <viewtype label="Bob">bigwrap</viewtype>
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
         <focusposition>5</focusposition>
         <orientation>horizontal</orientation>
         <preloaditems>4</preloaditems>
         <itemlayout height="176" width="136">
-            <!--<control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>120</width>
-                <height>180</height>
-                <texture background="true">special://skin/media/roundedmatte.png</texture>
-                <aspectratio>stretch</aspectratio>
-                <colordiffuse>blue</colordiffuse>
-            </control>-->
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -43,7 +31,7 @@
                 <colordiffuse>lime</colordiffuse>
             </control>
         </itemlayout>
-        <focusedlayout height="200" width="173">
+        <focusedlayout height="200" width="185">
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -51,8 +39,8 @@
                 <height>182</height>
                 <texture>special://skin/media/roundedmatte.png</texture>
                 <colordiffuse>ff00B8F5</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400">focus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
             </control>
             <control type="image">
@@ -62,8 +50,8 @@
                 <height>174</height>
                 <texture background="true" diffuse="special://skin/media/roundedmatte.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400">focus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
             </control>
             <control type="image">
@@ -74,15 +62,15 @@
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>lime</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="130" time="400">focus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600)">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
                 <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
             </control>
         </focusedlayout>
     </include>
     <include name="Viewtype_Bob">
         <control type="group">
-            <visible>Control.IsVisible(500)</visible>
+            <visible>Control.IsVisible(500) | Control.IsVisible(504)</visible>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>120</posy>
@@ -91,12 +79,21 @@
                 <posx>0</posx>
                 <posy>-10</posy>
                 <width>1280</width>
-                <height>271</height>
+                <height>281</height>
                 <texture>special://skin/media/white.png</texture>
-                <colordiffuse>55000000</colordiffuse>
+                <colordiffuse>550000000</colordiffuse>
             </control>
             <control type="wraplist" id="500">
+                <onleft>500</onleft>
+                <onright>500</onright>
                 <include>Bob_listcontent</include>
+                <viewtype label="Bobwrap">bigwrap</viewtype>
+            </control>
+            <control type="fixedlist" id="504">
+                <onleft>504</onleft>
+                <onright>504</onright>
+                <include>Bob_listcontent</include>
+                <viewtype label="Bobfixed">bigwrap</viewtype>
             </control>
             <control type="scrollbar" id="60">
                 <posx>200</posx>
@@ -173,10 +170,10 @@
             <control type="label">
                 <description>Totals label</description>
                 <posx>20</posx>
-                <posy>0</posy>
+                <posy>10</posy>
                 <width>300</width>
-                <height>35</height>
-                <font>Font_Home_Weather_Labels</font>
+                <height>30</height>
+                <font>Font_Movie_totals</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>true</scroll>
@@ -187,73 +184,34 @@
             <control type="group">
                 <description>Totals labels and values</description>
                 <posx>20</posx>
-                <posy>30</posy>
+                <posy>40</posy>
                 <control type="group">
                     <description>Totals labels</description>
                     <control type="label">
                         <description>Watched movies count</description>
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>100</width>
-                        <height>35</height>
+                        <width>250</width>
+                        <height>25</height>
                         <font>Font_Movie_Info</font>
-                        <textcolor>ffcccccc</textcolor>
+                        <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Visade:</label>
+                        <label>Visade: $INFO[Window(Home).Property(Movies.Watched),, st]</label>
                     </control>
                     <control type="label">
                         <description>Unwatched movies count</description>
                         <posx>0</posx>
-                        <posy>25</posy>
-                        <width>100</width>
-                        <height>35</height>
+                        <posy>20</posy>
+                        <width>250</width>
+                        <height>25</height>
                         <font>Font_Movie_Info</font>
-                        <textcolor>ffcccccc</textcolor>
+                        <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Inte visade:</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <description>Totals values</description>
-                    <posx>110</posx>
-                    <posy>0</posy>
-                    <control type="fadelabel">
-                        <description>Watched movies value</description>
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>200</width>
-                        <height>35</height>
-                        <font>Font_Movie_Info</font>
-                        <textcolor>ffcccccc</textcolor>
-                        <shadowcolor>black</shadowcolor>
-                        <scrollout>false</scrollout>
-                        <pauseatend>2000</pauseatend>
-                        <scrollspeed>40</scrollspeed>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[Window(Home).Property(Movies.Watched),, st]</label>
-                    </control>
-                    <control type="fadelabel">
-                        <description>Unwatched movies value</description>
-                        <posx>0</posx>
-                        <posy>25</posy>
-                        <width>200</width>
-                        <height>35</height>
-                        <font>Font_Movie_Info</font>
-                        <textcolor>ffcccccc</textcolor>
-                        <shadowcolor>black</shadowcolor>
-                        <scrollout>false</scrollout>
-                        <pauseatend>2000</pauseatend>
-                        <scrollspeed>40</scrollspeed>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[Window(Home).Property(Movies.UnWatched),, st]</label>
+                        <label>Inte visade: $INFO[Window(Home).Property(Movies.UnWatched),, st]</label>
                     </control>
                 </control>
             </control>

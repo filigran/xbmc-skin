@@ -118,12 +118,11 @@
             <control type="fadelabel">
                 <description>Title</description>
                 <posx>0</posx>
-                <posy>460</posy>
+                <posy>443</posy>
                 <width>1280</width>
-                <height>35</height>
+                <height>68</height>
                 <font>Font_Movie_Title</font>
-                <textcolor>ffcccccc</textcolor>
-                <shadowcolor>black</shadowcolor>
+                <textcolor>ffdddddd</textcolor>
                 <scroll>true</scroll>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -239,7 +238,7 @@
             </control>
             <control type="group">
                 <description>Movie / episode info labels</description>
-                <posx>370r</posx>
+                <posx>350r</posx>
                 <posy>510</posy>
                 <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
                  <control type="label">
@@ -253,13 +252,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Release:</label>
                 </control>
                 <control type="label">
                     <description>Movie / episode duration label</description>
                     <posx>0</posx>
-                    <posy>30</posy>
+                    <posy>25</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -267,13 +265,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Speltid:</label>
                 </control>
                 <control type="label">
                     <description>Movie / episode genre label</description>
                     <posx>0</posx>
-                    <posy>60</posy>
+                    <posy>50</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -281,13 +278,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Genre:</label>
                 </control>
                 <control type="label">
                     <description>Movie / episode director label</description>
                     <posx>0</posx>
-                    <posy>90</posy>
+                    <posy>75</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -295,13 +291,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Regissör:</label>
                 </control>
                 <control type="label">
                     <description>Movie / episode writer label</description>
                     <posx>0</posx>
-                    <posy>120</posy>
+                    <posy>100</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -309,7 +304,6 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Författare:</label>
                 </control>
             </control>
@@ -329,13 +323,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Year]</label>
                 </control>
                 <control type="label">
                     <description>Movie / episode duration value</description>
                     <posx>0</posx>
-                    <posy>30</posy>
+                    <posy>25</posy>
                     <width>200</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -343,13 +336,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Movie / episode genre value</description>
                     <posx>0</posx>
-                    <posy>60</posy>
+                    <posy>50</posy>
                     <width>200</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -359,13 +351,12 @@
                     <pauseatend>2000</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Genre]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Movie / episode director value</description>
                     <posx>0</posx>
-                    <posy>90</posy>
+                    <posy>75</posy>
                     <width>200</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -375,13 +366,12 @@
                     <pauseatend>2000</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Director]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Movie / episode writer value</description>
                     <posx>0</posx>
-                    <posy>120</posy>
+                    <posy>100</posy>
                     <width>230</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -391,7 +381,6 @@
                     <pauseatend>2000</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Writer]</label>
                 </control>
             </control>
@@ -411,13 +400,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Premiär:</label>
                 </control>
                 <control type="label">
                     <description>Season episode count label</description>
                     <posx>0</posx>
-                    <posy>30</posy>
+                    <posy>25</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -425,13 +413,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Avsnitt:</label>
                 </control>
                 <control type="label">
                     <description>Season genre label</description>
                     <posx>0</posx>
-                    <posy>60</posy>
+                    <posy>50</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -439,13 +426,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Genre:</label>
                 </control>
                 <control type="label">
                     <description>Season director label</description>
                     <posx>0</posx>
-                    <posy>90</posy>
+                    <posy>75</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -453,13 +439,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Regissör:</label>
                 </control>
                 <control type="label">
                     <description>Season writer label</description>
                     <posx>0</posx>
-                    <posy>120</posy>
+                    <posy>100</posy>
                     <width>100</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -467,7 +452,6 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label>Författare:</label>
                 </control>
             </control>
@@ -487,13 +471,12 @@
                     <shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <label fallback="-">$INFO[ListItem.Premiered]</label>
+                    <label fallback="Inte tillgänglig">$INFO[ListItem.Premiered]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Season episode count value</description>
                     <posx>0</posx>
-                    <posy>30</posy>
+                    <posy>25</posy>
                     <width>280</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -502,13 +485,12 @@
                     <pauseatend>3000</pauseatend>
                     <scrolltoend>false</scrolltoend>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Episode]$INFO[ListItem.Property(WatchedEpisodes), (, visade]$INFO[ListItem.Property(UnWatchedEpisodes),$COMMA , inte visade)]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Season genre value</description>
                     <posx>0</posx>
-                    <posy>60</posy>
+                    <posy>50</posy>
                     <width>280</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -518,13 +500,12 @@
                     <pauseatend>2000</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Genre]</label>
                 </control>
                 <control type="fadelabel">
                     <description>Season director value</description>
                     <posx>0</posx>
-                    <posy>90</posy>
+                    <posy>75</posy>
                     <width>280</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -534,13 +515,12 @@
                     <pauseatend>2000</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Director]</label>
                 </control>
                 <control type="fadelabel">
                     <description> writer value</description>
                     <posx>0</posx>
-                    <posy>120</posy>
+                    <posy>100</posy>
                     <width>280</width>
                     <height>35</height>
                     <font>Font_Movie_Info</font>
@@ -550,7 +530,6 @@
                     <pauseatend>2000</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
-                    <aligny>center</aligny>
                     <label fallback="-">$INFO[ListItem.Writer]</label>
                 </control>
             </control>
