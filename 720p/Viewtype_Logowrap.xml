@@ -161,7 +161,7 @@
                     <control type="label">
                         <description>Watched episodes count</description>
                         <posx>0</posx>
-                        <posy>30</posy>
+                        <posy>25</posy>
                         <width>140</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
@@ -174,7 +174,7 @@
                     <control type="label">
                         <description>Total unwatched count</description>
                         <posx>0</posx>
-                        <posy>60</posy>
+                        <posy>50</posy>
                         <width>140</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
@@ -205,7 +205,7 @@
                     <control type="fadelabel">
                         <description>Total watched value</description>
                         <posx>0</posx>
-                        <posy>30</posy>
+                        <posy>25</posy>
                         <width>200</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
@@ -220,7 +220,7 @@
                     <control type="fadelabel">
                         <description>Total unwatched value</description>
                         <posx>0</posx>
-                        <posy>60</posy>
+                        <posy>50</posy>
                         <width>200</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>

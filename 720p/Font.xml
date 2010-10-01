@@ -95,6 +95,8 @@
             <filename>Tahoma.ttf</filename>
             <size>12</size>
         </font>
+
+       <!-- egna fonts -->
         <font>
             <name>Font_Top_Time</name>
             <filename>Helvetica_Neue_Medium.ttf</filename>
@@ -111,13 +113,8 @@
             <size>18</size>
         </font>
         <font>
-            <name>Font_Top_Conditions</name>
-            <filename>Tahoma.ttf</filename>
-            <size>12</size>
-        </font>
-        <font>
             <name>Font_Top_Menu</name>
-            <filename>TahomaCaps.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>16</size>
         </font>
         <font>
@@ -147,17 +144,17 @@
         </font>
         <font>
             <name>Font_Home_Weather_Current_Temp</name>
-            <filename>TahomaCapsBold.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>36</size>
         </font>
         <font>
             <name>Font_Home_Weather_Labels</name>
-            <filename>TahomaCapsBold.ttf</filename>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
             <size>20</size>
         </font>
         <font>
             <name>Font_Home_Weather_Values</name>
-            <filename>Tahoma.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>20</size>
         </font>
         <font>
@@ -177,17 +174,17 @@
         </font>
         <font>
             <name>Font_Movie_List_Bold</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>16</size>
         </font>
         <font>
             <name>Font_Movie_Title</name>
-            <filename>HelveticaNeueCondensedBold.ttf</filename>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>40</size>
         </font>
         <font>
             <name>Font_Movie_totals</name>
-            <filename>HelveticaNeueCondensedBold.ttf</filename>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>28</size>
         </font>
         <font>
@@ -197,17 +194,17 @@
         </font>
         <font>
             <name>Font_TVShows_Logowrap_Episodes</name>
-            <filename>tahomabd.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>30</size>
         </font>
         <font>
             <name>Font_TVShows_Logowrap_Episodes_Smaller</name>
-            <filename>tahomabd.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>24</size>
         </font>
         <font>
             <name>Font_TVShows_Logowrap_TVShows_count</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>32</size>
         </font>
         <font>

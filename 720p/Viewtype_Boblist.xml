@@ -498,7 +498,7 @@
                 <texture background="true">$INFO[ListItem.Path]../logo.png</texture>
             </control>
             <control type="label">
-                <description>Episode count</description>
+                <description>Season number</description>
                 <posx>253</posx>
                 <posy>20</posy>
                 <width>350</width>
@@ -528,10 +528,10 @@
                 <colordiffuse>ff00B8F5</colordiffuse>
             </control>
             <control type="image">
-                <posx>39</posx>
-                <posy>114</posy>
-                <width>516</width>
-                <height>286</height>
+                <posx>36</posx>
+                <posy>111</posy>
+                <width>522</width>
+                <height>292</height>
                 <texture background="true" diffuse="special://skin/media/episoderoundedmatte.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
                 <fadetime>400</fadetime>

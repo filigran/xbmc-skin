@@ -11,6 +11,42 @@
             <posx>0</posx>
             <posy>0</posy>
             <visible>Control.IsVisible(503)</visible>
+            <control type="image">
+                <description>TV Show logo</description>
+                <posx>33</posx>
+                <posy>10</posy>
+                <width>200</width>
+                <height>77</height>
+                <aspectratio>stretch</aspectratio>
+                <texture background="true">$INFO[ListItem.Path]../logo.png</texture>
+            </control>
+            <control type="label">
+                <description>Season number</description>
+                <posx>253</posx>
+                <posy>20</posy>
+                <width>350</width>
+                <height>30</height>
+                <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
+                <textcolor>white</textcolor>
+                <align>left</align>
+                <label>$INFO[ListItem.Season,Säsong ]</label>
+            </control>
+            <control type="label">
+                <description>Episode count</description>
+                <posx>253</posx>
+                <posy>50</posy>
+                <width>350</width>
+                <height>30</height>
+                <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
+                <textcolor>white</textcolor>
+                <align>left</align>
+                <label>$INFO[Container(TVShows).NumItems,, avsnitt]</label>
+            </control>
+        </control>
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <visible>Control.IsVisible(503)</visible>
             <control type="fixedlist" id="503">
                 <viewtype label="Episode">list</viewtype>
                 <posx>327</posx>
