@@ -10,7 +10,7 @@
             <description>Buttons for recently added visibility (onup/down conditions)</description>
             <posx>-2000</posx>
             <control type="button">
-                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+                <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
                 <onfocus>SetFocus(301)</onfocus>
             </control>
             <control type="button">
@@ -109,12 +109,12 @@
                         <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
                     </item>
                     <item id="3">
-                        <description>Movies</description>
-                        <label>342</label>
-                        <icon>special://skin/media/movies.png</icon>
-                        <thumb fallback="special://skin/media/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
-                        <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
-                        <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
+                        <description>Weather</description>
+                        <label>8</label>
+                        <icon>special://skin/media/weather.png</icon>
+                        <thumb fallback="special://skin/media/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
+                        <onclick>ActivateWindow(weather,return)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
                     </item>
                     <item id="4">
                         <description>TV Shows</description>
@@ -133,12 +133,12 @@
                         <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
                     </item>
                     <item id="6">
-                        <description>Weather</description>
-                        <label>8</label>
-                        <icon>special://skin/media/weather.png</icon>
-                        <thumb fallback="special://skin/media/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
-                        <onclick>ActivateWindow(weather,return)</onclick>
-                        <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
+                        <description>Movies</description>
+                        <label>342</label>
+                        <icon>special://skin/media/movies.png</icon>
+                        <thumb fallback="special://skin/media/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
+                        <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
                     </item>
                     <item id="7">
                         <description>Programs</description>
