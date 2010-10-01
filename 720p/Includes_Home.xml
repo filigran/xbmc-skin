@@ -1,35 +1,39 @@
 ﻿<includes>
-    <include name="Home_Menu_pos130r">
+    <include name="Home_Menu_posy130r">
         <posy>130r</posy>
     </include>
-    <include name="Home_Menu_pos100r">
+    <include name="Home_Menu_posy100r">
         <posy>100r</posy>
     </include>
     <include name="Home_Menu">
         <control type="group" id="900">
-            <description>Buttons for recently added visibility (onup/down conditions)</description>
+            <description>Buttons for recently added and weather info visibility (onup/down conditions)</description>
             <posx>-2000</posx>
             <control type="button">
+                <description>RecentlyAdded movies</description>
                 <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
                 <onfocus>SetFocus(301)</onfocus>
             </control>
             <control type="button">
+                <description>RecentlyAdded TVShows</description>
                 <visible>Container(300).HasFocus(4) + Skin.HasSetting(Home_Show_RecentlyAdded_TVShows)</visible>
                 <onfocus>SetFocus(302)</onfocus>
             </control>
             <control type="button">
+                <description>RecentlyAdded music</description>
                 <visible>Container(300).HasFocus(2) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
                 <onfocus>SetFocus(303)</onfocus>
             </control>
             <control type="button">
-                <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+                <description>Weather info</description>
+                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
                 <onfocus>SetFocus(304)</onfocus>
             </control>
         </control>
         <control type="group">
             <posx>0</posx>
-            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_Menu_pos130r</include>
-            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_Menu_pos100r</include>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_Menu_posy130r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_Menu_posy100r</include>
             <control type="image">
                 <description>Menu background</description>
                 <posx>0</posx>
@@ -192,11 +196,24 @@
             </control>
         </control>
     </include>
+    <include name="Home_RecentlyAdded_Movies_Music_Weather_Info_posy450r">
+        <posy>450r</posy>
+    </include>
+    <include name="Home_RecentlyAdded_Movies_Music_Weather_Info_posy480r">
+        <posy>480r</posy>
+    </include>
+    <include name="Home_RecentlyAdded_TVShows_posy420r">
+        <posy>420r</posy>
+    </include>
+    <include name="Home_RecentlyAdded_TVShows_posy450r">
+        <posy>450r</posy>
+    </include>
     <include name="Home_RecentlyAdded">
         <control type="group">
             <description>RecentlyAdded for Movies</description>
             <posx>350</posx>
-            <posy>450r</posy>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_Weather_Info_posy480r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_Weather_Info_posy450r</include>
             <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
             <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + Control.HasFocus(301)</visible>
             <control type="image">
@@ -258,62 +275,33 @@
                 <preloaditems>2</preloaditems>
                 <itemlayout width="201">
                     <control type="image">
-                        <description>Latest cover reflection</description>
-                        <posx>0</posx>
-                        <posy>275</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
                         <description>Latest cover</description>
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <texture fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
+                        <posx>4</posx>
+                        <posy>4</posy>
+                        <width>173</width>
+                        <height>267</height>
+                        <texture diffuse="roundedmatte.png" fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
                 <focusedlayout width="201">
                     <control type="image">
-                        <description>Latest cover reflection</description>
-                        <posx>0</posx>
-                        <posy>275</posy>
-                        <width>181</width>
-                        <height>275</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
-                        <description>Latest cover</description>
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>181</width>
                         <height>275</height>
-                        <texture fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
+                        <texture>special://skin/media/rounded.png</texture>
+                        <colordiffuse>ff00B8F5</colordiffuse>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>
                     <control type="image">
-                        <description>Latest cover overlay arrow</description>
-                        <posx>75</posx>
-                        <posy>117</posy>
-                        <height>40</height>
-                        <width>50</width>
-                        <texture>special://skin/media/recentlyaddednext.png</texture>
-                        <colordiffuse>cceeeeee</colordiffuse>
-                        <visible>Control.HasFocus(301)</visible>
-                    </control>
-                    <control type="image">
-                        <description>Latest cover overlay arrow focused</description>
-                        <posx>75</posx>
-                        <posy>117</posy>
-                        <height>40</height>
-                        <width>50</width>
-                        <texture>special://skin/media/recentlyaddednext.png</texture>
-                        <colordiffuse>88eeeeee</colordiffuse>
-                        <visible>!Control.HasFocus(301)</visible>
+                        <posx>3</posx>
+                        <posy>3</posy>
+                        <width>175</width>
+                        <height>269</height>
+                        <texture background="true" fallback="noposter.png" diffuse="special://skin/media/roundedmatte.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>
                 </focusedlayout>
                 <content>
@@ -395,7 +383,8 @@
         <control type="group">
             <description>RecentlyAdded for TVShows</description>
             <posx>270</posx>
-            <posy>420r</posy>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_TVShows_posy450r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_TVShows_posy420r</include>
             <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
             <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + Control.HasFocus(302)</visible>
             <control type="image">
@@ -455,62 +444,33 @@
                 <preloaditems>2</preloaditems>
                 <itemlayout width="378">
                     <control type="image">
-                        <description>Latest cover reflection</description>
-                        <posx>0</posx>
-                        <posy>203</posy>
-                        <width>360</width>
-                        <height>203</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
                         <description>Latest cover</description>
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>360</width>
-                        <height>203</height>
-                        <texture fallback="special://skin/media/nothumb.png">$INFO[ListItem.Icon]</texture>
+                        <posx>4</posx>
+                        <posy>4</posy>
+                        <width>352</width>
+                        <height>195</height>
+                        <texture diffuse="episoderoundedmatte.png" fallback="special://skin/media/nothumb.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
                 <focusedlayout width="378">
                     <control type="image">
-                        <description>Latest cover reflection</description>
-                        <posx>0</posx>
-                        <posy>203</posy>
-                        <width>360</width>
-                        <height>203</height>
-                        <texture diffuse="special://skin/media/gradient_cover.png" flipy="true">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
-                        <description>Latest cover</description>
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>360</width>
                         <height>203</height>
-                        <texture fallback="special://skin/media/nothumb.png">$INFO[ListItem.Thumb]</texture>
-                        <aspectratio>stretch</aspectratio>
+                        <texture>special://skin/media/episoderounded.png</texture>
+                        <colordiffuse>ff00B8F5</colordiffuse>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>
                     <control type="image">
-                        <description>Latest cover overlay arrow</description>
-                        <posx>155</posx>
-                        <posy>92</posy>
-                        <height>40</height>
-                        <width>50</width>
-                        <texture>special://skin/media/recentlyaddednext.png</texture>
-                        <colordiffuse>cceeeeee</colordiffuse>
-                        <visible>Control.HasFocus(302)</visible>
-                    </control>
-                    <control type="image">
-                        <description>Latest cover overlay arrow, unfocused</description>
-                        <posx>155</posx>
-                        <posy>92</posy>
-                        <height>40</height>
-                        <width>50</width>
-                        <texture>special://skin/media/recentlyaddednext.png</texture>
-                        <colordiffuse>88eeeeee</colordiffuse>
-                        <visible>!Control.HasFocus(302)</visible>
+                        <posx>4</posx>
+                        <posy>4</posy>
+                        <width>352</width>
+                        <height>195</height>
+                        <texture background="true" fallback="nothumb.png" diffuse="special://skin/media/episoderoundedmatte.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>
                 </focusedlayout>
                 <content>
@@ -592,7 +552,8 @@
         <control type="group">
             <description>RecentlyAdded for Music</description>
             <posx>240</posx>
-            <posy>450r</posy>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_posy480r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_posy450r</include>
             <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
             <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_Music) + Control.HasFocus(303)</visible>
             <control type="image">
@@ -808,7 +769,8 @@
         <control type="group">
             <description>Current weather</description>
             <posx>150</posx>
-            <posy>450r</posy>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_Weather_Info_posy480r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_Weather_Info_posy450r</include>
             <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
             <visible allowhiddenfocus="true">Control.HasFocus(304) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
             <control type="image">
