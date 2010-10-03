@@ -209,13 +209,18 @@
         </font>
         <font>
             <name>Font_Episodes_Title</name>
-            <filename>HelveticaNeueCondensedBold.ttf</filename>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>32</size>
         </font>
         <font>
             <name>Font_Details_Header</name>
             <filename>Helvetica_Neue_Medium.ttf</filename>
             <size>18</size>
+        </font>
+        <font>
+            <name>Font_Rating</name>
+            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
+            <size>20</size>
         </font>
     </fontset>
 </fonts>

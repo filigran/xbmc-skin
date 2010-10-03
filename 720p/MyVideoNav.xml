@@ -37,6 +37,7 @@
             <include>Viewtype_Episode</include> <!-- view id = 503 -->
             <!--<include>MediaListView3</include> --><!-- view id = 503 -->
             <!--<include>MediaListView2</include> --><!-- view id = 504 -->
+            <include>Viewtype_BobEpisodes</include> <!-- view id = 505 & 511 -->
             <!--<include>WideIconView</include> --><!-- view id = 505 -->
             <!--<include>MusicVideoInfoListView</include> --><!-- view id = 511 -->
         </control>
@@ -142,32 +143,32 @@
                 <visible>!Control.IsVisible(503) + Container.Content(Episodes)</visible>
             </control>
             <control type="togglebutton" id="108">
-                <description>Toggle star rating movies</description>
-                <label>Star rating (*)</label>
-                <altlabel>Star rating ( )</altlabel>
-                <onclick>Skin.ToggleSetting(Movies_Show_Star_Rating)</onclick>
+                <description>Toggle rating movies</description>
+                <label>Rating (*)</label>
+                <altlabel>Rating ( )</altlabel>
+                <onclick>Skin.ToggleSetting(Movies_Show_Rating)</onclick>
                 <visible>Container.Content(Movies)</visible>
             </control>
             <control type="togglebutton" id="109">
                 <description>Toggle star rating tvshows</description>
                 <label>Star rating (*)</label>
                 <altlabel>Star rating ( )</altlabel>
-                <onclick>Skin.ToggleSetting(TVShows_Show_Star_Rating)</onclick>
-                <visible>!Control.IsVisible(508) + Container.Content(TVShows)</visible>
+                <onclick>Skin.ToggleSetting(TVShows_Show_Rating)</onclick>
+                <visible>Container.Content(TVShows)</visible>
             </control>
             <control type="togglebutton" id="110">
                 <description>Toggle star rating seasons</description>
                 <label>Star rating (*)</label>
                 <altlabel>Star rating ( )</altlabel>
-                <onclick>Skin.ToggleSetting(Seasons_Show_Star_Rating)</onclick>
-                <visible>Container.Content(Seasons)</visible>
+                <onclick>Skin.ToggleSetting(Seasons_Show_Rating)</onclick>
+                <visible>Control.IsVisible(50) + Container.Content(Seasons)</visible>
             </control>
             <control type="togglebutton" id="111">
                 <description>Toggle star rating episodes</description>
                 <label>Star rating (*)</label>
                 <altlabel>Star rating ( )</altlabel>
-                <onclick>Skin.ToggleSetting(Episodes_Show_Star_Rating)</onclick>
-                <visible>Container.Content(Episodes)</visible>
+                <onclick>Skin.ToggleSetting(Episodes_Show_Rating)</onclick>
+                <visible>Control.IsVisible(50) + Container.Content(Episodes)</visible>
             </control>
             <control type="togglebutton" id="112">
                 <description>Toggle centered/bottom logos</description>
@@ -175,6 +176,13 @@
                 <altlabel>Logos centered ( )</altlabel>
                 <onclick>Skin.ToggleSetting(TVShows_Logos_centered)</onclick>
                 <visible>Control.IsVisible(508) + Container.Content(TVShows)</visible>
+            </control>
+            <control type="togglebutton" id="113">
+                <description>Toggle centered/bottom posters</description>
+                <label>Posters centered (*)</label>
+                <altlabel>Posters centered ( )</altlabel>
+                <onclick>Skin.ToggleSetting(Movies_Bob_Posters_Bottom)</onclick>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies)</visible>
             </control>
         </control>
         <control type="image">
@@ -460,7 +468,7 @@
                 <label>$INFO[Control.GetLabel(109)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.IsVisible(508) + !Control.HasFocus(109) + Container.Content(TVShows)</visible>
+                <visible>!Control.HasFocus(109) + Container.Content(TVShows)</visible>
             </control>
             <control type="label"> <!-- 109 -->
                 <description>Star rating focused tvshows</description>
@@ -476,7 +484,7 @@
                 <label>$INFO[Control.GetLabel(110)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.HasFocus(110) + Container.Content(Seasons)</visible>
+                <visible>Control.IsVisible(50) + !Control.HasFocus(110) + Container.Content(Seasons)</visible>
             </control>
             <control type="label"> <!-- 110 -->
                 <description>Star rating focused seasons</description>
@@ -492,7 +500,7 @@
                 <label>$INFO[Control.GetLabel(111)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.HasFocus(111) + Container.Content(Episodes)</visible>
+                <visible>Control.IsVisible(50) + !Control.HasFocus(111) + Container.Content(Episodes)</visible>
             </control>
             <control type="label"> <!-- 111 -->
                 <description>Star rating focused episodes</description>
@@ -517,6 +525,22 @@
                 <textcolor>blue</textcolor>
                 <font>Font_Top_Menu</font>
                 <visible>Control.HasFocus(112) + Container.Content(TVShows)</visible>
+            </control>
+            <control type="label"> <!-- 113 -->
+                <description>Centered/bottom aligned posters unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(113)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + !Control.HasFocus(113) + Container.Content(Movies)</visible>
+            </control>
+            <control type="label"> <!-- 113 -->
+                <description>Centered/bottom aligned posters focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(113)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(113) + Container.Content(Movies)</visible>
             </control>
         </control>
     </controls>
