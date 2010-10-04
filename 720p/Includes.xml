@@ -144,8 +144,8 @@
             <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(505) | Control.IsVisible(511)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <posx>0</posx>
             <posy>470</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies) + Skin.HasSetting(Movies_Bob_Posters_Bottom)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies) + !Skin.HasSetting(Movies_Bob_Posters_Bottom)">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Bob_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Bob_Posters_Bottom)]]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Bob_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Bob_Posters_Bottom)]]">conditional</animation>
             <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
             <control type="image">
                 <description>Info background</description>

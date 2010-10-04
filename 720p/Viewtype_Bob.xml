@@ -129,8 +129,8 @@
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>120</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,330" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Bob_Posters_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,330" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Bob_Posters_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,330" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Bob_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Bob_Posters_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,330" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Bob_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Bob_Posters_Bottom)]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
             <control type="image">
                 <description>List background</description>

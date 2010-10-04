@@ -524,7 +524,17 @@
                 <posy>111</posy>
                 <width>526</width>
                 <height>296</height>
-                <texture background="true" diffuse="special://skin/media/episoderoundedmatte.png">$INFO[ListItem.Icon]</texture>
+                <texture background="true">special://skin/media/episodeframe.png</texture>
+                <colordiffuse>ff00B8F5</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+                <fadetime>400</fadetime>
+            </control>
+            <control type="image">
+                <posx>40</posx>
+                <posy>115</posy>
+                <width>518</width>
+                <height>288</height>
+                <texture background="true" diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio>stretch</aspectratio>
                 <fadetime>400</fadetime>
             </control>

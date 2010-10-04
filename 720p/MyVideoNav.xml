@@ -178,11 +178,18 @@
                 <visible>Control.IsVisible(508) + Container.Content(TVShows)</visible>
             </control>
             <control type="togglebutton" id="113">
-                <description>Toggle centered/bottom posters</description>
+                <description>Toggle centered/bottom posters movies</description>
                 <label>Posters centered (*)</label>
                 <altlabel>Posters centered ( )</altlabel>
                 <onclick>Skin.ToggleSetting(Movies_Bob_Posters_Bottom)</onclick>
                 <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies)</visible>
+            </control>
+            <control type="togglebutton" id="114">
+                <description>Toggle centered/bottom posters seasons</description>
+                <label>Posters centered (*)</label>
+                <altlabel>Posters centered ( )</altlabel>
+                <onclick>Skin.ToggleSetting(Seasons_Bob_Posters_Bottom)</onclick>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Seasons)</visible>
             </control>
         </control>
         <control type="image">
@@ -527,7 +534,7 @@
                 <visible>Control.HasFocus(112) + Container.Content(TVShows)</visible>
             </control>
             <control type="label"> <!-- 113 -->
-                <description>Centered/bottom aligned posters unfocused</description>
+                <description>Centered/bottom aligned posters movies unfocused</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(113)]</label>
                 <textcolor>white</textcolor>
@@ -535,12 +542,28 @@
                 <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + !Control.HasFocus(113) + Container.Content(Movies)</visible>
             </control>
             <control type="label"> <!-- 113 -->
-                <description>Centered/bottom aligned posters focused</description>
+                <description>Centered/bottom aligned posters movies focused</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(113)]</label>
                 <textcolor>blue</textcolor>
                 <font>Font_Top_Menu</font>
                 <visible>Control.HasFocus(113) + Container.Content(Movies)</visible>
+            </control>
+            <control type="label"> <!-- 114 -->
+                <description>Centered/bottom aligned posters seasons unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(114)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + !Control.HasFocus(114) + Container.Content(Seasons)</visible>
+            </control>
+            <control type="label"> <!-- 114 -->
+                <description>Centered/bottom aligned posters seasons focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(114)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(114) + Container.Content(Seasons)</visible>
             </control>
         </control>
     </controls>
