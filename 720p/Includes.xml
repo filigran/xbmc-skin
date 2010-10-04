@@ -326,7 +326,7 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="(0.0)">$INFO[ListItem.Rating,(,)]</label>
+                    <label>$INFO[ListItem.Rating,(,)]</label>
                 </control>
             </control>
             <control type="group">
@@ -359,7 +359,7 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="(0.0)">$INFO[ListItem.Rating,(,)]</label>
+                    <label>$INFO[ListItem.Rating,(,)]</label>
                 </control>
             </control>
             <control type="group">

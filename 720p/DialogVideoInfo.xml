@@ -1124,7 +1124,8 @@
 						<description>Get logo</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>Hämta logo</label>
-                        <onclick>XBMC.RunScript(script.logo-downloader,mode=solo,logo=True,clearart=True,showthumb=True,showname=$INFO[ListItem.TVShowTitle])</onclick>
+            <onclick>XBMC.RunScript(script.logo-downloader,mode=solo,logo=True,clearart=True,showthumb=True,showname=$INFO[ListItem.TVShowTitle])</onclick>
+            <visible>Container.Content(TVShows)</visible>
 					</control>
 				</control>
 			</control>
