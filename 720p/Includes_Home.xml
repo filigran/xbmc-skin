@@ -280,7 +280,7 @@
                         <posy>4</posy>
                         <width>173</width>
                         <height>267</height>
-                        <texture diffuse="roundedmatte.png" fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
+                        <texture diffuse="postermatte.png" fallback="special://skin/media/noposter.png">$INFO[ListItem.Thumb]</texture>
                         <colordiffuse>88ffffff</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
@@ -291,16 +291,16 @@
                         <posy>0</posy>
                         <width>181</width>
                         <height>275</height>
-                        <texture>special://skin/media/roundedmatte.png</texture>
+                        <texture>special://skin/media/posterframe.png</texture>
                         <colordiffuse>ff00B8F5</colordiffuse>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>
                     <control type="image">
-                        <posx>4</posx>
-                        <posy>4</posy>
-                        <width>173</width>
-                        <height>267</height>
-                        <texture background="true" fallback="noposter.png" diffuse="special://skin/media/roundedmatte.png">$INFO[ListItem.Icon]</texture>
+                        <posx>3</posx>
+                        <posy>3</posy>
+                        <width>175</width>
+                        <height>269</height>
+                        <texture background="true" fallback="noposter.png" diffuse="special://skin/media/postermatte.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>

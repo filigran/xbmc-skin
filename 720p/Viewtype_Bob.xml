@@ -19,6 +19,7 @@
                 <width>116</width>
                 <height>176</height>
                 <texture background="true" diffuse="special://skin/media/postermatte.png">$INFO[ListItem.Icon]</texture>
+                <colordiffuse>99ffffff</colordiffuse>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
             <control type="image">
