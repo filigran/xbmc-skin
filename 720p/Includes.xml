@@ -111,18 +111,48 @@
     </include>
 
     <include name="VideoLibrary_bottom_info">
+        <control type="group" id="905">
+            <description>Buttons for onleft/onright conditions</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>Left/right press from scrollbar 600 when list 50 is visible</description>
+                <visible>Control.IsVisible(50) + Control.HasFocus(600)</visible>
+                <onfocus>SetFocus(60)</onfocus>
+            </control>
+            <control type="button">
+                <description>Left/right press from scrollbar 600 when list 500/504 is visible</description>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(600)</visible>
+                <onfocus>SetFocus(60)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos at bottom and left/right press scrollbar 600</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(508)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos centered and down press from scrollbar 60</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(600)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos at bottom and down press from scrollbar 60</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(60) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(9000)</onfocus>
+            </control>
+        </control>
         <control type="group">
             <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(505) | Control.IsVisible(511)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <posx>0</posx>
-            <posy>440</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies) + !Skin.HasSetting(Movies_Bob_Posters_Bottom)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies) + Skin.HasSetting(Movies_Bob_Posters_Bottom)">conditional</animation>
+            <posy>470</posy>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies) + Skin.HasSetting(Movies_Bob_Posters_Bottom)">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies) + !Skin.HasSetting(Movies_Bob_Posters_Bottom)">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
-                <height>280</height>
+                <height>250</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
             </control>
@@ -242,7 +272,7 @@
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[Container.ShowPlot]</label>
-                    <pagecontrol>601</pagecontrol>
+                    <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Autoscroll_plot)</autoscroll>
                     <visible>Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_fanart)</visible>
                 </control>
@@ -259,7 +289,8 @@
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                    <onleft>60</onleft>
+                    <onleft>905</onleft>
+                    <onright>905</onright>
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
                     <visible allowhiddenfocus="true">Control.HasFocus(600)</visible>
