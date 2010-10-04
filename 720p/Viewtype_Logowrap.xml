@@ -97,7 +97,7 @@
                         <width>40</width>
                         <height>40</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Overlay]</texture>
+                        <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>lime</colordiffuse>
                     </control>
                 </itemlayout>
@@ -117,7 +117,7 @@
                         <width>40</width>
                         <height>40</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Overlay]</texture>
+                        <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>lime</colordiffuse>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="120" time="400">focus</animation>
                     </control>

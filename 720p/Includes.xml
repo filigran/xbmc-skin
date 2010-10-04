@@ -326,7 +326,40 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label fallback="(No rating found)">$INFO[ListItem.Rating,(,)]</label>
+                    <label fallback="(0.0)">$INFO[ListItem.Rating,(,)]</label>
+                </control>
+            </control>
+            <control type="group">
+                <description>Rating</description>
+                <posx>350r</posx>
+                <posy>20</posy>
+                <visible>Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Rating)</visible>
+                <control type="image">
+                    <description>Star rating</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>110</width>
+                    <height>30</height>
+                    <aspectratio>keep</aspectratio>
+                    <aligny>center</aligny>
+                    <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
+                    <colordiffuse>ffeaf188</colordiffuse>
+                </control>
+                <control type="fadelabel">
+                    <description>Text rating</description>
+                    <posx>120</posx>
+                    <posy>-1</posy>
+                    <width>230</width>
+                    <height>30</height>
+                    <font>Font_Rating</font>
+                    <textcolor>ffdddddd</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
+                    <scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label fallback="(0.0)">$INFO[ListItem.Rating,(,)]</label>
                 </control>
             </control>
             <control type="group">
