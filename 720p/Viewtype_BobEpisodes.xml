@@ -1,85 +1,86 @@
 ﻿<includes>
     <include name="BobEpisodes_listcontent">
         <visible>Container.Content(Episodes)</visible>
-        <posx>-80</posx>
-        <posy>40</posy>
+        <posx>-30</posx>
+        <posy>25</posy>
         <width>1441</width>
         <height>720</height>
         <onup>9000</onup>
         <ondown>60</ondown>
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
-        <focusposition>3</focusposition>
+        <focusposition>2</focusposition>
         <orientation>horizontal</orientation>
         <preloaditems>4</preloaditems>
-        <itemlayout height="136" width="200">
+        <itemlayout width="249">
             <control type="image">
                 <posx>0</posx>
-                <posy>0</posy>
-                <width>176</width>
-                <height>116</height>
-                <texture background="true" diffuse="special://skin/media/episoderoundedmatte.png">$INFO[ListItem.Icon]</texture>
+                <posy>30</posy>
+                <width>229</width>
+                <height>129</height>
+                <texture background="true" diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
+                <colordiffuse>99ffffff</colordiffuse>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
             <control type="image">
-                <posx>145</posx>
-                <posy>90</posy>
+                <posx>200</posx>
+                <posy>135</posy>
                 <width>40</width>
                 <height>40</height>
                 <aspectratio>stretch</aspectratio>
-                <texture background="true">$INFO[ListItem.Overlay]</texture>
-                <colordiffuse>lime</colordiffuse>
+                <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
+                <colordiffuse>9900ff00</colordiffuse>
             </control>
         </itemlayout>
-        <focusedlayout height="185" width="270">
+        <focusedlayout width="354">
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>182</width>
-                <height>122</height>
-                <texture>special://skin/media/episoderoundedmatte.png</texture>
+                <width>334</width>
+                <height>188</height>
+                <texture>special://skin/media/episodematte.png</texture>
                 <colordiffuse>ff00B8F5</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
-                <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
             </control>
             <control type="image">
                 <posx>4</posx>
                 <posy>4</posy>
-                <width>174</width>
-                <height>114</height>
-                <texture background="true" diffuse="special://skin/media/roundedmatte.png">$INFO[ListItem.Icon]</texture>
+                <width>326</width>
+                <height>180</height>
+                <texture background="true" diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
-                <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
             </control>
             <control type="image">
-                <posx>145</posx>
-                <posy>90</posy>
-                <width>40</width>
-                <height>40</height>
+                <posx>290</posx>
+                <posy>150</posy>
+                <width>60</width>
+                <height>60</height>
                 <aspectratio>stretch</aspectratio>
-                <texture background="true">$INFO[ListItem.Overlay]</texture>
-                <colordiffuse>lime</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="6,93" start="90" end="140" time="400">focus</animation>
-                <animation reversible="false" effect="zoom" center="auto" end="100" start="130" time="200">unfocus</animation>
+                <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
+                <colordiffuse>ff00ff00</colordiffuse>
+                <animation tween="back" reversible="false" effect="zoom" center="0,0" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="0,0" start="60" end="100" time="400">focus</animation>
             </control>
         </focusedlayout>
     </include>
     <include name="Viewtype_BobEpisodes">
         <control type="group">
             <visible>Control.IsVisible(505) | Control.IsVisible(511)</visible>
+            <animation reversible="false" effect="slide" start="0,0" end="0,357" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + Skin.HasSetting(Episodes_Bob_Thumbs_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,357" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Bob_Thumbs_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>120</posy>
             <control type="image">
                 <description>List background</description>
                 <posx>0</posx>
-                <posy>-10</posy>
+                <posy>0</posy>
                 <width>1280</width>
-                <height>281</height>
+                <height>241</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
             </control>
@@ -87,13 +88,13 @@
                 <onleft>505</onleft>
                 <onright>505</onright>
                 <include>BobEpisodes_listcontent</include>
-                <viewtype label="Bobwrap">bigwrap</viewtype>
+                <viewtype label="BobEpisodesWrap">bigwrap</viewtype>
             </control>
             <control type="fixedlist" id="511">
                 <onleft>511</onleft>
                 <onright>511</onright>
                 <include>BobEpisodes_listcontent</include>
-                <viewtype label="Bobfixed">bigwrap</viewtype>
+                <viewtype label="BobEpisodesFixed">bigwrap</viewtype>
             </control>
             <control type="scrollbar" id="60">
                 <posx>200</posx>
@@ -111,175 +112,8 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(500) + Window.IsVisible(VideoFiles)</visible>
-            <control type="fadelabel">
-                <description>Movie title</description>
-                <posx>300</posx>
-                <posy>460</posy>
-                <width>950</width>
-                <height>35</height>
-                <font>Font_Movie_Title</font>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <scroll>true</scroll>
-                <align>left</align>
-                <aligny>center</aligny>
-                <scrollout>false</scrollout>
-                <pauseatend>5000</pauseatend>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="image">
-                <description>Small fanart border</description>
-                <posx>21</posx>
-                <posy>509</posy>
-                <width>258</width>
-                <height>146</height>
-                <aspectratio>scale</aspectratio>
-                <fadetime>IconCrossfadeTime</fadetime>
-                <texture background="true">special://skin/media/white.png</texture>
-                <colordiffuse>55ffffff</colordiffuse>
-                <visible>Skin.HasSetting(Show_Small_Fanart)</visible>
-            </control>
-            <control type="image">
-                <description>Small fanart image</description>
-                <posx>22</posx>
-                <posy>510</posy>
-                <width>256</width>
-                <height>144</height>
-                <aspectratio aligny="top">scale</aspectratio>
-                <fadetime>IconCrossfadeTime</fadetime>
-                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Show_Small_Fanart)</visible>
-            </control>
-            <control type="grouplist">
-                <description>Media Codec Flagging Images</description>
-                <posx>0</posx>
-                <posy>670</posy>
-                <width>1280</width>
-                <align>center</align>
-                <itemgap>0</itemgap>
-                <orientation>horizontal</orientation>
-                <include>VideoCodecFlaggingConditions</include>
-                <include>AudioCodecFlaggingConditions</include>
-                <include>AspectCodecFlaggingConditions</include>
-                <include>VideoTypeHackFlaggingConditions</include>
-            </control>
-        </control>
-        <control type="group">
-            <visible>Container.Content(Movies)</visible>
-            <control type="label">
-                <description>Totals label</description>
-                <posx>20</posx>
-                <posy>10</posy>
-                <width>300</width>
-                <height>30</height>
-                <font>Font_Movie_totals</font>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <scroll>true</scroll>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[Container(Movies).NumItems,, filmer]</label>
-            </control>
-            <control type="group">
-                <description>Totals labels and values</description>
-                <posx>20</posx>
-                <posy>40</posy>
-                <control type="group">
-                    <description>Totals labels</description>
-                    <control type="label">
-                        <description>Watched movies count</description>
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>250</width>
-                        <height>25</height>
-                        <font>Font_Movie_Info</font>
-                        <textcolor>ffdddddd</textcolor>
-                        <shadowcolor>black</shadowcolor>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <label>Visade: $INFO[Window(Home).Property(Movies.Watched),, st]</label>
-                    </control>
-                    <control type="label">
-                        <description>Unwatched movies count</description>
-                        <posx>0</posx>
-                        <posy>20</posy>
-                        <width>250</width>
-                        <height>25</height>
-                        <font>Font_Movie_Info</font>
-                        <textcolor>ffdddddd</textcolor>
-                        <shadowcolor>black</shadowcolor>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <label>Inte visade: $INFO[Window(Home).Property(Movies.UnWatched),, st]</label>
-                    </control>
-                </control>
-            </control>
-        </control>
-        <control type="group">
             <visible>Control.IsVisible(505) | Control.IsVisible(511)</visible>
             <include>VideoLibrary_bottom_info</include>
-        </control>
-        <control type="group">
-            <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible>
-            <control type="image">
-                <description>Info background</description>
-                <posx>0</posx>
-                <posy>270r</posy>
-                <width>1280</width>
-                <height>270</height>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>55000000</colordiffuse>
-            </control>
-            <control type="label">
-                <description>TVShow title</description>
-                <posx>30</posx>
-                <posy>530</posy>
-                <width>1220</width>
-                <height>35</height>
-                <font>font30_title</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="label">
-                <posx>0</posx>
-                <posy>570</posy>
-                <width>1280</width>
-                <height>35</height>
-                <font>font30</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Genre]</label>
-            </control>
-            <control type="label">
-                <posx>0</posx>
-                <posy>610</posy>
-                <width>1280</width>
-                <height>35</height>
-                <font>font13caps</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
-            </control>
-            <control type="label">
-                <posx>0</posx>
-                <posy>640</posy>
-                <width>1280</width>
-                <height>35</height>
-                <font>Font_Movie_Info</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
-            </control>
         </control>
     </include>
 </includes>

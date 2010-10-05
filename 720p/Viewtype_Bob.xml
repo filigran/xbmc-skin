@@ -29,7 +29,7 @@
                 <height>40</height>
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
-                <colordiffuse>lime</colordiffuse>
+                <colordiffuse>9900ff00</colordiffuse>
             </control>
         </itemlayout>
         <focusedlayout width="190">
@@ -136,9 +136,9 @@
             <control type="image">
                 <description>List background</description>
                 <posx>0</posx>
-                <posy>-10</posy>
+                <posy>-20</posy>
                 <width>1280</width>
-                <height>281</height>
+                <height>291</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
             </control>
@@ -167,61 +167,6 @@
                 <showonepage>false</showonepage>
                 <orientation>horizontal</orientation>
                 <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
-            </control>
-        </control>
-        <control type="group">
-            <visible>Control.IsVisible(500) + Window.IsVisible(VideoFiles)</visible>
-            <control type="fadelabel">
-                <description>Movie title</description>
-                <posx>300</posx>
-                <posy>460</posy>
-                <width>950</width>
-                <height>35</height>
-                <font>Font_Movie_Title</font>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <scroll>true</scroll>
-                <align>left</align>
-                <aligny>center</aligny>
-                <scrollout>false</scrollout>
-                <pauseatend>5000</pauseatend>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="image">
-                <description>Small fanart border</description>
-                <posx>21</posx>
-                <posy>509</posy>
-                <width>258</width>
-                <height>146</height>
-                <aspectratio>scale</aspectratio>
-                <fadetime>IconCrossfadeTime</fadetime>
-                <texture background="true">special://skin/media/white.png</texture>
-                <colordiffuse>55ffffff</colordiffuse>
-                <visible>Skin.HasSetting(Show_Small_Fanart)</visible>
-            </control>
-            <control type="image">
-                <description>Small fanart image</description>
-                <posx>22</posx>
-                <posy>510</posy>
-                <width>256</width>
-                <height>144</height>
-                <aspectratio aligny="top">scale</aspectratio>
-                <fadetime>IconCrossfadeTime</fadetime>
-                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>Skin.HasSetting(Show_Small_Fanart)</visible>
-            </control>
-            <control type="grouplist">
-                <description>Media Codec Flagging Images</description>
-                <posx>0</posx>
-                <posy>670</posy>
-                <width>1280</width>
-                <align>center</align>
-                <itemgap>0</itemgap>
-                <orientation>horizontal</orientation>
-                <include>VideoCodecFlaggingConditions</include>
-                <include>AudioCodecFlaggingConditions</include>
-                <include>AspectCodecFlaggingConditions</include>
-                <include>VideoTypeHackFlaggingConditions</include>
             </control>
         </control>
         <control type="group">
