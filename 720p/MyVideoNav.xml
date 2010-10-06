@@ -1,7 +1,7 @@
 ﻿<window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,500,501,502,508,504,503,505,511,512,513,514</views>
+    <views>50,500,501,502,508,504,503,505,511,512,513,514,515</views>
     <controls>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
@@ -40,6 +40,7 @@
             <include>Viewtype_BobEpisodes</include> <!-- view id = 505 & 511 -->
             <!--<include>WideIconView</include> --><!-- view id = 505 -->
             <!--<include>MusicVideoInfoListView</include> --><!-- view id = 511 -->
+            <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
         </control>
         <include>Global_Time</include>
         <include>Global_Weather</include>
@@ -140,7 +141,7 @@
                 <label>Liten fanart (*)</label>
                 <altlabel>Liten fanart ( )</altlabel>
                 <onclick>Skin.ToggleSetting(Episodes_Show_Small_Fanart)</onclick>
-                <visible>!Control.IsVisible(503) + Container.Content(Episodes)</visible>
+                <visible>!Control.IsVisible(503) + !Control.IsVisible(515) + Container.Content(Episodes)</visible>
             </control>
             <control type="togglebutton" id="108">
                 <description>Toggle rating movies</description>
@@ -450,7 +451,7 @@
                 <label>$INFO[Control.GetLabel(107)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.IsVisible(503) + !Control.HasFocus(107) + Container.Content(Episodes)</visible>
+                <visible>!Control.IsVisible(503) + !Control.IsVisible(515) + !Control.HasFocus(107) + Container.Content(Episodes)</visible>
             </control>
             <control type="label"> <!-- 107 -->
                 <description>Small fanart focused episodes</description>

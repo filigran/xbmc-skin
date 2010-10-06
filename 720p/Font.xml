@@ -222,5 +222,30 @@
             <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
             <size>20</size>
         </font>
+        <font>
+            <name>Font_EpisodeList_Episode_Number</name>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>Font_EpisodeList_Episode_Title</name>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>30</size>
+        </font>
+        <font>
+            <name>Font_EpisodeList_Season</name>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>36</size>
+        </font>
+        <font>
+            <name>Font_EpisodeList_Episode_Count</name>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>Font_EpisodeList_TVShow_Plot</name>
+            <filename>Arial.ttf</filename>
+            <size>18</size>
+        </font>
     </fontset>
 </fonts>
