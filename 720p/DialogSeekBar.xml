@@ -3,13 +3,10 @@
 	<visible>Window.IsActive(fullscreenvideo) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsActive(VideoOSD) | Window.IsActive(fullscreeninfo)]</visible>
 	<animation effect="slide" start="0,80" end="0,0" time="300">WindowOpen</animation>
 	<animation effect="slide" start="0,0" end="0,80" time="300">WindowClose</animation>
-    <coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>630</posy>
-	</coordinates>
 	<controls>
         <control type="group">
+            <posx>0</posx>
+            <posy>630</posy>
             <control type="image">
                 <description>Background image</description>
 				<posx>0</posx>
@@ -23,7 +20,7 @@
                 <posx>512</posx>
                 <posy>-450</posy>
                 <include>OSD_Control_images</include>
-                <visible>!Window.IsTopMost(fullscreeninfo) + !Window.IsTopMost(VideoOSD)</visible>
+                <visible>!Window.IsVisible(fullscreeninfo) + !Window.IsVisible(VideoOSD)</visible>
             </control>
             <control type="label">
 				<description>Cache Label</description>
@@ -121,5 +118,6 @@
 				<label>$INFO[Player.FinishTime,[COLOR=blue]Sluttid:[/COLOR] ]</label>
 			</control>
         </control>
+        <include>Global_Time</include>
     </controls>
 </window>
