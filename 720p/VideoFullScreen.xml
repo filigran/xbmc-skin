@@ -14,7 +14,7 @@
 			<description>row 1 label</description>
 			<posx>50</posx>
 			<posy>40</posy>
-			<label>-</label>
+			<label></label>
 			<align>left</align>
 			<font>font12</font>
 			<include>VisibleFadeEffect</include>

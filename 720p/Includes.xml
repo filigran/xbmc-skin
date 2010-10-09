@@ -244,7 +244,7 @@
                     <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
                     <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
-                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
+                    <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
                 </control>
                 <control type="textbox">
                     <description>Plot if not small fanart</description>

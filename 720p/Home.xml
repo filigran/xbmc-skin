@@ -30,6 +30,7 @@
             <texturefocus>-</texturefocus>
             <visible>!Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + !Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + !Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
         </control>
+        <include>CommonMediaPlayingBackground</include>
         <control type="multiimage">
 			<posx>0</posx>
             <posy>0</posy>
@@ -42,6 +43,7 @@
 			<loop>true</loop>
 			<aspectratio background="true" aligny="top">scale</aspectratio>
 			<imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
+            <visible>!Player.HasMedia</visible>
 			<include>Animation_CommonFade</include>
 		</control>		
         <control type="image">
