@@ -10,174 +10,6 @@
 	</coordinates>
 	<controls>
         <control type="group">
-            <posx>512</posx>
-            <posy>-450</posy>
-            <control type="image">
-                <description>Play image</description>
-                <width>265</width>
-				<height>256</height>
-				<texture>OSD_play.png</texture>
-                <colordiffuse>blue</colordiffuse>
-                <visible>Player.Playing</visible>
-			</control>
-            <control type="image">
-                <description>Paused image</description>
-				<width>256</width>
-				<height>256</height>
-				<texture>special://skin/media/OSD_pause.png</texture>
-                <colordiffuse>blue</colordiffuse>
-                <visible>[Player.Paused + !Player.Caching]</visible>
-			</control>
-            <control type="image">
-                <description>Rewind image</description>
-                <width>256</width>
-                <height>256</height>
-                <texture>OSD_rw.png</texture>
-                <colordiffuse>blue</colordiffuse>
-                <visible>Player.Rewinding</visible>
-            </control>
-			<control type="image">
-                <description>Forward image</description>
-                <width>256</width>
-                <height>256</height>
-                <texture>OSD_ff.png</texture>
-                <colordiffuse>blue</colordiffuse>
-                <visible>Player.Forwarding</visible>
-            </control>
-            
-            <control type="label">
-                <description>Rewind 2x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>2x</label>
-                <visible>Player.Rewinding2x</visible>
-            </control>
-            <control type="label">
-                <description>Rewind 4x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>4x</label>
-                <visible>Player.Rewinding4x</visible>
-            </control>
-            <control type="label">
-                <description>Rewind 8x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>8x</label>
-                <visible>Player.Rewinding8x</visible>
-            </control>
-            <control type="label">
-                <description>Rewind 16x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>16x</label>
-                <visible>Player.Rewinding16x</visible>
-            </control>
-            <control type="label">
-                <description>Rewind 32x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>32x</label>
-                <visible>Player.Rewinding32x</visible>
-            </control>
-
-            <control type="label">
-                <description>Forward 2x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>2x</label>
-                <visible>Player.Forwarding2x</visible>
-            </control>
-            <control type="label">
-                <description>Forward 4x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>4x</label>
-                <visible>Player.Forwarding4x</visible>
-            </control>
-            <control type="label">
-                <description>Forward 8x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>8x</label>
-                <visible>Player.Forwarding8x</visible>
-            </control>
-            <control type="label">
-                <description>Forward 16x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>16x</label>
-                <visible>Player.Forwarding16x</visible>
-            </control>
-            <control type="label">
-                <description>Forward 32x</description>
-				<posx>0</posx>
-				<posy>256</posy>
-				<width>256</width>
-				<height>20</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_OSD_speed</font>
-				<textcolor>blue</textcolor>
-				<label>32x</label>
-                <visible>Player.Forwarding32x</visible>
-            </control>
-        </control>
-		<control type="group">
             <control type="image">
                 <description>Background image</description>
 				<posx>0</posx>
@@ -187,6 +19,12 @@
 				<texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
 			</control>
+            <control type="group">
+                <posx>512</posx>
+                <posy>-450</posy>
+                <include>OSD_Control_images</include>
+                <visible>!Window.IsTopMost(fullscreeninfo) + !Window.IsTopMost(VideoOSD)</visible>
+            </control>
             <control type="label">
 				<description>Cache Label</description>
 				<posx>20</posx>

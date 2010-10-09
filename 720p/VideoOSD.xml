@@ -6,6 +6,11 @@
 		<posy>505</posy>
 	</coordinates>
     <controls>
+        <control type="group">
+            <posx>512</posx>
+            <posy>-325</posy>
+            <include>OSD_Control_images</include>
+        </control>
 		<control type="group">
 			<animation effect="slide" start="0,250" end="0,0" time="300">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,250" time="300">WindowClose</animation>
@@ -18,7 +23,7 @@
 				<texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
 			</control>
-			<control type="group" id="200">
+            <control type="group" id="200">
 				<posx>417</posx>
 				<posy>4</posy>
 				<control type="button" id="700">

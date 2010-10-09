@@ -6,7 +6,13 @@
 		<posy>357</posy>
 	</coordinates>
     <controls>
-		<control type="group">
+        <control type="group">
+            <posx>512</posx>
+            <posy>-177</posy>
+            <include>OSD_Control_images</include>
+            <visible>!Window.IsTopMost(VideoOSD)</visible>
+        </control>
+        <control type="group">
             <visible>Window.IsActive(fullscreenvideo) + !Window.IsActive(videoosd)</visible>
             <animation effect="slide" start="0,357" end="0,0" time="300">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="0,357" time="300">WindowClose</animation>
@@ -21,7 +27,7 @@
 				<texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
 			</control>
-			<control type="image">
+            <control type="image">
 				<description>Non Movie cover image</description>
 				<posx>10</posx>
 				<posy>0</posy>
