@@ -1,0 +1,160 @@
+<includes>
+    <include name="Viewtype_LauncherWide">
+        <control type="group">
+            <visible>Control.IsVisible(517)</visible>
+            <include>VisibleFadeEffect</include>
+            <posx>400</posx>
+            <posy>0</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>880</width>
+                <height>720</height>
+                <aspectratio>stretch</aspectratio>
+                <aligny>center</aligny>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="panel" id="517">
+                <visible>Window.IsActive(1)</visible>
+                <posx>80</posx>
+                <posy>100</posy>
+                <width>748</width>
+                <height>560</height>
+                <onleft>9000</onleft>
+                <onright>60</onright>
+                <onup>517</onup>
+                <ondown>517</ondown>
+                <scrolltime>0</scrolltime>
+                <pagecontrol>60</pagecontrol>
+                <viewtype label="LauncherWide">list</viewtype>
+                <orientation>vertical</orientation>
+                <itemlayout height="140" width="187">
+                    <control type="image">
+                        <posx>4</posx>
+                        <posy>3</posy>
+                        <width>159</width>
+                        <height>116</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
+                        <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
+                        <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="140" width="187">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>167</width>
+                        <height>120</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>special://skin/media/episodeframe.png</texture>
+                        <colordiffuse>ff00b8f5</colordiffuse>
+                        <animation effect="zoom" center="auto" start="50" end="100" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>4</posx>
+                        <posy>3</posy>
+                        <width>159</width>
+                        <height>116</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
+                        <animation effect="zoom" center="auto" start="50" end="100" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Control.IsVisible(517) + Window.IsVisible(1)</visible>
+            <control type="scrollbar" id="60">
+                <posx>15r</posx>
+                <posy>100</posy>
+                <width>5</width>
+                <height>560</height>
+                <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                <onleft>517</onleft>
+                <onright>9000</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible allowhiddenfocus="true">Control.IsVisible(517) + Control.HasFocus(60)</visible>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>400</width>
+                <height>720</height>
+                <aspectratio>stretch</aspectratio>
+                <aligny>center</aligny>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>aa000000</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>398</posx>
+                <posy>0</posy>
+                <width>2</width>
+                <height>720</height>
+                <aspectratio>stretch</aspectratio>
+                <aligny>center</aligny>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+            </control>
+            <control type="label">
+                <description>Game count</description>
+                <posx>38</posx>
+                <posy>15</posy>
+                <width>250</width>
+                <height>30</height>
+                <font>Font_EpisodeList_Episode_Count</font>
+                <textcolor>ffdddddd</textcolor>
+                <align>left</align>
+                <label>$INFO[Container(517).NumItems,, spel]</label>
+            </control>
+            <control type="image">
+                <description>Game screenshot border</description>
+                <posx>38</posx>
+                <posy>60</posy>
+                <width>320</width>
+                <height>180</height>
+                <texture background="true">special://skin/media/episodeframe.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+            </control>
+            <control type="image">
+                <description>Game screenshot</description>
+                <posx>38</posx>
+                <posy>60</posy>
+                <width>320</width>
+                <height>180</height>
+                <bordersize>4</bordersize>
+                <fadetime>400</fadetime>
+                <texture fallback="special://skin/media/nothumb.png" diffuse="special://skin/media/episodematte.png" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+            </control>
+            <control type="label">
+                <description>Game name</description>
+                <posx>38</posx>
+                <posy>240</posy>
+                <width>350</width>
+                <height>100</height>
+                <wrapmultiline>true</wrapmultiline>
+                <aligny>center</aligny>
+                <label>$INFO[ListItem.Title]</label>
+                <font>Font_EpisodeList_Episode_Count</font>
+                <textcolor>ff00b8f5</textcolor>
+            </control>
+            <control type="textbox">
+                <posx>38</posx>
+                <posy>330</posy>
+                <width>320</width>
+                <height>345</height>
+                <align>left</align>
+                <info>ListItem.Plot</info>
+                <font>Font_Movie_Plot</font>
+                <textcolor>white</textcolor>
+                <autoscroll delay="7000" time="3000" repeat="10000" />
+                <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+                <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
+            </control>
+        </control>
+    </include>
+</includes>

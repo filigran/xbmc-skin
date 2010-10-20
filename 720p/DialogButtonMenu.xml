@@ -229,7 +229,7 @@
 					<height>90</height>
 					<texturefocus>special://skin/media/ButtonMenuSettingsFO.png</texturefocus>
 					<texturenofocus>special://skin/media/ButtonMenuSettingsNF.png</texturenofocus>
-					<onclick>ActivateWindow(Settings)</onclick>
+					<onclick>ActivateWindow(FileManager)</onclick>
 					<pulseonselect>no</pulseonselect>
 					<font>-</font>
 					<label>5</label>

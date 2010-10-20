@@ -152,12 +152,20 @@
                         <onclick>ActivateWindow(Programs,Addons,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Addons)</visible>
                     </item>
+                    <item id="14">
+                        <description>Launcher</description>
+                        <label>TV-Spel</label>
+                        <icon>special://skin/media/games.png</icon>
+                        <thumb fallback="special://skin/media/games.jpg">$INFO[Skin.String(home_custom_back_games_folder)]</thumb>
+                        <onclick>ActivateWindow(10001,plugin://plugin.program.launcher)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Games)</visible>
+                    </item>
                     <item id="8">
                         <description>Settings</description>
                         <label>5</label>
                         <icon>special://skin/media/settings.png</icon>
                         <thumb fallback="special://skin/media/settings.jpg">$INFO[Skin.String(home_custom_back_settings_folder)]</thumb>
-                        <onclick>ActivateWindow(settings,return)</onclick>
+                        <onclick>ActivateWindow(Settings)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Settings)</visible>
                     </item>
                     <item id="10">

@@ -6,6 +6,20 @@
         <posy>357</posy>
     </coordinates>
     <controls>
+        <control type="group" id="600">
+            <description>Scrollbar selector</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>VideoPlayer content = episodes</description>
+                <visible>VideoPlayer.Content(Episodes)</visible>
+                <onfocus>SetFocus(601)</onfocus>
+            </control>
+            <control type="button">
+                <description>VideoPlayer content = movies</description>
+                <visible>VideoPlayer.Content(Movies)</visible>
+                <onfocus>SetFocus(602)</onfocus>
+            </control>
+        </control>
         <control type="group">
             <posx>512</posx>
             <posy>-177</posy>
@@ -27,22 +41,31 @@
                 <texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
             </control>
-            <control type="image">
-                <description>Non Movie cover image</description>
-                <posx>10</posx>
-                <posy>0</posy>
-                <width>340</width>
-                <height>260</height>
-                <fadetime>200</fadetime>
-                <texture background="true">$INFO[VideoPlayer.Cover]</texture>
-                <aspectratio aligny="bottom">keep</aspectratio>
-                <bordertexture border="8">ThumbShadow.png</bordertexture>
-                <bordersize>8</bordersize>
-                <visible>!VideoPlayer.Content(Movies)</visible>
+            <control type="group">
+                <visible>VideoPlayer.Content(Episodes)</visible>
+                <posx>30</posx>
+                <posy>60</posy>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>299</width>
+                    <height>168</height>
+                    <texture>special://skin/media/episodeframe.png</texture>
+                    <colordiffuse>ff00B8F5</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>3</posx>
+                    <posy>3</posy>
+                    <width>294</width>
+                    <height>163</height>
+                    <texture background="true" diffuse="episodematte.png">$INFO[VideoPlayer.Cover]</texture>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                </control>
             </control>
             <control type="group">
                 <posx>30</posx>
                 <posy>10</posy>
+                <visible>VideoPlayer.Content(Movies)</visible>
                 <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -63,146 +86,117 @@
                 </control>
             </control>
             <control type="group">
-                <posx>230</posx>
+                <posx>360</posx>
                 <posy>20</posy>
+                <visible>VideoPlayer.Content(Episodes)</visible>
                 <control type="label">
-                    <posx>10</posx>
+                    <description>Title</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>880</width>
+                    <height>30</height>
+                    <label>$INFO[VideoPlayer.Title]</label>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_Movie_Title</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <description>Year, Series and episode number</description>
+                    <posx>0</posx>
                     <posy>35</posy>
                     <width>880</width>
                     <height>30</height>
-                    <label>$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, - ]</label>
+                    <label>$INFO[VideoPlayer.Year,, / ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Season,Säsong ]$INFO[VideoPlayer.Episode,$COMMA avsnitt]</label>
+                    <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>font13</font>
-                    <textcolor>grey</textcolor>
-                    <shadowcolor>black</shadowcolor>
-                    <visible>VideoPlayer.Content(MusicVideos)</visible>
+                    <font>Font_Movie_Plot</font>
+                    <textcolor>blue</textcolor>
                 </control>
-                <control type="group">
-                    <posx>130</posx>
-                    <posy>0</posy>
-                    <control type="label">
-                        <description>Title</description>
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>880</width>
-                        <height>30</height>
-                        <label>$INFO[VideoPlayer.Title]</label>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Movie_Title</font>
-                        <textcolor>white</textcolor>
-                    </control>
-                    <control type="label">
-                        <description>Series and episode number</description>
-                        <posx>0</posx>
-                        <posy>35</posy>
-                        <width>880</width>
-                        <height>30</height>
-                        <label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Season,Säsong ]$INFO[VideoPlayer.Episode,$COMMA avsnitt]</label>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Movie_Plot</font>
-                        <textcolor>grey</textcolor>
-                    </control>
-                    <control type="label">
-                        <description>Year</description>
-                        <posx>0</posx>
-                        <posy>70</posy>
-                        <width>100</width>
-                        <height>30</height>
-                        <label>$INFO[VideoPlayer.Year]</label>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Movie_Plot</font>
-                        <textcolor>blue</textcolor>
-                    </control>
-                    <control type="textbox">
-                        <description>Plot</description>
-                        <posx>0</posx>
-                        <posy>105</posy>
-                        <width>570</width>
-                        <height>135</height>
-                        <font>Font_Movie_Plot</font>
-                        <align>justify</align>
-                        <textcolor>white</textcolor>
-                        <label>$INFO[VideoPlayer.Plot]</label>
-                        <pagecontrol>600</pagecontrol>
-                        <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Episodes_Autoscroll_plot)</autoscroll>
-                    </control>
-                    <control type="scrollbar" id="600">
-                        <description>Plot scrollbar</description>
-                        <posx>580</posx>
-                        <posy>105</posy>
-                        <width>5</width>
-                        <height>135</height>
-                        <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-                        <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-                        <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                        <showonepage>true</showonepage>
-                        <orientation>vertical</orientation>
-                        <visible allowhiddenfocus="true">Control.HasFocus(600)</visible>
-                    </control>
+                <control type="textbox">
+                    <description>Plot</description>
+                    <posx>0</posx>
+                    <posy>70</posy>
+                    <width>570</width>
+                    <height>170</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[VideoPlayer.Plot]</label>
+                    <pagecontrol>601</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Episodes_Autoscroll_plot)</autoscroll>
                 </control>
-                <control type="group">
+                <control type="scrollbar" id="601">
+                    <description>Plot scrollbar</description>
+                    <posx>580</posx>
+                    <posy>70</posy>
+                    <width>5</width>
+                    <height>170</height>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">VideoPlayer.Content(Episodes) + Control.HasFocus(601)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <posx>230</posx>
+                <posy>20</posy>
+                <visible>VideoPlayer.Content(Movies)</visible>
+                <control type="label">
+                    <description>Title</description>
                     <posx>0</posx>
                     <posy>0</posy>
-                    <visible>VideoPlayer.Content(Movies)</visible>
-                    <control type="label">
-                        <description>Title</description>
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>880</width>
-                        <height>30</height>
-                        <label>$INFO[VideoPlayer.Title]</label>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Movie_Title</font>
-                        <textcolor>white</textcolor>
-                    </control>
-                    <control type="label">
-                        <description>Year</description>
-                        <posx>0</posx>
-                        <posy>35</posy>
-                        <width>880</width>
-                        <height>30</height>
-                        <label>$INFO[VideoPlayer.Year]</label>
-                        <scroll>true</scroll>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Movie_Plot</font>
-                        <textcolor>blue</textcolor>
-                    </control>
-                    <control type="textbox">
-                        <description>Plot</description>
-                        <posx>0</posx>
-                        <posy>70</posy>
-                        <width>700</width>
-                        <height>170</height>
-                        <font>Font_Movie_Plot</font>
-                        <align>justify</align>
-                        <textcolor>white</textcolor>
-                        <label>$INFO[VideoPlayer.Plot]</label>
-                        <pagecontrol>600</pagecontrol>
-                        <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Movies_Autoscroll_plot)</autoscroll>
-                    </control>
-                    <control type="scrollbar" id="601">
-                        <description>Plot scrollbar</description>
-                        <posx>710</posx>
-                        <posy>70</posy>
-                        <width>5</width>
-                        <height>170</height>
-                        <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-                        <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-                        <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                        <showonepage>true</showonepage>
-                        <orientation>vertical</orientation>
-                        <visible allowhiddenfocus="true">Control.HasFocus(601)</visible>
-                    </control>
+                    <width>880</width>
+                    <height>30</height>
+                    <label>$INFO[VideoPlayer.Title]</label>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_Movie_Title</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <description>Year</description>
+                    <posx>0</posx>
+                    <posy>35</posy>
+                    <width>880</width>
+                    <height>30</height>
+                    <label>$INFO[VideoPlayer.Year]</label>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_Movie_Plot</font>
+                    <textcolor>blue</textcolor>
+                </control>
+                <control type="textbox">
+                    <description>Plot</description>
+                    <posx>0</posx>
+                    <posy>70</posy>
+                    <width>700</width>
+                    <height>170</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[VideoPlayer.Plot]</label>
+                    <pagecontrol>602</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Movies_Autoscroll_plot)</autoscroll>
+                </control>
+                <control type="scrollbar" id="602">
+                    <description>Plot scrollbar</description>
+                    <posx>710</posx>
+                    <posy>70</posy>
+                    <width>5</width>
+                    <height>170</height>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">VideoPlayer.Content(Movies) + Control.HasFocus(602)</visible>
                 </control>
             </control>
             <control type="grouplist">

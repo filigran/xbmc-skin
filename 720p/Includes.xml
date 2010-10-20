@@ -5,6 +5,9 @@
     <include file="ViewsFileMode.xml" />
     <include file="ViewsPictures.xml" />
     <include file="ViewsAddonBrowser.xml" />
+    <include file="Viewtype_LauncherSquare.xml" />
+    <include file="Viewtype_LauncherWide.xml" />
+    <include file="Viewtype_LauncherTall.xml" />
     <include file="IncludesCodecFlagging.xml" />
     <include file="IncludesHomeRecentlyAdded.xml" />
     <include file="Includes_Home.xml" />
@@ -782,7 +785,7 @@
             <colordiffuse>5500b8f5</colordiffuse>
             <visible>Player.Forwarding</visible>
         </control>
-        
+
         <control type="label">
             <description>Rewind 2x</description>
             <posx>0</posx>
@@ -1007,6 +1010,19 @@
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
+        </control>
+    </include>
+    <include name="CommonGamesBackground">
+        <control type="multiimage">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath fallback="special://skin/backgrounds/games.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Games_Folder)]</imagepath>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <colordiffuse>88ffffff</colordiffuse>
         </control>
     </include>
     <include name="CommonScriptBackground">
