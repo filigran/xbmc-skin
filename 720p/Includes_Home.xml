@@ -157,7 +157,7 @@
                         <label>TV-Spel</label>
                         <icon>special://skin/media/games.png</icon>
                         <thumb fallback="special://skin/media/games.jpg">$INFO[Skin.String(home_custom_back_games_folder)]</thumb>
-                        <onclick>ActivateWindow(10001,plugin://plugin.program.launcher)</onclick>
+                        <onclick>ActivateWindow(10001,plugin://plugin.program.launcher,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Games)</visible>
                     </item>
                     <item id="8">
@@ -561,8 +561,8 @@
         <control type="group">
             <description>RecentlyAdded for Music</description>
             <posx>240</posx>
-            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_posy480r</include>
-            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_posy450r</include>
+            <include condition="System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_Weather_posy480r</include>
+            <include condition="!System.GetBool(lookandfeel.enablerssfeeds)">Home_RecentlyAdded_Movies_Music_Weather_posy450r</include>
             <animation effect="slide" time="300" start="0,-1000" end="0,0">VisibleChange</animation>
             <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_Music) + Control.HasFocus(303)</visible>
             <control type="image">

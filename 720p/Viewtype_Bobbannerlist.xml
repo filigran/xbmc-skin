@@ -1,5 +1,33 @@
 ﻿<includes>
     <include name="Viewtype_Bobbannerlist">
+        <control type="group" id="903">
+            <description>Buttons for onleft conditions</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>left press scrollbar 600 or 601</description>
+                <visible>Control.IsVisible(501) + [Control.HasFocus(600) | Control.HasFocus(601)]</visible>
+                <onfocus>SetFocus(60)</onfocus>
+            </control>
+        </control>
+        <control type="group" id="904">
+            <description>Buttons for onright conditions</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>right press scrollbar 60 if small fanart</description>
+                <visible>Control.IsVisible(501) + Control.HasFocus(60) + [[Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Small_Fanart)]]</visible>
+                <onfocus>SetFocus(600)</onfocus>
+            </control>
+            <control type="button">
+                <description>right press scrollbar 60 if not small fanart</description>
+                <visible>Control.IsVisible(501) + Control.HasFocus(60) + [[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_Small_Fanart)]]</visible>
+                <onfocus>SetFocus(601)</onfocus>
+            </control>
+            <control type="button">
+                <description>right press scrollbar 600 or 601</description>
+                <visible>Control.IsVisible(501) + [Control.HasFocus(600) | Control.HasFocus(601)]</visible>
+                <onfocus>SetFocus(60)</onfocus>
+            </control>
+        </control>
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
             <include>VisibleFadeEffect</include>
@@ -129,7 +157,7 @@
                 <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                 <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
                 <onleft>501</onleft>
-                <onright>600</onright>
+                <onright>904</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
                 <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>

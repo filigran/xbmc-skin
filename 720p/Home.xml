@@ -43,8 +43,7 @@
 			<loop>true</loop>
 			<aspectratio background="true" aligny="top">scale</aspectratio>
 			<imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
-            <visible>!Player.HasMedia</visible>
-			<include>Animation_CommonFade</include>
+      <visible>!Player.HasMedia</visible>
 		</control>		
         <control type="image">
             <description>Fanart overlay</description>

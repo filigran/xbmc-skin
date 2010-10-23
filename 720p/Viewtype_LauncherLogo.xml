@@ -1,0 +1,95 @@
+﻿<includes>
+    <include name="Viewtype_LauncherLogo">
+        <control type="group">
+            <visible>Control.IsVisible(519)</visible>
+            <include>VisibleFadeEffect</include>
+            <posx>0</posx>
+            <posy>200</posy>
+            <control type="image">
+                <description>List background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>320</height>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="fixedlist" id="519">
+                <visible>Window.IsActive(1)</visible>
+                <posx>-57</posx>
+                <posy>50</posy>
+                <width>1350</width>
+                <onleft>519</onleft>
+                <onright>519</onright>
+                <onup>9000</onup>
+                <ondown>61</ondown>
+                <viewtype label="LauncherLogo">biglist</viewtype>
+                <pagecontrol>61</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <focusposition>2</focusposition>
+                <orientation>horizontal</orientation>
+                <preloaditems>4</preloaditems>
+                <itemlayout width="290">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>230</width>
+                        <height>230</height>
+                        <aspectratio>keep</aspectratio>
+                        <colordiffuse>88ffffff</colordiffuse>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="290">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>230</width>
+                        <height>230</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="70" end="120" time="400">focus</animation>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="group">
+                <posx>0</posx>
+                <posy>330</posy>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>0</posy>
+                    <width>1260</width>
+                    <height>30</height>
+                    <font>Font_TVShows_Logowrap_Episodes</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>50</posy>
+                    <width>1260</width>
+                    <height>30</height>
+                    <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Plot,, spel]</label>
+                </control>
+            </control>
+            <control type="scrollbar" id="61">
+                <posx>140</posx>
+                <posy>300</posy>
+                <width>1000</width>
+                <height>5</height>
+                <texturesliderbackground>special://skin/media/scrollbar_horizontal_background.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/scrollbar_horizontal_bar.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/scrollbar_horizontal_bar_focus.png</texturesliderbarfocus>
+                <onup>519</onup>
+                <ondown>9000</ondown>
+                <showonepage>false</showonepage>
+                <orientation>horizontal</orientation>
+                <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(61)</visible>
+            </control>
+        </control>
+    </include>
+</includes>

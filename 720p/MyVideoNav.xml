@@ -1,7 +1,7 @@
 ﻿<window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,500,501,502,508,504,503,505,511,512,513,514,515</views>
+    <views>50,500,504,501,502,508,503,512,513,514,515</views>
     <controls>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
@@ -10,10 +10,54 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
+            <aspectratio aligny="top">stretch</aspectratio>
+            <fadetime>IconCrossfadeTime</fadetime>
+            <texture background="true" fallback="special://skin/backgrounds/movies.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
+            <visible>!Player.HasVideo + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Fanart)]]</visible>
+        </control>
+        <control type="image">
+            <description>Default image if no fanart for movies</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-            <visible>!Player.HasVideo + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Fanart)]]</visible>
+            <texture background="true" fallback="special://skin/backgrounds/movies.jpg">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</texture>
+            <visible>!Player.HasVideo + [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Fanart)]</visible>
+        </control>
+        <control type="image">
+            <description>Default image if no fanart for tvshows</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio aligny="top">scale</aspectratio>
+            <fadetime>IconCrossfadeTime</fadetime>
+            <texture background="true" fallback="special://skin/backgrounds/videos.jpg">$INFO[Skin.String(Home_Custom_Back_TVShows_Folder)]</texture>
+            <visible>!Player.HasVideo + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Fanart)]</visible>
+        </control>
+        <control type="image">
+            <description>Default image if no fanart for seasons</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio aligny="top">scale</aspectratio>
+            <fadetime>IconCrossfadeTime</fadetime>
+            <texture background="true" fallback="special://skin/backgrounds/videos.jpg">$INFO[Skin.String(Home_Custom_Back_Seasons_Folder)]</texture>
+            <visible>!Player.HasVideo + [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_Fanart)]</visible>
+        </control>
+        <control type="image">
+            <description>Default image if no fanart for episodes</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio aligny="top">scale</aspectratio>
+            <fadetime>IconCrossfadeTime</fadetime>
+            <texture background="true" fallback="special://skin/backgrounds/videos.jpg">$INFO[Skin.String(Home_Custom_Back_Episodes_Folder)]</texture>
+            <visible>!Player.HasVideo + [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Fanart)]</visible>
         </control>
         <control type="image">
             <description>Background diffuser</description>
@@ -26,9 +70,9 @@
         </control>
         <control type="group">
             <include>Window_OpenClose_Animation</include>
-            <include>Viewtype_Boblist</include> <!-- view id = 50 -->
+            <include>Viewtype_List</include> <!-- view id = 50 -->
             <!--<include>CommonRootView</include> --> <!-- view id = 50 -->
-            <include>Viewtype_Bob</include> <!-- view id = 500 & 504 -->
+            <include>Viewtype_Poster</include> <!-- view id = 500 & 504 -->
             <!--<include>ThumbnailView</include> --><!-- view id = 500 -->
             <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
             <!--<include>PosterWrapView</include> --><!-- view id = 501 -->
@@ -37,7 +81,6 @@
             <include>Viewtype_Episode</include> <!-- view id = 503 -->
             <!--<include>MediaListView3</include> --><!-- view id = 503 -->
             <!--<include>MediaListView2</include> --><!-- view id = 504 -->
-            <include>Viewtype_BobEpisodes</include> <!-- view id = 505 & 511 -->
             <!--<include>WideIconView</include> --><!-- view id = 505 -->
             <!--<include>MusicVideoInfoListView</include> --><!-- view id = 511 -->
             <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
@@ -169,7 +212,7 @@
                 <label>Star rating (*)</label>
                 <altlabel>Star rating ( )</altlabel>
                 <onclick>Skin.ToggleSetting(Episodes_Show_Rating)</onclick>
-                <visible>Control.IsVisible(50) + Container.Content(Episodes)</visible>
+                <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes)</visible>
             </control>
             <control type="togglebutton" id="112">
                 <description>Toggle centered/bottom logos</description>
@@ -182,22 +225,22 @@
                 <description>Toggle centered/bottom posters movies</description>
                 <label>Posters centered (*)</label>
                 <altlabel>Posters centered ( )</altlabel>
-                <onclick>Skin.ToggleSetting(Movies_Bob_Posters_Bottom)</onclick>
+                <onclick>Skin.ToggleSetting(Movies_Posters_Bottom)</onclick>
                 <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Movies)</visible>
             </control>
             <control type="togglebutton" id="114">
                 <description>Toggle centered/bottom posters seasons</description>
                 <label>Posters centered (*)</label>
                 <altlabel>Posters centered ( )</altlabel>
-                <onclick>Skin.ToggleSetting(Seasons_Bob_Posters_Bottom)</onclick>
+                <onclick>Skin.ToggleSetting(Seasons_Posters_Bottom)</onclick>
                 <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Seasons)</visible>
             </control>
             <control type="togglebutton" id="115">
                 <description>Toggle centered/bottom thumbs episodes</description>
                 <label>Thumbs centered (*)</label>
                 <altlabel>Thumbs centered ( )</altlabel>
-                <onclick>Skin.ToggleSetting(Episodes_Bob_Thumbs_Bottom)</onclick>
-                <visible>[Control.IsVisible(505) | Control.IsVisible(511)] + Container.Content(Episodes)</visible>
+                <onclick>Skin.ToggleSetting(Episodes_Thumbs_Bottom)</onclick>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes)</visible>
             </control>
         </control>
         <control type="image">
@@ -207,9 +250,9 @@
             <width>1280</width>
             <height>40</height>
             <texture>special://skin/media/white.png</texture>
-            <colordiffuse>ff2d2d2d</colordiffuse>
-            <animation reversible="false" effect="slide" start="0,-40" end="0,0" tween="back" easing="out" time="400">visible</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-40" tween="back" easing="out" time="400">hidden</animation>
+            <colordiffuse>dd000000</colordiffuse>
+            <animation reversible="false" effect="slide" start="0,-40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-40" easing="out" time="400">hidden</animation>
             <visible>ControlGroup(9000).HasFocus</visible>
         </control>
         <control type="grouplist">
@@ -218,8 +261,8 @@
             <posy>10</posy>
             <orientation>horizontal</orientation>
             <itemgap>10</itemgap>
-            <animation reversible="false" effect="slide" start="0,-40" end="0,0" tween="back" easing="out" time="400">visible</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-40" tween="back" easing="out" time="400">hidden</animation>
+            <animation reversible="false" effect="slide" start="0,-40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-40" easing="out" time="400">hidden</animation>
             <visible>ControlGroup(9000).HasFocus</visible>
             <control type="label"> <!-- 2 -->
                 <description>Viewtype toggle unfocused</description>
@@ -515,7 +558,7 @@
                 <label>$INFO[Control.GetLabel(111)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>Control.IsVisible(50) + !Control.HasFocus(111) + Container.Content(Episodes)</visible>
+                <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(504)] + !Control.HasFocus(111) + Container.Content(Episodes)</visible>
             </control>
             <control type="label"> <!-- 111 -->
                 <description>Star rating focused episodes</description>
@@ -579,7 +622,7 @@
                 <label>$INFO[Control.GetLabel(115)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>[Control.IsVisible(505) | Control.IsVisible(511)] + !Control.HasFocus(115) + Container.Content(Episodes)</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + !Control.HasFocus(115) + Container.Content(Episodes)</visible>
             </control>
             <control type="label"> <!-- 115 -->
                 <description>Centered/bottom aligned thumbs episodes focused</description>

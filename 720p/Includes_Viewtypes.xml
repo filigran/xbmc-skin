@@ -1,0 +1,629 @@
+<includes>
+    <include name="VideoLibrary_bottom_info">
+        <control type="group">
+            <description>Extra info for views posterfixed/posterwrap, list, listbanner and episodelist</description>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(515)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            <posx>0</posx>
+            <posy>470</posy>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-318" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-318" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
+            <control type="image">
+                <description>Info background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>250</height>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="fadelabel">
+                <description>Title if not episodes (episodes has the number too)</description>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>890</width>
+                <height>68</height>
+                <font>Font_Movie_Title</font>
+                <textcolor>ffdddddd</textcolor>
+                <scroll>true</scroll>
+                <align>center</align>
+                <aligny>center</aligny>
+                <scrollout>false</scrollout>
+                <pauseatend>5000</pauseatend>
+                <label>$INFO[ListItem.Title]</label>
+                <visible>!Container.Content(Episodes)</visible>
+            </control>
+            <control type="fadelabel">
+                <description>Title + number if episodes</description>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>890</width>
+                <height>68</height>
+                <font>Font_Movie_Title</font>
+                <textcolor>ffdddddd</textcolor>
+                <scroll>true</scroll>
+                <align>center</align>
+                <aligny>center</aligny>
+                <scrollout>false</scrollout>
+                <pauseatend>5000</pauseatend>
+                <label>$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</label>
+                <visible>Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <description>Small fanart border</description>
+                <posx>21</posx>
+                <posy>73</posy>
+                <width>258</width>
+                <height>146</height>
+                <aspectratio>scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true">special://skin/media/white.png</texture>
+                <colordiffuse>55ffffff</colordiffuse>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
+            </control>
+            <control type="image">
+                <description>Small fanart image if not view 515 (episodelist)</description>
+                <posx>22</posx>
+                <posy>74</posy>
+                <width>256</width>
+                <height>144</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <visible>!Control.IsVisible(515) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]]</visible>
+            </control>
+            <control type="image">
+                <description>Small thumb image if view 515 (episodelist)</description>
+                <posx>22</posx>
+                <posy>74</posy>
+                <width>256</width>
+                <height>144</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="Fanart_Fallback_Small.jpg">$INFO[ListItem.Icon]</texture>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <visible>Control.IsVisible(515) + Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)</visible>
+            </control>
+            <control type="group">
+                <description>Plot</description>
+                <posx>300</posx>
+                <posy>70</posy>
+                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <control type="textbox">
+                    <description>Plot for movies/tvshows/episodes if small fanart</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>500</width>
+                    <height>147</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <pagecontrol>600</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                    <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
+                </control>
+                <control type="textbox">
+                    <description>Plot for movies/tvshows/episodes if not small fanart</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>756</width>
+                    <height>147</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <pagecontrol>601</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
+                    <visible>[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
+                </control>
+                <control type="textbox">
+                    <description>Season plot if small fanart</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>500</width>
+                    <height>147</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[Container.ShowPlot]</label>
+                    <pagecontrol>600</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Autoscroll_plot)</autoscroll>
+                    <visible>Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_fanart)</visible>
+                </control>
+                <control type="textbox">
+                    <description>Season plot if not small fanart</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>756</width>
+                    <height>147</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[Container.ShowPlot]</label>
+                    <pagecontrol>601</pagecontrol>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Seasons_Autoscroll_plot)</autoscroll>
+                    <visible>Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_fanart)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <description>Plot scrollbar</description>
+                <posx>300</posx>
+                <posy>70</posy>
+                <control type="scrollbar" id="600">
+                    <posx>510</posx>
+                    <posy>0</posy>
+                    <width>5</width>
+                    <height>147</height>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <onleft>903</onleft>
+                    <onright>904</onright>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(600)</visible>
+                </control>
+                <control type="scrollbar" id="601">
+                    <posx>510</posx>
+                    <posy>0</posy>
+                    <width>5</width>
+                    <height>147</height>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <onleft>903</onleft>
+                    <onright>904</onright>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(601)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <description>Rating for movies and episodes</description>
+                <posx>350r</posx>
+                <posy>20</posy>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Rating)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Rating)]</visible>
+                <control type="image">
+                    <description>Star rating</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>110</width>
+                    <height>30</height>
+                    <aspectratio>keep</aspectratio>
+                    <aligny>center</aligny>
+                    <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
+                    <colordiffuse>ffeaf188</colordiffuse>
+                </control>
+                <control type="fadelabel">
+                    <description>Text rating</description>
+                    <posx>120</posx>
+                    <posy>-1</posy>
+                    <width>230</width>
+                    <height>30</height>
+                    <font>Font_Rating</font>
+                    <textcolor>ffdddddd</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
+                    <scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem.Rating,(,)]</label>
+                </control>
+            </control>
+            <control type="group">
+                <description>Rating for tvshows</description>
+                <posx>350r</posx>
+                <posy>20</posy>
+                <visible>Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Rating)</visible>
+                <control type="image">
+                    <description>Star rating</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>110</width>
+                    <height>30</height>
+                    <aspectratio>keep</aspectratio>
+                    <aligny>center</aligny>
+                    <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
+                    <colordiffuse>ffeaf188</colordiffuse>
+                </control>
+                <control type="fadelabel">
+                    <description>Text rating</description>
+                    <posx>120</posx>
+                    <posy>-1</posy>
+                    <width>230</width>
+                    <height>30</height>
+                    <font>Font_Rating</font>
+                    <textcolor>ffdddddd</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
+                    <scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem.Rating,(,)]</label>
+                </control>
+            </control>
+            <control type="group">
+                <description>Movie / episode info</description>
+                <posx>350r</posx>
+                <posy>70</posy>
+                <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+                <control type="group">
+                    <control type="fadelabel">
+                         <description>Info header</description>
+                         <posx>0</posx>
+                         <posy>-5</posy>
+                         <width>300</width>
+                         <height>68</height>
+                         <font>Font_Details_Header</font>
+                         <textcolor>ffdddddd</textcolor>
+                         <scroll>true</scroll>
+                         <align>left</align>
+                         <scrollout>false</scrollout>
+                         <pauseatend>5000</pauseatend>
+                         <label>Filminformation:</label>
+                         <visible>Container.Content(Movies)</visible>
+                     </control>
+                     <control type="fadelabel">
+                         <description>Info header</description>
+                         <posx>0</posx>
+                         <posy>-5</posy>
+                         <width>300</width>
+                         <height>68</height>
+                         <font>Font_Details_Header</font>
+                         <textcolor>ffdddddd</textcolor>
+                         <scroll>true</scroll>
+                         <align>left</align>
+                         <scrollout>false</scrollout>
+                         <pauseatend>5000</pauseatend>
+                         <label>Avsnittsinformation:</label>
+                         <visible>Container.Content(Episodes)</visible>
+                     </control>
+                     <control type="label">
+                        <description>Movie / episode year label</description>
+                        <posx>0</posx>
+                        <posy>25</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Release:</label>
+                    </control>
+                    <control type="label">
+                        <description>Movie / episode duration label</description>
+                        <posx>0</posx>
+                        <posy>50</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Speltid:</label>
+                    </control>
+                    <control type="label">
+                        <description>Movie / episode genre label</description>
+                        <posx>0</posx>
+                        <posy>75</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Genre:</label>
+                    </control>
+                    <control type="label">
+                        <description>Movie / episode director label</description>
+                        <posx>0</posx>
+                        <posy>100</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Regissör:</label>
+                    </control>
+                    <control type="label">
+                        <description>Movie / episode writer label</description>
+                        <posx>0</posx>
+                        <posy>125</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Författare:</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Movie / episode info values</description>
+                    <posx>100</posx>
+                    <posy>25</posy>
+                    <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+                    <control type="label">
+                        <description>Movie / episode year value</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Year]</label>
+                    </control>
+                    <control type="label">
+                        <description>Movie / episode duration value</description>
+                        <posx>0</posx>
+                        <posy>25</posy>
+                        <width>200</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Movie / episode genre value</description>
+                        <posx>0</posx>
+                        <posy>50</posy>
+                        <width>200</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Genre]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Movie / episode director value</description>
+                        <posx>0</posx>
+                        <posy>75</posy>
+                        <width>200</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Director]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Movie / episode writer value</description>
+                        <posx>0</posx>
+                        <posy>100</posy>
+                        <width>230</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Writer]</label>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <description>Season / tv show info labels and values</description>
+                <posx>350r</posx>
+                <posy>70</posy>
+                <visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
+                <control type="group">
+                     <control type="fadelabel">
+                         <description>Info header</description>
+                         <posx>0</posx>
+                         <posy>-5</posy>
+                         <width>300</width>
+                         <height>68</height>
+                         <font>Font_Details_Header</font>
+                         <textcolor>ffdddddd</textcolor>
+                         <scroll>true</scroll>
+                         <align>left</align>
+                         <scrollout>false</scrollout>
+                         <pauseatend>5000</pauseatend>
+                         <label>Säsongsinformation:</label>
+                         <visible>Container.Content(Seasons)</visible>
+                     </control>
+                     <control type="fadelabel">
+                         <description>Info header</description>
+                         <posx>0</posx>
+                         <posy>-5</posy>
+                         <width>300</width>
+                         <height>68</height>
+                         <font>Font_Details_Header</font>
+                         <textcolor>ffdddddd</textcolor>
+                         <scroll>true</scroll>
+                         <align>left</align>
+                         <scrollout>false</scrollout>
+                         <pauseatend>5000</pauseatend>
+                         <label>TV-serieinformation:</label>
+                         <visible>Container.Content(TVShows)</visible>
+                     </control>
+                     <control type="label">
+                        <description>Season / tv show premiered label</description>
+                        <posx>0</posx>
+                        <posy>25</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Premiär:</label>
+                    </control>
+                    <control type="label">
+                        <description>Season / tv show episode count label</description>
+                        <posx>0</posx>
+                        <posy>50</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Avsnitt:</label>
+                    </control>
+                    <control type="label">
+                        <description>Season / tv show genre label</description>
+                        <posx>0</posx>
+                        <posy>75</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Genre:</label>
+                    </control>
+                    <control type="label">
+                        <description>Season / tv show director label</description>
+                        <posx>0</posx>
+                        <posy>100</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Regissör:</label>
+                    </control>
+                    <control type="label">
+                        <description>Season / tv show writer label</description>
+                        <posx>0</posx>
+                        <posy>125</posy>
+                        <width>100</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label>Författare:</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Season info values</description>
+                    <posx>100</posx>
+                    <posy>25</posy>
+                    <control type="label">
+                        <description>Season premiered value</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>280</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <label fallback="Inte tillgänglig">$INFO[ListItem.Premiered]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Season episode count value</description>
+                        <posx>0</posx>
+                        <posy>25</posy>
+                        <width>280</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <pauseatend>3000</pauseatend>
+                        <scrolltoend>false</scrolltoend>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Episode]$INFO[ListItem.Property(WatchedEpisodes), (, visade]$INFO[ListItem.Property(UnWatchedEpisodes),$COMMA , inte visade)]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Season genre value</description>
+                        <posx>0</posx>
+                        <posy>50</posy>
+                        <width>280</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Genre]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Season director value</description>
+                        <posx>0</posx>
+                        <posy>75</posy>
+                        <width>280</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Director]</label>
+                    </control>
+                    <control type="fadelabel">
+                        <description> writer value</description>
+                        <posx>0</posx>
+                        <posy>100</posy>
+                        <width>280</width>
+                        <height>35</height>
+                        <font>Font_Movie_Info</font>
+                        <textcolor>ffdddddd</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2000</pauseatend>
+                        <scrollspeed>40</scrollspeed>
+                        <align>left</align>
+                        <label fallback="-">$INFO[ListItem.Writer]</label>
+                    </control>
+                </control>
+            </control>
+            <control type="grouplist">
+                <description>Media Codec Flagging Images</description>
+                <posx>0</posx>
+                <posy>670</posy>
+                <width>1280</width>
+                <align>center</align>
+                <itemgap>0</itemgap>
+                <orientation>horizontal</orientation>
+                <include>VideoCodecFlaggingConditions</include>
+                <include>AudioCodecFlaggingConditions</include>
+                <include>AspectCodecFlaggingConditions</include>
+                <include>VideoTypeHackFlaggingConditions</include>
+            </control>
+        </control>
+    </include>
+</includes>

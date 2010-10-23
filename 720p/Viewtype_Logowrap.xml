@@ -20,7 +20,7 @@
             </control>
         </control>
         <control type="group" id="902">
-            <description>Buttons for ondown/onleft/onright conditions</description>
+            <description>Buttons for ondown conditions</description>
             <posx>-2000</posx>
             <control type="button">
                 <description>Down press from list 508</description>

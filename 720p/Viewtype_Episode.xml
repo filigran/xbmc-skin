@@ -98,9 +98,9 @@
                 <focusedlayout width="633" height="164">
                     <control type="image">
                         <posx>269</posx>
-                        <posy>15</posy>
+                        <posy>5</posy>
                         <width>655</width>
-                        <height>133</height>
+                        <height>153</height>
                         <texture>white.png</texture>
                         <colordiffuse>55000000</colordiffuse>
                     </control>
@@ -109,7 +109,7 @@
                         <posy>0</posy>
                         <width>278</width>
                         <height>164</height>
-                        <texture>episoderoundedmatte.png</texture>
+                        <texture>special://skin/media/episodeframe.png</texture>
                         <colordiffuse>ff00B8F5</colordiffuse>
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
@@ -117,11 +117,12 @@
                         </animation>
                     </control>
                     <control type="image">
-                        <posx>6</posx>
-                        <posy>6</posy>
-                        <width>266</width>
-                        <height>152</height>
-                        <texture background="true" diffuse="episoderoundedmatte.png">$INFO[ListItem.Icon]</texture>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>278</width>
+                        <height>164</height>
+                        <texture background="true" diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
+                        <bordersize>3</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
