@@ -273,6 +273,7 @@
         </control>
         <include condition="Control.IsVisible(500) + Control.IsVisible(504)">WindowTitleHomeButton</include>
         <include condition="Control.IsVisible(500) + Control.IsVisible(504)">Clock</include>
+        <include>Global_ContextOverlay</include>
         <include condition="!Control.IsVisible(500) + !Control.IsVisible(504)">Global_Time</include>
         <include condition="!Control.IsVisible(500) + !Control.IsVisible(504)">Global_Weather</include>
     </controls>

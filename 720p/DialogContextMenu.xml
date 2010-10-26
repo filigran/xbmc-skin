@@ -1,6 +1,7 @@
 <window id="106">
     <defaultcontrol>1000</defaultcontrol>
-    <include>dialogeffect</include>
+    <animation reversible="false" effect="slide" start="-1000,0" end="0,0" time="400" tween="back" easing="out">WindowOpen</animation>
+    <animation reversible="false" effect="slide" start="0,0" end="1000,0" time="400" tween="back" easing="out">WindowClose</animation>
     <coordinates>
         <system>1</system>
         <posx>0</posx>
@@ -20,7 +21,7 @@
         <control type="image" id="997">
             <description>Top background image</description>
             <posx>0</posx>
-            <posy>-9</posy>
+            <posy>-10</posy>
             <width>271</width>
             <height>10</height>
             <aspectratio>stretch</aspectratio>
@@ -30,7 +31,7 @@
         <control type="image" id="999">
             <description>Center background image</description>
             <posx>0</posx>
-            <posy>0</posy>
+            <posy>-1</posy>
             <width>271</width>
             <texture>special://skin/media/context_center.png</texture>
             <colordiffuse>ff00b8f5</colordiffuse>
@@ -55,6 +56,7 @@
             <shadowcolor>black</shadowcolor>
             <focusedcolor>white</focusedcolor>
             <texturefocus>special://skin/media/white.png</texturefocus>
+            <bordersize>20</bordersize>
             <colordiffuse>ff00b8f5</colordiffuse>
             <texturenofocus>-</texturenofocus>
         </control>

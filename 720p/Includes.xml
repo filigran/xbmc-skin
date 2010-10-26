@@ -275,7 +275,7 @@
             <visible>Player.Forwarding32x</visible>
         </control>
     </include>
-    <include name="Global_ContextFilter">
+    <include name="Global_ContextOverlay">
         <control type="group">
             <visible>Window.IsActive(106)</visible>
             <animation effect="fade" start="0" end="100" time="200">Visible</animation>

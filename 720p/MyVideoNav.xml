@@ -85,8 +85,8 @@
             <!--<include>MusicVideoInfoListView</include> --><!-- view id = 511 -->
             <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
         </control>
-        <include>Global_ContextFilter</include>
-        <!--<control type="image">
+        <include>Global_ContextOverlay</include>
+       <!--<control type="image">
             <description>Top background image</description>
             <posx>640</posx>
             <posy>0</posy>

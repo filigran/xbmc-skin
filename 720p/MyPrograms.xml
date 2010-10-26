@@ -88,6 +88,7 @@
         <include condition="!Window.IsVisible(1)">CommonPageCount</include>
         <include>BehindDialogFadeOut</include>
         <include>ScrollOffsetLabel</include>
+        <include>Global_ContextOverlay</include>
         <include condition="Window.IsVisible(1)">Global_Time</include>
         <include condition="Window.IsVisible(1)">Global_Weather</include>
         <!-- Top menu -->
