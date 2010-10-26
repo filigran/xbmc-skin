@@ -28,16 +28,6 @@
                 <onfocus>SetFocus(60)</onfocus>
             </control>
             <control type="button">
-                <description>Logos centered and left/right press scrollbar 600</description>
-                <visible>Control.IsVisible(508) + Control.HasFocus(600) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(60)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom and left/right press scrollbar 600</description>
-                <visible>Control.IsVisible(508) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(508)</onfocus>
-            </control>
-            <control type="button">
                 <description>Logos centered and down press from scrollbar 60</description>
                 <visible>Control.IsVisible(508) + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
                 <onfocus>SetFocus(600)</onfocus>
@@ -48,14 +38,42 @@
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
         </control>
+        <control type="group" id="903">
+            <description>Buttons for onleft conditions</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>Logos centered and left press scrollbar 600</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(600) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(60)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos at bottom and left press scrollbar 600</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(9000)</onfocus>
+            </control>
+        </control>
+        <control type="group" id="904">
+            <description>Buttons for onright conditions</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>Logos centered and right press scrollbar 600</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(600) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(60)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos at bottom and right press scrollbar 600</description>
+                <visible>Control.IsVisible(508) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <onfocus>SetFocus(508)</onfocus>
+            </control>
+        </control>
         <control type="group">
             <visible>Control.IsVisible(508)</visible>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>450</posy>
             <animation reversible="false" effect="slide" start="0,0" end="0,-250" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-250" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + !System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-250" end="0,-30" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-250" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + !System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-250" end="0,-30" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
             <control type="image">
                 <description>List background</description>
                 <posx>0</posx>
@@ -168,7 +186,7 @@
             <posy>300</posy>
             <animation reversible="false" effect="slide" start="0,0" end="0,170" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,170" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + !System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,170" end="0,-30" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,170" end="0,-30" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
@@ -336,8 +354,8 @@
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                    <onleft>902</onleft>
-                    <onright>902</onright>
+                    <onleft>903</onleft>
+                    <onright>904</onright>
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
                     <visible allowhiddenfocus="true">Control.IsVisible(508) + Control.HasFocus(600)</visible>

@@ -1,7 +1,7 @@
 <window id="6">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,51,500,501,508,505</views>
+    <views>50,51,500,504,501,508,505</views>
     <controls>
         <include>CommonVideoBackground</include>
         <control type="image">
@@ -25,7 +25,7 @@
                 <height>720</height>
                 <texture border="20">black-back.png</texture>
                 <include>VisibleFadeEffect</include>
-                <visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(505)</visible>
+                <visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(505)</visible>
             </control>
             <control type="image">
                 <posx>0</posx>
@@ -34,7 +34,7 @@
                 <height>128</height>
                 <texture>floor.png</texture>
                 <include>VisibleFadeEffect</include>
-                <visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(505) | Control.IsVisible(508)</visible>
+                <visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(505) | Control.IsVisible(508)</visible>
             </control>
             <control type="group">
                 <include>VisibleFadeEffect</include>
@@ -66,7 +66,7 @@
             </control>
             <control type="group">
                 <include>VisibleFadeEffect</include>
-                <visible>Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(505)</visible>
+                <visible>Control.IsVisible(51) | Control.IsVisible(505)</visible>
                 <control type="image">
                     <posx>75</posx>
                     <posy>60</posy>
@@ -88,209 +88,172 @@
             <include>Window_OpenClose_Animation</include>
             <include>CommonRootView</include> <!-- view id = 50 -->
             <include>FullWidthList</include> <!-- view id = 51 -->
-            <include>ThumbnailView</include> <!-- view id = 500 -->
+            <include>Viewtype_Poster</include> <!-- view id = 500 & 504 -->
             <include>PosterWrapView</include> <!-- view id = 501 -->
             <include>PosterWrapView2_Fanart</include> <!-- view id = 508 -->
             <include>WideIconView</include> <!-- view id = 505 -->
         </control>
-        <include>CommonPageCount</include>
+        <include condition="Control.IsVisible(500) + Control.IsVisible(504)">CommonPageCount</include>
         <include>BehindDialogFadeOut</include>
         <include>ScrollOffsetLabel</include>
-        <control type="group">
-            <animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="-250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
-            <control type="group">
-                <animation effect="slide" end="-240,0" time="300" tween="quadratic" easing="out">WindowClose</animation>
-                <animation effect="slide" start="-15,0" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1</width>
-                    <height>720</height>
-                    <texture>MediaBladeSub_Part1.png</texture>
-                    <animation effect="zoom" start="0,0,1,720" end="0,0,229,720" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(98) | ControlGroup(9001).HasFocus">Conditional</animation>
-                </control>
-                <control type="image">
-                    <posx>1</posx>
-                    <posy>0</posy>
-                    <width>12</width>
-                    <height>720</height>
-                    <texture>MediaBladeSub_Part2.png</texture>
-                    <animation effect="slide" end="228,0" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(98) | ControlGroup(9001).HasFocus">Conditional</animation>
-                </control>
-            </control>
-            <control type="group" id="9001">
-                <posx>-220</posx>
-                <posy>0</posy>
-                <animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(9001).HasFocus + !Control.HasFocus(98)">conditional</animation>
-                <animation effect="fade" start="0" end="100" delay="300" time="200" condition="Control.HasFocus(98) | ControlGroup(9001).HasFocus">conditional</animation>
-                <animation effect="fade" start="100" end="0" time="0" condition="Control.HasFocus(98) | ControlGroup(9001).HasFocus">WindowClose</animation>
-                <animation effect="slide" end="220,0" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(98) | ControlGroup(9001).HasFocus">conditional</animation>
-                <control type="button">
-                    <description>Fake button for mouse control</description>
-                    <posx>-15</posx>
-                    <posy>0</posy>
-                    <width>245</width>
-                    <height>720</height>
-                    <label>-</label>
-                    <font>-</font>
-                    <texturenofocus>-</texturenofocus>
-                    <texturefocus>-</texturefocus>
-                    <visible>true</visible>
-                </control>
-                <control type="image">
-                    <posx>185</posx>
-                    <posy>200</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texture>MediaSubSet.png</texture>
-                </control>
-                <control type="grouplist" id="9010">
-                    <posx>10</posx>
-                    <posy>250</posy>
-                    <width>240</width>
-                    <height>550</height>
-                    <onleft>9000</onleft>
-                    <onright>50</onright>
-                    <onup>9010</onup>
-                    <ondown>9010</ondown>
-                    <itemgap>0</itemgap>
-                    <control type="radiobutton" id="7">
-                        <description>Stack Toggle</description>
-                        <textwidth>170</textwidth>
-                        <include>ButtonMediaSubCommonValues</include>
-                        <label>346</label>
-                    </control>
-                    <control type="label" id="200">
-                        <width>220</width>
-                        <height>45</height>
-                        <font>font12caps</font>
-                        <label>14018</label>
-                        <textcolor>dialogheader</textcolor>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                    </control>
-                    <control type="radiobutton" id="201">
-                        <description>Toggle Fanart</description>
-                        <textwidth>170</textwidth>
-                        <include>ButtonMediaSubCommonValues</include>
-                        <label>31307</label>
-                        <onclick>Skin.ToggleSetting(VideoFilesFanart)</onclick>
-                        <selected>Skin.HasSetting(VideoFilesFanart)</selected>
-                        <visible>!Control.IsVisible(508)</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="button" id="8999">
-                <description>Fake button for mouse control</description>
-                <posx>-250</posx>
-                <posy>0</posy>
-                <width>265</width>
-                <height>720</height>
+        <!-- Top menu -->
+        <control type="grouplist" id="9000">
+            <description>Hidden button top menu</description>
+            <posx>0</posx>
+            <posy>-200</posy>
+            <orientation>horizontal</orientation>
+            <ondown>50</ondown>
+            <control type="button" id="2">
+                <description>Viewtype toggle</description>
                 <label>-</label>
-                <font>-</font>
-                <texturenofocus>-</texturenofocus>
-                <texturefocus>-</texturefocus>
-                <visible>true</visible>
+                <onclick>-</onclick>
             </control>
-            <include>SideBladeLeft</include>
-            <control type="image">
-                <description>LOGO</description>
-                <posx>-230</posx>
-                <posy>50</posy>
-                <width>220</width>
-                <height>80</height>
-                <aspectratio>keep</aspectratio>
-                <texture>Confluence_Logo.png</texture>
+            <control type="button" id="3">
+                <description>Sort toggle</description>
+                <label>-</label>
+                <onclick>-</onclick>
             </control>
-            <control type="group" id="9000">
-                <posx>-250</posx>
-                <posy>130</posy>
-                <include>CommonNowPlaying</include>
-                <control type="button" id="2">
-                    <description>View As button</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <include>ButtonCommonValues</include>
-                    <label>-</label>
-                    <onleft>50</onleft>
-                    <onright>50</onright>
-                    <onup>611</onup>
-                    <ondown>3</ondown>
-                </control>
-                <control type="button" id="3">
-                    <description>Sort by button</description>
-                    <posx>0</posx>
-                    <posy>40</posy>
-                    <include>ButtonCommonValues</include>
-                    <label>103</label>
-                    <onleft>50</onleft>
-                    <onright>4</onright>
-                    <onup>2</onup>
-                    <ondown>99</ondown>
-                </control>
-                <control type="togglebutton" id="4">
-                    <description>Sort asc</description>
-                    <posx>220</posx>
-                    <posy>53</posy>
-                    <label>-</label>
-                    <onleft>3</onleft>
-                    <onright>50</onright>
-                    <onup>2</onup>
-                    <ondown>99</ondown>
-                </control>
-                <control type="radiobutton" id="99">
-                    <description>Library button</description>
-                    <posx>0</posx>
-                    <posy>80</posy>
-                    <label>$LOCALIZE[29800]</label>
-                    <onclick>ReplaceWindow(VideoLibrary)</onclick>
-                    <selected>Window.IsVisible(VideoLibrary)</selected>
-                    <include>ButtonCommonValues</include>
-                    <onleft>50</onleft>
-                    <onright>50</onright>
-                    <onup>3</onup>
-                    <ondown>98</ondown>
-                    <enable>Library.HasContent(Video)</enable>
-                </control>
-                <control type="radiobutton" id="98">
-                    <description>Extra Options</description>
-                    <hitrect x="0" y="120" w="265" h="40" />
-                    <posx>0</posx>
-                    <posy>120</posy>
-                    <include>ButtonCommonValues</include>
-                    <radiowidth>18</radiowidth>
-                    <radioheight>18</radioheight>
-                    <radioposx>222</radioposx>
-                    <radioposy>12</radioposy>
-                    <textureradiofocus>HomeHasSub.png</textureradiofocus>
-                    <textureradionofocus>HomeHasSub.png</textureradionofocus>
-                    <label>31026</label>
-                    <onleft>50</onleft>
-                    <onright>9010</onright>
-                    <onup>99</onup>
-                    <ondown>610</ondown>
-                </control>
-                <control type="button" id="610">
-                    <description>Fake Button to fix Player Controls Navigation</description>
-                    <onup>98</onup>
-                    <ondown>603</ondown>
-                    <visible>false</visible>
-                </control>
-                <control type="group">
-                    <posx>0</posx>
-                    <posy>260</posy>
-                    <include>CommonNowPlaying_Controls</include>
-                </control>
-                <control type="button" id="611">
-                    <description>Fake Button to fix Player Controls Navigation</description>
-                    <onup>608</onup>
-                    <ondown>2</ondown>
-                    <visible>false</visible>
-                </control>
+            <control type="togglebutton" id="4">
+                <description>Sort asc</description>
+                <label>Asc</label>
+                <altlabel>Desc</altlabel>
+                <onclick>-</onclick>
+            </control>
+            <control type="radiobutton" id="99">
+                <description>Library button</description>
+                <label>Biblioteksläge</label>
+                <selected>Window.IsVisible(VideoLibrary)</selected>
+                <onclick>ReplaceWindow(VideoFiles)</onclick>
+            </control>
+            <control type="button" id="8">
+                <description>Search</description>
+                <label>137</label>
+            </control>
+            <control type="radiobutton" id="19">
+                <description>Filter</description>
+                <label>587</label>
+            </control>
+        </control>
+        <control type="image">
+            <description>Top menu background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>40</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>dd000000</colordiffuse>
+            <animation reversible="false" effect="slide" start="0,-40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-40" easing="out" time="400">hidden</animation>
+            <visible>ControlGroup(9000).HasFocus</visible>
+        </control>
+        <control type="grouplist">
+            <description>The visible part of the menu for movies</description>
+            <posx>20</posx>
+            <posy>10</posy>
+            <orientation>horizontal</orientation>
+            <itemgap>10</itemgap>
+            <animation reversible="false" effect="slide" start="0,-40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-40" easing="out" time="400">hidden</animation>
+            <visible>ControlGroup(9000).HasFocus</visible>
+            <control type="label"> <!-- 2 -->
+                <description>Viewtype toggle unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(2)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>!Control.HasFocus(2)</visible>
+            </control>
+            <control type="label"> <!-- 2 -->
+                <description>Viewtype toggle focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(2)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(2)</visible>
+            </control>
+            <control type="label"> <!-- 3 -->
+                <description>Sort toggle unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>!Control.HasFocus(3)</visible>
+            </control>
+            <control type="label"> <!-- 3-->
+                <description>Sort toggle focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(3)</visible>
+            </control>
+            <control type="label"> <!-- 4 -->
+                <description>Sort direction unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(4)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>!Control.HasFocus(4)</visible>
+            </control>
+            <control type="label"> <!-- 4 -->
+                <description>Sort direction focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(4)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(4)</visible>
+            </control>
+            <control type="label"> <!-- 99 -->
+                <description>Library toggle unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(99)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>!Control.HasFocus(99)</visible>
+            </control>
+            <control type="label"> <!-- 99 -->
+                <description>Library toggle focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(99)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(99)</visible>
+            </control>
+            <control type="label"> <!-- 8 -->
+                <description>Search unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(8)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>!Control.HasFocus(8)</visible>
+            </control>
+            <control type="label"> <!-- 8 -->
+                <description>Search focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(8)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(8)</visible>
+            </control>
+            <control type="label"> <!-- 19 -->
+                <description>Filter unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(19)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>!Control.HasFocus(19)</visible>
+            </control>
+            <control type="label"> <!-- 19 -->
+                <description>Filter focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(19)]</label>
+                <textcolor>blue</textcolor>
+                <font>Font_Top_Menu</font>
+                <visible>Control.HasFocus(19)</visible>
             </control>
         </control>
         <control type="group">
+            <visible>false</visible>
             <posx>60</posx>
             <posy>0</posy>
             <animation effect="slide" end="-310,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
@@ -308,7 +271,9 @@
                 <label>$LOCALIZE[31021]</label>
             </control>
         </control>
-        <include>WindowTitleHomeButton</include>
-        <include>Clock</include>
+        <include condition="Control.IsVisible(500) + Control.IsVisible(504)">WindowTitleHomeButton</include>
+        <include condition="Control.IsVisible(500) + Control.IsVisible(504)">Clock</include>
+        <include condition="!Control.IsVisible(500) + !Control.IsVisible(504)">Global_Time</include>
+        <include condition="!Control.IsVisible(500) + !Control.IsVisible(504)">Global_Weather</include>
     </controls>
 </window>

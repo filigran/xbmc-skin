@@ -255,6 +255,18 @@
                         <onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
                         <selected>Skin.HasSetting(HideFilenameFlagging)</selected>
                     </control>
+                    <control type="radiobutton" id="115">
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <label>Visa RSS-nyheter i alla fönster</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(Show_RSS_Everywhere)</onclick>
+                        <selected>Skin.HasSetting(Show_RSS_Everywhere)</selected>
+                    </control>
                     <control type="label" id="104">
                         <width>750</width>
                         <height>45</height>
@@ -627,6 +639,19 @@
                         <label>$LOCALIZE[31111] - TV-Spel</label>
                         <onclick>Skin.ToggleSetting(Home_Hide_Games)</onclick>
                         <selected>Skin.HasSetting(Home_Hide_Games)</selected>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="radiobutton" id="220">
+                        <description>Hide Trailers button</description>
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>$LOCALIZE[31111] - Trailers</label>
+                        <onclick>Skin.ToggleSetting(Home_Hide_Trailers)</onclick>
+                        <selected>Skin.HasSetting(Home_Hide_Trailers)</selected>
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>

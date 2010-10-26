@@ -22,11 +22,11 @@
                 <width>748</width>
                 <height>560</height>
                 <onleft>9000</onleft>
-                <onright>60</onright>
+                <onright>61</onright>
                 <onup>517</onup>
                 <ondown>517</ondown>
                 <scrolltime>0</scrolltime>
-                <pagecontrol>60</pagecontrol>
+                <pagecontrol>61</pagecontrol>
                 <viewtype label="LauncherWide">list</viewtype>
                 <orientation>vertical</orientation>
                 <itemlayout height="140" width="187">
@@ -63,7 +63,7 @@
                 </focusedlayout>
             </control>
         </control>
-        <control type="scrollbar" id="60">
+        <control type="scrollbar" id="61">
             <posx>15r</posx>
             <posy>100</posy>
             <width>5</width>
@@ -75,7 +75,7 @@
             <onright>9000</onright>
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.IsVisible(517) + Control.HasFocus(60)</visible>
+            <visible allowhiddenfocus="true">Control.IsVisible(517) + Control.HasFocus(61)</visible>
         </control>
         <include>Launcher_Left_bar</include>
     </include>

@@ -22,9 +22,9 @@
                 <onleft>519</onleft>
                 <onright>519</onright>
                 <onup>9000</onup>
-                <ondown>61</ondown>
+                <ondown>63</ondown>
                 <viewtype label="LauncherLogo">biglist</viewtype>
-                <pagecontrol>61</pagecontrol>
+                <pagecontrol>63</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <focusposition>2</focusposition>
                 <orientation>horizontal</orientation>
@@ -52,31 +52,7 @@
                     </control>
                 </focusedlayout>
             </control>
-            <control type="group">
-                <posx>0</posx>
-                <posy>330</posy>
-                <control type="label">
-                    <posx>10</posx>
-                    <posy>0</posy>
-                    <width>1260</width>
-                    <height>30</height>
-                    <font>Font_TVShows_Logowrap_Episodes</font>
-                    <textcolor>white</textcolor>
-                    <align>center</align>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-                <control type="label">
-                    <posx>10</posx>
-                    <posy>50</posy>
-                    <width>1260</width>
-                    <height>30</height>
-                    <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
-                    <textcolor>white</textcolor>
-                    <align>center</align>
-                    <label>$INFO[ListItem.Plot,, spel]</label>
-                </control>
-            </control>
-            <control type="scrollbar" id="61">
+            <control type="scrollbar" id="63">
                 <posx>140</posx>
                 <posy>300</posy>
                 <width>1000</width>
@@ -85,10 +61,49 @@
                 <texturesliderbar>special://skin/media/scrollbar_horizontal_bar.png</texturesliderbar>
                 <texturesliderbarfocus>special://skin/media/scrollbar_horizontal_bar_focus.png</texturesliderbarfocus>
                 <onup>519</onup>
-                <ondown>9000</ondown>
-                <showonepage>false</showonepage>
+                <ondown>64</ondown>
+                <showonepage>true</showonepage>
                 <orientation>horizontal</orientation>
-                <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(61)</visible>
+                <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(63)</visible>
+            </control>
+            <control type="group">
+                <posx>0</posx>
+                <posy>330</posy>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>0</posy>
+                    <width>1260</width>
+                    <height>30</height>
+                    <font>Font_Movie_Title</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="textbox">
+                    <posx>140</posx>
+                    <posy>50</posy>
+                    <width>1000</width>
+                    <height>94</height>
+                    <font>Font_Movie_Plot</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <pagecontrol>64</pagecontrol>
+                    <label>$INFO[ListItem.Plot,, spel]</label>
+                </control>
+                <control type="scrollbar" id="64">
+                    <posx>1150</posx>
+                    <posy>50</posy>
+                    <width>5</width>
+                    <height>94</height>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
+                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
+                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <onleft>63</onleft>
+                    <onright>63</onright>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(64)</visible>
+                </control>
             </control>
         </control>
     </include>

@@ -26,7 +26,7 @@
                 <posy>20</posy>
                 <width>350</width>
                 <height>30</height>
-                <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
+                <font>Font_EpisodeList_Season</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
                 <label>$INFO[ListItem.Season,Säsong ]</label>
@@ -34,10 +34,10 @@
             <control type="label">
                 <description>Episode count</description>
                 <posx>253</posx>
-                <posy>50</posy>
+                <posy>60</posy>
                 <width>350</width>
                 <height>30</height>
-                <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
+                <font>Font_EpisodeList_Episode_Count</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
                 <label>$INFO[Container(TVShows).NumItems,, avsnitt]</label>

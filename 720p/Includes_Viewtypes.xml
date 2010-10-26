@@ -2,14 +2,14 @@
     <include name="VideoLibrary_bottom_info">
         <control type="group">
             <description>Extra info for views posterfixed/posterwrap, list, listbanner and episodelist</description>
-            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(515)] + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(515)] + [Window.IsVisible(VideoFiles) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <posx>0</posx>
             <posy>470</posy>
             <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,0" end="0,-318" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,-318" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
-            <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
@@ -92,7 +92,7 @@
                 <description>Plot</description>
                 <posx>300</posx>
                 <posy>70</posy>
-                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                <animation reversible="false" effect="slide" start="0,0" end="-256,0" tween="back" easing="out" time="400" condition="Window.IsVisible(videofiles) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
                 <animation reversible="false" effect="slide" start="-256,0" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
                 <control type="textbox">
                     <description>Plot for movies/tvshows/episodes if small fanart</description>
@@ -122,6 +122,19 @@
                     <pagecontrol>601</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
                     <visible>[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
+                </control>
+                <control type="textbox">
+                    <description>Plot for videofiles in any case</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>756</width>
+                    <height>147</height>
+                    <font>Font_Movie_Plot</font>
+                    <align>justify</align>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <pagecontrol>600</pagecontrol>
+                    <visible>Window.IsVisible(videofiles)</visible>
                 </control>
                 <control type="textbox">
                     <description>Season plot if small fanart</description>
@@ -255,7 +268,7 @@
                 <description>Movie / episode info</description>
                 <posx>350r</posx>
                 <posy>70</posy>
-                <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+                <visible>Window.IsVisible(videofiles) | Container.Content(Movies) | Container.Content(Episodes)</visible>
                 <control type="group">
                     <control type="fadelabel">
                          <description>Info header</description>
@@ -357,7 +370,7 @@
                     <description>Movie / episode info values</description>
                     <posx>100</posx>
                     <posy>25</posy>
-                    <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+                    <visible>Window.IsVisible(videofiles) | Container.Content(Movies) | Container.Content(Episodes)</visible>
                     <control type="label">
                         <description>Movie / episode year value</description>
                         <posx>0</posx>

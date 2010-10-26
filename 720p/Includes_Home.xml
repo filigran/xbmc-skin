@@ -144,13 +144,21 @@
                         <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
                     </item>
+                    <item id="14">
+                        <description>Trailers</description>
+                        <label>Trailers</label>
+                        <icon>special://skin/media/trailers.png</icon>
+                        <thumb fallback="special://skin/media/trailers.jpg">$INFO[Skin.String(home_custom_back_trailers_folder)]</thumb>
+                        <onclick>ActivateWindow(10024,plugin://plugin.video.apple.movie.trailers.lite,return)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Trailers)</visible>
+                    </item>
                     <item id="7">
                         <description>Programs</description>
-                        <label>24001</label>
-                        <icon>special://skin/media/addons.png</icon>
-                        <thumb fallback="special://skin/media/addons.jpg">$INFO[Skin.String(home_custom_back_addons_folder)]</thumb>
-                        <onclick>ActivateWindow(Programs,Addons,return)</onclick>
-                        <visible>!Skin.HasSetting(Home_Hide_Addons)</visible>
+                        <label>Programs</label>
+                        <icon>special://skin/media/programs.png</icon>
+                        <thumb fallback="special://skin/media/programs.jpg">$INFO[Skin.String(home_custom_back_programs_folder)]</thumb>
+                        <onclick>ActivateWindow(Programs,return)</onclick>
+                        <visible>!Skin.HasSetting(Home_Hide_Programs)</visible>
                     </item>
                     <item id="14">
                         <description>Launcher</description>

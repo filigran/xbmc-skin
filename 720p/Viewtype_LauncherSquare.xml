@@ -22,7 +22,7 @@
                 <width>748</width>
                 <height>560</height>
                 <onleft>9000</onleft>
-                <onright>62</onright>
+                <onright>60</onright>
                 <onup>516</onup>
                 <ondown>516</ondown>
                 <scrolltime>0</scrolltime>
@@ -75,7 +75,7 @@
             <onright>9000</onright>
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.IsVisible(516) + Control.HasFocus(6)</visible>
+            <visible allowhiddenfocus="true">Control.IsVisible(516) + Control.HasFocus(60)</visible>
         </control>
         <include>Launcher_Left_bar</include>
     </include>

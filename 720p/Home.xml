@@ -1,6 +1,6 @@
-﻿<window id="0"> <!-- delta window id för Home är 0 -->
-    <defaultcontrol always="true">5043</defaultcontrol> <!-- vilken control som ska ha focus från början -->
-    <allowoverlay>yes</allowoverlay> <!-- tillåt video/vizualisation att spela i bakgrunden -->
+﻿<window id="0">
+    <defaultcontrol always="true">5043</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
     <backgroundcolor>ff000000</backgroundcolor>
     <controls>
         <control type="button" id="5043">
@@ -32,19 +32,19 @@
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="multiimage">
-			<posx>0</posx>
+            <posx>0</posx>
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-			<randomize>true</randomize>
-			<timeperimage>12000</timeperimage>
-			<fadetime>1000</fadetime>
-			<pauseatend>0</pauseatend>
-			<loop>true</loop>
-			<aspectratio background="true" aligny="top">scale</aspectratio>
-			<imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
+            <randomize>true</randomize>
+            <timeperimage>12000</timeperimage>
+            <fadetime>1000</fadetime>
+            <pauseatend>0</pauseatend>
+            <loop>true</loop>
+            <aspectratio background="true" aligny="top">scale</aspectratio>
+            <imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
       <visible>!Player.HasMedia</visible>
-		</control>		
+        </control>
         <control type="image">
             <description>Fanart overlay</description>
             <posx>0</posx>
