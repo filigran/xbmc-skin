@@ -94,8 +94,8 @@
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>lime</colordiffuse>
-        </control>-->
-
+        </control>
+-->
         <include>Global_Time</include>
         <include>Global_Weather</include>
         <include condition="Skin.HasSetting(Show_RSS_Everywhere)">RSS_Feed</include>

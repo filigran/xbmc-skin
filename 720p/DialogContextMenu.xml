@@ -3,14 +3,14 @@
     <include>dialogeffect</include>
     <coordinates>
         <system>1</system>
-        <posx>-234</posx>
+        <posx>0</posx>
         <posy>0</posy>
-        <origin x="455" y="100" />
+        <origin x="505" y="100" />
     </coordinates>
-    <controls>
-<!--        <control type="image">
+    <controls><!--
+        <control type="image">
             <description>Top background image</description>
-            <posx>185</posx>
+            <posx>135</posx>
             <posy>-20</posy>
             <width>1</width>
             <height>500</height>
@@ -20,38 +20,42 @@
         <control type="image" id="997">
             <description>Top background image</description>
             <posx>0</posx>
-            <posy>-13</posy>
-            <width>370</width>
-            <height>13</height>
+            <posy>-9</posy>
+            <width>271</width>
+            <height>10</height>
             <aspectratio>stretch</aspectratio>
-            <texture>special://skidn/media/context_top.png</texture>
+            <texture>special://skin/media/context_top.png</texture>
             <colordiffuse>ff00b8f5</colordiffuse>
         </control>
         <control type="image" id="999">
-            <description>Center backgroudn image</description>
+            <description>Center background image</description>
             <posx>0</posx>
             <posy>0</posy>
-            <width>370</width>
+            <width>271</width>
             <texture>special://skin/media/context_center.png</texture>
+            <colordiffuse>ff00b8f5</colordiffuse>
         </control>
         <control type="image" id="998">
             <description>Bottom background image</description>
             <posx>0</posx>
-            <width>370</width>
-            <height>50</height>
-            <texture>special://skin/media/context_background.png</texture>
+            <width>271</width>
+            <height>10</height>
+            <texture flipy="true">special://skin/media/context_top.png</texture>
+            <colordiffuse>ff00b8f5</colordiffuse>
         </control>
         <control type="button" id="1000">
             <description>button template</description>
-            <posx>34</posx>
-            <posy>-</posy>
-            <width>297</width>
-            <height>38</height>
-            <font>Font_Movie_Plot</font>
+            <posx>3</posx>
+            <posy>0</posy>
+            <width>265</width>
+            <height>35</height>
+            <font>Font_Bold_20</font>
             <align>center</align>
             <textcolor>grey2</textcolor>
+            <shadowcolor>black</shadowcolor>
             <focusedcolor>white</focusedcolor>
-            <texturefocus border="5">button-focus.png</texturefocus>
+            <texturefocus>special://skin/media/white.png</texturefocus>
+            <colordiffuse>ff00b8f5</colordiffuse>
             <texturenofocus>-</texturenofocus>
         </control>
     </controls>
