@@ -1,12 +1,12 @@
 <includes>
     <include name="VideoLibrary_bottom_info">
         <control type="group">
-            <description>Extra info for views posterfixed/posterwrap, list, listbanner and episodelist</description>
-            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(515)] + [Window.IsVisible(VideoFiles) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            <description>Extra info for views posterfixed/posterwrap, list and listbanner</description>
+            <visible>[Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(515)] + [Window.IsVisible(VideoFiles) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <posx>0</posx>
             <posy>470</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-330" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-330" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]]]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,0" end="0,-318" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,-318" end="0,0" tween="back" easing="out" time="400" condition="[[Control.IsVisible(500) | Control.IsVisible(504)] + Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
             <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
@@ -19,11 +19,29 @@
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
             </control>
+            <control type="image">
+                <description>Top border</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+            </control>
+            <control type="image">
+                <description>Bottom border</description>
+                <posx>0</posx>
+                <posy>250</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+            </control>
             <control type="fadelabel">
-                <description>Title if not episodes (episodes has the number too)</description>
+                <description>Title if not episodes</description>
                 <posx>20</posx>
                 <posy>0</posy>
-                <width>890</width>
+                <width>1240</width>
                 <height>68</height>
                 <font>Font_Movie_Title</font>
                 <textcolor>ffdddddd</textcolor>
@@ -32,14 +50,14 @@
                 <aligny>center</aligny>
                 <scrollout>false</scrollout>
                 <pauseatend>5000</pauseatend>
-                <label>$INFO[ListItem.Title]</label>
+                <label>$INFO[ListItem.Label]</label>
                 <visible>!Container.Content(Episodes)</visible>
             </control>
             <control type="fadelabel">
                 <description>Title + number if episodes</description>
                 <posx>20</posx>
                 <posy>0</posy>
-                <width>890</width>
+                <width>1240</width>
                 <height>68</height>
                 <font>Font_Movie_Title</font>
                 <textcolor>ffdddddd</textcolor>
@@ -106,7 +124,7 @@
                     <label>$INFO[ListItem.Plot]</label>
                     <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
-                    <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]">conditional</animation>
                     <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_Fanart)]</visible>
                 </control>
                 <control type="textbox">
@@ -271,7 +289,7 @@
                 <visible>Window.IsVisible(videofiles) | Container.Content(Movies) | Container.Content(Episodes)</visible>
                 <control type="group">
                     <control type="fadelabel">
-                         <description>Info header</description>
+                         <description>Movies Info header</description>
                          <posx>0</posx>
                          <posy>-5</posy>
                          <width>300</width>
@@ -282,11 +300,11 @@
                          <align>left</align>
                          <scrollout>false</scrollout>
                          <pauseatend>5000</pauseatend>
-                         <label>Filminformation:</label>
-                         <visible>Container.Content(Movies)</visible>
+                         <label>$LOCALIZE[31364]:</label>
+                         <visible>Container.Content(Movies) | Window.IsVisible(VideoFiles)</visible>
                      </control>
                      <control type="fadelabel">
-                         <description>Info header</description>
+                         <description>Episodes Info header</description>
                          <posx>0</posx>
                          <posy>-5</posy>
                          <width>300</width>
@@ -297,11 +315,11 @@
                          <align>left</align>
                          <scrollout>false</scrollout>
                          <pauseatend>5000</pauseatend>
-                         <label>Avsnittsinformation:</label>
+                         <label>$LOCALIZE[31365]:</label>
                          <visible>Container.Content(Episodes)</visible>
                      </control>
                      <control type="label">
-                        <description>Movie / episode year label</description>
+                        <description>Movie / episode release year label</description>
                         <posx>0</posx>
                         <posy>25</posy>
                         <width>100</width>
@@ -311,7 +329,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Release:</label>
+                        <label>$LOCALIZE[31366]:</label>
                     </control>
                     <control type="label">
                         <description>Movie / episode duration label</description>
@@ -324,7 +342,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Speltid:</label>
+                        <label>$LOCALIZE[2050]:</label>
                     </control>
                     <control type="label">
                         <description>Movie / episode genre label</description>
@@ -337,7 +355,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Genre:</label>
+                        <label>$LOCALIZE[515]:</label>
                     </control>
                     <control type="label">
                         <description>Movie / episode director label</description>
@@ -350,7 +368,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Regissör:</label>
+                        <label>$LOCALIZE[20339]:</label>
                     </control>
                     <control type="label">
                         <description>Movie / episode writer label</description>
@@ -363,7 +381,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Författare:</label>
+                        <label>$LOCALIZE[20417]:</label>
                     </control>
                 </control>
                 <control type="group">
@@ -382,7 +400,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Year]</label>
+                        <label fallback="416">$INFO[ListItem.Year]</label>
                     </control>
                     <control type="label">
                         <description>Movie / episode duration value</description>
@@ -395,7 +413,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                        <label fallback="416">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Movie / episode genre value</description>
@@ -410,7 +428,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Genre]</label>
+                        <label fallback="416">$INFO[ListItem.Genre]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Movie / episode director value</description>
@@ -425,7 +443,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Director]</label>
+                        <label fallback="416">$INFO[ListItem.Director]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Movie / episode writer value</description>
@@ -440,7 +458,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Writer]</label>
+                        <label fallback="416">$INFO[ListItem.Writer]</label>
                     </control>
                 </control>
             </control>
@@ -451,7 +469,7 @@
                 <visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
                 <control type="group">
                      <control type="fadelabel">
-                         <description>Info header</description>
+                         <description>Season Info header</description>
                          <posx>0</posx>
                          <posy>-5</posy>
                          <width>300</width>
@@ -462,11 +480,11 @@
                          <align>left</align>
                          <scrollout>false</scrollout>
                          <pauseatend>5000</pauseatend>
-                         <label>Säsongsinformation:</label>
+                         <label>$LOCALIZE[31367]:</label>
                          <visible>Container.Content(Seasons)</visible>
                      </control>
                      <control type="fadelabel">
-                         <description>Info header</description>
+                         <description>TVShow Info header</description>
                          <posx>0</posx>
                          <posy>-5</posy>
                          <width>300</width>
@@ -477,7 +495,7 @@
                          <align>left</align>
                          <scrollout>false</scrollout>
                          <pauseatend>5000</pauseatend>
-                         <label>TV-serieinformation:</label>
+                         <label>$LOCALIZE[20351]:</label>
                          <visible>Container.Content(TVShows)</visible>
                      </control>
                      <control type="label">
@@ -491,7 +509,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Premiär:</label>
+                        <label>$LOCALIZE[31369]:</label>
                     </control>
                     <control type="label">
                         <description>Season / tv show episode count label</description>
@@ -504,7 +522,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Avsnitt:</label>
+                        <label>$LOCALIZE[20360]:</label>
                     </control>
                     <control type="label">
                         <description>Season / tv show genre label</description>
@@ -517,7 +535,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Genre:</label>
+                        <label>$LOCALIZE[515]:</label>
                     </control>
                     <control type="label">
                         <description>Season / tv show director label</description>
@@ -530,7 +548,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Regissör:</label>
+                        <label>$LOCALIZE[20339]:</label>
                     </control>
                     <control type="label">
                         <description>Season / tv show writer label</description>
@@ -543,11 +561,11 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Författare:</label>
+                        <label>$LOCALIZE[20417]:</label>
                     </control>
                 </control>
                 <control type="group">
-                    <description>Season info values</description>
+                    <description>TV Show / Season info values</description>
                     <posx>100</posx>
                     <posy>25</posy>
                     <control type="label">
@@ -561,7 +579,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label fallback="Inte tillgänglig">$INFO[ListItem.Premiered]</label>
+                        <label fallback="416">$INFO[ListItem.Premiered]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Season episode count value</description>
@@ -575,7 +593,7 @@
                         <pauseatend>3000</pauseatend>
                         <scrolltoend>false</scrolltoend>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Episode]$INFO[ListItem.Property(WatchedEpisodes), (, visade]$INFO[ListItem.Property(UnWatchedEpisodes),$COMMA , inte visade)]</label>
+                        <label fallback="416">$INFO[ListItem.Episode]$INFO[ListItem.Property(WatchedEpisodes), (, visade]$INFO[ListItem.Property(UnWatchedEpisodes),$COMMA , inte visade)]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Season genre value</description>
@@ -590,7 +608,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Genre]</label>
+                        <label fallback="416">$INFO[ListItem.Genre]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Season director value</description>
@@ -605,7 +623,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Director]</label>
+                        <label fallback="416">$INFO[ListItem.Director]</label>
                     </control>
                     <control type="fadelabel">
                         <description> writer value</description>
@@ -620,7 +638,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <label fallback="-">$INFO[ListItem.Writer]</label>
+                        <label fallback="416">$INFO[ListItem.Writer]</label>
                     </control>
                 </control>
             </control>

@@ -1,6 +1,6 @@
 ﻿<includes>
     <include name="Poster_listcontent">
-        <visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)] | Container.Content(Episodes) | Window.IsVisible(VideoFiles)</visible>
+        <visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Episodes) | Window.IsVisible(VideoFiles)</visible>
         <posx>-123</posx>
         <posy>0</posy>
         <width>1994</width>
@@ -23,13 +23,14 @@
                 <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
             <control type="image">
-                <posx>90</posx>
+                <posx>88</posx>
                 <posy>190</posy>
                 <width>40</width>
                 <height>40</height>
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
-                <colordiffuse>9900ff00</colordiffuse>
+                <colordiffuse>8800ff00</colordiffuse>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
             </control>
         </itemlayout>
         <focusedlayout width="190" condition="!Container.Content(Episodes)">
@@ -42,6 +43,7 @@
                 <colordiffuse>ff00B8F5</colordiffuse>
                 <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
                 <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
+                <visible>!ControlGroup(9000).HasFocus</visible>
             </control>
             <control type="image">
                 <posx>3</posx>
@@ -63,6 +65,7 @@
                 <colordiffuse>lime</colordiffuse>
                 <animation tween="back" reversible="false" effect="zoom" center="0,0" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
                 <animation tween="back" reversible="false" effect="zoom" center="90,190" start="60" end="100" time="400">focus</animation>
+                <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
             </control>
         </focusedlayout>
         <itemlayout width="249" condition="Container.Content(Episodes)">
@@ -83,6 +86,7 @@
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>9900ff00</colordiffuse>
+                <visible>Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
             </control>
         </itemlayout>
         <focusedlayout width="354" condition="Container.Content(Episodes)">
@@ -114,8 +118,9 @@
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>ff00ff00</colordiffuse>
-                <animation tween="back" reversible="false" effect="zoom" center="-500,0" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
-                <animation tween="back" reversible="false" effect="zoom" center="-500,0" start="60" end="100" time="400">focus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="-350,130" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="-350,130" start="60" end="100" time="400">focus</animation>
+                <visible>Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
             </control>
         </focusedlayout>
     </include>
@@ -125,17 +130,17 @@
             <posx>-2000</posx>
             <control type="button">
                 <description>Posters centered and up press from list 500/504</description>
-                <visible>[[Control.IsVisible(500) + Control.HasFocus(500)] | [Control.IsVisible(504) + Control.HasFocus(504)]] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[[Control.IsVisible(500) + Control.HasFocus(500)] | [Control.IsVisible(504) + Control.HasFocus(504)]] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
             <control type="button">
                 <description>Posters at bottom and up press from list 500/504 when small fanart</description>
-                <visible>[[Control.IsVisible(500) + Control.HasFocus(500)] | [Control.IsVisible(504) + Control.HasFocus(504)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom) + Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom) + Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom) + Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[[Control.IsVisible(500) + Control.HasFocus(500)] | [Control.IsVisible(504) + Control.HasFocus(504)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom) + Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom) + Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom) + Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom) + Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(600)</onfocus>
             </control>
             <control type="button">
                 <description>Posters at bottom and up press from list 500/504 when not small fanart</description>
-                <visible>[[Control.IsVisible(500) + Control.HasFocus(500)] | [Control.IsVisible(504) + Control.HasFocus(504)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom) + !Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom) + !Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom) + !Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[[Control.IsVisible(500) + Control.HasFocus(500)] | [Control.IsVisible(504) + Control.HasFocus(504)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom) + !Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom) + !Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom) + !Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom) + !Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(601)</onfocus>
             </control>
             <control type="button">
@@ -159,12 +164,12 @@
             </control>
             <control type="button">
                 <description>Posters centered and down press from scrollbar 60 if small fanart visible</description>
-                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(60) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom) + Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom) + Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom) + Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(60) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom) + Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom) + Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom) + Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom) + Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(600)</onfocus>
             </control>
             <control type="button">
                 <description>Posters centered and down press from scrollbar 60 if small fanart not visible</description>
-                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(60) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom) + !Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom) + !Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom) + !Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(60) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom) + !Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom) + !Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom) + !Skin.HasSetting(Seasons_Show_Small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom) + !Skin.HasSetting(Episodes_Show_Small_Fanart)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(601)</onfocus>
             </control>
             <control type="button">
@@ -174,7 +179,7 @@
             </control>
             <control type="button">
                 <description>Posters at bottom and down press from scrollbar 60</description>
-                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(60) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + Control.HasFocus(60) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
         </control>
@@ -183,12 +188,12 @@
             <posx>-2000</posx>
             <control type="button">
                 <description>Posters centered and left press scrollbar 600 or 601</description>
-                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(60)</onfocus>
             </control>
             <control type="button">
                 <description>Posters at bottom and left press from scrollbar 600 or 601</description>
-                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)]  | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)]  | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
         </control>
@@ -197,17 +202,17 @@
             <posx>-2000</posx>
             <control type="button">
                 <description>Posters centered and right press scrollbar 600 or 601</description>
-                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>[Control.IsVisible(500) | Control.IsVisible(504)] + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(60)</onfocus>
             </control>
             <control type="button">
                 <description>Posters at bottom and list 500 visible and right press scrollbar 600 or 601</description>
-                <visible>Control.IsVisible(500) + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>Control.IsVisible(500) + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(500)</onfocus>
             </control>
             <control type="button">
                 <description>Posters at bottom and list 504 visible and right press scrollbar 600 or 601</description>
-                <visible>Control.IsVisible(504) + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
+                <visible>Control.IsVisible(504) + [Control.HasFocus(600) | Control.HasFocus(601)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | Window.IsVisible(VideoFiles)]</visible>
                 <onfocus>SetFocus(504)</onfocus>
             </control>
         </control>
@@ -216,10 +221,10 @@
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>120</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,330" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,330" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="0,330" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,330" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,330" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,330" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,333" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,333" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
             <control type="image">
                 <description>List background if not episodes</description>
@@ -232,13 +237,53 @@
                 <visible>!Container.Content(Episodes)</visible>
             </control>
             <control type="image">
-                <description>List background</description>
+                <description>Top border not episodes</description>
+                <posx>0</posx>
+                <posy>-23</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>!Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <description>Bottom border not episodes</description>
+                <posx>0</posx>
+                <posy>271</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>!Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <description>List background episodes</description>
                 <posx>0</posx>
                 <posy>27</posy>
                 <width>1280</width>
                 <height>241</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
+                <visible>Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <description>Top border episodes</description>
+                <posx>0</posx>
+                <posy>24</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>Container.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <description>Bottom border episodes</description>
+                <posx>0</posx>
+                <posy>266</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
                 <visible>Container.Content(Episodes)</visible>
             </control>
             <control type="wraplist" id="500">
@@ -282,7 +327,7 @@
                 <scroll>true</scroll>
                 <align>left</align>
                 <aligny>center</aligny>
-                <label>$INFO[Container(Movies).NumItems,, filmer]</label>
+                <label>$INFO[Container(Movies).NumItems,, $LOCALIZE[31370]]</label>
             </control>
             <control type="group">
                 <description>Totals labels and values</description>
@@ -301,7 +346,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Visade: $INFO[Window(Home).Property(Movies.Watched),, st]</label>
+                        <label>$INFO[Window(Home).Property(Movies.Watched),$LOCALIZE[31332]: ,]</label>
                     </control>
                     <control type="label">
                         <description>Unwatched movies count</description>
@@ -314,7 +359,7 @@
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <label>Inte visade: $INFO[Window(Home).Property(Movies.UnWatched),, st]</label>
+                        <label>$INFO[Window(Home).Property(Movies.UnWatched),$LOCALIZE[31333]: ,]</label>
                     </control>
                 </control>
             </control>
@@ -339,7 +384,7 @@
                 <font>Font_EpisodeList_Season</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
-                <label>$INFO[ListItem.Season,Säsong ]</label>
+                <label>$INFO[ListItem.Season,$LOCALIZE[20373] ]</label>
             </control>
             <control type="label">
                 <description>Episode count</description>
@@ -348,75 +393,14 @@
                 <width>350</width>
                 <height>30</height>
                 <font>Font_EpisodeList_Episode_Count</font>
-                <textcolor>white</textcolor>
+                <textcolor>ffdddddd</textcolor>
                 <align>left</align>
-                <label>$INFO[Container(TVShows).NumItems,, avsnitt]</label>
+                <label>$INFO[Container(TVShows).NumItems,, $LOCALIZE[20453]]</label>
             </control>
         </control>
         <control type="group">
-            <visible>[[Control.IsVisible(500) | Control.IsVisible(504)] + !Window.IsVisible(VideoFiles)] + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            <visible>[[Control.IsVisible(500) | Control.IsVisible(504)] + !Window.IsVisible(VideoFiles)] + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             <include>VideoLibrary_bottom_info</include>
-        </control>
-        <control type="group">
-            <visible>[Control.IsVisible(500) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible>
-            <control type="image">
-                <description>Info background</description>
-                <posx>0</posx>
-                <posy>270r</posy>
-                <width>1280</width>
-                <height>270</height>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>55000000</colordiffuse>
-            </control>
-            <control type="label">
-                <description>TVShow title</description>
-                <posx>30</posx>
-                <posy>530</posy>
-                <width>1220</width>
-                <height>35</height>
-                <font>font30_title</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="label">
-                <posx>0</posx>
-                <posy>570</posy>
-                <width>1280</width>
-                <height>35</height>
-                <font>font30</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Genre]</label>
-            </control>
-            <control type="label">
-                <posx>0</posx>
-                <posy>610</posy>
-                <width>1280</width>
-                <height>35</height>
-                <font>font13caps</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
-            </control>
-            <control type="label">
-                <posx>0</posx>
-                <posy>640</posy>
-                <width>1280</width>
-                <height>35</height>
-                <font>Font_Movie_Info</font>
-                <textcolor>yellow</textcolor>
-                <scroll>true</scroll>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
-            </control>
         </control>
         <control type="group">
             <visible>Window.IsVisible(VideoFiles)</visible>

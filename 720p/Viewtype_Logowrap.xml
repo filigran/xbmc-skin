@@ -70,9 +70,9 @@
             <visible>Control.IsVisible(508)</visible>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
-            <posy>450</posy>
+            <posy>400</posy>
             <animation reversible="false" effect="slide" start="0,0" end="0,-250" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-250" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + !System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-250" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
             <animation reversible="false" effect="slide" start="0,-250" end="0,-30" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
             <control type="image">
                 <description>List background</description>
@@ -82,6 +82,153 @@
                 <height>270</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="image">
+                <description>Top border if logos at top</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>Skin.HasSetting(TVShows_Logos_Centered)</visible>
+            </control>
+            <control type="image">
+                <description>Bottom border if logos at bottom</description>
+                <posx>0</posx>
+                <posy>270</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>!Skin.HasSetting(TVShows_Logos_Centered)</visible>
+            </control>
+            <control type="group">
+                <description>Logo fallbacks</description>
+                <control type="image" id="7000">
+                    <description>Logo -2</description>
+                    <posx>0</posx>
+                    <posy>1000</posy>
+                    <width>1</width>
+                    <height>1</height>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>88ffffff</colordiffuse>
+                    <texture>$INFO[ListItem(-2).Path,,logo.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Label fallback for logo -2</description>
+                    <posx>35</posx>
+                    <posy>60</posy>
+                    <width>220</width>
+                    <height>60</height>
+                    <font>Font_Condensed_Bold_Caps_40</font>
+                    <textcolor>88ffffff</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem(-2).TVShowTitle]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>IsEmpty(Control.GetLabel(7000))</visible>
+                </control>
+                <control type="image" id="7001">
+                    <description>Logo -1</description>
+                    <posx>0</posx>
+                    <posy>1000</posy>
+                    <width>1</width>
+                    <height>1</height>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>88ffffff</colordiffuse>
+                    <texture>$INFO[ListItem(-1).Path,,logo.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Label fallback for logo -1</description>
+                    <posx>285</posx>
+                    <posy>60</posy>
+                    <width>220</width>
+                    <height>60</height>
+                    <font>Font_Condensed_Bold_Caps_40</font>
+                    <textcolor>88ffffff</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem(-1).TVShowTitle]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>IsEmpty(Control.GetLabel(7001))</visible>
+                </control>
+                <control type="image" id="7002">
+                    <description>Logo 0</description>
+                    <posx>0</posx>
+                    <posy>1000</posy>
+                    <width>1</width>
+                    <height>1</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>$INFO[ListItem.Path,,logo.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Label fallback for logo 0</description>
+                    <posx>535</posx>
+                    <posy>60</posy>
+                    <width>220</width>
+                    <height>60</height>
+                    <font>Font_Condensed_Bold_Caps_40</font>
+                    <textcolor>ffffffff</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem.TVShowTitle]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>IsEmpty(Control.GetLabel(7002))</visible>
+                </control>
+                <control type="image" id="7003">
+                    <description>Logo 1</description>
+                    <posx>0</posx>
+                    <posy>1000</posy>
+                    <width>1</width>
+                    <height>1</height>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>88ffffff</colordiffuse>
+                    <texture>$INFO[ListItem(1).Path,,logo.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Label fallback for logo 1</description>
+                    <posx>785</posx>
+                    <posy>60</posy>
+                    <width>220</width>
+                    <height>60</height>
+                    <font>Font_Condensed_Bold_Caps_40</font>
+                    <textcolor>88ffffff</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem(1).TVShowTitle]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>IsEmpty(Control.GetLabel(7003))</visible>
+                </control>
+                <control type="image" id="7004">
+                    <description>Logo 2</description>
+                    <posx>0</posx>
+                    <posy>1000</posy>
+                    <width>1</width>
+                    <height>1</height>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>88ffffff</colordiffuse>
+                    <texture>$INFO[ListItem(2).Path,,logo.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Label fallback for logo 2</description>
+                    <posx>1035</posx>
+                    <posy>60</posy>
+                    <width>220</width>
+                    <height>60</height>
+                    <font>Font_Condensed_Bold_Caps_40</font>
+                    <textcolor>88ffffff</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem(2).TVShowTitle]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>IsEmpty(Control.GetLabel(7004))</visible>
+                </control>
             </control>
             <control type="wraplist" id="508">
                 <visible>Container.Content(TVShows)</visible>
@@ -101,13 +248,14 @@
                 <preloaditems>4</preloaditems>
                 <itemlayout height="255" width="250">
                     <control type="image">
+                        <description>Logo</description>
                         <posx>25</posx>
                         <posy>0</posy>
                         <width>200</width>
                         <height>77</height>
                         <aspectratio>stretch</aspectratio>
                         <colordiffuse>88ffffff</colordiffuse>
-                        <texture background="true">$INFO[ListItem.Path]logo.png</texture>
+                        <texture>$INFO[ListItem.Path,,logo.png]</texture>
                     </control>
                     <control type="image">
                         <posx>200</posx>
@@ -116,17 +264,20 @@
                         <height>40</height>
                         <aspectratio>stretch</aspectratio>
                         <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
-                        <colordiffuse>lime</colordiffuse>
+                        <colordiffuse>8800ff00</colordiffuse>
+                        <visible>Skin.HasSetting(TVShows_Show_Watched_Overlay)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="255" width="250">
                     <control type="image">
+                        <description>Logo</description>
                         <posx>25</posx>
                         <posy>0</posy>
                         <width>200</width>
                         <height>77</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Path]logo.png</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                        <texture>$INFO[ListItem.Path,,logo.png]</texture>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="120" time="400">focus</animation>
                     </control>
                     <control type="image">
@@ -137,6 +288,7 @@
                         <aspectratio>stretch</aspectratio>
                         <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>lime</colordiffuse>
+                        <visible>Skin.HasSetting(TVShows_Show_Watched_Overlay)</visible>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="120" time="400">focus</animation>
                     </control>
                     <control type="label">
@@ -147,7 +299,7 @@
                         <font>Font_TVShows_Logowrap_Episodes</font>
                         <textcolor>white</textcolor>
                         <align>center</align>
-                        <label>$INFO[ListItem.Episode,, avsnitt]</label>
+                        <label fallback="">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
                         <animation reversible="false" effect="fade" start="0" end="100" time="400">focus</animation>
                         <animation reversible="false" effect="fade" start="100" end="0" time="200">unfocus</animation>
                     </control>
@@ -159,7 +311,7 @@
                         <font>Font_TVShows_Logowrap_Episodes_Smaller</font>
                         <textcolor>ffaeaeae</textcolor>
                         <align>center</align>
-                        <label>$INFO[ListItem.Property(WatchedEpisodes),, visade][CR]$INFO[ListItem.Property(UnWatchedEpisodes),, inte visade]</label>
+                        <label>$INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[31332]][CR]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31333]]</label>
                         <animation reversible="false" effect="fade" start="0" end="100" time="400">focus</animation>
                         <animation reversible="false" effect="fade" start="100" end="0" time="200">unfocus</animation>
                     </control>
@@ -183,16 +335,15 @@
         <control type="group">
             <visible>Control.IsVisible(508) + Container.Content(TVShows)</visible>
             <posx>0</posx>
-            <posy>300</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,170" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,170" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + !System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,170" end="0,-30" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)] + System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
+            <posy>230</posy>
+            <animation reversible="false" effect="slide" start="0,0" end="0,190" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,190" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
-                <height>180</height>
+                <height>200</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
                 <visible>Control.IsVisible(508) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
@@ -202,73 +353,89 @@
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
-                <height>150</height>
+                <height>170</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>55000000</colordiffuse>
                 <visible>Control.IsVisible(508) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
             </control>
+            <control type="image">
+                <description>Top border if logos at bottom</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>!Skin.HasSetting(TVShows_Logos_Centered)</visible>
+            </control>
+            <control type="image">
+                <description>Bottom border if logos at top</description>
+                <posx>0</posx>
+                <posy>200</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>Skin.HasSetting(TVShows_Logos_Centered)</visible>
+            </control>
             <control type="label">
-                <description>Totals label</description>
+                <description>Total show count</description>
                 <posx>20</posx>
-                <posy>0</posy>
+                <posy>10</posy>
                 <width>300</width>
                 <height>35</height>
                 <font>Font_Details_Header</font>
                 <textcolor>white</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[Container(TVShows).NumItems,, TV-serier totalt:]</label>
+                <label>$INFO[Container(TVShows).NumItems,, $LOCALIZE[31381]:]</label>
             </control>
             <control type="group">
                 <description>Totals labels and values</description>
                 <posx>20</posx>
-                <posy>30</posy>
+                <posy>40</posy>
                 <control type="group">
                     <description>Totals labels</description>
                     <control type="label">
                         <description>Total episodes count</description>
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>140</width>
+                        <width>160</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Avsnitt totalt:</label>
+                        <label>$LOCALIZE[31382]:</label>
                     </control>
                     <control type="label">
                         <description>Watched episodes count</description>
                         <posx>0</posx>
                         <posy>25</posy>
-                        <width>140</width>
+                        <width>160</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Visade totalt:</label>
+                        <label>$LOCALIZE[31383]:</label>
                     </control>
                     <control type="label">
                         <description>Total unwatched count</description>
                         <posx>0</posx>
                         <posy>50</posy>
-                        <width>140</width>
+                        <width>160</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Inte visade totalt:</label>
+                        <label>$LOCALIZE[31384]:</label>
                     </control>
                 </control>
                 <control type="group">
                     <description>Totals values</description>
-                    <posx>150</posx>
+                    <posx>170</posx>
                     <posy>0</posy>
                     <control type="label">
                         <description>Total episodes value</description>
@@ -280,8 +447,7 @@
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[Window(Home).Property(Episodes.Count),, st]</label>
+                        <label fallback="416">$INFO[Window(Home).Property(Episodes.Count)]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Total watched value</description>
@@ -295,8 +461,7 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[Window(Home).Property(Episodes.Watched),, st]</label>
+                        <label fallback="416">$INFO[Window(Home).Property(Episodes.Watched)]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Total unwatched value</description>
@@ -310,23 +475,9 @@
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[Window(Home).Property(Episodes.UnWatched),, st]</label>
+                        <label fallback="416">$INFO[Window(Home).Property(Episodes.UnWatched)]</label>
                     </control>
                 </control>
-            </control>
-            <control type="label">
-                <description>Info label</description>
-                <posx>330r</posx>
-                <posy>0</posy>
-                <width>300</width>
-                <height>35</height>
-                <font>Font_Details_Header</font>
-                <textcolor>white</textcolor>
-                <scroll>true</scroll>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>TV-serieinformation:</label>
             </control>
             <control type="group">
                 <description>Plot + plot scrollbar</description>
@@ -364,9 +515,23 @@
             <control type="group">
                 <description>Info labels and values</description>
                 <posx>330r</posx>
-                <posy>30</posy>
+                <posy>10</posy>
+                <control type="label">
+                    <description>Info header</description>
+                    <posx>30r</posx>
+                    <posy>0</posy>
+                    <width>300</width>
+                    <height>35</height>
+                    <font>Font_Details_Header</font>
+                    <textcolor>white</textcolor>
+                    <scroll>true</scroll>
+                    <align>right</align>
+                    <label>$LOCALIZE[20351]:</label>
+                </control>
                 <control type="group">
                     <description>Info labels</description>
+                    <posx>220r</posx>
+                    <posy>30</posy>
                     <control type="label">
                         <description>Premiered label</description>
                         <posx>0</posx>
@@ -377,83 +542,83 @@
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Premiär:</label>
+                        <label>$LOCALIZE[31369]:</label>
                     </control>
                     <control type="label">
                         <description>Genre label</description>
                         <posx>0</posx>
-                        <posy>30</posy>
+                        <posy>25</posy>
                         <width>100</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
                         <align>left</align>
-                        <aligny>center</aligny>
-                        <label>Genre:</label>
+                        <label>$LOCALIZE[515]:</label>
                     </control>
                 </control>
                 <control type="group">
                     <description>Info values</description>
-                    <posx>110</posx>
-                    <posy>0</posy>
+                    <posx>30r</posx>
+                    <posy>30</posy>
                     <control type="label">
                         <description>Premiered value</description>
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>200</width>
+                        <width>130</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
                         <textcolor>ffcccccc</textcolor>
                         <scroll>true</scroll>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[ListItem.Premiered]</label>
+                        <align>right</align>
+                        <label fallback="416">$INFO[ListItem.Premiered]</label>
                     </control>
                     <control type="fadelabel">
                         <description>Genre value</description>
-                        <posx>0</posx>
-                        <posy>30</posy>
-                        <width>200</width>
+                        <posx>-130</posx>
+                        <posy>25</posy>
+                        <width>130</width>
                         <height>35</height>
                         <font>Font_Movie_Info</font>
                         <textcolor>ffcccccc</textcolor>
                         <scrollout>false</scrollout>
                         <pauseatend>2000</pauseatend>
                         <scrollspeed>40</scrollspeed>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label fallback="-">$INFO[ListItem.Genre]</label>
+                        <align>right</align>
+                        <label fallback="416">$INFO[ListItem.Genre]</label>
                     </control>
                 </control>
             </control>
-            <control type="image">
-                <description>TV Show Star rating</description>
-                <posx>250r</posx>
+            <control type="group">
+                <posx>220r</posx>
                 <posy>100</posy>
-                <width>100</width>
-                <height>50</height>
-                <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
-                <colordiffuse>ffeaf188</colordiffuse>
-                <aspectratio>keep</aspectratio>
-                <visible>Skin.HasSetting(TVShows_Show_Rating)</visible>
-            </control>
-            <control type="fadelabel">
-                <description>TV Show rating text</description>
-                <posx>140r</posx>
-                <posy>99</posy>
-                <width>200</width>
-                <height>50</height>
-                <font>Font_Rating</font>
-                <textcolor>ffcccccc</textcolor>
-                <scrollout>false</scrollout>
-                <pauseatend>2000</pauseatend>
-                <scrollspeed>40</scrollspeed>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label fallback="(No rating)">$INFO[ListItem.Rating,(,)]</label>
-                <visible>Skin.HasSetting(TVShows_Show_Rating)</visible>
+                <control type="image">
+                    <description>TV Show Star rating</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>100</width>
+                    <height>50</height>
+                    <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
+                    <colordiffuse>ffeaf188</colordiffuse>
+                    <aspectratio>keep</aspectratio>
+                    <visible>Skin.HasSetting(TVShows_Show_Rating)</visible>
+                </control>
+                <control type="fadelabel">
+                    <description>TV Show rating text</description>
+                    <posy>0</posy>
+                    <posx>120</posx>
+                    <width>200</width>
+                    <height>50</height>
+                    <font>Font_Rating</font>
+                    <textcolor>ffcccccc</textcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
+                    <scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label fallback="31385">$INFO[ListItem.Rating,(,)]</label>
+                    <visible>Skin.HasSetting(TVShows_Show_Rating)</visible>
+                </control>
             </control>
         </control>
     </include>

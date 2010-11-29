@@ -12,10 +12,10 @@
             <label>-</label>
             <font>-</font>
             <onfocus>XBMC.RunScript(script.recentlyadded,totals=True&amp;limit=5)</onfocus>
-            <onfocus>SetFocus(300)</onfocus>
+            <onfocus>SetFocus(5044)</onfocus>
             <texturenofocus>-</texturenofocus>
             <texturefocus>-</texturefocus>
-            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_Movies) | Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) | Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+            <visible>Skin.HasSetting(Home_Show_RecentlyAdded_Movies) | Skin.HasSetting(Home_Show_RecentlyAdded_Episodes) | Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
         </control>
         <control type="button" id="5043">
             <description>Don't run recently added</description>
@@ -25,13 +25,41 @@
             <height>1</height>
             <label>-</label>
             <font>-</font>
+            <onfocus>SetFocus(5044)</onfocus>
+            <texturenofocus>-</texturenofocus>
+            <texturefocus>-</texturefocus>
+            <visible>!Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + !Skin.HasSetting(Home_Show_RecentlyAdded_Episodes) + !Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+        </control>
+        <control type="button" id="5044">
+            <description>Run random items</description>
+            <posx>-20</posx>
+            <posy>-20</posy>
+            <width>1</width>
+            <height>1</height>
+            <label>-</label>
+            <font>-</font>
+            <onfocus>XBMC.RunScript(script.randomitems,totals=True&amp;limit=10&amp;unplayed=True)</onfocus>
             <onfocus>SetFocus(300)</onfocus>
             <texturenofocus>-</texturenofocus>
             <texturefocus>-</texturefocus>
-            <visible>!Skin.HasSetting(Home_Show_RecentlyAdded_Movies) + !Skin.HasSetting(Home_Show_RecentlyAdded_TVShows) + !Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+            <visible>Skin.HasSetting(Home_Show_Random_Movies) | Skin.HasSetting(Home_Show_Random_Episodes) | Skin.HasSetting(Home_Show_Random_Music)</visible>
+        </control>
+        <control type="button" id="5044">
+            <description>Don't run random items</description>
+            <posx>-20</posx>
+            <posy>-20</posy>
+            <width>1</width>
+            <height>1</height>
+            <label>-</label>
+            <font>-</font>
+            <onfocus>SetFocus(300)</onfocus>
+            <texturenofocus>-</texturenofocus>
+            <texturefocus>-</texturefocus>
+            <visible>!Skin.HasSetting(Home_Show_Random_Movies) + !Skin.HasSetting(Home_Show_Random_Episodes) + !Skin.HasSetting(Home_Show_Random_Music)</visible>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="multiimage">
+            <description>Menu fanart</description>
             <posx>0</posx>
             <posy>0</posy>
             <width>1280</width>
@@ -43,7 +71,7 @@
             <loop>true</loop>
             <aspectratio background="true" aligny="top">scale</aspectratio>
             <imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
-      <visible>!Player.HasMedia</visible>
+            <visible>!Player.HasMedia</visible>
         </control>
         <control type="image">
             <description>Fanart overlay</description>
@@ -54,11 +82,42 @@
             <texture>white.png</texture>
             <colordiffuse>88000000</colordiffuse>
         </control>
+        <include>Home_Menu</include>
+        <control type="image">
+            <description>Background diffuser for recently added / random items / weather</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>white.png</texture>
+            <colordiffuse>88000000</colordiffuse>
+            <visible>Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305) | Control.HasFocus(306) | Control.HasFocus(307)</visible>
+            <animation effect="fade" time="300" start="0" end="100">VisibleChange</animation>
+        </control>
+        <include>Home_RecentlyAdded</include>
+        <include>Home_RandomItems</include>
+        <include>Home_Weather</include>
+        <!--<control type="image">
+            <description>centering image horizontal. REMOVE THIS</description>
+            <posx>0</posx>
+            <posy>360</posy>
+            <width>1280</width>
+            <height>1</height>
+            <texture>white.png</texture>
+            <colordiffuse>ffff0000</colordiffuse>
+        </control>
+        <control type="image">
+            <description>centering image vertical. REMOVE THIS</description>
+            <posx>640</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>720</height>
+            <texture>white.png</texture>
+            <colordiffuse>ff00ff00</colordiffuse>
+        </control>-->
+        <include>Global_DialogDiffuser</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>
-        <include>Home_Menu</include>
-        <include>Home_RecentlyAdded</include>
-        <include>Home_Weather</include>
         <include>RSS_Feed</include>
     </controls>
 </window>

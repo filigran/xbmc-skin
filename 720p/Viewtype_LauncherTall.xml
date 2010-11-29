@@ -1,5 +1,20 @@
 <includes>
     <include name="Viewtype_LauncherTall">
+        <control type="group" id="620">
+            <visible>Control.IsVisible(518)</visible>
+            <description>Onright conditions</description>
+            <posy>-200</posy>
+            <control type="button">
+                <description>Scrollbar disabled</description>
+                <onfocus>SetFocus(518)</onfocus>
+                <visible>!Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
+            </control>
+            <control type="button">
+                <description>Scrollbar enabled</description>
+                <onfocus>SetFocus(62)</onfocus>
+                <visible>Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
+            </control>
+        </control>
         <control type="group">
             <visible>Control.IsVisible(518)</visible>
             <include>VisibleFadeEffect</include>
@@ -22,7 +37,7 @@
                 <width>748</width>
                 <height>594</height>
                 <onleft>9000</onleft>
-                <onright>62</onright>
+                <onright>620</onright>
                 <onup>518</onup>
                 <ondown>518</ondown>
                 <scrolltime>0</scrolltime>
@@ -75,7 +90,7 @@
             <onright>9000</onright>
             <showonepage>true</showonepage>
             <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.IsVisible(518) + Control.HasFocus(62)</visible>
+            <visible allowhiddenfocus="true">Control.IsVisible(518) + Control.HasFocus(62) + Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
         </control>
         <include>Launcher_Left_bar</include>
     </include>

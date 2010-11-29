@@ -8,16 +8,7 @@
         <posy>0</posy>
         <origin x="505" y="100" />
     </coordinates>
-    <controls><!--
-        <control type="image">
-            <description>Top background image</description>
-            <posx>135</posx>
-            <posy>-20</posy>
-            <width>1</width>
-            <height>500</height>
-            <texture>special://skin/media/white.png</texture>
-            <colordiffuse>lime</colordiffuse>
-        </control>-->
+    <controls>
         <control type="image" id="997">
             <description>Top background image</description>
             <posx>0</posx>
@@ -25,8 +16,8 @@
             <width>271</width>
             <height>10</height>
             <aspectratio>stretch</aspectratio>
-            <texture>special://skin/media/context_top.png</texture>
-            <colordiffuse>ff00b8f5</colordiffuse>
+            <texture>special://skin/media/context_topbottom.png</texture>
+            <colordiffuse>5500b8f5</colordiffuse>
         </control>
         <control type="image" id="999">
             <description>Center background image</description>
@@ -34,15 +25,15 @@
             <posy>-1</posy>
             <width>271</width>
             <texture>special://skin/media/context_center.png</texture>
-            <colordiffuse>ff00b8f5</colordiffuse>
+            <colordiffuse>5500b8f5</colordiffuse>
         </control>
         <control type="image" id="998">
             <description>Bottom background image</description>
             <posx>0</posx>
             <width>271</width>
             <height>10</height>
-            <texture flipy="true">special://skin/media/context_top.png</texture>
-            <colordiffuse>ff00b8f5</colordiffuse>
+            <texture flipy="true">special://skin/media/context_topbottom.png</texture>
+            <colordiffuse>5500b8f5</colordiffuse>
         </control>
         <control type="button" id="1000">
             <description>button template</description>
@@ -57,7 +48,7 @@
             <focusedcolor>white</focusedcolor>
             <texturefocus>special://skin/media/white.png</texturefocus>
             <bordersize>20</bordersize>
-            <colordiffuse>ff00b8f5</colordiffuse>
+            <colordiffuse>5500b8f5</colordiffuse>
             <texturenofocus>-</texturenofocus>
         </control>
     </controls>

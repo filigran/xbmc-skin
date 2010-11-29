@@ -87,14 +87,26 @@
                     <font>Font_Movie_Plot</font>
                     <textcolor>white</textcolor>
                     <align>center</align>
+                    <label>$INFO[ListItem.Premiered,, $LOCALIZE[31371]]</label>
+                    <visible>!IsEmpty(ListItem.Premiered)</visible>
+                </control>
+                <control type="textbox">
+                    <posx>140</posx>
+                    <posy>50</posy>
+                    <width>1000</width>
+                    <height>100</height>
+                    <font>Font_Movie_Plot</font>
+                    <textcolor>white</textcolor>
+                    <align>justify</align>
                     <pagecontrol>64</pagecontrol>
-                    <label>$INFO[ListItem.Plot,, spel]</label>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <visible>IsEmpty(ListItem.Premiered)</visible>
                 </control>
                 <control type="scrollbar" id="64">
                     <posx>1150</posx>
                     <posy>50</posy>
                     <width>5</width>
-                    <height>94</height>
+                    <height>100</height>
                     <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                     <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                     <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
@@ -102,7 +114,7 @@
                     <onright>63</onright>
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
-                    <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(64)</visible>
+                    <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(64) + IsEmpty(ListItem.Premiered)</visible>
                 </control>
             </control>
         </control>

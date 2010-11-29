@@ -3,24 +3,45 @@
     <coordinates>
         <system>1</system>
         <posx>0</posx>
-        <posy>505</posy>
+        <posy>465</posy>
     </coordinates>
     <controls>
         <control type="group">
-            <animation effect="slide" start="0,250" end="0,0" time="300">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,250" time="300">WindowClose</animation>
+            <animation effect="slide" start="0,390" end="0,0" time="300">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,390" time="300">WindowClose</animation>
             <control type="image">
                 <description>Background image</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
-                <height>125</height>
+                <height>135</height>
                 <texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
             </control>
+            <control type="image">
+                <description>Top border</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <animation effect="slide" start="0,-255" end="0,0" time="300" condition="Player.Paused">WindowOpen</animation>
+                <animation effect="slide" start="0,0" end="0,-255" time="300" condition="Player.Paused">WindowClose</animation>
+            </control>
+            <control type="image">
+                <posx>270r</posx>
+                <posy>-143</posy>
+                <width>250</width>
+                <height>140</height>
+                <texture background="true">$INFO[Player.FolderPath,,/../clearart.png]</texture>
+                <animation effect="slide" start="0,-265" end="0,0" time="300" condition="Player.Paused">WindowOpen</animation>
+                <animation effect="slide" start="0,0" end="0,-265" time="300" condition="Player.Paused">WindowClose</animation>
+                <visible>VideoPlayer.Content(Episodes) + Skin.HasSetting(Episodes_Show_Clearart)</visible>
+            </control>
             <control type="group" id="200">
                 <posx>417</posx>
-                <posy>4</posy>
+                <posy>14</posy>
                 <control type="button" id="700">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -78,7 +99,7 @@
             </control>
             <control type="group" id="201">
                 <posx>718</posx>
-                <posy>4</posy>
+                <posy>14</posy>
                 <control type="button" id="703">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -134,7 +155,7 @@
             </control>
             <control type="group" id="100">
                 <posx>490</posx>
-                <posy>40</posy>
+                <posy>50</posy>
                 <control type="button" id="600">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -232,7 +253,7 @@
             </control>
             <control type="label">
                 <posx>410</posx>
-                <posy>92</posy>
+                <posy>102</posy>
                 <width>460</width>
                 <height>25</height>
                 <label>$INFO[System.CurrentControl]</label>

@@ -9,24 +9,26 @@
     <include file="Viewtype_LauncherWide.xml" />
     <include file="Viewtype_LauncherTall.xml" />
     <include file="Viewtype_LauncherLogo.xml" />
-    <include file="IncludesCodecFlagging.xml" />
-    <include file="IncludesHomeRecentlyAdded.xml" />
-    <include file="Includes_Home.xml" />
+    <include file="Includes_Home_Menu.xml" />
+    <include file="Includes_Home_RecentlyAdded.xml" />
+    <include file="Includes_Home_RandomItems.xml" />
+    <include file="Includes_Home_Weather.xml" />
     <include file="Includes_Launcher.xml" />
     <include file="Includes_Viewtypes.xml" />
+    <include file="IncludesCodecFlagging.xml" />
     <constant name="FanartCrossfadeTime">500</constant>
     <constant name="IconCrossfadeTime">400</constant>
     <include name="Global_Time">
         <!-- Time and date -->
         <control type="group">
             <description>Time and date</description>
-            <posx>150r</posx>
+            <posx>215r</posx>
             <posy>25</posy>
             <control type="label">
                 <description>Time</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>135</width>
+                <width>200</width>
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>Font_Top_Time</font>
@@ -38,7 +40,7 @@
                 <description>Date</description>
                 <posx>0</posx>
                 <posy>20</posy>
-                <width>135</width>
+                <width>200</width>
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>Font_Top_Date</font>
@@ -52,7 +54,7 @@
         <!-- Weather -->
         <control type="group">
             <description>Weather</description>
-            <posx>300r</posx>
+            <posx>365r</posx>
             <posy>11</posy>
             <width>150</width>
             <control type="image">
@@ -92,6 +94,15 @@
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
             </control>
+            <control type="image">
+                <description>Top border</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+            </control>
             <control type="rss">
                 <description>RSS feed</description>
                 <posx>0</posx>
@@ -104,7 +115,7 @@
                 <textcolor>gray</textcolor>
                 <headlinecolor>gray</headlinecolor>
                 <highlightcolor>red</highlightcolor>
-                <titlecolor>blue</titlecolor>
+                <titlecolor>ff00b8f5</titlecolor>
                 <urlset>1</urlset>
             </control>
         </control>
@@ -152,7 +163,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>2x</label>
             <visible>Player.Rewinding2x</visible>
         </control>
@@ -165,7 +176,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>4x</label>
             <visible>Player.Rewinding4x</visible>
         </control>
@@ -178,7 +189,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>8x</label>
             <visible>Player.Rewinding8x</visible>
         </control>
@@ -191,7 +202,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>16x</label>
             <visible>Player.Rewinding16x</visible>
         </control>
@@ -204,7 +215,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>32x</label>
             <visible>Player.Rewinding32x</visible>
         </control>
@@ -218,7 +229,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>2x</label>
             <visible>Player.Forwarding2x</visible>
         </control>
@@ -231,7 +242,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>4x</label>
             <visible>Player.Forwarding4x</visible>
         </control>
@@ -244,7 +255,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>8x</label>
             <visible>Player.Forwarding8x</visible>
         </control>
@@ -257,7 +268,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>16x</label>
             <visible>Player.Forwarding16x</visible>
         </control>
@@ -270,24 +281,33 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>Font_OSD_speed</font>
-            <textcolor>blue</textcolor>
+            <textcolor>ff00b8f5</textcolor>
             <label>32x</label>
             <visible>Player.Forwarding32x</visible>
         </control>
     </include>
-    <include name="Global_ContextOverlay">
-        <control type="group">
-            <visible>Window.IsActive(106)</visible>
-            <animation effect="fade" start="0" end="100" time="200">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-            <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1280</width>
-                <height>720</height>
-                <texture>white.png</texture>
-                <colordiffuse>cc000000</colordiffuse>
-            </control>
+    <include name="Global_DialogDiffuser">
+        <control type="image">
+            <description>Dialog diffuser</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>cc000000</colordiffuse>
+            <animation effect="fade" start="0" end="100" time="200" reversible="no">VisibleChange</animation>
+            <visible>Window.IsActive(100) | Window.IsActive(106) | Window.IsActive(111)</visible>
+        </control>
+    </include>
+    <include name="Global_BackgroundDiffuser">
+        <control type="image">
+            <description>Background diffuser</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>55000000</colordiffuse>
         </control>
     </include>
     <include name="CommonMediaPlayingBackground">
@@ -296,7 +316,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <texture>special://skin/backgrounds/media-overlay.png</texture>
+            <texture>special://skin/media/backgrounds/media-overlay.png</texture>
             <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
         </control>
         <control type="visualisation">
@@ -320,7 +340,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -330,7 +350,18 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/trailers.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Trailers_Folder)]</imagepath>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <visible>substring(container.folderpath,plugin://plugin.video.apple.movie.trailers.lite)</visible>
+        </control>
+        <control type="multiimage">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath fallback="special://skin/media/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -341,7 +372,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_TVShow_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_TVShow_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -354,7 +385,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Music_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/music.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Music_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -366,7 +397,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/pictures.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Pictures_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/pictures.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Pictures_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -378,7 +409,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/programs.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Programs_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/programs.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Programs_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -390,7 +421,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/games.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Games_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/games.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Games_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -403,7 +434,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/scripts.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Scripts_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/scripts.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Scripts_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -415,7 +446,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/weather.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Weather_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/weather.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Weather_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -440,7 +471,7 @@
             <posy>0</posy>
             <width>1280</width>
             <height>720</height>
-            <imagepath fallback="special://skin/backgrounds/settings.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Settings_Folder)]</imagepath>
+            <imagepath fallback="special://skin/media/backgrounds/settings.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Settings_Folder)]</imagepath>
             <timeperimage>10000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
@@ -566,7 +597,7 @@
             <posy>30r</posy>
             <width>700</width>
             <height>20</height>
-            <label>([COLOR=blue]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR]) - $INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title]</label>
+            <label>([COLOR=ff00b8f5]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR]) - $INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title]</label>
             <align>left</align>
             <aligny>center</aligny>
             <font>font12</font>
@@ -587,7 +618,7 @@
             <scroll>false</scroll>
             <align>right</align>
             <aligny>center</aligny>
-            <label>([COLOR=blue]$INFO[Container.NumItems][/COLOR]) $LOCALIZE[31025]$INFO[Container.TotalTime, - $LOCALIZE[180] ([COLOR=blue],[/COLOR])] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container.CurrentPage]/$INFO[Container.NumPages][/COLOR])</label>
+            <label>([COLOR=ff00b8f5]$INFO[Container.NumItems][/COLOR]) $LOCALIZE[31025]$INFO[Container.TotalTime, - $LOCALIZE[180] ([COLOR=ff00b8f5],[/COLOR])] - $LOCALIZE[31024] ([COLOR=ff00b8f5]$INFO[Container.CurrentPage]/$INFO[Container.NumPages][/COLOR])</label>
             <include>Window_OpenClose_Animation</include>
         </control>
     </include>
@@ -669,7 +700,7 @@
             <posy>120</posy>
             <height>30</height>
             <width>325</width>
-            <label>[COLOR=blue]$LOCALIZE[209] :[/COLOR] $INFO[MusicPlayer.offset(1).Title]</label>
+            <label>[COLOR=ff00b8f5]$LOCALIZE[209] :[/COLOR] $INFO[MusicPlayer.offset(1).Title]</label>
             <align>right</align>
             <aligny>center</aligny>
             <font>font12</font>

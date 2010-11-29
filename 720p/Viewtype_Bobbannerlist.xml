@@ -68,7 +68,7 @@
                         <label>$INFO[Listitem.Label]</label>
                         <font>Font_Movie_List</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <selectedcolor>ff00b8f5</selectedcolor>
                         <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
                     </control>
                     <control type="image">
@@ -91,7 +91,7 @@
                         <aligny>center</aligny>
                         <texture>special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>lime</colordiffuse>
-                        <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
+                        <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="30">
@@ -115,8 +115,8 @@
                         <aligny>center</aligny>
                         <label>$INFO[Listitem.Label]</label>
                         <font>Font_Movie_List</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor><animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
+                        <textcolor>ff00b8f5</textcolor>
+                        <selectedcolor>ff00b8f5</selectedcolor><animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
                         <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
                     </control>
@@ -144,7 +144,7 @@
                         <colordiffuse>lime</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(TVshows) | Container.Content(Seasons)</visible>
+                        <visible>[Container.Content(TVshows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
                     </control>
                 </focusedlayout>
             </control>
@@ -166,6 +166,16 @@
         <control type="group">
             <visible>Control.IsVisible(501) + !Window.IsVisible(VideoFiles) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
             <control type="image">
+                <description>Banner frame</description>
+                <posx>336</posx>
+                <posy>100</posy>
+                <width>606</width>
+                <height>112</height>
+                <aspectratio>stretch</aspectratio>
+                <texture border="4">special://skin/media/episodeframe.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+            </control>
+            <control type="image">
                 <description>Banner</description>
                 <posx>336</posx>
                 <posy>100</posy>
@@ -173,7 +183,8 @@
                 <height>112</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
-                <texture>$INFO[Listitem.Icon]</texture>
+                <texture diffuse="special://skin/media/episodematte.png">$INFO[Listitem.Icon]</texture>
+                <bordersize>4</bordersize>
             </control>
             <include>VideoLibrary_bottom_info</include>
         </control>

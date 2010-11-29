@@ -18,7 +18,7 @@
   <string id="31025">Items</string>
   <string id="31026">Misc Options</string>
   <string id="31027">Location</string>
- 
+
   <!-- View Type labels -->
   <string id="31028">Poster Wrap</string>
   <string id="31029">Fanart</string>
@@ -48,7 +48,7 @@
   <string id="31059">Current playlist</string>
   <string id="31060">This file is stacked, select the part you want to play from.</string>
   <string id="31061">Current Selected</string>
-  
+
   <!-- Skin Settings labels -->
   <string id="31100"></string>
   <string id="31101">Home screen options</string>
@@ -67,7 +67,6 @@
   <string id="31114">Multi Image</string>
   <string id="31115">Customizer</string>
   <string id="31116"></string>
-  <string id="31117">Show Recently added Videos</string>
   <string id="31118">Home Page Programs Submenu</string>
   <string id="31119">Enable Custom Add-on Button</string>
   <string id="31120">BUTTON LABEL</string>
@@ -134,7 +133,6 @@
   <string id="31354">Rewind</string>
   <string id="31355">Movie menu</string>
   <string id="31356">Download Subtitles</string>
-  <string id="31357"></string>
 
   <!-- Description Labels  -->
   <string id="31400">[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver</string>
@@ -148,4 +146,55 @@
   <string id="31408">[B]CONFIGURE ADD-ONS[/B][CR][CR]Manage your installed Add-ons · Browse for and install Add-ons from xbmc.org[CR]Modify Add-on settings</string>
 
   <string id="31421">Select your XBMC user Profile[CR]to login and continue</string>
+
+  <string id="31117">Show Recently added Movies</string>
+  <string id="31331">Latest songs</string>
+  <string id="31323">Latest movies</string>
+  <string id="31324">Latest episodes</string>
+  <string id="31131">Show Recently Added Episodes</string>
+  <string id="31132">Show Recently Added Songs</string>
+  <string id="31133">Available from the Shut Down menu</string>
+  <string id="31332">Watched</string>
+  <string id="31333">Unwatched</string>
+  <string id="31357">Trailers</string>
+  <string id="31358">Video Games</string>
+  <string id="31359">Switch to Filemode</string>
+  <string id="31390">Switch to Library mode</string>
+  <string id="31360">Use Scrollbar</string>
+  <string id="31361">Download logo.png for all TV-shows</string>
+  <string id="31362">Show clearart in episode info during video playback</string>
+  <string id="31363">Show RSS in all windows</string>
+  <string id="31364">Movie information</string>
+  <string id="31365">Episode information</string>
+  <string id="31366">Release</string>
+  <string id="31367">Season information</string>
+  <string id="31368">TV Show information</string>
+  <string id="31369">Premiered</string>
+  <string id="31370">movies</string>
+  <string id="31371">games</string>
+  <string id="31372">Centered menu</string>
+  <string id="31373">Hide icons</string>
+  <string id="31374">Centered icons</string>
+  <string id="31375">Icons to the left</string>
+  <string id="31376">Semi-centered menu</string>
+  <string id="31377">Centered meni</string>
+  <string id="31378">Bottom aligned menu</string>
+  <string id="31379">Menu options</string>
+  <string id="31380">Icons to the right</string>
+  <string id="31381">TV series in total</string>
+  <string id="31382">Episodes in total</string>
+  <string id="31383">Watched episodes</string>
+  <string id="31384">Unwatched episodes</string>
+  <string id="31385">(No rating)</string>
+  <string id="31386">Small fanart</string>
+  <string id="31387">Watched overlay</string>
+  <string id="31388">Logos centered</string>
+  <string id="31389">Posters centered</string>
+  <string id="31391">Thumbs centered</string>
+  <string id="31392">Random movies</string>
+  <string id="31393">Random episodes</string>
+  <string id="31394">Random songs</string>
+  <string id="31395">Show Random Movies</string>
+  <string id="31396">Show Random Episodes</string>
+  <string id="31397">Show Random Songs</string>
 </strings>

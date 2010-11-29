@@ -31,7 +31,7 @@
                 <font>Font_EpisodeList_Episode_Count</font>
                 <textcolor>ffdddddd</textcolor>
                 <align>left</align>
-                <label>$INFO[ListItem.Studio,,:] $INFO[Container.NumItems,[COLOR=grey], spel[/COLOR]]</label>
+                <label>$INFO[ListItem.Studio,,:] $INFO[Container.NumItems,[COLOR=grey], $LOCALIZE[31371][/COLOR]]</label>
             </control>
             <control type="image">
                 <description>Game screenshot border</description>

@@ -3,7 +3,7 @@
     <coordinates>
         <system>1</system>
         <posx>0</posx>
-        <posy>357</posy>
+        <posy>327</posy>
     </coordinates>
     <controls>
         <control type="group" id="600">
@@ -22,21 +22,54 @@
         </control>
         <control type="group">
             <visible>Window.IsActive(fullscreenvideo) + !Window.IsActive(videoosd)</visible>
-            <animation effect="slide" start="0,357" end="0,0" time="300">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,357" time="300">WindowClose</animation>
-            <animation effect="slide" start="0,0" end="0,357" time="300">hidden</animation>
-            <animation effect="slide" start="0,357" end="0,0" time="300">visible</animation>
+            <animation effect="slide" start="0,497" end="0,0" time="300">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,497" time="300">WindowClose</animation>
+            <animation effect="slide" start="0,0" end="0,497" time="300">hidden</animation>
+            <animation effect="slide" start="0,497" end="0,0" time="300">visible</animation>
             <control type="image">
-                <description>Background image</description>
+                <description>Background image if playing episodes or movies</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
                 <height>273</height>
                 <texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
+                <visible>VideoPlayer.Content(Episodes) | VideoPlayer.Content(Movies)</visible>
+            </control>
+            <control type="image">
+                <description>Background image if playing something else</description>
+                <posx>0</posx>
+                <posy>73</posy>
+                <width>1280</width>
+                <height>200</height>
+                <texture>white.png</texture>
+                <colordiffuse>88000000</colordiffuse>
+                <visible>!VideoPlayer.Content(Episodes) + !VideoPlayer.Content(Movies)</visible>
+            </control>
+            <control type="image">
+                <description>Top border</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <animation effect="slide" start="0,-225" end="0,0" time="300" condition="Player.Paused">WindowOpen</animation>
+                <animation effect="slide" start="0,0" end="0,-225" time="300" condition="Player.Paused">WindowClose</animation>
+            </control>
+            <control type="image">
+                <posx>270r</posx>
+                <posy>-143</posy>
+                <width>250</width>
+                <height>140</height>
+                <texture background="true">$INFO[Player.FolderPath,,/../clearart.png]</texture>
+                <animation effect="slide" start="0,-225" end="0,0" time="300" condition="Player.Paused">WindowOpen</animation>
+                <animation effect="slide" start="0,0" end="0,-225" time="300" condition="Player.Paused">WindowClose</animation>
+                <visible>VideoPlayer.Content(Episodes) + Skin.HasSetting(Episodes_Show_Clearart)</visible>
             </control>
             <control type="group">
                 <visible>VideoPlayer.Content(Episodes)</visible>
+                <description>Episode thumb + frame</description>
                 <posx>30</posx>
                 <posy>60</posy>
                 <control type="image">
@@ -59,6 +92,7 @@
             <control type="group">
                 <posx>30</posx>
                 <posy>10</posy>
+                <description>Movie postr + frame</description>
                 <visible>VideoPlayer.Content(Movies)</visible>
                 <control type="image">
                     <description>Poster frame</description>
@@ -84,6 +118,7 @@
             <control type="group">
                 <posx>360</posx>
                 <posy>20</posy>
+                <description>Episode title, plot and info</description>
                 <visible>VideoPlayer.Content(Episodes)</visible>
                 <control type="label">
                     <description>Title</description>
@@ -104,12 +139,12 @@
                     <posy>35</posy>
                     <width>880</width>
                     <height>30</height>
-                    <label>$INFO[VideoPlayer.Year,, / ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Season,Säsong ]$INFO[VideoPlayer.Episode,$COMMA avsnitt]</label>
+                    <label>$INFO[VideoPlayer.Year,, / ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Season,$LOCALIZE[20373] ]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]</label>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_Movie_Plot</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>ff00b8f5</textcolor>
                 </control>
                 <control type="textbox">
                     <description>Plot</description>
@@ -141,6 +176,7 @@
             <control type="group">
                 <posx>230</posx>
                 <posy>20</posy>
+                <description>Movie title, plot and info</description>
                 <visible>VideoPlayer.Content(Movies)</visible>
                 <control type="label">
                     <description>Title</description>
@@ -166,7 +202,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_Movie_Plot</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>ff00b8f5</textcolor>
                 </control>
                 <control type="textbox">
                     <description>Plot</description>
@@ -193,6 +229,24 @@
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
                     <visible allowhiddenfocus="true">VideoPlayer.Content(Movies) + Control.HasFocus(602)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <posx>230</posx>
+                <posy>93</posy>
+                <visible>!VideoPlayer.Content(Episodes) + !VideoPlayer.Content(Movies) + VideoPlayer.HasMenu</visible>
+                <control type="label">
+                    <description>Title</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>880</width>
+                    <height>30</height>
+                    <label>$INFO[System.DVDLabel]</label>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_Movie_Title</font>
+                    <textcolor>white</textcolor>
                 </control>
             </control>
             <control type="grouplist">

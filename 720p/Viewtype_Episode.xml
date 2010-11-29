@@ -29,7 +29,7 @@
                 <font>Font_EpisodeList_Season</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
-                <label>$INFO[ListItem.Season,Säsong ]</label>
+                <label>$INFO[ListItem.Season,$LOCALIZE[20373] ]</label>
             </control>
             <control type="label">
                 <description>Episode count</description>
@@ -40,7 +40,7 @@
                 <font>Font_EpisodeList_Episode_Count</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
-                <label>$INFO[Container(TVShows).NumItems,, avsnitt]</label>
+                <label>$INFO[Container(TVShows).NumItems,, $LOCALIZE[20453]]</label>
             </control>
         </control>
         <control type="group">
@@ -73,7 +73,7 @@
                         <label>$INFO[ListItem.Episode]</label>
                         <font>Font_Episodes_Title</font>
                         <textcolor>ffdddddd</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <selectedcolor>ff00b8f5</selectedcolor>
                     </control>
                     <control type="label">
                         <posx>125</posx>
@@ -84,7 +84,7 @@
                         <label>$INFO[ListItem.Title]</label>
                         <font>Font_Episodes_Title</font>
                         <textcolor>ffdddddd</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <selectedcolor>ff00b8f5</selectedcolor>
                     </control>
                     <control type="image">
                         <posx>117</posx>
@@ -93,6 +93,17 @@
                         <height>15</height>
                         <texture>$INFO[ListItem.StarRating]</texture>
                         <colordiffuse>ffeaf188</colordiffuse>
+                        <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Rating)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>85</posx>
+                        <posy>15</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
+                        <colordiffuse>ff00ff00</colordiffuse>
+                        <visible>Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout width="633" height="164">
@@ -128,6 +139,18 @@
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
                         </animation>
                     </control>
+                    <control type="image">
+                        <posx>228</posx>
+                        <posy>114</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
+                        <colordiffuse>ff00ff00</colordiffuse>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
+                        <visible>Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                    </control>
                     <control type="label">
                         <posx>292</posx>
                         <posy>10</posy>
@@ -135,7 +158,7 @@
                         <label>$INFO[ListItem.Episode]. $INFO[ListItem.Title]</label>
                         <font>Font_Episodes_Title</font>
                         <textcolor>ffdddddd</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <selectedcolor>ff00b8f5</selectedcolor>
                         <animation type="Focus" reversible="false">
                             <effect type="fade" start="0" end="100" time="200" />
                         </animation>
@@ -151,7 +174,7 @@
                 <info>Container(503).ListItem.Plot</info>
                 <font>Font_Movie_Plot</font>
                 <textcolor>white</textcolor>
-                <selectedcolor>blue</selectedcolor>
+                <selectedcolor>ff00b8f5</selectedcolor>
                 <include>Animation_EpisodePlot</include>
                 <pagecontrol>600</pagecontrol>
                 <animation type="Conditional" reversible="false" condition="Control.HasFocus(51) + [!Container(51).OnNext + !Container(51).OnPrevious]">

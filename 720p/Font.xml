@@ -125,7 +125,7 @@
         <font>
             <name>Font_Home_RecentlyAdded_90deg</name>
             <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>20</size>
+            <size>24</size>
         </font>
         <font>
             <name>Font_Home_RecentlyAdded_2</name>
@@ -264,8 +264,23 @@
         </font>
         <font>
             <name>Font_Bold_20</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+            <filename>Helvetica_Neue_Bold.ttf</filename>
             <size>20</size>
+        </font>
+        <font>
+            <name>Font_Bold_Caps_20</name>
+            <filename>Helvetica_Neue_Bold_Caps.ttf</filename>
+            <size>20</size>
+        </font>
+        <font>
+            <name>Font_Bold_Caps_14</name>
+            <filename>Helvetica_Neue_Bold_Caps.ttf</filename>
+            <size>14</size>
+        </font>
+        <font>
+            <name>Font_Condensed_Bold_Caps_40</name>
+            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+            <size>40</size>
         </font>
     </fontset>
 </fonts>

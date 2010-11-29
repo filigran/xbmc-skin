@@ -109,16 +109,16 @@
                 <onclick>-</onclick>
             </control>
             <control type="togglebutton" id="4">
-                <description>Sort asc</description>
-                <label>Asc</label>
-                <altlabel>Desc</altlabel>
+                <description>Sort direction</description>
+                <label>584</label>
+                <altlabel>585</altlabel>
                 <onclick>-</onclick>
             </control>
-            <control type="radiobutton" id="99">
-                <description>Library button</description>
-                <label>$LOCALIZE[29800]</label>
-                <selected>Window.IsVisible(VideoLibrary)</selected>
-                <onclick>ReplaceWindow(VideoFiles)</onclick>
+            <control type="button" id="100">
+                <description>Toggle scrollbar</description>
+                <label>31360</label>
+                <onclick>Skin.ToggleSetting(Launchers_Show_Scrollbar)</onclick>
+                <visible>Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)</visible>
             </control>
         </control>
         <control type="image">
@@ -154,7 +154,7 @@
                 <description>Viewtype toggle focused</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(2)]</label>
-                <textcolor>blue</textcolor>
+                <textcolor>ff00b8f5</textcolor>
                 <font>Font_Top_Menu</font>
                 <visible>Control.HasFocus(2)</visible>
             </control>
@@ -170,41 +170,91 @@
                 <description>Sort toggle focused</description>
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(3)]</label>
-                <textcolor>blue</textcolor>
+                <textcolor>ff00b8f5</textcolor>
                 <font>Font_Top_Menu</font>
                 <visible>Control.HasFocus(3)</visible>
             </control>
-            <control type="label"> <!-- 4 -->
-                <description>Sort direction unfocused</description>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow asc (up) focused</description>
+                <posy>4</posy>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_up.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <visible>!Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[584])</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow asc (up) focused</description>
+                <posy>4</posy>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_up.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+                <visible>Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[584])</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow desc (down) unfocused</description>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_down.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <visible>!Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[585])</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow desc (down) focused</description>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_down.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+                <visible>Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[585])</visible>
+            </control>
+            <control type="label"> <!-- 100 -->
+                <description>Launcher scrollbar unfocused</description>
                 <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(4)]</label>
+                <label>$INFO[Control.GetLabel(100)]</label>
                 <textcolor>white</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>!Control.HasFocus(4)</visible>
+                <visible>!Control.HasFocus(100) + [Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)]</visible>
             </control>
-            <control type="label"> <!-- 4 -->
-                <description>Sort direction focused</description>
+            <control type="label"> <!-- 106 -->
+                <description>Launcher scrollbar focused</description>
                 <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(4)]</label>
-                <textcolor>blue</textcolor>
+                <label>$INFO[Control.GetLabel(100)]</label>
+                <textcolor>ff00b8f5</textcolor>
                 <font>Font_Top_Menu</font>
-                <visible>Control.HasFocus(4)</visible>
+                <visible>Control.HasFocus(100) + [Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)]</visible>
             </control>
-            <control type="label"> <!-- 99 -->
-                <description>Library toggle unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(99)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Top_Menu</font>
-                <visible>!Control.HasFocus(99)</visible>
+            <control type="image">
+                <description>Launcher scrollbar checkbox checked unfocused</description>
+                <width>15</width>
+                <height>20</height>
+                <texture>special://skin/media/checkbox_checked.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <visible>!Control.HasFocus(100) + [Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)] + Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
             </control>
-            <control type="label"> <!-- 99 -->
-                <description>Library toggle focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(99)]</label>
-                <textcolor>blue</textcolor>
-                <font>Font_Top_Menu</font>
-                <visible>Control.HasFocus(99)</visible>
+            <control type="image">
+                <description>Launcher scrollbar checkbox checked focused</description>
+                <width>15</width>
+                <height>20</height>
+                <texture>special://skin/media/checkbox_checked.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+                <visible>Control.HasFocus(100) + [Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)] + Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
+            </control>
+            <control type="image">
+                <description>Launcher scrollbar checkbox unchecked unfocused</description>
+                <width>15</width>
+                <height>20</height>
+                <texture>special://skin/media/checkbox_unchecked.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <visible>!Control.HasFocus(100) + [Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)] + !Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
+            </control>
+            <control type="image">
+                <description>Launcher scrollbar checkbox unchecked focused</description>
+                <width>15</width>
+                <height>20</height>
+                <texture>special://skin/media/checkbox_unchecked.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+                <visible>Control.HasFocus(100) + [Control.IsVisible(516) | Control.IsVisible(517) | Control.IsVisible(518)] + !Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
             </control>
         </control>
         <include condition="!Window.IsVisible(1)">WindowTitleHomeButton</include>

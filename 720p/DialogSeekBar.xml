@@ -21,48 +21,67 @@
         <control type="group">
             <description>The seekbar itself</description>
             <posx>0</posx>
-            <posy>630</posy>
-            <animation effect="slide" start="0,80" end="0,0" time="300">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,80" time="300">WindowClose</animation>
+            <posy>600</posy>
+            <animation effect="slide" start="0,220" end="0,0" time="300">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,220" time="300">WindowClose</animation>
             <control type="image">
                 <description>Background image</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
-                <height>100</height>
+                <height>120</height>
                 <texture>white.png</texture>
                 <colordiffuse>88000000</colordiffuse>
             </control>
-            <control type="label">
-                <description>Cache Label - not sure when this is seen, so red for now</description>
-                <posx>20</posx>
-                <posy>8</posy>
-                <width>240</width>
-                <height>20</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <font>Font_OSD</font>
-                <textcolor>red</textcolor>
-                <label>$LOCALIZE[15107] $INFO[Player.CacheLevel]%</label>
-                <visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
+            <control type="image">
+                <description>Top border</description>
+                <posx>0</posx>
+                <posy>-3</posy>
+                <width>1280</width>
+                <height>3</height>
+                <texture>white.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
+                <visible>!Window.IsVisible(FullScreenInfo) + !Window.IsVisible(VideoOSD)</visible>
+            </control>
+            <control type="image">
+                <description>Clearart image</description>
+                <posx>270r</posx>
+                <posy>-143</posy>
+                <width>250</width>
+                <height>140</height>
+                <texture background="true">$INFO[Player.FolderPath,,/../clearart.png]</texture>
+                <visible>!Window.IsVisible(VideoOSD) + !Window.IsVisible(FullScreenInfo) + Skin.HasSetting(Episodes_Show_Clearart)</visible>
             </control>
             <control type="label">
-                <description>Search time value</description>
+                <description>Cache label and value</description>
                 <posx>520</posx>
-                <posy>3</posy>
+                <posy>13</posy>
                 <width>240</width>
                 <height>20</height>
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>Font_OSD</font>
                 <textcolor>white</textcolor>
-                <label>$INFO[Player.SeekOffset,[COLOR=blue]$LOCALIZE[773]:[/COLOR] ]</label>
+                <label>[COLOR=ff00b8f5]$LOCALIZE[15107]:[/COLOR] $INFO[Player.CacheLevel]%</label>
+                <visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
+            </control>
+            <control type="label">
+                <description>Search time label and value</description>
+                <posx>520</posx>
+                <posy>13</posy>
+                <width>240</width>
+                <height>20</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_OSD</font>
+                <textcolor>white</textcolor>
+                <label>$INFO[Player.SeekOffset,[COLOR=ff00b8f5]$LOCALIZE[773]:[/COLOR] ]</label>
                 <visible>Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]</visible>
             </control>
             <control type="label">
                 <description>Elapsed time</description>
                 <posx>40</posx>
-                <posy>27</posy>
+                <posy>37</posy>
                 <width>140</width>
                 <height>20</height>
                 <font>Font_OSD</font>
@@ -74,7 +93,7 @@
             <control type="progress" id="23">
                 <description>Progressbar</description>
                 <posx>190</posx>
-                <posy>31</posy>
+                <posy>41</posy>
                 <width>900</width>
                 <height>15</height>
                 <info>Player.Progress</info>
@@ -82,7 +101,7 @@
             <control type="label">
                 <description>Duration</description>
                 <posx>40r</posx>
-                <posy>27</posy>
+                <posy>37</posy>
                 <width>140</width>
                 <height>20</height>
                 <font>Font_OSD</font>
@@ -94,39 +113,39 @@
             <control type="label">
                 <description>Chapter</description>
                 <posx>40</posx>
-                <posy>57</posy>
+                <posy>67</posy>
                 <width>200</width>
                 <height>20</height>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>Font_OSD</font>
                 <textcolor>white</textcolor>
-                <label>$INFO[player.chapter,[COLOR=blue]Kapitel:[/COLOR] ]$INFO[player.chaptercount, / ]</label>
+                <label>$INFO[player.chapter,[COLOR=ff00b8f5]Kapitel:[/COLOR] ]$INFO[player.chaptercount, / ]</label>
                 <visible>Player.ChapterCount</visible>
             </control>
             <control type="label">
                 <description>Remaining time</description>
                 <posx>490</posx>
-                <posy>57</posy>
+                <posy>67</posy>
                 <width>300</width>
                 <height>20</height>
                 <font>Font_OSD</font>
                 <textcolor>white</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
-                <label>$INFO[VideoPlayer.TimeRemaining,[COLOR=blue]Återstående tid:[/COLOR] ]</label>
+                <label>$INFO[VideoPlayer.TimeRemaining,[COLOR=ff00b8f5]Återstående tid:[/COLOR] ]</label>
             </control>
             <control type="label">
                 <description>Finish time</description>
                 <posx>40r</posx>
-                <posy>57</posy>
+                <posy>67</posy>
                 <width>175</width>
                 <height>20</height>
                 <font>Font_OSD</font>
                 <textcolor>white</textcolor>
                 <align>right</align>
                 <aligny>center</aligny>
-                <label>$INFO[Player.FinishTime,[COLOR=blue]Sluttid:[/COLOR] ]</label>
+                <label>$INFO[Player.FinishTime,[COLOR=ff00b8f5]Sluttid:[/COLOR] ]</label>
             </control>
         </control>
     </controls>

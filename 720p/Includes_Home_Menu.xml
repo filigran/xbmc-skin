@@ -1,0 +1,363 @@
+﻿<includes>
+    <include name="Home_Onup_Ondown">
+        <control type="group" id="900">
+            <description>Buttons for recently added and weather info visibility (onup conditions)</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>RecentlyAdded movies</description>
+                <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+                <onfocus>SetFocus(301)</onfocus>
+            </control>
+            <control type="button">
+                <description>RecentlyAdded Episodes</description>
+                <visible>Container(300).HasFocus(4) + Skin.HasSetting(Home_Show_RecentlyAdded_Episodes)</visible>
+                <onfocus>SetFocus(302)</onfocus>
+            </control>
+            <control type="button">
+                <description>RecentlyAdded music</description>
+                <visible>Container(300).HasFocus(2) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+                <onfocus>SetFocus(303)</onfocus>
+            </control>
+            <control type="button">
+                <description>Weather info</description>
+                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+                <onfocus>SetFocus(304)</onfocus>
+            </control>
+        </control>
+        <control type="group" id="901">
+            <description>Buttons for random items visibility (ondown conditions)</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>Random movies</description>
+                <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_Random_Movies)</visible>
+                <onfocus>SetFocus(305)</onfocus>
+            </control>
+            <control type="button">
+                <description>Random Episodes</description>
+                <visible>Container(300).HasFocus(4) + Skin.HasSetting(Home_Show_Random_Episodes)</visible>
+                <onfocus>SetFocus(306)</onfocus>
+            </control>
+            <control type="button">
+                <description>Random music</description>
+                <visible>Container(300).HasFocus(2) + Skin.HasSetting(Home_Show_Random_Music)</visible>
+                <onfocus>SetFocus(307)</onfocus>
+            </control>
+        </control>
+    </include>
+    <include name="Home_Labels_Right_Icons">
+        <posx>-930</posx>
+        <width>2220</width>
+        <itemlayout width="630" height="100">
+            <control type="label">
+                <posx>250</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Home_Category</font>
+                <textcolor>22ffffff</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout width="700" height="100">
+            <control type="label">
+                <posx>310</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Home_Category</font>
+                <textcolor>ff00b8f5</textcolor>
+                <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Labels_Left_Icons">
+        <posx>-420</posx>
+        <width>1750</width>
+        <itemlayout width="430" height="100">
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Home_Category</font>
+                <textcolor>22ffffff</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout width="850" height="100">
+            <control type="label">
+                <posx>200</posx>
+                <posy>0</posy>
+                <width>400</width>
+                <height>100</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Home_Category</font>
+                <textcolor>ff00b8f5</textcolor>
+                <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Labels_Centered_Icons">
+        <posx>-400</posx>
+        <width>1750</width>
+        <itemlayout width="520" height="100">
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Home_Category</font>
+                <textcolor>22ffffff</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout width="510" height="100">
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Home_Category</font>
+                <textcolor>ff00b8f5</textcolor>
+                <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Bottom_posy133r">
+        <posy>133r</posy>
+    </include>
+    <include name="Home_Bottom_posy100r">
+        <posy>100r</posy>
+    </include>
+    <include name="Home_Centered_posy310">
+        <posy>310</posy>
+    </include>
+    <include name="Home_Centered_posy460">
+        <posy>460</posy>
+    </include>
+    <include name="Home_Backgrounds">
+        <control type="image">
+            <description>Menu background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>100</height>
+            <texture>white.png</texture>
+            <colordiffuse>88000000</colordiffuse>
+        </control>
+        <control type="image">
+            <description>Top border</description>
+            <posx>0</posx>
+            <posy>-3</posy>
+            <width>1280</width>
+            <height>3</height>
+            <texture>white.png</texture>
+            <colordiffuse>5500b8f5</colordiffuse>
+        </control>
+        <control type="image">
+            <description>Bottom border</description>
+            <posx>0</posx>
+            <posy>100</posy>
+            <width>1280</width>
+            <height>3</height>
+            <texture>white.png</texture>
+            <colordiffuse>55008bf5</colordiffuse>
+            <visible>!Skin.HasSetting(Home_Bottom_Menu)</visible>
+        </control>
+    </include>
+    <include name="Home_Content">
+        <content>
+            <item id="1">
+                <description>Videos</description>
+                <label>3</label>
+                <icon>special://skin/media/homeicons/videos.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/videos.jpg">$INFO[Skin.String(home_custom_back_video_folder)]</thumb>
+                <onclick>ActivateWindow(VideoFiles)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Videos)</visible>
+            </item>
+            <item id="2">
+                <description>Music</description>
+                <label>2</label>
+                <icon>special://skin/media/homeicons/music.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/music.jpg">$INFO[Skin.String(home_custom_back_music_folder)]</thumb>
+                <onclick>ActivateWindow(Music,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
+            </item>
+            <item id="3">
+                <description>Weather</description>
+                <label>8</label>
+                <icon fallback="special://skin/media/homeicons/weather.png">$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
+                <thumb fallback="special://skin/media/backgrounds/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
+                <onclick>ActivateWindow(weather,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
+            </item>
+            <item id="4">
+                <description>TV Shows</description>
+                <label>20343</label>
+                <icon>special://skin/media/homeicons/tvshows.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
+            </item>
+            <item id="5">
+                <description>Pictures</description>
+                <label>1</label>
+                <icon>special://skin/media/homeicons/pictures.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/pictures.jpg">$INFO[Skin.String(home_custom_back_pictures_folder)]</thumb>
+                <onclick>ActivateWindow(Pictures,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
+            </item>
+            <item id="6">
+                <description>Movies</description>
+                <label>342</label>
+                <icon>special://skin/media/homeicons/movies.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
+            </item>
+            <item id="14">
+                <description>Trailers</description>
+                <label>31357</label>
+                <icon>special://skin/media/homeicons/trailers.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/trailers.jpg">$INFO[Skin.String(home_custom_back_trailers_folder)]</thumb>
+                <onclick>ActivateWindow(10024,plugin://plugin.video.apple.movie.trailers.lite,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Trailers)</visible>
+            </item>
+            <item id="7">
+                <description>Programs</description>
+                <label>0</label>
+                <icon>special://skin/media/homeicons/programs.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/programs.jpg">$INFO[Skin.String(home_custom_back_programs_folder)]</thumb>
+                <onclick>ActivateWindow(Programs,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Programs)</visible>
+            </item>
+            <item id="14">
+                <description>Launcher</description>
+                <label>31358</label>
+                <icon>special://skin/media/homeicons/games.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/games.jpg">$INFO[Skin.String(home_custom_back_games_folder)]</thumb>
+                <onclick>ActivateWindow(10001,plugin://plugin.program.launcher,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Games)</visible>
+            </item>
+            <item id="8">
+                <description>Settings</description>
+                <label>5</label>
+                <icon>special://skin/media/homeicons/settings.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/settings.jpg">$INFO[Skin.String(home_custom_back_settings_folder)]</thumb>
+                <onclick>ActivateWindow(Settings)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Settings)</visible>
+            </item>
+            <item id="10">
+                <description>Shutdown</description>
+                <label>13005</label>
+                <icon>special://skin/media/homeicons/shutdown.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/shutdown.jpg">$INFO[Skin.String(home_custom_back_shutdown_folder)]</thumb>
+                <onclick>Shutdown()</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Shutdown)</visible>
+            </item>
+            <item id="11">
+                <description>Play Disc</description>
+                <label>341</label>
+                <icon>special://skin/media/homeicons/playdisc.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/playdisc.jpg">$INFO[Skin.String(home_custom_back_playdisc_folder)]</thumb>
+                <onclick>PlayDVD</onclick>
+                <visible>System.HasMediadvd</visible>
+            </item>
+            <item id="12">
+                <description>Favourites</description>
+                <label>1036</label>
+                <icon>special://skin/media/homeicons/favourites.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/favourites.jpg">$INFO[Skin.String(home_custom_back_favourites_folder)]</thumb>
+                <onclick>ActivateWindow(Favourites,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Favourites)</visible>
+            </item>
+            <item id="13">
+                <description>Profiles</description>
+                <label>13200</label>
+                <icon>special://skin/media/homeicons/profiles.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/profiles.jpg">$INFO[Skin.String(home_custom_back_profiles_folder)]</thumb>
+                <onclick>ActivateWindow(Profiles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Profiles)</visible>
+            </item>
+        </content>
+    </include>
+    <include name="Home_Icons">
+        <control type="image">
+            <description>Menu icon centered</description>
+            <posx>512</posx>
+            <posy>-266</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + !Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_Icons)</visible>
+        </control>
+        <control type="image">
+            <description>Menu icon to the right</description>
+            <posx>702</posx>
+            <posy>-78</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + Skin.HasSetting(Home_Right_Icons)</visible>
+        </control>
+        <control type="image">
+            <description>Menu icon to the left</description>
+            <posx>352</posx>
+            <posy>-78</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + Skin.HasSetting(Home_Left_Icons)</visible>
+        </control>
+    </include>
+    <include name="Home_Menu">
+        <control type="group">
+            <posx>0</posx>
+            <include>Home_Onup_Ondown</include>
+            <include condition="Skin.HasSetting(Home_Semi_Centered_Menu)">Home_Centered_posy460</include>
+            <include condition="Skin.HasSetting(Home_Centered_Menu)">Home_Centered_posy310</include>
+            <include condition="Skin.HasSetting(Home_Bottom_Menu) + System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy133r</include>
+            <include condition="Skin.HasSetting(Home_Bottom_Menu) + !System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy100r</include>
+            <animation effect="slide" start="0,800" end="0,0" tween="back" easing="out" time="400">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,800" tween="back" easing="out" time="400">WindowClose</animation>
+            <include>Home_Backgrounds</include>
+            <control type="wraplist" id="300">
+                <posy>0</posy>
+                <height>100</height>
+                <onleft>300</onleft>
+                <onright>300</onright>
+                <onup>900</onup>
+                <ondown>901</ondown>
+                <viewtype>list</viewtype>
+                <orientation>horizontal</orientation>
+                <focusposition>2</focusposition>
+                <scrolltime>200</scrolltime>
+                <include condition="Skin.HasSetting(Home_Left_Icons)">Home_Labels_Left_Icons</include>
+                <include condition="Skin.HasSetting(Home_Right_Icons)">Home_Labels_Right_Icons</include>
+                <include condition="!Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_Icons)">Home_Labels_Centered_Icons</include>
+                <include>Home_Content</include>
+            </control>
+            <include>Home_Icons</include>
+        </control>
+    </include>
+</includes>
