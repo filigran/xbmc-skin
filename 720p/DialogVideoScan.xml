@@ -30,7 +30,7 @@
                 <posy>4</posy>
                 <width>370</width>
                 <height>20</height>
-                <font>Font_Bold_Caps_14</font>
+                <font>Font_Normal_Bold_Caps_14</font>
                 <textcolor>ff00b8f5</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
@@ -41,7 +41,7 @@
                 <posy>25</posy>
                 <width>370</width>
                 <height>20</height>
-                <font>Font_Movie_Info</font>
+                <font>Font_Normal_18</font>
                 <align>left</align>
                 <aligny>center</aligny>
             </control>

@@ -60,7 +60,7 @@
                 <height>20</height>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <label>[COLOR=ff00b8f5]$LOCALIZE[15107]:[/COLOR] $INFO[Player.CacheLevel]%</label>
                 <visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
@@ -73,7 +73,7 @@
                 <height>20</height>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <label>$INFO[Player.SeekOffset,[COLOR=ff00b8f5]$LOCALIZE[773]:[/COLOR] ]</label>
                 <visible>Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]</visible>
@@ -84,7 +84,7 @@
                 <posy>37</posy>
                 <width>140</width>
                 <height>20</height>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
@@ -104,7 +104,7 @@
                 <posy>37</posy>
                 <width>140</width>
                 <height>20</height>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <align>right</align>
                 <aligny>center</aligny>
@@ -118,7 +118,7 @@
                 <height>20</height>
                 <align>left</align>
                 <aligny>center</aligny>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <label>$INFO[player.chapter,[COLOR=ff00b8f5]Kapitel:[/COLOR] ]$INFO[player.chaptercount, / ]</label>
                 <visible>Player.ChapterCount</visible>
@@ -129,7 +129,7 @@
                 <posy>67</posy>
                 <width>300</width>
                 <height>20</height>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -141,7 +141,7 @@
                 <posy>67</posy>
                 <width>175</width>
                 <height>20</height>
-                <font>Font_OSD</font>
+                <font>Font_Condensed_Bold_Caps_20</font>
                 <textcolor>white</textcolor>
                 <align>right</align>
                 <aligny>center</aligny>

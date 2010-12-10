@@ -1,5 +1,6 @@
 <includes>
     <include file="Viewtype_Poster.xml" />
+    <include file="Viewtype_Poster2.xml" />
     <include file="Viewtype_List.xml" />
     <include file="Viewtype_Bobbannerlist.xml" />
     <include file="Viewtype_Logowrap.xml" />

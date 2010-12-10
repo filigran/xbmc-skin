@@ -12,7 +12,7 @@
         <control type="image" id="997">
             <description>Top background image</description>
             <posx>0</posx>
-            <posy>-10</posy>
+            <posy>-11</posy>
             <width>271</width>
             <height>10</height>
             <aspectratio>stretch</aspectratio>
@@ -41,7 +41,7 @@
             <posy>0</posy>
             <width>265</width>
             <height>35</height>
-            <font>Font_Bold_20</font>
+            <font>Font_Normal_Bold_20</font>
             <align>center</align>
             <textcolor>grey2</textcolor>
             <shadowcolor>black</shadowcolor>

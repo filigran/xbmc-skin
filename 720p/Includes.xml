@@ -31,7 +31,7 @@
                 <width>200</width>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Font_Top_Time</font>
+                <font>Font_Normal_24</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <info>System.Time</info>
@@ -43,7 +43,7 @@
                 <width>200</width>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Font_Top_Date</font>
+                <font>Font_Normal_12</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <info>System.Date</info>
@@ -70,7 +70,7 @@
                 <height>45</height>
                 <align>left</align>
                 <aligny>center</aligny>
-                <font>Font_Top_Temp</font>
+                <font>Font_Normal_18</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <info>Weather.Temperature</info>
@@ -111,7 +111,7 @@
                 <height>30</height>
                 <aligny>center</aligny>
                 <align>center</align>
-                <font>Font_RSS_Feed</font>
+                <font>Font_Normal_16</font>
                 <textcolor>gray</textcolor>
                 <headlinecolor>gray</headlinecolor>
                 <highlightcolor>red</highlightcolor>
@@ -162,7 +162,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>2x</label>
             <visible>Player.Rewinding2x</visible>
@@ -175,7 +175,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>4x</label>
             <visible>Player.Rewinding4x</visible>
@@ -188,7 +188,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>8x</label>
             <visible>Player.Rewinding8x</visible>
@@ -201,7 +201,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>16x</label>
             <visible>Player.Rewinding16x</visible>
@@ -214,7 +214,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>32x</label>
             <visible>Player.Rewinding32x</visible>
@@ -228,7 +228,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>2x</label>
             <visible>Player.Forwarding2x</visible>
@@ -241,7 +241,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>4x</label>
             <visible>Player.Forwarding4x</visible>
@@ -254,7 +254,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>8x</label>
             <visible>Player.Forwarding8x</visible>
@@ -267,7 +267,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>16x</label>
             <visible>Player.Forwarding16x</visible>
@@ -280,7 +280,7 @@
             <height>20</height>
             <align>center</align>
             <aligny>center</aligny>
-            <font>Font_OSD_speed</font>
+            <font>Font_Condensed_Bold_60</font>
             <textcolor>ff00b8f5</textcolor>
             <label>32x</label>
             <visible>Player.Forwarding32x</visible>
@@ -296,7 +296,7 @@
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>cc000000</colordiffuse>
             <animation effect="fade" start="0" end="100" time="200" reversible="no">VisibleChange</animation>
-            <visible>Window.IsActive(100) | Window.IsActive(106) | Window.IsActive(111)</visible>
+            <visible>Window.IsActive(100) | Window.IsActive(106) | Window.IsActive(111) | Window.IsActive(2003)</visible>
         </control>
     </include>
     <include name="Global_BackgroundDiffuser">
@@ -531,7 +531,7 @@
         <textoffsetx>10</textoffsetx>
         <textwidth>235</textwidth>
         <aligny>center</aligny>
-        <font>Font_Top_Menu</font>
+        <font>Font_Normal_16</font>
         <texturefocus border="5">button-focus.png</texturefocus>
         <texturenofocus>-</texturenofocus>
         <pulseonselect>false</pulseonselect>
@@ -542,7 +542,7 @@
         <textoffsetx>20</textoffsetx>
         <textwidth>195</textwidth>
         <aligny>center</aligny>
-        <font>Font_Top_Menu</font>
+        <font>Font_Normal_16</font>
         <texturefocus border="5">button-focus.png</texturefocus>
         <texturenofocus border="5">button-nofocus.png</texturenofocus>
         <pulseonselect>false</pulseonselect>

@@ -130,7 +130,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Movie_Title</font>
+                    <font>Font_Condensed_Bold_40</font>
                     <textcolor>white</textcolor>
                 </control>
                 <control type="label">
@@ -143,7 +143,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <textcolor>ff00b8f5</textcolor>
                 </control>
                 <control type="textbox">
@@ -152,7 +152,7 @@
                     <posy>70</posy>
                     <width>570</width>
                     <height>170</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[VideoPlayer.Plot]</label>
@@ -188,7 +188,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Movie_Title</font>
+                    <font>Font_Condensed_Bold_40</font>
                     <textcolor>white</textcolor>
                 </control>
                 <control type="label">
@@ -201,7 +201,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <textcolor>ff00b8f5</textcolor>
                 </control>
                 <control type="textbox">
@@ -210,7 +210,7 @@
                     <posy>70</posy>
                     <width>700</width>
                     <height>170</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[VideoPlayer.Plot]</label>
@@ -245,7 +245,7 @@
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Movie_Title</font>
+                    <font>Font_Condensed_Bold_40</font>
                     <textcolor>white</textcolor>
                 </control>
             </control>

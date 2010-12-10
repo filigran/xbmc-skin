@@ -27,7 +27,7 @@
                 <posy>190</posy>
                 <width>40</width>
                 <height>40</height>
-                <aspectratio>stretch</aspectratio>
+                <aspectratio>keep</aspectratio>
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>8800ff00</colordiffuse>
                 <visible>[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
@@ -60,7 +60,7 @@
                 <posy>210</posy>
                 <width>56</width>
                 <height>56</height>
-                <aspectratio>stretch</aspectratio>
+                <aspectratio>keep</aspectratio>
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>lime</colordiffuse>
                 <animation tween="back" reversible="false" effect="zoom" center="0,0" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
@@ -321,7 +321,7 @@
                 <posy>10</posy>
                 <width>300</width>
                 <height>30</height>
-                <font>Font_Movie_totals</font>
+                <font>Font_Condensed_Bold_28</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>true</scroll>
@@ -341,7 +341,7 @@
                         <posy>0</posy>
                         <width>250</width>
                         <height>25</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>white</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -354,7 +354,7 @@
                         <posy>20</posy>
                         <width>250</width>
                         <height>25</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>white</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>

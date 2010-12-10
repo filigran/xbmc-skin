@@ -44,7 +44,7 @@
             <posy>10</posy>
             <width>580</width>
             <height>30</height>
-            <font>Font_Bold_Caps_20</font>
+            <font>Font_Normal_Bold_Caps_20</font>
             <label>$LOCALIZE[13406]</label>
             <align>left</align>
             <aligny>center</aligny>
@@ -60,7 +60,7 @@
             <aligny>center</aligny>
             <label>-</label>
             <textcolor>white</textcolor>
-            <font>Font_Bold_20</font>
+            <font>Font_Normal_Bold_20</font>
         </control>
         <control type="label" id="3">
             <description>dialog line 2</description>
@@ -71,20 +71,20 @@
             <align>left</align>
             <aligny>center</aligny>
             <label>-</label>
-            <font>Font_Bold_20</font>
+            <font>Font_Normal_Bold_20</font>
             <textcolor>white</textcolor>
         </control>
         <control type="label" id="4">
             <description>dialog line 3</description>
             <posx>20</posx>
-            <posy>110</posy>
+            <posy>100</posy>
             <width>560</width>
             <height>30</height>
             <align>left</align>
             <aligny>center</aligny>
             <label>-</label>
-            <font>font13</font>
-            <textcolor>orange</textcolor>
+            <font>Font_Normal_Bold_20</font>
+            <textcolor>white</textcolor>
         </control>
         <control type="button" id="11">
             <description>Yes button</description>
@@ -93,7 +93,7 @@
             <width>200</width>
             <height>40</height>
             <label>107</label>
-            <font>Font_Bold_Caps_20</font>
+            <font>Font_Normal_Bold_Caps_20</font>
             <align>center</align>
             <textcolor>grey2</textcolor>
             <shadowcolor>black</shadowcolor>
@@ -113,7 +113,7 @@
             <width>200</width>
             <height>40</height>
             <label>106</label>
-            <font>Font_Bold_Caps_20</font>
+            <font>Font_Normal_Bold_Caps_20</font>
             <align>center</align>
             <textcolor>grey2</textcolor>
             <shadowcolor>black</shadowcolor>

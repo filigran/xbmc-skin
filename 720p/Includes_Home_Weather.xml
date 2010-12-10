@@ -62,7 +62,7 @@
                     <posy>35</posy>
                     <width>240</width>
                     <height>40</height>
-                    <font>Font_Home_Weather_Current_Temp</font>
+                    <font>Font_Normal_36</font>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
@@ -75,7 +75,8 @@
                 <posx>0</posx>
                 <posy>150</posy>
                 <width>470</width>
-                <font>Font_Home_Category</font>
+                <height>200</height>
+                <font>Font_Normal_Bold_Caps_50</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <align>center</align>
@@ -91,7 +92,7 @@
                     <posy>0</posy>
                     <width>170</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Labels</font>
+                    <font>Font_Condensed_Bold_Caps_20</font>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[402] :</label>
@@ -104,7 +105,7 @@
                     <posy>30</posy>
                     <width>170</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Labels</font>
+                    <font>Font_Condensed_Bold_Caps_20</font>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[405] :</label>
@@ -117,7 +118,7 @@
                     <posy>60</posy>
                     <width>170</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Labels</font>
+                    <font>Font_Condensed_Bold_Caps_20</font>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[406] :</label>
@@ -130,7 +131,7 @@
                     <posy>90</posy>
                     <width>170</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Labels</font>
+                    <font>Font_Condensed_Bold_Caps_20</font>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[403] :</label>
@@ -143,7 +144,7 @@
                     <posy>120</posy>
                     <width>170</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Labels</font>
+                    <font>Font_Condensed_Bold_Caps_20</font>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[404] :</label>
@@ -156,7 +157,7 @@
                     <posy>0</posy>
                     <width>300</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Values</font>
+                    <font>Font_Tahoma_20</font>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>$INFO[Window(Weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
@@ -169,7 +170,7 @@
                     <posy>30</posy>
                     <width>300</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Values</font>
+                    <font>Font_Tahoma_20</font>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>$INFO[Window(Weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits]</label>
@@ -182,7 +183,7 @@
                     <posy>60</posy>
                     <width>300</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Values</font>
+                    <font>Font_Tahoma_20</font>
                     <align>left</align>
                     <aligny>center</aligny>
                     <info>Window(Weather).Property(Current.Humidity)</info>
@@ -195,7 +196,7 @@
                     <posy>90</posy>
                     <width>300</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Values</font>
+                    <font>Font_Tahoma_20</font>
                     <align>left</align>
                     <aligny>center</aligny>
                     <info>Window(Weather).Property(Current.UVIndex)</info>
@@ -208,7 +209,7 @@
                     <posy>120</posy>
                     <width>300</width>
                     <height>35</height>
-                    <font>Font_Home_Weather_Values</font>
+                    <font>Font_Tahoma_20</font>
                     <align>left</align>
                     <aligny>center</aligny>
                     <info>Window(Weather).Property(Current.Wind)</info>
@@ -233,7 +234,7 @@
                         <posy>10</posy>
                         <width>350</width>
                         <height>35</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <label>$LOCALIZE[33006]$INFO[Window(Weather).Property(Day0.Outlook),: ]</label>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -255,7 +256,7 @@
                         <posx>0</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[419] :</label>
@@ -269,7 +270,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -281,7 +282,7 @@
                         <posx>220</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[418] :</label>
@@ -295,7 +296,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -321,7 +322,7 @@
                         <posy>10</posy>
                         <width>350</width>
                         <height>35</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <label>$INFO[Window(Weather).Property(Day1.Title)]$INFO[Window(Weather).Property(Day1.Outlook),: ]</label>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -343,7 +344,7 @@
                         <posx>0</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[419] :</label>
@@ -357,7 +358,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -369,7 +370,7 @@
                         <posx>220</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[418] :</label>
@@ -383,7 +384,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -409,7 +410,7 @@
                         <posy>10</posy>
                         <width>350</width>
                         <height>35</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <label>$INFO[Window(Weather).Property(Day2.Title)]$INFO[Window(Weather).Property(Day2.Outlook),: ]</label>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -431,7 +432,7 @@
                         <posx>0</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[419] :</label>
@@ -445,7 +446,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -457,7 +458,7 @@
                         <posx>220</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[418] :</label>
@@ -471,7 +472,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -497,7 +498,7 @@
                         <posy>10</posy>
                         <width>350</width>
                         <height>35</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <label>$INFO[Window(Weather).Property(Day3.Title)]$INFO[Window(Weather).Property(Day3.Outlook),: ]</label>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -519,7 +520,7 @@
                         <posx>0</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[419] :</label>
@@ -533,7 +534,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>
@@ -545,7 +546,7 @@
                         <posx>220</posx>
                         <posy>50</posy>
                         <height>20</height>
-                        <font>Font_Home_Weather_Labels</font>
+                        <font>Font_Condensed_Bold_Caps_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[418] :</label>
@@ -559,7 +560,7 @@
                         <posy>50</posy>
                         <height>20</height>
                         <label>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                        <font>Font_Home_Weather_Values</font>
+                        <font>Font_Tahoma_20</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>white</textcolor>

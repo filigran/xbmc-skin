@@ -71,7 +71,7 @@
                 <height>345</height>
                 <align>left</align>
                 <info>ListItem.Plot</info>
-                <font>Font_Movie_Plot</font>
+                <font>Font_Normal_20</font>
                 <textcolor>white</textcolor>
                 <autoscroll delay="7000" time="3000" repeat="10000" />
             </control>

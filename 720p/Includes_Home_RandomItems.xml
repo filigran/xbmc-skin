@@ -37,7 +37,7 @@
                 <description>Random movies 90 deg label</description>
                 <posx>-40</posx>
                 <posy>305</posy>
-                <font>Font_Home_RecentlyAdded_90deg</font>
+                <font>Font_Normal_Bold_Caps_24</font>
                 <textcolor>ff00b8f5</textcolor>
                 <angle>90</angle>
                 <width>350</width>
@@ -45,10 +45,10 @@
             </control>
             <control type="fadelabel">
                 <description>Movie title</description>
-                <posy>-50</posy>
+                <posy>-40</posy>
                 <posx>25</posx>
                 <width>553</width>
-                <font>Font_Home_RecentlyAdded_Title</font>
+                <font>Font_Condensed_Bold_24</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(305).ListItem.Label]</label>
@@ -59,10 +59,10 @@
             </control>
             <control type="label">
                 <description>Movie runtime</description>
-                <posy>-20</posy>
+                <posy>-10</posy>
                 <posx>25</posx>
                 <width>553</width>
-                <font>Font_Home_RecentlyAdded_Line2</font>
+                <font>Font_Normal_18</font>
                 <textcolor>ffaaaaaa</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(305).ListItem.Label2,, $LOCALIZE[12391]]</label>
@@ -227,7 +227,7 @@
                 <description>Random episodes 90 deg label</description>
                 <posx>-40</posx>
                 <posy>278</posy>
-                <font>Font_Home_RecentlyAdded_90deg</font>
+                <font>Font_Normal_Bold_Caps_24</font>
                 <textcolor>ff00b8f5</textcolor>
                 <angle>90</angle>
                 <width>350</width>
@@ -238,7 +238,7 @@
                 <posy>0</posy>
                 <posx>40</posx>
                 <width>660</width>
-                <font>Font_Home_RecentlyAdded_Title</font>
+                <font>Font_Condensed_Bold_24</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(306).ListItem.Label2]</label>
@@ -249,7 +249,7 @@
                 <posy>30</posy>
                 <posx>40</posx>
                 <width>660</width>
-                <font>Font_Home_RecentlyAdded_Line2</font>
+                <font>Font_Normal_18</font>
                 <textcolor>ffaaaaaa</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(306).ListItem.Label]</label>
@@ -412,7 +412,7 @@
                 <description>Random albums 90 deg label</description>
                 <posx>-40</posx>
                 <posy>305</posy>
-                <font>Font_Home_RecentlyAdded_90deg</font>
+                <font>Font_Normal_Bold_Caps_24</font>
                 <textcolor>ff00b8f5</textcolor>
                 <angle>90</angle>
                 <width>350</width>
@@ -420,10 +420,10 @@
             </control>
             <control type="label">
                 <description>Random song title</description>
-                <posy>-50</posy>
+                <posy>-40</posy>
                 <posx>105</posx>
                 <width>600</width>
-                <font>Font_Home_RecentlyAdded_Title</font>
+                <font>Font_Condensed_Bold_24</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(307).ListItem.Label]</label>
@@ -431,10 +431,10 @@
             </control>
             <control type="label">
                 <description>Random album and artist name</description>
-                <posy>-20</posy>
+                <posy>-10</posy>
                 <posx>105</posx>
                 <width>600</width>
-                <font>Font_Home_RecentlyAdded_Line2</font>
+                <font>Font_Normal_18</font>
                 <textcolor>aaeeeeee</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$INFO[Container(307).ListItem.Label2]</label>

@@ -197,4 +197,8 @@
   <string id="31395">Show Random Movies</string>
   <string id="31396">Show Random Episodes</string>
   <string id="31397">Show Random Songs</string>
+  <string id="31398">Time until shutdown</string>
+  <string id="31399">Studio flag</string>
+  <string id="31409">No plot available.</string>
+  <string id="31410">min</string> <!-- short for minutes as in "96 min" for movie duration -->
 </strings>

@@ -56,7 +56,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <info>ListItem.Label</info>
-                <font>Font_Home_Category</font>
+                <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>22ffffff</textcolor>
             </control>
         </itemlayout>
@@ -69,7 +69,7 @@
                 <align>right</align>
                 <aligny>center</aligny>
                 <info>ListItem.Label</info>
-                <font>Font_Home_Category</font>
+                <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>ff00b8f5</textcolor>
                 <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
             </control>
@@ -87,7 +87,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <info>ListItem.Label</info>
-                <font>Font_Home_Category</font>
+                <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>22ffffff</textcolor>
             </control>
         </itemlayout>
@@ -100,7 +100,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <info>ListItem.Label</info>
-                <font>Font_Home_Category</font>
+                <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>ff00b8f5</textcolor>
                 <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
             </control>
@@ -118,7 +118,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <info>ListItem.Label</info>
-                <font>Font_Home_Category</font>
+                <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>22ffffff</textcolor>
             </control>
         </itemlayout>
@@ -131,7 +131,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <info>ListItem.Label</info>
-                <font>Font_Home_Category</font>
+                <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>ff00b8f5</textcolor>
                 <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
             </control>

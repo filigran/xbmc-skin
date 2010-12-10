@@ -43,7 +43,7 @@
                 <posy>0</posy>
                 <width>1240</width>
                 <height>68</height>
-                <font>Font_Movie_Title</font>
+                <font>Font_Condensed_Bold_40</font>
                 <textcolor>ffdddddd</textcolor>
                 <scroll>true</scroll>
                 <align>center</align>
@@ -59,7 +59,7 @@
                 <posy>0</posy>
                 <width>1240</width>
                 <height>68</height>
-                <font>Font_Movie_Title</font>
+                <font>Font_Condensed_Bold_40</font>
                 <textcolor>ffdddddd</textcolor>
                 <scroll>true</scroll>
                 <align>center</align>
@@ -118,7 +118,7 @@
                     <posy>0</posy>
                     <width>500</width>
                     <height>147</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
@@ -133,7 +133,7 @@
                     <posy>0</posy>
                     <width>756</width>
                     <height>147</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
@@ -147,7 +147,7 @@
                     <posy>0</posy>
                     <width>756</width>
                     <height>147</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
@@ -160,7 +160,7 @@
                     <posy>0</posy>
                     <width>500</width>
                     <height>147</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[Container.ShowPlot]</label>
@@ -174,7 +174,7 @@
                     <posy>0</posy>
                     <width>756</width>
                     <height>147</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[Container.ShowPlot]</label>
@@ -238,7 +238,7 @@
                     <posy>-1</posy>
                     <width>230</width>
                     <height>30</height>
-                    <font>Font_Rating</font>
+                    <font>Font_Condensed_Bold_20</font>
                     <textcolor>ffdddddd</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <scrollout>false</scrollout>
@@ -246,7 +246,7 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>$INFO[ListItem.Rating,(,)]</label>
+                    <label fallback="(0.0)">$INFO[ListItem.Rating,(,)]</label>
                 </control>
             </control>
             <control type="group">
@@ -271,7 +271,7 @@
                     <posy>-1</posy>
                     <width>230</width>
                     <height>30</height>
-                    <font>Font_Rating</font>
+                    <font>Font_Condensed_Bold_20</font>
                     <textcolor>ffdddddd</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <scrollout>false</scrollout>
@@ -279,9 +279,26 @@
                     <scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>$INFO[ListItem.Rating,(,)]</label>
+                    <label fallback="(0.0)">$INFO[ListItem.Rating,(,)]</label>
                 </control>
-            </control>
+            </control><!--
+            <control type="group">
+                <posx>350r</posx>
+                <posy>20</posy>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>300</width>
+                    <align>left</align>
+                    <itemgap>0</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include>VisibleFadeEffect</include>
+                    <include>VideoCodecFlaggingConditions</include>
+                    <include>AudioCodecFlaggingConditions</include>
+                    <include>AspectCodecFlaggingConditions</include>
+                </control>
+            </control>-->
             <control type="group">
                 <description>Movie / episode info</description>
                 <posx>350r</posx>
@@ -294,7 +311,7 @@
                          <posy>-5</posy>
                          <width>300</width>
                          <height>68</height>
-                         <font>Font_Details_Header</font>
+                         <font>Font_Normal_Bold_18</font>
                          <textcolor>ffdddddd</textcolor>
                          <scroll>true</scroll>
                          <align>left</align>
@@ -309,7 +326,7 @@
                          <posy>-5</posy>
                          <width>300</width>
                          <height>68</height>
-                         <font>Font_Details_Header</font>
+                         <font>Font_Normal_Bold_18</font>
                          <textcolor>ffdddddd</textcolor>
                          <scroll>true</scroll>
                          <align>left</align>
@@ -324,7 +341,7 @@
                         <posy>25</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -337,7 +354,7 @@
                         <posy>50</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -350,7 +367,7 @@
                         <posy>75</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -363,7 +380,7 @@
                         <posy>100</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -376,7 +393,7 @@
                         <posy>125</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -395,7 +412,7 @@
                         <posy>0</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -408,7 +425,7 @@
                         <posy>25</posy>
                         <width>200</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -421,7 +438,7 @@
                         <posy>50</posy>
                         <width>200</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scrollout>false</scrollout>
@@ -436,7 +453,7 @@
                         <posy>75</posy>
                         <width>200</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scrollout>false</scrollout>
@@ -451,7 +468,7 @@
                         <posy>100</posy>
                         <width>230</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scrollout>false</scrollout>
@@ -474,7 +491,7 @@
                          <posy>-5</posy>
                          <width>300</width>
                          <height>68</height>
-                         <font>Font_Details_Header</font>
+                         <font>Font_Normal_Bold_18</font>
                          <textcolor>ffdddddd</textcolor>
                          <scroll>true</scroll>
                          <align>left</align>
@@ -489,7 +506,7 @@
                          <posy>-5</posy>
                          <width>300</width>
                          <height>68</height>
-                         <font>Font_Details_Header</font>
+                         <font>Font_Normal_Bold_18</font>
                          <textcolor>ffdddddd</textcolor>
                          <scroll>true</scroll>
                          <align>left</align>
@@ -504,7 +521,7 @@
                         <posy>25</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -517,7 +534,7 @@
                         <posy>50</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -530,7 +547,7 @@
                         <posy>75</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -543,7 +560,7 @@
                         <posy>100</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -556,7 +573,7 @@
                         <posy>125</posy>
                         <width>100</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -574,7 +591,7 @@
                         <posy>0</posy>
                         <width>280</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>true</scroll>
@@ -587,7 +604,7 @@
                         <posy>25</posy>
                         <width>280</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <pauseatend>3000</pauseatend>
@@ -601,7 +618,7 @@
                         <posy>50</posy>
                         <width>280</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scrollout>false</scrollout>
@@ -616,7 +633,7 @@
                         <posy>75</posy>
                         <width>280</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scrollout>false</scrollout>
@@ -631,7 +648,7 @@
                         <posy>100</posy>
                         <width>280</width>
                         <height>35</height>
-                        <font>Font_Movie_Info</font>
+                        <font>Font_Normal_18</font>
                         <textcolor>ffdddddd</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scrollout>false</scrollout>
@@ -641,19 +658,6 @@
                         <label fallback="416">$INFO[ListItem.Writer]</label>
                     </control>
                 </control>
-            </control>
-            <control type="grouplist">
-                <description>Media Codec Flagging Images</description>
-                <posx>0</posx>
-                <posy>670</posy>
-                <width>1280</width>
-                <align>center</align>
-                <itemgap>0</itemgap>
-                <orientation>horizontal</orientation>
-                <include>VideoCodecFlaggingConditions</include>
-                <include>AudioCodecFlaggingConditions</include>
-                <include>AspectCodecFlaggingConditions</include>
-                <include>VideoTypeHackFlaggingConditions</include>
             </control>
         </control>
     </include>

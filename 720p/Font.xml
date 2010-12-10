@@ -97,190 +97,160 @@
         </font>
 
        <!-- egna fonts -->
-        <font>
-            <name>Font_Top_Time</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>24</size>
-        </font>
-        <font>
-            <name>Font_Top_Date</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+        <font> <!-- Global date -->
+            <name>Font_Normal_12</name>
+            <filename>Normal.ttf</filename>
             <size>12</size>
         </font>
-        <font>
-            <name>Font_Top_Temp</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>18</size>
-        </font>
-        <font>
-            <name>Font_Top_Menu</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+        <font> <!-- Top menu -->
+            <name>Font_Normal_16</name>
+            <filename>Normal.ttf</filename>
             <size>16</size>
         </font>
-        <font>
-            <name>Font_Home_Category</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>60</size>
-        </font>
-        <font>
-            <name>Font_Home_RecentlyAdded_90deg</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>24</size>
-        </font>
-        <font>
-            <name>Font_Home_RecentlyAdded_2</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
+        <font> <!-- Global temp, Recently Added / Random Items line 2, details label and value, episodelist aired + duration -->
+            <name>Font_Normal_18</name>
+            <filename>Normal.ttf</filename>
             <size>18</size>
         </font>
-        <font>
-            <name>Font_Home_RecentlyAdded_Title</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
+        <font> <!-- Global time, watched / unwatched episodes count-->
+            <name>Font_Normal_24</name>
+            <filename>Tahoma.ttf</filename>
             <size>24</size>
         </font>
-        <font>
-            <name>Font_Home_RecentlyAdded_Line2</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>18</size>
+        <font> <!-- Episode count -->
+            <name>Font_Normal_30</name>
+            <filename>Normal.ttf</filename>
+            <size>30</size>
         </font>
-        <font>
-            <name>Font_Home_Weather_Current_Temp</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+        <font> <!-- Weather current temp -->
+            <name>Font_Normal_36</name>
+            <filename>Normal.ttf</filename>
             <size>36</size>
         </font>
-        <font>
-            <name>Font_Home_Weather_Labels</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>20</size>
-        </font>
-        <font>
-            <name>Font_Home_Weather_Values</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>20</size>
-        </font>
-        <font>
-            <name>Font_RSS_Feed</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>16</size>
-        </font>
-        <font>
-            <name>Font_Movie_Plot</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>20</size>
-        </font>
-        <font>
-            <name>Font_Movie_List</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+        <font> <!-- Details header -->
+            <name>Font_Normal_Bold_18</name>
+            <filename>Normal_Bold.ttf</filename>
             <size>18</size>
         </font>
-        <font>
-            <name>Font_Movie_List_Bold</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
-            <size>16</size>
+        <font> <!-- Button menu labels -->
+            <name>Font_Normal_Bold_20</name>
+            <filename>Normal_Bold.ttf</filename>
+            <size>20</size>
         </font>
-        <font>
-            <name>Font_Movie_Title</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
-            <size>40</size>
+        <font> <!-- Button Menu alarm value -->
+            <name>Font_Normal_Bold_24</name>
+            <filename>Normal_Bold.ttf</filename>
+            <size>24</size>
         </font>
-        <font>
-            <name>Font_Movie_totals</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
-            <size>28</size>
-        </font>
-        <font>
-            <name>Font_Movie_Info</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+        <font> <!-- VideoScan header -->
+            <name>Font_Normal_Bold_Caps_14</name>
+            <filename>Normal_Bold_Caps.ttf</filename>
             <size>14</size>
         </font>
-        <font>
-            <name>Font_TVShows_Logowrap_Episodes</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>30</size>
-        </font>
-        <font>
-            <name>Font_TVShows_Logowrap_Episodes_Smaller</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>24</size>
-        </font>
-        <font>
-            <name>Font_TVShows_Logowrap_TVShows_count</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
-            <size>32</size>
-        </font>
-        <font>
-            <name>Font_Episodes_Title</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
-            <size>32</size>
-        </font>
-        <font>
-            <name>Font_Details_Header</name>
-            <filename>Helvetica_Neue_Medium.ttf</filename>
+        <font> <!-- Year/runtime/genre in poster2 view -->
+            <name>Font_Normal_Bold_Caps_18</name>
+            <filename>Normal_Bold_Caps.ttf</filename>
             <size>18</size>
         </font>
-        <font>
-            <name>Font_Rating</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
+        <font> <!-- Yes/no dialog labels -->
+            <name>Font_Normal_Bold_Caps_20</name>
+            <filename>Normal_Bold_Caps.ttf</filename>
             <size>20</size>
         </font>
-        <font>
-            <name>Font_EpisodeList_Episode_Number</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+        <font> <!-- Recently Added / Random Items 90 deg label -->
+            <name>Font_Normal_Bold_Caps_24</name>
+            <filename>Normal_Bold_Caps.ttf</filename>
             <size>24</size>
         </font>
-        <font>
-            <name>Font_EpisodeList_Episode_Title</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>30</size>
+        <font> <!-- Home menu categories -->
+            <name>Font_Normal_Bold_Caps_50</name>
+            <filename>Normal_Bold_Caps.ttf</filename>
+            <size>50</size>
         </font>
-        <font>
-            <name>Font_EpisodeList_Season</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>36</size>
-        </font>
-        <font>
-            <name>Font_EpisodeList_Episode_Count</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>24</size>
-        </font>
-        <font>
-            <name>Font_EpisodeList_TVShow_Plot</name>
-            <filename>Arial.ttf</filename>
+        <font> <!-- Selected control in OSD -->
+            <name>Font_Condensed_Bold_18</name>
+            <filename>Condensed_Bold.ttf</filename>
             <size>18</size>
         </font>
-        <font>
-            <name>Font_OSD</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
+        <font> <!-- Rating text -->
+            <name>Font_Condensed_Bold_20</name>
+            <filename>Condensed_Bold.ttf</filename>
             <size>20</size>
         </font>
-        <font>
-            <name>Font_OSD_Current_Control</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
-            <size>18</size>
+        <font> <!-- Recently Added / Random Items Title -->
+            <name>Font_Condensed_Bold_24</name>
+            <filename>Condensed_Bold.ttf</filename>
+            <size>24</size>
         </font>
-        <font>
-            <name>Font_OSD_speed</name>
-            <filename>Helvetica_Neue_Condensed_Bold.ttf</filename>
+        <font> <!-- Poster view totals -->
+            <name>Font_Condensed_Bold_28</name>
+            <filename>Condensed_Bold.ttf</filename>
+            <size>28</size>
+        </font>
+        <font> <!-- Episode title in episode view -->
+            <name>Font_Condensed_Bold_32</name>
+            <filename>Condensed_Bold.ttf</filename>
+            <size>32</size>
+        </font>
+        <font> <!-- Large titles -->
+            <name>Font_Condensed_Bold_40</name>
+            <filename>Condensed_Bold.ttf</filename>
+            <size>40</size>
+        </font>
+        <font> <!-- FF/Rew speed text in OSD -->
+            <name>Font_Condensed_Bold_60</name>
+            <filename>Condensed_Bold.ttf</filename>
             <size>60</size>
         </font>
-        <font>
-            <name>Font_Bold_20</name>
-            <filename>Helvetica_Neue_Bold.ttf</filename>
+        <font> <!-- Weather labels, labels in seekbar dialog -->
+            <name>Font_Condensed_Bold_Caps_20</name>
+            <filename>Condensed_Bold_Caps.ttf</filename>
             <size>20</size>
         </font>
-        <font>
-            <name>Font_Bold_Caps_20</name>
-            <filename>Helvetica_Neue_Bold_Caps.ttf</filename>
-            <size>20</size>
+        <font> <!-- EpisodeList episode count -->
+            <name>Font_Condensed_Bold_Caps_24</name>
+            <filename>Condensed_Bold_Caps.ttf</filename>
+            <size>24</size>
+        </font>
+        <font> <!-- EpisodeList number and title -->
+            <name>Font_Condensed_Bold_Caps_30</name>
+            <filename>Condensed_Bold_Caps.ttf</filename>
+            <size>30</size>
+        </font>
+        <font> <!-- EpisodeList season number -->
+            <name>Font_Condensed_Bold_Caps_36</name>
+            <filename>Condensed_Bold_Caps.ttf</filename>
+            <size>36</size>
+        </font>
+        <font> <!-- Label fallbacks for logowrap -->
+            <name>Font_Condensed_Bold_Caps_40</name>
+            <filename>Condensed_Bold_Caps.ttf</filename>
+            <size>40</size>
+        </font>
+        <font> <!-- Home menu categories -->
+            <name>Font_Condensed_Bold_Caps_60</name>
+            <filename>Condensed_Bold_Caps.ttf</filename>
+            <size>60</size>
         </font>
         <font>
             <name>Font_Bold_Caps_14</name>
             <filename>Helvetica_Neue_Bold_Caps.ttf</filename>
             <size>14</size>
         </font>
-        <font>
-            <name>Font_Condensed_Bold_Caps_40</name>
-            <filename>Helvetica_Neue_Condensed_Bold_Caps.ttf</filename>
-            <size>40</size>
+        <font> <!-- Weather values, all plots -->
+            <name>Font_Tahoma_20</name>
+            <filename>Tahoma.ttf</filename>
+            <size>20</size>
+        </font>
+        <font> <!-- Poster2 plot -->
+            <name>Font_Tahoma_24</name>
+            <filename>Tahoma.ttf</filename>
+            <size>24</size>
+        </font>
+        <font> <!-- episodelist english subtitle overlay !! REMOVE THIS !! -->
+            <name>Font_Normal_Bold_20</name>
+            <filename>Normal_Bold.ttf</filename>
+            <size>20</size>
         </font>
     </fontset>
 </fonts>

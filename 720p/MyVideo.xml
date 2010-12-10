@@ -84,6 +84,7 @@
                 </control>
             </control>
         </control>
+        <include>Global_BackgroundDiffuser</include>
         <control type="group">
             <include>Window_OpenClose_Animation</include>
             <include>CommonRootView</include> <!-- view id = 50 -->
@@ -159,7 +160,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(2)]</label>
                 <textcolor>white</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>!Control.HasFocus(2)</visible>
             </control>
             <control type="label"> <!-- 2 -->
@@ -167,7 +168,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(2)]</label>
                 <textcolor>ff00b8f5</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>Control.HasFocus(2)</visible>
             </control>
             <control type="label"> <!-- 3 -->
@@ -175,7 +176,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(3)]</label>
                 <textcolor>white</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>!Control.HasFocus(3)</visible>
             </control>
             <control type="label"> <!-- 3-->
@@ -183,7 +184,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(3)]</label>
                 <textcolor>ff00b8f5</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>Control.HasFocus(3)</visible>
             </control>
             <control type="image"> <!-- 4 -->
@@ -225,7 +226,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(99)]</label>
                 <textcolor>white</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>!Control.HasFocus(99)</visible>
             </control>
             <control type="label"> <!-- 99 -->
@@ -233,7 +234,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(99)]</label>
                 <textcolor>ff00b8f5</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>Control.HasFocus(99)</visible>
             </control>
             <control type="label"> <!-- 8 -->
@@ -241,7 +242,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(8)]</label>
                 <textcolor>white</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>!Control.HasFocus(8)</visible>
             </control>
             <control type="label"> <!-- 8 -->
@@ -249,7 +250,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(8)]</label>
                 <textcolor>ff00b8f5</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>Control.HasFocus(8)</visible>
             </control>
             <control type="label"> <!-- 19 -->
@@ -257,7 +258,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(19)]</label>
                 <textcolor>white</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>!Control.HasFocus(19)</visible>
             </control>
             <control type="label"> <!-- 19 -->
@@ -265,7 +266,7 @@
                 <width min="20" max="200">auto</width>
                 <label>$INFO[Control.GetLabel(19)]</label>
                 <textcolor>ff00b8f5</textcolor>
-                <font>Font_Top_Menu</font>
+                <font>Font_Normal_16</font>
                 <visible>Control.HasFocus(19)</visible>
             </control>
         </control>

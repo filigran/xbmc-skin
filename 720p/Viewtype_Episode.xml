@@ -71,7 +71,7 @@
                         <height>60</height>
                         <align>right</align>
                         <label>$INFO[ListItem.Episode]</label>
-                        <font>Font_Episodes_Title</font>
+                        <font>Font_Condensed_Bold_32</font>
                         <textcolor>ffdddddd</textcolor>
                         <selectedcolor>ff00b8f5</selectedcolor>
                     </control>
@@ -82,7 +82,7 @@
                         <height>60</height>
                         <align>left</align>
                         <label>$INFO[ListItem.Title]</label>
-                        <font>Font_Episodes_Title</font>
+                        <font>Font_Condensed_Bold_32</font>
                         <textcolor>ffdddddd</textcolor>
                         <selectedcolor>ff00b8f5</selectedcolor>
                     </control>
@@ -156,7 +156,7 @@
                         <posy>10</posy>
                         <width>633</width>
                         <label>$INFO[ListItem.Episode]. $INFO[ListItem.Title]</label>
-                        <font>Font_Episodes_Title</font>
+                        <font>Font_Condensed_Bold_32</font>
                         <textcolor>ffdddddd</textcolor>
                         <selectedcolor>ff00b8f5</selectedcolor>
                         <animation type="Focus" reversible="false">
@@ -172,7 +172,7 @@
                 <height>100</height>
                 <align>left</align>
                 <info>Container(503).ListItem.Plot</info>
-                <font>Font_Movie_Plot</font>
+                <font>Font_Tahoma_20</font>
                 <textcolor>white</textcolor>
                 <selectedcolor>ff00b8f5</selectedcolor>
                 <include>Animation_EpisodePlot</include>

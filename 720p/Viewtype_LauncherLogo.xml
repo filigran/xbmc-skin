@@ -74,7 +74,7 @@
                     <posy>0</posy>
                     <width>1260</width>
                     <height>30</height>
-                    <font>Font_Movie_Title</font>
+                    <font>Font_Condensed_Bold_40</font>
                     <textcolor>white</textcolor>
                     <align>center</align>
                     <label>$INFO[ListItem.Label]</label>
@@ -84,7 +84,7 @@
                     <posy>50</posy>
                     <width>1000</width>
                     <height>94</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <textcolor>white</textcolor>
                     <align>center</align>
                     <label>$INFO[ListItem.Premiered,, $LOCALIZE[31371]]</label>
@@ -95,7 +95,7 @@
                     <posy>50</posy>
                     <width>1000</width>
                     <height>100</height>
-                    <font>Font_Movie_Plot</font>
+                    <font>Font_Tahoma_20</font>
                     <textcolor>white</textcolor>
                     <align>justify</align>
                     <pagecontrol>64</pagecontrol>

@@ -260,7 +260,7 @@
                 <scroll>true</scroll>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Font_OSD_Current_Control</font>
+                <font>Font_Condensed_Bold_18</font>
                 <textcolor>grey</textcolor>
                 <shadowcolor>black</shadowcolor>
             </control>
