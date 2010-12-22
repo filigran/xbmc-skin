@@ -1,7 +1,7 @@
 ﻿<window id="2003">
     <defaultcontrol always="true">5</defaultcontrol>
     <animation reversible="false" effect="slide" start="-1000,0" end="0,0" time="400" tween="back" easing="out">WindowOpen</animation>
-    <animation reversible="false" effect="slide" start="0,0" end="1000,0" time="400" tween="back" easing="out">WindowClose</animation>
+    <animation reversible="false" effect="slide" start="0,0" end="1500,0" time="100">WindowClose</animation>
     <allowoverlay>no</allowoverlay>
     <controls>
         <control type="group">
@@ -20,19 +20,12 @@
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
-                <control type="grouplist">
-                    <description>Media Codec Flagging Images</description>
-                    <posx>210</posx>
+                <control type="group">
+                    <description>Media flags</description>
+                    <visible>!Control.IsVisible(50)</visible>
+                    <posx>350</posx>
                     <posy>480</posy>
-                    <width>600</width>
-                    <align>left</align>
-                    <itemgap>0</itemgap>
-                    <orientation>horizontal</orientation>
-                    <include>VisibleFadeEffect</include>
-                    <visible>!Control.IsVisible(50) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
-                    <include>VideoCodecFlaggingConditions</include>
-                    <include>AudioCodecFlaggingConditions</include>
-                    <include>AspectCodecFlaggingConditions</include>
+                    <include>MediaFlags</include>
                 </control>
                 <control type="group">
                     <visible>Control.HasFocus(12)</visible>
@@ -954,7 +947,7 @@
                     <showonepage>true</showonepage>
                 </control>
                 <control type="textbox" id="400">
-                    <description>Description Value for Movies</description>
+                    <description>Plot for Movies</description>
                     <posx>210</posx>
                     <posy>515</posy>
                     <width>1030</width>
@@ -1098,13 +1091,11 @@
                         <description>Get logo</description>
                         <include>ButtonInfoDialogsCommonValues</include>
                         <label>Hämta logo</label>
-            <onclick>XBMC.RunScript(script.logo-downloader,mode=solo,logo=True,clearart=True,showthumb=True,showname=$INFO[ListItem.TVShowTitle])</onclick>
-            <visible>Container.Content(TVShows)</visible>
+                        <onclick>XBMC.RunScript(script.logo-downloader,mode=solo,logo=True,clearart=True,showthumb=True,showname=$INFO[ListItem.TVShowTitle])</onclick>
+                        <visible>Container.Content(TVShows)</visible>
                     </control>
                 </control>
             </control>
         </control>
-        <include>SideBladeRight</include>
-        <include>Clock</include>
     </controls>
 </window>

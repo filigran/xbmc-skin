@@ -1,20 +1,5 @@
 <includes>
     <include name="Viewtype_LauncherWide">
-        <control type="group" id="610">
-            <visible>Control.IsVisible(517)</visible>
-            <description>Onright conditions</description>
-            <posy>-200</posy>
-            <control type="button">
-                <description>Scrollbar disabled</description>
-                <onfocus>SetFocus(517)</onfocus>
-                <visible>!Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
-            </control>
-            <control type="button">
-                <description>Scrollbar enabled</description>
-                <onfocus>SetFocus(61)</onfocus>
-                <visible>Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
-            </control>
-        </control>
         <control type="group">
             <visible>Control.IsVisible(517)</visible>
             <include>VisibleFadeEffect</include>
@@ -31,7 +16,7 @@
                 <colordiffuse>55000000</colordiffuse>
             </control>
             <control type="panel" id="517">
-                <visible>Window.IsActive(1)</visible>
+                <visible>Window.IsActive(1) | Container.Content(Movies)</visible>
                 <posx>50</posx>
                 <posy>100</posy>
                 <width>748</width>
@@ -41,7 +26,6 @@
                 <onup>517</onup>
                 <ondown>517</ondown>
                 <scrolltime>0</scrolltime>
-                <pagecontrol>61</pagecontrol>
                 <viewtype label="LauncherWide">list</viewtype>
                 <orientation>vertical</orientation>
                 <itemlayout height="140" width="187">
@@ -77,20 +61,6 @@
                     </control>
                 </focusedlayout>
             </control>
-        </control>
-        <control type="scrollbar" id="61">
-            <posx>15r</posx>
-            <posy>100</posy>
-            <width>5</width>
-            <height>560</height>
-            <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-            <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-            <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-            <onleft>517</onleft>
-            <onright>9000</onright>
-            <showonepage>true</showonepage>
-            <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.IsVisible(517) + Control.HasFocus(61) + Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
         </control>
         <include>Launcher_Left_bar</include>
     </include>

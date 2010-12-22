@@ -170,6 +170,12 @@
   <string id="31399">Studioflagga</string>
   <string id="31409">Ingen handling tillgänglig.</string>
   <string id="31410">min</string>
+  <string id="31411">Väderinfo har inte hämtats</string>
+  <string id="31412">Visa navigeringshjälp</string>
+  <string id="31413">Visa info</string>
+  <string id="31414">Visa mediaflaggor</string>
+  <string id="31415">Poster Wrap</string>
+  <string id="31416">Poster Fixed</string>
 
   <string id="31400">[B]KONFIGURERA UTSEENDEINSTÄLLNINGAR[/B][CR][CR]Ändra skalet · Ange språk och region · Ange fillistningsalternativ[CR]Ange en skärmsläckare</string>
   <string id="31401">[B]KONFIGURERA GRAFIKINSTÄLLNINGAR[/B][CR][CR]Hantera ditt filmbibliotek · Ange filmuppspelningsalternativ · Ändra videoförteckningsalternativ[CR]Konfigurera undertextfonter</string>

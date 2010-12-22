@@ -95,7 +95,10 @@
                 <posx>190</posx>
                 <posy>41</posy>
                 <width>900</width>
-                <height>15</height>
+                <height>12</height>
+                <texturebg>osd_back.png</texturebg>
+                <midtexture>osd_mid.png</midtexture>
+                <colordiffuse>8800b8f5</colordiffuse>
                 <info>Player.Progress</info>
             </control>
             <control type="label">

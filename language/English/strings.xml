@@ -201,4 +201,10 @@
   <string id="31399">Studio flag</string>
   <string id="31409">No plot available.</string>
   <string id="31410">min</string> <!-- short for minutes as in "96 min" for movie duration -->
+  <string id="31411">Weather info has not been fetched</string>
+  <string id="31412">Show navigation hints</string>
+  <string id="31413">Show info</string>
+  <string id="31414">Show media flags</string>
+  <string id="31415">Poster Wrap</string>
+  <string id="31416">Poster Fixed</string>
 </strings>

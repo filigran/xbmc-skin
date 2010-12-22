@@ -233,6 +233,7 @@
             </control>
         </control>
         <include>WindowTitleHomeButton</include>
+        <include>Global_DialogDiffuser</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>
     </controls>

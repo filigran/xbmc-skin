@@ -1,25 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon
-  id="skin.filigran"
-  version="0.1"
-  name="Filigran's skin"
-  provider-name="filigran">
-  <requires>
-    <import addon="xbmc.gui" version="2.11"/>
-    <import addon="script.recentlyadded" version="1.0.4"/>
-    <import addon="script.logo-downloader" version="2.0.0"/>
-  </requires>
-  <extension
-    point="xbmc.gui.skin"
-    defaultresolution="720p"
-    defaultresolutionwide="720p"
-    defaultthemename="textures.xbt"
-    effectslowdown="0.75"
-    debugging="false"/>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Filigran is da makah.</summary>
-    <description lang="en">THE skin.</description>
-    <disclaimer lang="en">ze best.</disclaimer>
-    <platform>all</platform>
-  </extension>
+<addon id="skin.tergum" version="0.1" name="Tergum" provider-name="filigran">
+	<requires>
+		<import addon="xbmc.gui" version="2.11"/>
+		<import addon="script.recentlyadded" version="1.0.8"/>
+		<import addon="script.logo-downloader" version="2.0.0"/>
+		<import addon="script.favourites" version="1.0.3"/>
+		<import addon="script.randomitems" version="1.0.6"/>
+	</requires>
+	<extension  point="xbmc.gui.skin" defaultresolution="720p"  defaultresolutionwide="720p" defaultthemename="Textures.xbt"  effectslowdown="1.00" debugging="false"/>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<minversion app="xbmc">33035</minversion>
+		<summary>Created by filigran</summary>
+		<description>Tergum - 'skin' in latin, thought it was quite suitable. :)</description>
+		<disclaimer>Use at your own risk.</disclaimer>
+	</extension>
 </addon>

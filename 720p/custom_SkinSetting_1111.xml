@@ -489,15 +489,15 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
                     <control type="radiobutton" id="231">
-                        <description>Show random items for songs</description>
+                        <description>Show random items for music</description>
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white</focusedcolor>
                         <label>31397</label>
-                        <onclick>Skin.ToggleSetting(Home_Show_Random_Songs)</onclick>
-                        <selected>Skin.HasSetting(Home_Show_Random_Songs)</selected>
+                        <onclick>Skin.ToggleSetting(Home_Show_Random_Music)</onclick>
+                        <selected>Skin.HasSetting(Home_Show_Random_Music)</selected>
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
@@ -526,7 +526,7 @@
                         <aligny>center</aligny>
                     </control>
                     <control type="radiobutton" id="221">
-                        <description>bottom menu</description>
+                        <description>bottom menu - default</description>
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -538,7 +538,7 @@
                         <onclick>Skin.Reset(Home_Left_Icons)</onclick>
                         <onclick>Skin.Reset(Home_Right_Icons)</onclick>
                         <onclick>Skin.Reset(Home_Semi_Centered_Menu)</onclick>
-                        <selected>Skin.HasSetting(Home_Bottom_Menu) + !Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)</selected>
+                        <selected>!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)</selected>
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
@@ -568,7 +568,7 @@
                         <onclick>Skin.SetBool(Home_Semi_Centered_Menu)</onclick>
                         <onclick>Skin.Reset(Home_Centered_Menu)</onclick>
                         <onclick>Skin.Reset(Home_Bottom_Menu)</onclick>
-                        <selected>!Skin.HasSetting(Home_Bottom_Menu) + !Skin.HasSetting(Home_Centered_Menu) + Skin.HasSetting(Home_Semi_Centered_Menu)</selected>
+                        <selected>Skin.HasSetting(Home_Semi_Centered_Menu)</selected>
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
@@ -972,16 +972,14 @@
                             <item id="10">
                                 <label>20342</label>
                                 <onclick>-</onclick>
-                                <icon>special://skin/media/backgrounds/videos.jpg</icon>
+                                <icon>special://skin/media/backgrounds/movies.jpg</icon>
                                 <thumb>$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</thumb>
-                                <visible>Skin.HasSetting(HomeMenuNoMoviesButton) + Library.HasContent(Movies)</visible>
                             </item>
                             <item id="11">
                                 <label>20343</label>
                                 <onclick>-</onclick>
-                                <icon>special://skin/media/backgrounds/videos.jpg</icon>
+                                <icon>special://skin/media/backgrounds/tvshows.jpg</icon>
                                 <thumb>$INFO[Skin.String(Home_Custom_Back_TVShows_Folder)]</thumb>
-                                <visible>Skin.HasSetting(HomeMenuNoTVShowsButton) + Library.HasContent(TVShows)</visible>
                             </item>
                             <item id="2">
                                 <label>2</label>
@@ -2148,6 +2146,8 @@
             </control>
         </control>
         <include>WindowTitleHomeButton</include>
-        <include>Clock</include>
+        <include>Global_DialogDiffuser</include>
+        <include>Global_Time</include>
+        <include>Global_Weather</include>
     </controls>
 </window>

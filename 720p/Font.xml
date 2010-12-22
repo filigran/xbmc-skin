@@ -3,42 +3,42 @@
     <!-- Normal Fonts -->
         <font>
             <name>font10</name>
-            <filename>DejaVuSans.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>12</size>
         </font>
         <font>
             <name>font12</name>
-            <filename>DejaVuSans.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>16</size>
         </font>
         <font>
             <name>font12caps</name>
-            <filename>DefaultCaps.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>16</size>
         </font>
         <font>
             <name>font13</name>
-            <filename>DejaVuSans.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>20</size>
         </font>
         <font>
             <name>font13caps</name>
-            <filename>DefaultCaps.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>20</size>
         </font>
         <font>
             <name>font16caps</name>
-            <filename>DefaultCaps.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>25</size>
         </font>
         <font>
             <name>font30</name>
-            <filename>DejaVuSans.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>30</size>
         </font>
         <font>
             <name>fontContextMenu</name>
-            <filename>DejaVuSans.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>18</size>
         </font>
 
@@ -46,48 +46,48 @@
     <!-- Title Fonts -->
         <font>
             <name>font10_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>12</size>
         </font>
         <font>
             <name>font12_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>16</size>
         </font>
         <font>
             <name>font13_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>20</size>
         </font>
         <font>
             <name>font24_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>24</size>
         </font>
         <font>
             <name>font28_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>28</size>
         </font>
         <font>
             <name>font30_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>30</size>
         </font>
         <font>
             <name>font35_title</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>35</size>
         </font>
         <font>
             <name>font50caps_title</name>
-            <filename>DejaVuSans-Bold-Caps.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>50</size>
         </font>
 
         <font>
             <name>WeatherTemp</name>
-            <filename>DejaVuSans-Bold.ttf</filename>
+            <filename>Tahoma.ttf</filename>
             <size>80</size>
         </font>
         <font>
@@ -212,7 +212,7 @@
             <filename>Condensed_Bold_Caps.ttf</filename>
             <size>24</size>
         </font>
-        <font> <!-- EpisodeList number and title -->
+        <font> <!-- EpisodeList number and title, poster2 season title -->
             <name>Font_Condensed_Bold_Caps_30</name>
             <filename>Condensed_Bold_Caps.ttf</filename>
             <size>30</size>

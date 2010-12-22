@@ -71,7 +71,6 @@
                 <info>ListItem.Label</info>
                 <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>ff00b8f5</textcolor>
-                <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
             </control>
         </focusedlayout>
     </include>
@@ -102,7 +101,6 @@
                 <info>ListItem.Label</info>
                 <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>ff00b8f5</textcolor>
-                <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
             </control>
         </focusedlayout>
     </include>
@@ -133,7 +131,6 @@
                 <info>ListItem.Label</info>
                 <font>Font_Condensed_Bold_Caps_60</font>
                 <textcolor>ff00b8f5</textcolor>
-                <animation reversible="false" effect="zoom" center="auto" time="400" start="50" end="100" tween="back" easing="out">focus</animation>
             </control>
         </focusedlayout>
     </include>
@@ -234,7 +231,7 @@
                 <label>31357</label>
                 <icon>special://skin/media/homeicons/trailers.png</icon>
                 <thumb fallback="special://skin/media/backgrounds/trailers.jpg">$INFO[Skin.String(home_custom_back_trailers_folder)]</thumb>
-                <onclick>ActivateWindow(10024,plugin://plugin.video.apple.movie.trailers.lite,return)</onclick>
+                <onclick>ActivateWindow(VideoLibrary,plugin://plugin.video.apple.movie.trailers.lite,return)</onclick>
                 <visible>!Skin.HasSetting(Home_Hide_Trailers)</visible>
             </item>
             <item id="7">
@@ -244,6 +241,14 @@
                 <thumb fallback="special://skin/media/backgrounds/programs.jpg">$INFO[Skin.String(home_custom_back_programs_folder)]</thumb>
                 <onclick>ActivateWindow(Programs,return)</onclick>
                 <visible>!Skin.HasSetting(Home_Hide_Programs)</visible>
+            </item>
+            <item id="15">
+                <description>Addons</description>
+                <label>10510</label>
+                <icon>special://skin/media/homeicons/addons.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/addons.jpg">$INFO[Skin.String(home_custom_back_addons_folder)]</thumb>
+                <onclick>ActivateWindow(Addons,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Addons)</visible>
             </item>
             <item id="14">
                 <description>Launcher</description>
@@ -336,8 +341,8 @@
             <include>Home_Onup_Ondown</include>
             <include condition="Skin.HasSetting(Home_Semi_Centered_Menu)">Home_Centered_posy460</include>
             <include condition="Skin.HasSetting(Home_Centered_Menu)">Home_Centered_posy310</include>
-            <include condition="Skin.HasSetting(Home_Bottom_Menu) + System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy133r</include>
-            <include condition="Skin.HasSetting(Home_Bottom_Menu) + !System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy100r</include>
+            <include condition="!Skin.HasSetting(Home_Semi_Centered_Menu) + !Skin.HasSetting(Home_Centered_Menu) + System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy133r</include>
+            <include condition="!Skin.HasSetting(Home_Semi_Centered_Menu) + !Skin.HasSetting(Home_Centered_Menu) + !System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy100r</include>
             <animation effect="slide" start="0,800" end="0,0" tween="back" easing="out" time="400">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="0,800" tween="back" easing="out" time="400">WindowClose</animation>
             <include>Home_Backgrounds</include>

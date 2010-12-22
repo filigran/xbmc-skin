@@ -5,20 +5,12 @@
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
             <posy>200</posy>
-            <control type="image">
-                <description>List background</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1280</width>
-                <height>320</height>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>55000000</colordiffuse>
-            </control>
             <control type="fixedlist" id="519">
                 <visible>Window.IsActive(1)</visible>
                 <posx>-57</posx>
                 <posy>50</posy>
                 <width>1350</width>
+                <height>300</height>
                 <onleft>519</onleft>
                 <onright>519</onright>
                 <onup>9000</onup>
@@ -54,14 +46,13 @@
             </control>
             <control type="scrollbar" id="63">
                 <posx>140</posx>
-                <posy>300</posy>
+                <posy>270</posy>
                 <width>1000</width>
-                <height>5</height>
-                <texturesliderbackground>special://skin/media/scrollbar_horizontal_background.png</texturesliderbackground>
-                <texturesliderbar>special://skin/media/scrollbar_horizontal_bar.png</texturesliderbar>
-                <texturesliderbarfocus>special://skin/media/scrollbar_horizontal_bar_focus.png</texturesliderbarfocus>
+                <height>52</height>
+                <texturesliderbackground>special://skin/media/scrollbar_horizontal_background2.png</texturesliderbackground>
+                <textureslidernibfocus>special://skin/media/scrollbar_horizontal_bar_focus2.png</textureslidernibfocus>
                 <onup>519</onup>
-                <ondown>64</ondown>
+                <ondown>9000</ondown>
                 <showonepage>true</showonepage>
                 <orientation>horizontal</orientation>
                 <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(63)</visible>
@@ -98,23 +89,9 @@
                     <font>Font_Tahoma_20</font>
                     <textcolor>white</textcolor>
                     <align>justify</align>
-                    <pagecontrol>64</pagecontrol>
                     <label>$INFO[ListItem.Plot]</label>
+                    <autoscroll time="5000" delay="10000" repeat="5160">true</autoscroll>
                     <visible>IsEmpty(ListItem.Premiered)</visible>
-                </control>
-                <control type="scrollbar" id="64">
-                    <posx>1150</posx>
-                    <posy>50</posy>
-                    <width>5</width>
-                    <height>100</height>
-                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                    <onleft>63</onleft>
-                    <onright>63</onright>
-                    <showonepage>true</showonepage>
-                    <orientation>vertical</orientation>
-                    <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(64) + IsEmpty(ListItem.Premiered)</visible>
                 </control>
             </control>
         </control>

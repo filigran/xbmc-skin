@@ -284,7 +284,7 @@
                         <posy>0</posy>
                         <width>360</width>
                         <height>203</height>
-                        <texture>special://skin/media/episoderounded.png</texture>
+                        <texture>special://skin/media/episodeframe.png</texture>
                         <colordiffuse>ff00B8F5</colordiffuse>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="100" time="400">focus</animation>
                     </control>
@@ -380,7 +380,7 @@
             <posy>215</posy>
             <!-- TODO: centrera allting och fixa borderposition-->
             <animation effect="slide" time="300" start="0,1000" end="0,0">VisibleChange</animation>
-            <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_RecentlyAdded_Music) + Control.HasFocus(307)</visible>
+            <visible allowhiddenfocus="true">Skin.HasSetting(Home_Show_Random_Music) + Control.HasFocus(307)</visible>
             <control type="image">
                 <description>Music background</description>
                 <posx>-240</posx>

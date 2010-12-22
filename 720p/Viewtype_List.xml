@@ -4,8 +4,8 @@
             <description>Buttons for onleft conditions</description>
             <posx>-2000</posx>
             <control type="button">
-                <description>left press from scrollbar 600 or 601 and list 50 visible</description>
-                <visible>Control.IsVisible(50) + [Control.HasFocus(600) | Control.HasFocus(601)]</visible>
+                <description>left press from scrollbar 600 or 601 and list 519 visible</description>
+                <visible>Control.IsVisible(519) + [Control.HasFocus(600) | Control.HasFocus(601)]</visible>
                 <onfocus>SetFocus(60)</onfocus>
             </control>
         </control>
@@ -13,23 +13,23 @@
             <description>Buttons for onright conditions</description>
             <posx>-2000</posx>
             <control type="button">
-                <description>right press from scrollbar 60 when small fanart and list 50 visible</description>
-                <visible>Control.IsVisible(50) + Control.HasFocus(60) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)]]</visible>
+                <description>right press from scrollbar 60 when small fanart and list 519 visible</description>
+                <visible>Control.IsVisible(519) + Control.HasFocus(60) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)]]</visible>
                 <onfocus>SetFocus(600)</onfocus>
             </control>
             <control type="button">
-                <description>right press from scrollbar 60 when not small fanart and list 50 visible</description>
-                <visible>Control.IsVisible(50) + Control.HasFocus(60) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Small_Fanart)]]</visible>
+                <description>right press from scrollbar 60 when not small fanart and list 519 visible</description>
+                <visible>Control.IsVisible(519) + Control.HasFocus(60) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Small_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Small_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Small_Fanart)]]</visible>
                 <onfocus>SetFocus(601)</onfocus>
             </control>
             <control type="button">
-                <description>right press from scrollbar 600 or 601 and list 50 visible</description>
-                <visible>Control.IsVisible(50) + [Control.HasFocus(600) | Control.HasFocus(601)]</visible>
+                <description>right press from scrollbar 600 or 601 and list 519 visible</description>
+                <visible>Control.IsVisible(519) + [Control.HasFocus(600) | Control.HasFocus(601)]</visible>
                 <onfocus>SetFocus(60)</onfocus>
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(50)</visible>
+            <visible>Control.IsVisible(519)</visible>
             <include>VisibleFadeEffect</include>
             <posx>259</posx>
             <posy>65</posy>
@@ -109,16 +109,15 @@
                     <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
                 </control>
             </control>
-            <control type="list" id="50">
-                <visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Episodes) | Window.IsVisible(VideoFiles)</visible>
+            <control type="list" id="519">
                 <posx>0</posx>
                 <posy>55</posy>
                 <width>970</width>
                 <height>270</height>
                 <onleft>9000</onleft>
                 <onright>60</onright>
-                <onup>50</onup>
-                <ondown>50</ondown>
+                <onup>519</onup>
+                <ondown>519</ondown>
                 <viewtype label="List">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
@@ -489,7 +488,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(50) + Window.IsVisible(VideoFiles)</visible>
+            <visible>Control.IsVisible(519) + Window.IsVisible(VideoFiles)</visible>
             <control type="fadelabel">
                 <description>Movie title</description>
                 <posx>300</posx>
@@ -544,7 +543,7 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(50) + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+            <visible>Control.IsVisible(519) + !Window.IsVisible(VideoFiles) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
             <control type="scrollbar" id="60">
                 <posx>60r</posx>
                 <posy>118</posy>
@@ -553,11 +552,11 @@
                 <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                 <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                 <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                <onleft>50</onleft>
+                <onleft>519</onleft>
                 <onright>904</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
-                <visible allowhiddenfocus="true">Control.IsVisible(50) + Control.HasFocus(60)</visible>
+                <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(60)</visible>
             </control>
             <control type="image">
                 <posx>50</posx>
@@ -579,7 +578,7 @@
             <include>VideoLibrary_bottom_info</include>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(50) + !Window.IsVisible(VideoFiles) + Container.Content(Episodes)</visible>
+            <visible>Control.IsVisible(519) + !Window.IsVisible(VideoFiles) + Container.Content(Episodes)</visible>
             <control type="scrollbar" id="60">
                 <posx>40r</posx>
                 <posy>118</posy>
@@ -588,11 +587,11 @@
                 <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
                 <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
                 <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-                <onleft>50</onleft>
+                <onleft>519</onleft>
                 <onright>904</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
-                <visible allowhiddenfocus="true">Control.IsVisible(50) + Control.HasFocus(60)</visible>
+                <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(60)</visible>
             </control>
             <control type="image">
                 <description>TV Show logo</description>

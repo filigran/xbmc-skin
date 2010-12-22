@@ -47,6 +47,7 @@
                 <posx>150</posx>
                 <posy>0</posy>
                 <width>470</width>
+                <visible>Weather.IsFetched</visible>
                 <control type="image">
                     <description>Current weather icon</description>
                     <posx>0</posx>
@@ -77,15 +78,31 @@
                 <width>470</width>
                 <height>200</height>
                 <font>Font_Normal_Bold_Caps_50</font>
-                <textcolor>white</textcolor>
+                <textcolor>ff00b8f5</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <align>center</align>
-                <label>$INFO[Weather.Location,[COLOR=ff00b8f5],[/COLOR]]</label>
+                <label>$INFO[Weather.Location]</label>
                 <wrapmultiline>true</wrapmultiline>
+                <visible>Weather.IsFetched</visible>
+            </control>
+            <control type="label">
+                <description>not fetched label</description>
+                <posx>0</posx>
+                <posy>150</posy>
+                <width>470</width>
+                <height>200</height>
+                <font>Font_Normal_Bold_Caps_50</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <align>center</align>
+                <label>31411</label>
+                <wrapmultiline>true</wrapmultiline>
+                <visible>!Weather.IsFetched</visible>
             </control>
             <control type="group">
                 <posx>0</posx>
                 <posy>305</posy>
+                <visible>Weather.IsFetched</visible>
                 <control type="label">
                     <description>current feels like label</description>
                     <posx>170</posx>
@@ -235,7 +252,7 @@
                         <width>350</width>
                         <height>35</height>
                         <font>Font_Condensed_Bold_Caps_20</font>
-                        <label>$LOCALIZE[33006]$INFO[Window(Weather).Property(Day0.Outlook),: ]</label>
+                        <label>$INFO[Window(Weather).Property(Current.Condition),$LOCALIZE[33006]: ]</label>
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>ff00b8f5</textcolor>

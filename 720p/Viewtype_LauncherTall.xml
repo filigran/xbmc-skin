@@ -1,20 +1,5 @@
 <includes>
     <include name="Viewtype_LauncherTall">
-        <control type="group" id="620">
-            <visible>Control.IsVisible(518)</visible>
-            <description>Onright conditions</description>
-            <posy>-200</posy>
-            <control type="button">
-                <description>Scrollbar disabled</description>
-                <onfocus>SetFocus(518)</onfocus>
-                <visible>!Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
-            </control>
-            <control type="button">
-                <description>Scrollbar enabled</description>
-                <onfocus>SetFocus(62)</onfocus>
-                <visible>Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
-            </control>
-        </control>
         <control type="group">
             <visible>Control.IsVisible(518)</visible>
             <include>VisibleFadeEffect</include>
@@ -31,17 +16,16 @@
                 <colordiffuse>55000000</colordiffuse>
             </control>
             <control type="panel" id="518">
-                <visible>Window.IsActive(1)</visible>
+                <visible>Window.IsActive(1) | Container.Content(Movies)</visible>
                 <posx>67</posx>
                 <posy>100</posy>
                 <width>748</width>
                 <height>594</height>
                 <onleft>9000</onleft>
-                <onright>620</onright>
+                <onright>518</onright>
                 <onup>518</onup>
                 <ondown>518</ondown>
                 <scrolltime>0</scrolltime>
-                <pagecontrol>62</pagecontrol>
                 <viewtype label="LauncherTall">list</viewtype>
                 <orientation>vertical</orientation>
                 <itemlayout height="198" width="144">
@@ -51,7 +35,7 @@
                         <width>116</width>
                         <height>172</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
+                        <texture diffuse="special://skin/media/episodematte.png" background="true">$INFO[ListItem.Icon]</texture>
                         <colordiffuse>88ffffff</colordiffuse>
                     </control>
                 </itemlayout>
@@ -77,20 +61,6 @@
                     </control>
                 </focusedlayout>
             </control>
-        </control>
-        <control type="scrollbar" id="62">
-            <posx>15r</posx>
-            <posy>100</posy>
-            <width>5</width>
-            <height>560</height>
-            <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-            <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-            <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
-            <onleft>518</onleft>
-            <onright>9000</onright>
-            <showonepage>true</showonepage>
-            <orientation>vertical</orientation>
-            <visible allowhiddenfocus="true">Control.IsVisible(518) + Control.HasFocus(62) + Skin.HasSetting(Launchers_Show_Scrollbar)</visible>
         </control>
         <include>Launcher_Left_bar</include>
     </include>

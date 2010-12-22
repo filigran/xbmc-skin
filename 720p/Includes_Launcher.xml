@@ -1,7 +1,7 @@
 <includes>
     <include name="Launcher_Left_bar">
         <control type="group">
-            <visible>!Control.IsVisible(519) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(500) + !Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(517) | Control.IsVisible(518)</visible>
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -28,10 +28,10 @@
                 <posy>15</posy>
                 <width>370</width>
                 <height>30</height>
-                <font>Font_EpisodeList_Episode_Count</font>
+                <font>Font_Condensed_Bold_Caps_30</font>
                 <textcolor>ffdddddd</textcolor>
                 <align>left</align>
-                <label>$INFO[ListItem.Studio,,:] $INFO[Container.NumItems,[COLOR=grey], $LOCALIZE[31371][/COLOR]]</label>
+                <label>$INFO[ListItem.Studio,,:] $INFO[Container.NumItems,[COLOR=ffbbbbbb], $LOCALIZE[31025][/COLOR]]</label>
             </control>
             <control type="image">
                 <description>Game screenshot border</description>
@@ -61,7 +61,7 @@
                 <wrapmultiline>true</wrapmultiline>
                 <aligny>center</aligny>
                 <label>$INFO[ListItem.Title]</label>
-                <font>Font_EpisodeList_Episode_Count</font>
+                <font>Font_Normal_Bold_Caps_24</font>
                 <textcolor>ff00b8f5</textcolor>
             </control>
             <control type="textbox">
