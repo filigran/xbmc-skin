@@ -142,6 +142,11 @@
             <filename>Normal_Bold.ttf</filename>
             <size>24</size>
         </font>
+        <font> <!-- Button Menu alarm value -->
+            <name>Font_Normal_Caps_18</name>
+            <filename>Normal_Caps.ttf</filename>
+            <size>18</size>
+        </font>
         <font> <!-- VideoScan header -->
             <name>Font_Normal_Bold_Caps_14</name>
             <filename>Normal_Bold_Caps.ttf</filename>
