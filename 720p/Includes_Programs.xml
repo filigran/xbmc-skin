@@ -1,0 +1,129 @@
+<includes>
+    <include name="Programs_Menu">
+        <!-- Bottom menu -->
+        <control type="grouplist" id="9000">
+            <description>Hidden button bottom menu</description>
+            <posx>0</posx>
+            <posy>-200</posy>
+            <orientation>horizontal</orientation>
+            <onup>50</onup>
+            <ondown>50</ondown>
+            <control type="button" id="2">
+                <description>Viewtype toggle</description>
+                <label>-</label>
+                <onclick>-</onclick>
+            </control>
+            <control type="button" id="3">
+                <description>Sort toggle</description>
+                <label>-</label>
+                <onclick>-</onclick>
+            </control>
+            <control type="togglebutton" id="4">
+                <description>Sort direction</description>
+                <label>584</label>
+                <altlabel>585</altlabel>
+                <onclick>-</onclick>
+            </control>
+        </control>
+        <control type="image">
+            <description>Bottom menu background</description>
+            <posx>0</posx>
+            <posy>680</posy>
+            <width>1280</width>
+            <height>40</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>dd000000</colordiffuse>
+            <animation reversible="false" effect="slide" start="0,40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,40" easing="out" time="400">hidden</animation>
+            <visible>ControlGroup(9000).HasFocus</visible>
+        </control>
+        <control type="image">
+            <description>Bottom menu top border</description>
+            <posx>0</posx>
+            <posy>677</posy>
+            <width>1280</width>
+            <height>3</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>5500b8f5</colordiffuse>
+            <animation reversible="false" effect="slide" start="0,40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,40" easing="out" time="400">hidden</animation>
+            <visible>ControlGroup(9000).HasFocus</visible>
+        </control>
+        <control type="grouplist">
+            <description>The visible part of the menu</description>
+            <posx>20</posx>
+            <posy>690</posy>
+            <orientation>horizontal</orientation>
+            <itemgap>10</itemgap>
+            <animation reversible="false" effect="slide" start="0,40" end="0,0" easing="out" time="400">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="0,40" easing="out" time="400">hidden</animation>
+            <visible>ControlGroup(9000).HasFocus</visible>
+            <control type="label"> <!-- 2 -->
+                <description>Viewtype toggle unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(2)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Normal_16</font>
+                <visible>!Control.HasFocus(2)</visible>
+            </control>
+            <control type="label"> <!-- 2 -->
+                <description>Viewtype toggle focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(2)]</label>
+                <textcolor>ff00b8f5</textcolor>
+                <font>Font_Normal_16</font>
+                <visible>Control.HasFocus(2)</visible>
+            </control>
+            <control type="label"> <!-- 3 -->
+                <description>Sort toggle unfocused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <textcolor>white</textcolor>
+                <font>Font_Normal_16</font>
+                <visible>!Control.HasFocus(3)</visible>
+            </control>
+            <control type="label"> <!-- 3-->
+                <description>Sort toggle focused</description>
+                <width min="20" max="200">auto</width>
+                <label>$INFO[Control.GetLabel(3)]</label>
+                <textcolor>ff00b8f5</textcolor>
+                <font>Font_Normal_16</font>
+                <visible>Control.HasFocus(3)</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow asc (up) focused</description>
+                <posy>4</posy>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_up.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <visible>!Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[584])</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow asc (up) focused</description>
+                <posy>4</posy>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_up.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+                <visible>Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[584])</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow desc (down) unfocused</description>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_down.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <visible>!Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[585])</visible>
+            </control>
+            <control type="image"> <!-- 4 -->
+                <description>Sort direction arrow desc (down) focused</description>
+                <width>16</width>
+                <height>20</height>
+                <texture>special://skin/media/arrow_down.png</texture>
+                <colordiffuse>ff00b8f5</colordiffuse>
+                <visible>Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[585])</visible>
+            </control>
+        </control>
+    </include>
+</includes>
