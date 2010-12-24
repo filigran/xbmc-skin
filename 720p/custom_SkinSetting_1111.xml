@@ -701,15 +701,15 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
                     <control type="radiobutton" id="210">
-                        <description>Hide Programs Button</description>
+                        <description>Hide Apps Button</description>
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white</focusedcolor>
-                        <label>$LOCALIZE[31111] - $LOCALIZE[0]</label>
-                        <onclick>Skin.ToggleSetting(Home_Hide_Programs)</onclick>
-                        <selected>Skin.HasSetting(Home_Hide_Programs)</selected>
+                        <label>$LOCALIZE[31111] - $LOCALIZE[31418]</label>
+                        <onclick>Skin.ToggleSetting(Home_Hide_Apps)</onclick>
+                        <selected>Skin.HasSetting(Home_Hide_Apps)</selected>
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
@@ -996,8 +996,8 @@
                             <item id="4">
                                 <label>0</label>
                                 <onclick>-</onclick>
-                                <icon>special://skin/media/backgrounds/programs.jpg</icon>
-                                <thumb>$INFO[Skin.String(Home_Custom_Back_Programs_Folder)]</thumb>
+                                <icon>special://skin/media/backgrounds/apps.jpg</icon>
+                                <thumb>$INFO[Skin.String(Home_Custom_Back_Apps_Folder)]</thumb>
                             </item>
                             <item id="5">
                                 <label>8</label>
@@ -1236,7 +1236,7 @@
                                 <align>center</align>
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
-                                <onclick>Skin.SetImage(Home_Custom_Back_Programs_Folder)</onclick>
+                                <onclick>Skin.SetImage(Home_Custom_Back_Apps_Folder)</onclick>
                                 <onleft>302</onleft>
                                 <onright>301</onright>
                                 <onup>304</onup>
@@ -1255,7 +1255,7 @@
                                 <align>center</align>
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
-                                <onclick>Skin.SetPath(Home_Custom_Back_Programs_Folder)</onclick>
+                                <onclick>Skin.SetPath(Home_Custom_Back_Apps_Folder)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
                                 <onup>304</onup>
@@ -1274,7 +1274,7 @@
                                 <align>center</align>
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
-                                <onclick>Skin.Reset(Home_Custom_Back_Programs_Folder)</onclick>
+                                <onclick>Skin.Reset(Home_Custom_Back_Apps_Folder)</onclick>
                                 <onleft>301</onleft>
                                 <onright>300</onright>
                                 <onup>304</onup>

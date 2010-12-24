@@ -177,7 +177,7 @@
   <string id="31374">Centered icons</string>
   <string id="31375">Icons to the left</string>
   <string id="31376">Semi-centered menu</string>
-  <string id="31377">Centered meni</string>
+  <string id="31377">Centered menu</string>
   <string id="31378">Bottom aligned menu</string>
   <string id="31379">Menu options</string>
   <string id="31380">Icons to the right</string>
@@ -207,4 +207,10 @@
   <string id="31414">Show media flags</string>
   <string id="31415">Poster Wrap</string>
   <string id="31416">Poster Fixed</string>
+  <string id="31417">Play random song</string>
+  <string id="31418">Apps</string>
+  <string id="31419">Play random movie</string>
+  <string id="31420">Play random episode</string>
+
+
 </strings>

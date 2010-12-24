@@ -1,8 +1,20 @@
 ﻿<window id="0">
-    <defaultcontrol always="true">5043</defaultcontrol>
+    <defaultcontrol always="true">5042</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <backgroundcolor>ff000000</backgroundcolor>
     <controls>
+        <control type="button" id="5042">
+            <description>Fetch weather</description>
+            <posx>-20</posx>
+            <posy>-20</posy>
+            <width>1</width>
+            <height>1</height>
+            <texturenofocus>-</texturenofocus>
+            <texturefocus>-</texturefocus>
+            <font>-</font>
+            <info>Weather.Conditions</info>
+            <onfocus>SetFocus(5043)</onfocus>
+        </control>
         <control type="button" id="5043">
             <description>Run Recently added</description>
             <posx>-20</posx>
@@ -73,15 +85,7 @@
             <imagepath background="true">$INFO[Container(300).ListItem.Thumb]</imagepath>
             <visible>!Player.HasMedia</visible>
         </control>
-        <control type="image">
-            <description>Fanart overlay</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture>white.png</texture>
-            <colordiffuse>88000000</colordiffuse>
-        </control>
+        <include>Global_BackgroundDiffuser</include>
         <include>Home_Menu</include>
         <control type="image">
             <description>Background diffuser for recently added / random items / weather</description>

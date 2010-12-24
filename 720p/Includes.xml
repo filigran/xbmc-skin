@@ -115,10 +115,8 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>Font_Normal_16</font>
-                <textcolor>gray</textcolor>
-                <headlinecolor>gray</headlinecolor>
-                <highlightcolor>red</highlightcolor>
-                <titlecolor>ff00b8f5</titlecolor>
+                <textcolor>white</textcolor>
+                <headlinecolor>white</headlinecolor>
                 <urlset>1</urlset>
             </control>
         </control>
@@ -310,7 +308,7 @@
             <width>1280</width>
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
-            <colordiffuse>88000000</colordiffuse>
+            <colordiffuse>aa000000</colordiffuse>
         </control>
     </include>
     <include name="MediaFlags">
