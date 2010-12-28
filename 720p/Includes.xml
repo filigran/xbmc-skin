@@ -10,6 +10,7 @@
     <include file="Viewtype_LauncherTall.xml" />
     <include file="Viewtype_LauncherLogo.xml" />
     <include file="Includes_Home_Menu.xml" />
+    <include file="Includes_Home_Menu_Vertical.xml" />
     <include file="Includes_Home_RecentlyAdded.xml" />
     <include file="Includes_Home_RandomItems.xml" />
     <include file="Includes_Home_Weather.xml" />
@@ -18,6 +19,7 @@
     <include file="IncludesCodecFlagging.xml" />
     <include file="Includes_Video.xml" />
     <include file="Includes_Programs.xml" />
+    <include file="Includes_Animations.xml" />
     <constant name="FanartCrossfadeTime">500</constant>
     <constant name="IconCrossfadeTime">400</constant>
     <include name="Global_Time">
@@ -316,11 +318,6 @@
             <description>Media flags</description>
             <width>487</width>
             <height>38</height>
-            <animation reversible="false" effect="slide" start="0,0" end="-140,0" time="10" condition="[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Rating)]">conditional</animation>
-            <animation type="Focus" reversible="false">
-                <effect type="fade" start="0" end="100" time="100" delay="1000" />
-                <effect type="slide" start="-183,0" end="0,0" time="300" delay="1000" />
-            </animation>
             <control type="image">
                 <description>Video res if bluray</description>
                 <posx>0</posx>
@@ -388,6 +385,36 @@
                 <height>38</height>
                 <aspectratio>keep</aspectratio>
                 <texture>$INFO[ListItem.AudioChannels,flags/audio/,.png]</texture>
+            </control>
+        </control>
+    </include>
+    <include name="Scrolling_Letter">
+        <control type="group">
+            <description>Scrolling letter</description>
+            <visible>Container.Scrolling</visible>
+            <animation effect="fade" time="100">Visible</animation>
+            <animation effect="fade" time="300">Hidden</animation>
+            <posx>600</posx>
+            <posy>90r</posy>
+            <width>320</width>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>80</width>
+                <height>80</height>
+                <texture diffuse="squarematte.png">white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>80</width>
+                <height>80</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>[B]$INFO[ListItem.SortLetter][/B]</label>
+                <textcolor>aaffffff</textcolor>
+                <font>Font_Condensed_Bold_Caps_60</font>
             </control>
         </control>
     </include>

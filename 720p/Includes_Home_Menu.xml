@@ -5,7 +5,7 @@
             <posx>-2000</posx>
             <control type="button">
                 <description>RecentlyAdded movies</description>
-                <visible>Container(300).HasFocus(6) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+                <visible>Container(300).HasFocus(5) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
                 <onfocus>SetFocus(301)</onfocus>
             </control>
             <control type="button">
@@ -15,12 +15,12 @@
             </control>
             <control type="button">
                 <description>RecentlyAdded music</description>
-                <visible>Container(300).HasFocus(2) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
                 <onfocus>SetFocus(303)</onfocus>
             </control>
             <control type="button">
                 <description>Weather info</description>
-                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+                <visible>Container(300).HasFocus(8) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
                 <onfocus>SetFocus(304)</onfocus>
             </control>
         </control>
@@ -249,22 +249,6 @@
                 <onclick>ActivateWindow(Music,return)</onclick>
                 <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
             </item>
-            <item id="4">
-                <description>TV Shows</description>
-                <label>20343</label>
-                <icon>special://skin/media/homeicons/tvshows.png</icon>
-                <thumb fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
-                <onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
-                <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
-            </item>
-            <item id="5">
-                <description>Movies</description>
-                <label>342</label>
-                <icon>special://skin/media/homeicons/movies.png</icon>
-                <thumb fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
-                <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
-                <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
-            </item>
             <item id="6">
                 <description>Trailers</description>
                 <label>31357</label>
@@ -288,6 +272,22 @@
                 <thumb fallback="special://skin/media/backgrounds/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
                 <onclick>ActivateWindow(weather,return)</onclick>
                 <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
+            </item>
+            <item id="4">
+                <description>TV Shows</description>
+                <label>20343</label>
+                <icon>special://skin/media/homeicons/tvshows.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
+            </item>
+            <item id="5">
+                <description>Movies</description>
+                <label>342</label>
+                <icon>special://skin/media/homeicons/movies.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
             </item>
             <item id="9">
                 <description>Apps</description>

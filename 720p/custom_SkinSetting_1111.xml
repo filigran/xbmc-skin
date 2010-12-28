@@ -436,19 +436,6 @@
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="radiobutton" id="229">
-                        <description>Show random items for movies</description>
-                        <width>750</width>
-                        <height>40</height>
-                        <font>font13</font>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
-                        <label>31395</label>
-                        <onclick>Skin.ToggleSetting(Home_Show_Random_Movies)</onclick>
-                        <selected>Skin.HasSetting(Home_Show_Random_Movies)</selected>
-                        <texturefocus>MenuItemFO.png</texturefocus>
-                        <texturenofocus>MenuItemNF.png</texturenofocus>
-                    </control>
                     <control type="radiobutton" id="202">
                         <description>Show Recently added info for episodes</description>
                         <width>750</width>
@@ -462,19 +449,6 @@
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="radiobutton" id="230">
-                        <description>Show random items for episodes</description>
-                        <width>750</width>
-                        <height>40</height>
-                        <font>font13</font>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
-                        <label>31396</label>
-                        <onclick>Skin.ToggleSetting(Home_Show_Random_Episodes)</onclick>
-                        <selected>Skin.HasSetting(Home_Show_Random_Episodes)</selected>
-                        <texturefocus>MenuItemFO.png</texturefocus>
-                        <texturenofocus>MenuItemNF.png</texturenofocus>
-                    </control>
                     <control type="radiobutton" id="203">
                         <description>Show Recently added info for music</description>
                         <width>750</width>
@@ -485,19 +459,6 @@
                         <label>31132</label>
                         <onclick>Skin.ToggleSetting(Home_Show_RecentlyAdded_Music)</onclick>
                         <selected>Skin.HasSetting(Home_Show_RecentlyAdded_Music)</selected>
-                        <texturefocus>MenuItemFO.png</texturefocus>
-                        <texturenofocus>MenuItemNF.png</texturenofocus>
-                    </control>
-                    <control type="radiobutton" id="231">
-                        <description>Show random items for music</description>
-                        <width>750</width>
-                        <height>40</height>
-                        <font>font13</font>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
-                        <label>31397</label>
-                        <onclick>Skin.ToggleSetting(Home_Show_Random_Music)</onclick>
-                        <selected>Skin.HasSetting(Home_Show_Random_Music)</selected>
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>

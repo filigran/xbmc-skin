@@ -3,7 +3,6 @@
     <allowoverlay>no</allowoverlay>
     <views>50,519,520,521,522,501,502,508,509,503,512,513,514,515,517,518</views>
     <controls>
-        <include>CommonMediaPlayingBackground</include>
         <control type="button" id="5043">
             <description>Run Recently added</description>
             <posx>-20</posx>
@@ -17,108 +16,85 @@
             <texturenofocus>-</texturenofocus>
             <texturefocus>-</texturefocus>
         </control>
-        <control type="image">
-            <description>Fanart image</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio aligny="top">stretch</aspectratio>
-            <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-            <visible>!Player.HasVideo + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Fanart)]]</visible>
-        </control>
-        <control type="image">
-            <description>Default image if no fanart for movies</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</texture>
-            <visible>!Player.HasVideo + [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Fanart)]</visible>
-        </control>
-        <control type="image">
-            <description>Default image if no fanart for tvshows</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_TVShows_Folder)]</texture>
-            <visible>!Player.HasVideo + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Fanart)]</visible>
-        </control>
-        <control type="image">
-            <description>Default image if no fanart for seasons</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Seasons_Folder)]</texture>
-            <visible>!Player.HasVideo + [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_Fanart)]</visible>
-        </control>
-        <control type="image">
-            <description>Default image if no fanart for episodes</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <fadetime>IconCrossfadeTime</fadetime>
-            <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Episodes_Folder)]</texture>
-            <visible>!Player.HasVideo + [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Fanart)]</visible>
-        </control>
-        <include>Global_BackgroundDiffuser</include>
         <control type="group">
-            <include>Window_OpenClose_Animation</include>
-            <include>CommonRootView</include> <!-- view id = 50 -->
-            <include>Viewtype_List</include> <!-- view id = 519 -->
-            <include>Viewtype_Poster</include> <!-- view id = 520 & 521 -->
-            <include>Viewtype_Banner</include> <!-- view id = 522 -->
-            <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
-            <include>Viewtype_Logowrap</include> <!-- view id = 508 -->
-            <include>Viewtype_Episode</include> <!-- view id = 503 -->
-            <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
-            <include>Viewtype_LauncherWide</include> <!-- view id = 517 -->
-            <include>Viewtype_LauncherTall</include> <!-- view id = 518 -->
-        </control>
-        <control type="group">
-            <description>Scrolling letter</description>
-            <visible>Container.Scrolling</visible>
-            <animation effect="fade" time="100">Visible</animation>
-            <animation effect="fade" time="300">Hidden</animation>
-            <posx>600</posx>
-            <posy>90r</posy>
-            <width>320</width>
+            <include>Animation_Left_Menu_Slide</include>
+            <include>CommonMediaPlayingBackground</include>
             <control type="image">
+                <description>Fanart image</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>80</width>
-                <height>80</height>
-                <texture diffuse="squarematte.png">white.png</texture>
-                <colordiffuse>55000000</colordiffuse>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
+                <visible>!Player.HasVideo + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Fanart)]]</visible>
             </control>
-            <control type="label">
+            <control type="image">
+                <description>Default image if no fanart for movies</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>80</width>
-                <height>80</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>[B]$INFO[ListItem.SortLetter][/B]</label>
-                <textcolor>aaffffff</textcolor>
-                <font>Font_Condensed_Bold_Caps_60</font>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</texture>
+                <visible>!Player.HasVideo + [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Fanart)]</visible>
             </control>
+            <control type="image">
+                <description>Default image if no fanart for tvshows</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_TVShows_Folder)]</texture>
+                <visible>!Player.HasVideo + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Fanart)]</visible>
+            </control>
+            <control type="image">
+                <description>Default image if no fanart for seasons</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Seasons_Folder)]</texture>
+                <visible>!Player.HasVideo + [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_Fanart)]</visible>
+            </control>
+            <control type="image">
+                <description>Default image if no fanart for episodes</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Episodes_Folder)]</texture>
+                <visible>!Player.HasVideo + [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Fanart)]</visible>
+            </control>
+            <include>Global_BackgroundDiffuser</include>
+            <control type="group">
+                <include>Window_OpenClose_Animation</include>
+                <include>CommonRootView</include> <!-- view id = 50 -->
+                <include>Viewtype_List</include> <!-- view id = 519 -->
+                <include>Viewtype_Poster</include> <!-- view id = 520 & 521 -->
+                <include>Viewtype_Banner</include> <!-- view id = 522 -->
+                <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
+                <include>Viewtype_Logowrap</include> <!-- view id = 508 -->
+                <include>Viewtype_Episode</include> <!-- view id = 503 -->
+                <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
+                <include>Viewtype_LauncherWide</include> <!-- view id = 517 -->
+                <include>Viewtype_LauncherTall</include> <!-- view id = 518 -->
+            </control>
+            <include>Scrolling_Letter</include>
+            <include condition="Skin.HasSetting(Show_RSS_Everywhere)">RSS_Feed</include>
+            <include>Global_DialogDiffuser</include>
+            <include>Global_Time</include>
+            <include>Global_Weather</include>
         </control>
         <include>VideoLibrary_Menu</include>
-        <include condition="Skin.HasSetting(Show_RSS_Everywhere)">RSS_Feed</include>
-        <include>Global_DialogDiffuser</include>
-        <include>Global_Time</include>
-        <include>Global_Weather</include>
         <!--<control type="image">
             <description>centering image horizontal. REMOVE THIS</description>
             <posx>0</posx>

@@ -139,7 +139,7 @@
                     <posy>35</posy>
                     <width>880</width>
                     <height>30</height>
-                    <label>$INFO[VideoPlayer.Year,, / ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Season,$LOCALIZE[20373] ]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]</label>
+                    <label>$INFO[VideoPlayer.TVShowTitle] $INFO[VideoPlayer.Season,/ $LOCALIZE[20373]]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]$INFO[VideoPlayer.Premiered, / $LOCALIZE[20416] ]</label>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -163,11 +163,10 @@
                     <description>Plot scrollbar</description>
                     <posx>580</posx>
                     <posy>70</posy>
-                    <width>5</width>
+                    <width>26</width>
                     <height>170</height>
-                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background2.png</texturesliderbackground>
+                    <textureslidernibfocus>special://skin/media/scrollbar_vertical_bar_focus2.png</textureslidernibfocus>
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
                     <visible allowhiddenfocus="true">VideoPlayer.Content(Episodes) + Control.HasFocus(601)</visible>
@@ -221,11 +220,10 @@
                     <description>Plot scrollbar</description>
                     <posx>710</posx>
                     <posy>70</posy>
-                    <width>5</width>
+                    <width>26</width>
                     <height>170</height>
-                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background.png</texturesliderbackground>
-                    <texturesliderbar>special://skin/media/scrollbar_vertical_bar.png</texturesliderbar>
-                    <texturesliderbarfocus>special://skin/media/scrollbar_vertical_bar_focus.png</texturesliderbarfocus>
+                    <texturesliderbackground>special://skin/media/scrollbar_vertical_background2.png</texturesliderbackground>
+                    <textureslidernibfocus>special://skin/media/scrollbar_vertical_bar_focus2.png</textureslidernibfocus>
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
                     <visible allowhiddenfocus="true">VideoPlayer.Content(Movies) + Control.HasFocus(602)</visible>
@@ -260,14 +258,14 @@
                     <width>80</width>
                     <height>40</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.VideoResolution,flags/video/,.png]</texture>
                 </control>
                 <control type="image">
                     <description>Common Codec Image</description>
                     <width>80</width>
                     <height>40</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.VideoCodec,flagging/video/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
                     <!-- Don't show if its one of the 500 divx codecs -->
                     <visible>![substring(VideoPlayer.VideoCodec,div,left) | stringcompare(VideoPlayer.VideoCodec,dx50)]</visible>
                 </control>
@@ -276,7 +274,7 @@
                     <width>80</width>
                     <height>40</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>flagging/video/divx.png</texture>
+                    <texture>flags/video/divx.png</texture>
                     <visible>[substring(VideoPlayer.VideoCodec,div,left) | stringcompare(VideoPlayer.VideoCodec,dx50)]</visible>
                 </control>
                 <control type="image">
@@ -284,7 +282,7 @@
                     <width>80</width>
                     <height>40</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>flagging/audio/dolbydigital.png</texture>
+                    <texture>flags/audio/dolbydigital.png</texture>
                     <visible>[stringcompare(VideoPlayer.AudioCodec,ac3) + stringcompare(VideoPlayer.AudioChannels,6)]</visible>
                 </control>
                 <control type="image">
@@ -292,16 +290,16 @@
                     <width>80</width>
                     <height>40</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
                     <!-- Don't show if I want the Dolby Digital Logo -->
                     <visible>![stringcompare(VideoPlayer.AudioCodec,ac3) + stringcompare(VideoPlayer.AudioChannels,6)]</visible>
                 </control>
                 <control type="image">
                     <description>Audio Channels Image</description>
-                    <width>60</width>
+                    <width>80</width>
                     <height>40</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
                 </control>
             </control>
         </control>

@@ -167,6 +167,11 @@
             <filename>Normal_Bold_Caps.ttf</filename>
             <size>24</size>
         </font>
+        <font> <!-- Logo fallback episodelist view -->
+            <name>Font_Normal_Bold_Caps_40</name>
+            <filename>Normal_Bold_Caps.ttf</filename>
+            <size>40</size>
+        </font>
         <font> <!-- Home menu categories -->
             <name>Font_Normal_Bold_Caps_50</name>
             <filename>Normal_Bold_Caps.ttf</filename>

@@ -28,7 +28,7 @@
             <posx>400</posx>
             <posy>100</posy>
             <width>880</width>
-            <height>540</height>
+            <height>581</height>
             <onleft>603</onleft>
             <onright>600</onright>
             <onup>515</onup>
@@ -117,13 +117,13 @@
                     <selectedcolor>ff00b8f5</selectedcolor>
                 </control>
             </itemlayout>
-            <focusedlayout height="201">
+            <focusedlayout height="231">
                 <control type="image">
                     <description>Focused item background</description>
                     <posx>0</posx>
                     <posy>3</posy>
                     <width>880</width>
-                    <height>178</height>
+                    <height>208</height>
                     <aspectratio>stretch</aspectratio>
                     <aligny>center</aligny>
                     <texture>special://skin/media/white.png</texture>
@@ -134,7 +134,7 @@
                 <control type="image">
                     <description>Focused item Left border</description>
                     <posx>0</posx>
-                    <posy>184</posy>
+                    <posy>214</posy>
                     <width>3</width>
                     <height>17</height>
                     <aspectratio>stretch</aspectratio>
@@ -160,7 +160,7 @@
                 <control type="image">
                     <description>Focused item bottom border</description>
                     <posx>0</posx>
-                    <posy>181</posy>
+                    <posy>211</posy>
                     <width>880</width>
                     <height>3</height>
                     <aspectratio>stretch</aspectratio>
@@ -171,29 +171,28 @@
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                 </control>
                 <control type="image">
-                    <description>Thumb frame</description>
-                    <posx>30</posx>
-                    <posy>20</posy>
-                    <width>249</width>
-                    <height>140</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>special://skin/media/episodeframe.png</texture>
-                    <colordiffuse>ff00b8f5</colordiffuse>
-                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                    <visible>Control.HasFocus(515)</visible>
-                </control>
-                <control type="image">
                     <description>Thumb</description>
                     <posx>30</posx>
                     <posy>20</posy>
                     <width>249</width>
                     <height>140</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture diffuse="special://skin/media/episodematte.png">$INFO[ListItem.Icon]</texture>
-                    <bordersize>4</bordersize>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="special://skin/media/16x9_diffuse_small.png">$INFO[ListItem.Icon]</texture>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
+                </control>
+                <control type="image">
+                    <description>Thumb frame</description>
+                    <posx>30</posx>
+                    <posy>20</posy>
+                    <width>249</width>
+                    <height>140</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>special://skin/media/16x9_frame_small.png</texture>
+                    <colordiffuse>8800b8f5</colordiffuse>
+                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
+                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
+                    <visible>Control.HasFocus(515)</visible>
                 </control>
                 <control type="image">
                     <description>English subtitles background</description>
@@ -266,26 +265,35 @@
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                 </control>
+                <control type="group">
+                    <posx>28</posx>
+                    <posy>170</posy>
+                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
+                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
+                    <include>MediaFlags</include>
+                    <visible>Skin.HasSetting(Episodes_Show_MediaFlags)</visible>
+                </control>
                 <control type="image">
                     <description>Rating</description>
-                    <posx>302</posx>
-                    <posy>130</posy>
+                    <posx>327</posx>
+                    <posy>170</posy>
                     <width>90</width>
-                    <height>40</height>
+                    <height>30</height>
                     <aspectratio>keep</aspectratio>
                     <aligny>center</aligny>
                     <texture fallback="special://skin/media/rating0.png">$INFO[Listitem.StarRating]</texture>
                     <colordiffuse>ffeaf188</colordiffuse>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
+                    <animation effect="slide" start="0,0" end="-299,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_MediaFlags)">conditional</animation>
                     <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Rating)</visible>
                 </control>
                 <control type="label">
                     <description>Duration + air date</description>
-                    <posx>402</posx>
-                    <posy>130</posy>
+                    <posx>442</posx>
+                    <posy>170</posy>
                     <width>400</width>
-                    <height>40</height>
+                    <height>30</height>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>$INFO[ListItem.Premiered,$LOCALIZE[20416]: ] $INFO[ListItem.Duration, /  $LOCALIZE[2050]: , $LOCALIZE[12391]]</label>
@@ -294,22 +302,8 @@
                     <selectedcolor>ffdddddd</selectedcolor>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                    <visible>Skin.HasSetting(Episodes_Show_Rating)</visible>
-                </control>
-                <control type="label">
-                    <posx>302</posx>
-                    <posy>130</posy>
-                    <width>400</width>
-                    <height>40</height>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>$INFO[ListItem.Premiered,$LOCALIZE[20416]: ] $INFO[ListItem.Duration, /  $LOCALIZE[2050]: , $LOCALIZE[12391]]</label>
-                    <font>Font_Normal_18</font>
-                    <textcolor>ffdddddd</textcolor>
-                    <selectedcolor>ffdddddd</selectedcolor>
-                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                    <visible>!Skin.HasSetting(Episodes_Show_Rating)</visible>
+                    <animation effect="slide" start="0,0" end="-115,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_Rating)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="-299,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_MediaFlags)">conditional</animation>
                 </control>
                 <control type="image">
                     <description>Watched overlay</description>
@@ -337,7 +331,6 @@
                 <texturesliderbackground flipx="true">special://skin/media/scrollbar_vertical_background_full.png</texturesliderbackground>
                 <textureslidernibfocus flipx="true">special://skin/media/scrollbar_horizontal_bar_focus2.png</textureslidernibfocus>
                 <onleft>600</onleft>
-                <onright>9000</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
                 <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(60)</visible>
@@ -346,7 +339,7 @@
                 <posx>702</posx>
                 <posy>155</posy>
                 <width>548</width>
-                <height>75</height>
+                <height>103</height>
                 <align>left</align>
                 <info>ListItem.Plot</info>
                 <font>Font_Tahoma_20</font>
@@ -361,7 +354,7 @@
                 <posx>1262</posx>
                 <posy>155</posy>
                 <width>26</width>
-                <height>75</height>
+                <height>105</height>
                 <texturesliderbackground>special://skin/media/scrollbar_vertical_background2.png</texturesliderbackground>
                 <textureslidernibfocus>special://skin/media/scrollbar_vertical_bar_focus2.png</textureslidernibfocus>
                 <onleft>515</onleft>
@@ -434,9 +427,9 @@
             <control type="image">
                 <description>Left info bar right bottom border if not rss visible and 1 item</description>
                 <posx>400</posx>
-                <posy>441</posy>
+                <posy>471</posy>
                 <width>3</width>
-                <height>280</height>
+                <height>250</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
                 <texture>special://skin/media/white.png</texture>
@@ -446,9 +439,9 @@
             <control type="image">
                 <description>Left info bar right bottom border if not rss visible and 2 or 3 items</description>
                 <posx>400</posx>
-                <posy>511</posy>
+                <posy>541</posy>
                 <width>3</width>
-                <height>209</height>
+                <height>179</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
                 <texture>special://skin/media/white.png</texture>
@@ -458,9 +451,9 @@
             <control type="image">
                 <description>Left info bar right bottom border if not rss visible and 4 or 5 items</description>
                 <posx>400</posx>
-                <posy>581</posy>
+                <posy>611</posy>
                 <width>3</width>
-                <height>140</height>
+                <height>110</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
                 <texture>special://skin/media/white.png</texture>
@@ -470,9 +463,9 @@
             <control type="image">
                 <description>Left info bar right bottom border if not rss visible and 6 items or more</description>
                 <posx>400</posx>
-                <posy>640</posy>
+                <posy>681</posy>
                 <width>3</width>
-                <height>80</height>
+                <height>39</height>
                 <aspectratio>stretch</aspectratio>
                 <aligny>center</aligny>
                 <texture>special://skin/media/white.png</texture>
@@ -506,7 +499,7 @@
                 <posy>30</posy>
                 <width>300</width>
                 <height>100</height>
-                <font>Font_Condensed_Bold_Caps_40</font>
+                <font>Font_Normal_Bold_Caps_40</font>
                 <textcolor>ffffffff</textcolor>
                 <aligny>center</aligny>
                 <align>left</align>
@@ -592,25 +585,24 @@
                 <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(602) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
             </control>
             <control type="image">
-                <description>TV Show small fanart frame</description>
-                <posx>38</posx>
-                <posy>520</posy>
-                <width>320</width>
-                <height>180</height>
-                <aspectratio>stretch</aspectratio>
-                <texture>special://skin/media/episodeframe.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
-            </control>
-            <control type="image">
                 <description>TV Show small fanart</description>
                 <posx>38</posx>
                 <posy>520</posy>
                 <width>320</width>
                 <height>180</height>
-                <aspectratio>stretch</aspectratio>
-                <texture background="true" diffuse="special://skin/media/episodematte.png">$INFO[Fanart.Image]</texture>
-                <bordersize>4</bordersize>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <texture background="true" diffuse="16x9_diffuse.png">$INFO[Fanart.Image]</texture>
+                <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
+            </control>
+            <control type="image">
+                <description>TV Show small fanart frame</description>
+                <posx>38</posx>
+                <posy>520</posy>
+                <width>320</width>
+                <height>180</height>
+                <aspectratio>scale</aspectratio>
+                <texture>special://skin/media/16x9_frame.png</texture>
+                <colordiffuse>5500b8f5</colordiffuse>
                 <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
             </control>
         </control>

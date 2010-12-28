@@ -1,0 +1,380 @@
+﻿<includes>
+    <include name="Home_Icons_Vertical">
+        <control type="group">
+            <posx>512</posx>
+            <posy>232</posy>
+            <animation effect="slide" start="0,0" end="200,0" tween="back" easing="out" time="400" condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(313) | Control.HasFocus(314) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+            <control type="image">
+                <description>Menu icon centered</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>256</width>
+                <height>256</height>
+                <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+                <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+                <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+                <visible>!Control.HasFocus(310)</visible>
+            </control>
+            <control type="image">
+                <description>Weather submenu icons centered</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>256</width>
+                <height>256</height>
+                <texture>$INFO[Container(310).ListItem.ActualIcon]</texture>
+                <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+                <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+                <visible>Control.HasFocus(310)</visible>
+            </control>
+        </control>
+    </include>
+    <include name="Home_Menu_Vertical">
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <include>Home_Onup_Ondown</include>
+            <animation effect="slide" start="0,800" end="0,0" tween="back" easing="out" time="400">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,800" tween="back" easing="out" time="400">WindowClose</animation>
+            <control type="fixedlist" id="300">
+                <posx>30</posx>
+                <posy>-90</posy>
+                <width>1280</width>
+                <height>810</height>
+                <onleft>900</onleft>
+                <onright>901</onright>
+                <onup>300</onup>
+                <ondown>300</ondown>
+                <viewtype>list</viewtype>
+                <orientation>vertical</orientation>
+                <focusposition>4</focusposition>
+                <scrolltime>200</scrolltime>
+                <itemlayout width="630" height="100">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>430</width>
+                        <height>100</height>
+                        <aligny>center</aligny>
+                        <info>ListItem.Label</info>
+                        <font>Font_Condensed_Bold_Caps_60</font>
+                        <textcolor>22ffffff</textcolor>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="700" height="100">
+                    <control type="fadelabel">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>430</width>
+                        <height>100</height>
+                        <aligny>center</aligny>
+                        <label>$INFO[Container(300).ListItem.Label]</label>
+                        <font>Font_Condensed_Bold_Caps_60</font>
+                        <textcolor>ff00b8f5</textcolor>
+                        <scrollout>false</scrollout>
+                        <pauseatend>3000</pauseatend>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <animation effect="fade" start="100" end="40" reversible="false" time="200"condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(313) | Control.HasFocus(314) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+                    </control>
+                </focusedlayout>
+                <include>Home_Content</include>
+            </control>
+            <include condition="!Skin.HasSetting(Home_Vertical_No_Icons)">Home_Icons_Vertical</include>
+            <control type="group">
+                <posx>0</posx>
+                <posy>340</posy>
+                <control type="list" id="308">
+                    <description>TV Shows submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(308)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>308</onup>
+                    <ondown>308</ondown>
+                    <content>
+                        <item id="1">
+                            <description>Random episode</description>
+                            <label>31420</label>
+                            <onclick>$INFO[Window.Property(RandomEpisode.1.Path),PlayMedia(,)]</onclick>
+                        </item>
+                        <item id="2">
+                            <description>Files</description>
+                            <label>744</label>
+                            <onclick>ActivateWindow(VideoFiles,return)</onclick>
+                        </item>
+                        <item id="3">
+                            <description>Genre</description>
+                            <label>515</label>
+                            <onclick>ActivateWindow(VideoLibrary,TVShowGenres,return)</onclick>
+                        </item>
+                        <item id="4">
+                            <description>Year</description>
+                            <label>562</label>
+                            <onclick>ActivateWindow(VideoLibrary,TVShowYears,return)</onclick>
+                        </item>
+                        <item id="5">
+                            <description>Actor</description>
+                            <label>344</label>
+                            <onclick>ActivateWindow(VideoLibrary,TVShowActors,return)</onclick>
+                        </item>
+                        <item id="6">
+                            <description>Studios</description>
+                            <label>20388</label>
+                            <onclick>ActivateWindow(VideoLibrary,TVShowStudios,return)</onclick>
+                        </item>
+                        <item id="7">
+                            <description>Recently Added</description>
+                            <label>31020</label>
+                            <onclick>ActivateWindow(VideoLibrary,RecentlyAddedEpisodes,return)</onclick>
+                        </item>
+                        <item id="8">
+                            <description>Addons</description>
+                            <label>31007</label>
+                            <onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="309">
+                    <description>Movies submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(309)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>309</onup>
+                    <ondown>309</ondown>
+                    <content>
+                        <item id="1">
+                            <description>Random movie</description>
+                            <label>31419</label>
+                            <onclick>$INFO[Window.Property(RandomMovie.1.Path),PlayMedia(,)]</onclick>
+                        </item>
+                        <item id="2">
+                            <description>Files</description>
+                            <label>744</label>
+                            <onclick>ActivateWindow(VideoFiles,return)</onclick>
+                        </item>
+                        <item id="3">
+                            <description>Genre</description>
+                            <label>515</label>
+                            <onclick>ActivateWindow(VideoLibrary,MovieGenres,return)</onclick>
+                        </item>
+                        <item id="4">
+                            <description>Year</description>
+                            <label>562</label>
+                            <onclick>ActivateWindow(VideoLibrary,MovieYears,return)</onclick>
+                        </item>
+                        <item id="5">
+                            <description>Actors</description>
+                            <label>344</label>
+                            <onclick>ActivateWindow(VideoLibrary,MovieActors,return)</onclick>
+                        </item>
+                        <item id="6">
+                            <description>Directors</description>
+                            <label>20348</label>
+                            <onclick>ActivateWindow(VideoLibrary,MovieDirectors,return)</onclick>
+                        </item>
+                        <item id="7">
+                            <description>Recently Added</description>
+                            <label>31020</label>
+                            <onclick>ActivateWindow(VideoLibrary,RecentlyAddedMovies,return)</onclick>
+                        </item>
+                        <item id="8">
+                            <description>Addons</description>
+                            <label>31007</label>
+                            <onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="310">
+                    <description>Weather submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(310)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>310</onup>
+                    <ondown>310</ondown>
+                    <content>
+                        <item id="1">
+                            <icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon>
+                            <label>$INFO[Window(Weather).Property(Day1.Title)] $INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
+                            <label2>$INFO[Window(Weather).Property(Day1.Outlook)]</label2>
+                            <onclick>ActivateWindow(weather)</onclick>
+                        </item>
+                        <item id="2">
+                            <icon>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</icon>
+                            <label>$INFO[Window(Weather).Property(Day2.Title)] $INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
+                            <label2>$INFO[Window(Weather).Property(Day3.Outlook)]</label2>
+                            <onclick>ActivateWindow(weather)</onclick>
+                        </item>
+                        <item id="3">
+                            <icon>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</icon>
+                            <label>$INFO[Window(Weather).Property(Day3.Title)] $INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
+                            <label2>$INFO[Window(Weather).Property(Day3.Outlook)]</label2>
+                            <onclick>ActivateWindow(weather)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="311">
+                    <description>Music submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(311)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>311</onup>
+                    <ondown>311</ondown>
+                    <content>
+                        <item id="1">
+                            <description>Random song</description>
+                            <label>31417</label>
+                            <onclick>$INFO[Window.Property(RandomSong.1.Path),PlayMedia(,)]</onclick>
+                        </item>
+                        <item id="2">
+                            <description>Files</description>
+                            <label>744</label>
+                            <onclick>ActivateWindow(MusicFiles,return)</onclick>
+                        </item>
+                        <item id="3">
+                            <description>Genre</description>
+                            <label>515</label>
+                            <onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
+                        </item>
+                        <item id="4">
+                            <description>Artists</description>
+                            <label>133</label>
+                            <onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+                        </item>
+                        <item id="5">
+                            <description>Albums</description>
+                            <label>132</label>
+                            <onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
+                        </item>
+                        <item id="6">
+                            <description>Songs</description>
+                            <label>134</label>
+                            <onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
+                        </item>
+                        <item id="7">
+                            <description>Recently Added</description>
+                            <label>359</label>
+                            <onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
+                        </item>
+                        <item id="8">
+                            <description>Addons</description>
+                            <label>31007</label>
+                            <onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="312">
+                    <description>Videos submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(312)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>312</onup>
+                    <ondown>312</ondown>
+                    <content>
+                        <item id="1">
+                            <description>Video addons</description>
+                            <label>1037</label>
+                            <onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+                        </item>
+                        <item id="2">
+                            <description>Music videos</description>
+                            <label>20389</label>
+                            <onclick>ActivateWindow(VideoLibrary,MusicvideoTitles,return)</onclick>
+                        </item>
+                        <item id="3">
+                            <label>20012</label>
+                            <onclick>ActivateWindow(VideoLibrary,Playlists,Return)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="313">
+                    <description>Pictures submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(313)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>313</onup>
+                    <ondown>313</ondown>
+                    <content>
+                        <item id="1">
+                            <label>1039</label>
+                            <onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="314">
+                    <description>Apps submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(314)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>314</onup>
+                    <ondown>314</ondown>
+                    <content>
+                        <item id="1">
+                            <description>Favourites</description>
+                            <label>1036</label>
+                            <onclick>ActivateWindow(Favourites,return)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="315">
+                    <description>Settings submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(315)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>315</onup>
+                    <ondown>315</ondown>
+                    <content>
+                        <item id="1">
+                            <label>130</label>
+                            <onclick>ActivateWindow(SystemInfo)</onclick>
+                        </item>
+                        <item id="2">
+                            <label>13200</label>
+                            <onclick>ActivateWindow(Profiles)</onclick>
+                        </item>
+                        <item id="3">
+                            <label>7</label>
+                            <onclick>ActivateWindow(FileManager)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="list" id="316">
+                    <description>Shutdown submenu</description>
+                    <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                    <visible allowhiddenfocus="true">Control.HasFocus(316)</visible>
+                    <include>SubMenu_Common</include>
+                    <onup>316</onup>
+                    <ondown>316</ondown>
+                    <content>
+                        <item id="1">
+                            <label>13012</label>
+                            <onclick>Quit()</onclick>
+                        </item>
+                        <item id="2">
+                            <label>13005</label>
+                            <onclick>Shutdown()</onclick>
+                        </item>
+                        <item id="3">
+                            <label>13013</label>
+                            <onclick>Reset()</onclick>
+                            <visible>System.CanReboot</visible>
+                        </item>
+                        <item id="4">
+                            <label>13011</label>
+                            <onclick>Suspend()</onclick>
+                            <visible>System.CanSuspend</visible>
+                        </item>
+                        <item id="5">
+                            <label>13010</label>
+                            <onclick>Hibernate()</onclick>
+                            <visible>System.CanHibernate</visible>
+                        </item>
+                        <item id="6">
+                            <label>20126</label>
+                            <onclick>System.LogOff</onclick>
+                            <visible>System.HasLoginScreen</visible>
+                            <visible>!Skin.HasSetting(HideLogoff)</visible>
+                        </item>
+                    </content>
+                </control>
+            </control>
+        </control>
+    </include>
+</includes>

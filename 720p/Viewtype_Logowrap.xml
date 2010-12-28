@@ -11,7 +11,6 @@
         <scrolltime>200</scrolltime>
         <focusposition>3</focusposition>
         <orientation>horizontal</orientation>
-        <preloaditems>4</preloaditems>
         <itemlayout height="255" width="300">
             <control type="image">
                 <description>Logo</description>
@@ -56,7 +55,7 @@
                 <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                 <colordiffuse>lime</colordiffuse>
                 <visible>Skin.HasSetting(TVShows_Show_Watched_Overlay)</visible>
-                <animation tween="back" reversible="false" effect="zoom" center="auto" start="90" end="120" time="400">focus</animation>
+                <animation tween="back" reversible="false" effect="zoom" center="auto" start="80" end="120" time="400">focus</animation>
             </control>
             <control type="label">
                 <description>Episode count</description>
@@ -112,8 +111,13 @@
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
             <control type="button">
-                <description>Logos at bottom and up press from list 508 or 509</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)] + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <description>Logos at bottom and up press from list 508 or 509 if info not visible</description>
+                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)] + !Skin.HasSetting(TVShows_Logos_Centered) + !Skin.HasSetting(TVShows_Show_Info)</visible>
+                <onfocus>SetFocus(9000)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos at bottom and up press from list 508 or 509 if info visible</description>
+                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)] + !Skin.HasSetting(TVShows_Logos_Centered) + Skin.HasSetting(TVShows_Show_Info)</visible>
                 <onfocus>SetFocus(600)</onfocus>
             </control>
             <control type="button">
@@ -136,9 +140,14 @@
                 <onfocus>SetFocus(60)</onfocus>
             </control>
             <control type="button">
-                <description>Logos centered and down press from scrollbar 60</description>
-                <visible>Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
+                <description>Logos centered and down press from scrollbar 60 if info visible</description>
+                <visible>Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered) + Skin.HasSetting(TVShows_Show_Info)</visible>
                 <onfocus>SetFocus(600)</onfocus>
+            </control>
+            <control type="button">
+                <description>Logos centered and down press from scrollbar 60 if info not visible</description>
+                <visible>Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered) + !Skin.HasSetting(TVShows_Show_Info)</visible>
+                <onfocus>SetFocus(9000)</onfocus>
             </control>
             <control type="button">
                 <description>Logos at bottom and down press from scrollbar 60</description>
@@ -187,9 +196,9 @@
         <control type="group">
             <visible>Control.IsVisible(508) | Control.IsVisible(509)</visible>
             <posx>0</posx>
-            <posy>400</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-200" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,-230" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
+            <posy>455</posy>
+            <animation reversible="false" effect="slide" start="0,0" end="0,-225" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,-225" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
             <control type="group">
                 <description>Logo fallbacks</description>
                 <control type="image" id="7000">
@@ -344,11 +353,11 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows)</visible>
+            <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Info)</visible>
             <posx>0</posx>
-            <posy>230</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,230" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,230" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
+            <posy>270</posy>
+            <animation reversible="false" effect="slide" start="0,0" end="0,225" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
+            <animation reversible="false" effect="slide" start="0,225" end="0,0" tween="back" easing="out" time="400" condition="[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]">conditional</animation>
             <control type="image">
                 <description>Info background</description>
                 <posx>0</posx>
