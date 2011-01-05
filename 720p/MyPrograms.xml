@@ -86,7 +86,7 @@
             <include>Viewtype_LauncherLogo</include> <!-- view id = 519 -->
         </control>
         <include>Programs_Menu</include>
-        <include condition="Window.IsVisible(1) + Skin.HasSetting(Show_RSS_Everywhere)">RSS_Feed</include>
+        <include condition="Window.IsVisible(1) + Skin.HasSetting(Show_RSS_Everywhere)">Global_RSS_Feed</include>
         <include>Global_DialogDiffuser</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>

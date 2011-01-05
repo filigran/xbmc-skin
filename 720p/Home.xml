@@ -108,6 +108,6 @@
         <include>Global_DialogDiffuser</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>
-        <include>RSS_Feed</include>
+        <include>Global_RSS_Feed</include>
     </controls>
 </window>

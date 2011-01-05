@@ -1,8 +1,7 @@
 <includes>
     <include name="VideoLibrary_Menu_CommonTemplate">
         <posx>0</posx>
-        <posy>0</posy>
-        <width>200</width>
+        <width>250</width>
         <height>30</height>
         <align>left</align>
         <aligny>top</aligny>
@@ -19,10 +18,10 @@
     </include>
     <include name="VideoLibrary_Menu_ToggleButtonTemplate">
         <include>VideoLibrary_Menu_CommonTemplate</include>
-        <texturefocus>-</texturefocus>
-        <texturenofocus>-</texturenofocus>
-        <alttexturefocus>-</alttexturefocus>
-        <alttexturenofocus>-</alttexturenofocus>
+        <texturefocus>arrow_up_focused.png</texturefocus>
+        <texturenofocus>arrow_up_unfocused.png</texturenofocus>
+        <alttexturefocus>arrow_down_focused.png</alttexturefocus>
+        <alttexturenofocus>arrow_down_unfocused.png</alttexturenofocus>
     </include>
     <include name="VideoLibrary_Menu_RadioButtonTemplate">
         <radiowidth>24</radiowidth>
@@ -222,58 +221,97 @@
     </include>
     <include name="VideoLibrary_Menu">
         <control type="group">
-            <animation reversible="false" effect="slide" start="-250,0" end="0,0" easing="out" time="300">visible</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="-250,0" easing="out" time="300">hidden</animation>
+            <animation reversible="false" effect="slide" start="-290,0" end="0,0" easing="out" time="300">visible</animation>
+            <animation reversible="false" effect="slide" start="0,0" end="-290,0" easing="out" time="300">hidden</animation>
+            <posx>0</posx>
+            <posy>0</posy>
             <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus</visible>
             <control type="image">
                 <description>Menu background</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>250</width>
+                <width>290</width>
                 <height>720</height>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>ff000000</colordiffuse>
+                <texture>backgrounds/settings.jpg</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+            <control type="image">
+                <description>Menu overlay</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>290</width>
+                <height>720</height>
+                <texture>white.png</texture>
+                <colordiffuse>bb000000</colordiffuse>
             </control>
             <control type="image">
                 <description>Menu border</description>
-                <posx>247</posx>
+                <posx>287</posx>
                 <posy>0</posy>
                 <width>3</width>
                 <height>720</height>
                 <texture>special://skin/media/white.png</texture>
                 <colordiffuse>5500b8f5</colordiffuse>
             </control>
-            <control type="grouplist" id="9000">
-                <description>Common options</description>
+            <control type="group" id="9000">
+                <description>General options</description>
                 <posx>20</posx>
                 <posy>50</posy>
-                <orientation>vertical</orientation>
-                <onright>50</onright>
-                <ondown>9001</ondown>
-                <onup>9001</onup>
+                <animation reversible="false" effect="slide" start="-250,0" end="0,0" easing="out" delay="200" time="200">visible</animation>
+                <animation reversible="false" effect="slide" start="0,0" end="-250,0" easing="out" time="200">hidden</animation>
+                <visible allowhiddenfocus="true">!ControlGroup(9001).HasFocus</visible>
+                <control type="label">
+                    <description>General options label</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>250</width>
+                    <height>30</height>
+                    <font>Font_Normal_Bold_Caps_18</font>
+                    <textcolor>white</textcolor>
+                    <label>31422</label>
+                </control>
                 <control type="button" id="2">
                     <description>Viewtype toggle</description>
                     <label>-</label>
                     <onclick>-</onclick>
+                    <posy>50</posy>
+                    <onup>901</onup>
+                    <ondown>3</ondown>
+                    <onright>50</onright>
                     <include>VideoLibrary_Menu_ButtonTemplate</include>
                 </control>
                 <control type="button" id="3">
                     <description>Sort toggle</description>
                     <label>-</label>
                     <onclick>-</onclick>
+                    <posy>80</posy>
+                    <onup>2</onup>
+                    <ondown>99</ondown>
+                    <onright>4</onright>
                     <include>VideoLibrary_Menu_ButtonTemplate</include>
                 </control>
                 <control type="togglebutton" id="4">
                     <description>Sort direction</description>
-                    <label>584</label>
-                    <altlabel>585</altlabel>
+                    <label>-</label>
                     <onclick>-</onclick>
+                    <posy>80</posy>
+                    <posx>218</posx>
+                    <width>24</width>
+                    <height>24</height>
+                    <onup>2</onup>
+                    <ondown>99</ondown>
+                    <onright>50</onright>
+                    <onleft>3</onleft>
                     <include>VideoLibrary_Menu_ToggleButtonTemplate</include>
                 </control>
                 <control type="radiobutton" id="99">
                     <description>Library toggle</description>
                     <label>29800</label>
                     <onclick>ReplaceWindow(VideoFiles)</onclick>
+                    <posy>110</posy>
+                    <onup>3</onup>
+                    <ondown>10</ondown>
+                    <onright>50</onright>
                     <include>VideoLibrary_Menu_CommonTemplate</include>
                     <include>VideoLibrary_Menu_RadioButtonTemplate</include>
                     <selected>Window.IsActive(VideoLibrary)</selected>
@@ -282,1126 +320,344 @@
                     <description>Watched Toggle</description>
                     <label>-</label>
                     <onclick>-</onclick>
+                    <posy>140</posy>
+                    <onup>99</onup>
+                    <ondown>8</ondown>
+                    <onright>50</onright>
                     <include>VideoLibrary_Menu_ButtonTemplate</include>
                 </control>
                 <control type="button" id="8">
                     <description>Search</description>
                     <label>137</label>
+                    <posy>170</posy>
+                    <onup>10</onup>
+                    <ondown>19</ondown>
+                    <onright>50</onright>
                     <include>VideoLibrary_Menu_ButtonTemplate</include>
                 </control>
                 <control type="button" id="19">
                     <description>Filter</description>
                     <label>587</label>
+                    <posy>200</posy>
+                    <onup>8</onup>
+                    <ondown>901</ondown>
+                    <onright>50</onright>
+                    <include>VideoLibrary_Menu_ButtonTemplate</include>
+                </control>
+                <control type="image">
+                    <description>Left arrow for view options</description>
+                    <posx>0</posx>
+                    <posy>234</posy>
+                    <width>16</width>
+                    <height>16</height>
+                    <texture flipx="true">arrow_rightleft.png</texture>
+                </control>
+                <control type="button" id="901">
+                    <description>View options</description>
+                    <posx>30</posx>
+                    <posy>230</posy>
+                    <onup>19</onup>
+                    <ondown>2</ondown>
+                    <onright>50</onright>
+                    <onleft>9001</onleft>
+                    <font>Font_Normal_Caps_18</font>
+                    <label>14018</label>
                     <include>VideoLibrary_Menu_ButtonTemplate</include>
                 </control>
             </control>
-            <control type="label">
-                <posx>20</posx>
-                <posy>320</posy>
-                <width>200</width>
-                <height>30</height>
-                <align>left</align>
-                <aligny>top</aligny>
-                <font>Font_Normal_Bold_18</font>
-                <textcolor>white</textcolor>
-                <label>View options</label>
-            </control>
-            <control type="grouplist" id="9001">
-                <description>View options</description>
-                <posx>20</posx>
-                <posy>360</posy>
-                <orientation>vertical</orientation>
-                <onright>50</onright>
-                <ondown>9000</ondown>
-                <onup>9000</onup>
-                <control type="radiobutton" id="100">
-                    <description>Toggle fanart movies</description>
-                    <label>20445</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Fanart)</onclick>
-                    <visible>Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_Fanart)</selected>
+            <control type="group">
+                <visible allowhiddenfocus="true">ControlGroup(9001).HasFocus</visible>
+                <animation reversible="false" effect="slide" start="-250,0" end="0,0" delay="200" easing="out" time="200">visible</animation>
+                <animation reversible="false" effect="slide" start="0,0" end="-250,0" easing="out" time="200">hidden</animation>
+                <control type="label">
+                    <description>View options label</description>
+                    <posx>20</posx>
+                    <posy>50</posy>
+                    <width>250</width>
+                    <height>30</height>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <font>Font_Normal_Bold_Caps_18</font>
+                    <textcolor>white</textcolor>
+                    <label>14018</label>
                 </control>
-                <control type="radiobutton" id="102">
-                    <description>Toggle fanart tvshows</description>
-                    <label>20445</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Show_Fanart)</onclick>
-                    <visible>Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Show_Fanart)</selected>
+                <control type="grouplist" id="9001">
+                    <description>View options</description>
+                    <posx>20</posx>
+                    <posy>90</posy>
+                    <orientation>vertical</orientation>
+                    <onright>50</onright>
+                    <ondown>9001</ondown>
+                    <onup>9001</onup>
+                    <itemgap>0</itemgap>
+                    <control type="radiobutton" id="100">
+                        <description>Toggle fanart movies</description>
+                        <label>20445</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Fanart)</onclick>
+                        <visible>Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="102">
+                        <description>Toggle fanart tvshows</description>
+                        <label>20445</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Show_Fanart)</onclick>
+                        <visible>Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Show_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="104">
+                        <description>Toggle fanart seasons</description>
+                        <label>20445</label>
+                        <onclick>Skin.ToggleSetting(Seasons_Show_Fanart)</onclick>
+                        <visible>Container.Content(Seasons)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Seasons_Show_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="106">
+                        <description>Toggle fanart episodes</description>
+                        <label>20445</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Show_Fanart)</onclick>
+                        <visible>Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Episodes_Show_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="101">
+                        <description>Toggle small fanart movies</description>
+                        <label>31386</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Small_Fanart)</onclick>
+                        <visible>!Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Small_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="103">
+                        <description>Toggle small fanart tvshows</description>
+                        <label>31386</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Show_Small_Fanart)</onclick>
+                        <visible>[![Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + !Control.IsVisible(509)] + !Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Show_Small_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="105">
+                        <description>Toggle small fanart seasons</description>
+                        <label>31386</label>
+                        <onclick>Skin.ToggleSetting(Seasons_Show_Small_Fanart)</onclick>
+                        <visible>!Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Seasons)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Seasons_Show_Small_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="107">
+                        <description>Toggle small fanart episodes</description>
+                        <label>31386</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Show_Small_Fanart)</onclick>
+                        <visible>!Control.IsVisible(503) + !Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Episodes_Show_Small_Fanart)</selected>
+                    </control>
+                    <control type="radiobutton" id="108">
+                        <description>Toggle rating movies</description>
+                        <label>563</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Rating)</onclick>
+                        <visible>Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Rating)</selected>
+                    </control>
+                    <control type="radiobutton" id="109">
+                        <description>Toggle rating tvshows</description>
+                        <label>563</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Show_Rating)</onclick>
+                        <visible>Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Show_Rating)</selected>
+                    </control>
+                    <control type="radiobutton" id="111">
+                        <description>Toggle rating episodes</description>
+                        <label>563</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Show_Rating)</onclick>
+                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(503) | Control.IsVisible(515)] + Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Episodes_Show_Rating)</selected>
+                    </control>
+                    <control type="radiobutton" id="112">
+                        <description>Toggle centered/bottom logos</description>
+                        <label>31388</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Logos_centered)</onclick>
+                        <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Logos_Centered)</selected>
+                    </control>
+                    <control type="radiobutton" id="113">
+                        <description>Toggle centered/bottom posters movies</description>
+                        <label>31389</label>
+                        <onclick>Skin.ToggleSetting(Movies_Posters_Bottom)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>!Skin.HasSetting(Movies_Posters_Bottom)</selected>
+                    </control>
+                    <control type="radiobutton" id="114">
+                        <description>Toggle centered/bottom posters seasons</description>
+                        <label>31389</label>
+                        <onclick>Skin.ToggleSetting(Seasons_Posters_Bottom)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Seasons)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>!Skin.HasSetting(Seasons_Posters_Bottom)</selected>
+                    </control>
+                    <control type="radiobutton" id="120">
+                        <description>Toggle centered/bottom posters tvshows</description>
+                        <label>31389</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Posters_Bottom)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>!Skin.HasSetting(TVShows_Posters_Bottom)</selected>
+                    </control>
+                    <control type="radiobutton" id="115">
+                        <description>Toggle centered/bottom thumbs episodes</description>
+                        <label>31391</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Thumbs_Bottom)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>!Skin.HasSetting(Episodes_Thumbs_Bottom)</selected>
+                    </control>
+                    <control type="radiobutton" id="116">
+                        <description>Toggle watched overlay movies</description>
+                        <label>31387</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Watched_Overlay)</onclick>
+                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Watched_Overlay)</selected>
+                    </control>
+                    <control type="radiobutton" id="117">
+                        <description>Toggle watched overlay tvshows</description>
+                        <label>31387</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Show_Watched_Overlay)</onclick>
+                        <visible>Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Show_Watched_Overlay)</selected>
+                    </control>
+                    <control type="radiobutton" id="118">
+                        <description>Toggle watched overlay episodes</description>
+                        <label>31387</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Show_Watched_Overlay)</onclick>
+                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Episodes_Show_Watched_Overlay)</selected>
+                    </control>
+                    <control type="radiobutton" id="119">
+                        <description>Toggle watched overlay seasons</description>
+                        <label>31387</label>
+                        <onclick>Skin.ToggleSetting(Seasons_Show_Watched_Overlay)</onclick>
+                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(501)] + Container.Content(Seasons)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Seasons_Show_Watched_Overlay)</selected>
+                    </control>
+                    <control type="radiobutton" id="121">
+                        <description>Toggle studio flag tvshows</description>
+                        <label>31399</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Show_Studio_Flag)</onclick>
+                        <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Show_Studio_Flag)</selected>
+                    </control>
+                    <control type="radiobutton" id="122">
+                        <description>Toggle info tvshows</description>
+                        <label>31413</label>
+                        <onclick>Skin.ToggleSetting(TVShows_Show_Info)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(522) | Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(TVShows_Show_Info)</selected>
+                    </control>
+                    <control type="radiobutton" id="123">
+                        <description>Toggle info movies</description>
+                        <label>31413</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Info)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Info)</selected>
+                    </control>
+                    <control type="radiobutton" id="127">
+                        <description>Toggle info episodes</description>
+                        <label>31413</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Show_Info)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Episodes_Show_Info)</selected>
+                    </control><!--
+                    <control type="radiobutton" id="128">
+                        <description>Toggle auto info movies</description>
+                        <label>31413 auto</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Info_Auto)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Info_Auto)</selected>
+                    </control>-->
+                    <control type="radiobutton" id="124">
+                        <description>Toggle media flags movies</description>
+                        <label>31414</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Mediaflags)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_MediaFlags)</selected>
+                    </control>
+                    <control type="radiobutton" id="125">
+                        <description>Toggle media flags episodes</description>
+                        <label>31414</label>
+                        <onclick>Skin.ToggleSetting(Episodes_Show_Mediaflags)</onclick>
+                        <visible>[Control.IsVisible(515) | Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Episodes_Show_MediaFlags)</selected>
+                    </control>
+                    <control type="radiobutton" id="126">
+                        <description>Toggle cover overlays movies</description>
+                        <label>31425</label>
+                        <onclick>Skin.ToggleSetting(Movies_Show_Cover_Overlays)</onclick>
+                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
+                        <include>VideoLibrary_Menu_CommonTemplate</include>
+                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
+                        <selected>Skin.HasSetting(Movies_Show_Cover_Overlays)</selected>
+                    </control>
+                    <control type="radiobutton" id="902">
+                        <description>General options</description>
+                        <onleft>SetFocus(9000)</onleft>
+                        <font>Font_Normal_Caps_18</font>
+                        <textoffsetx>30</textoffsetx>
+                        <width>280</width>
+                        <include>VideoLibrary_Menu_ButtonTemplate</include>
+                        <textureradiofocus flipx="true">arrow_rightleft.png</textureradiofocus>
+                        <textureradionofocus flipx="true">arrow_rightleft.png</textureradionofocus>
+                        <radiowidth>16</radiowidth>
+                        <radioheight>16</radioheight>
+                        <radioposx>1</radioposx>
+                        <radioposy>4</radioposy>
+                        <label>31422</label>
+                    </control>
                 </control>
-                <control type="radiobutton" id="104">
-                    <description>Toggle fanart seasons</description>
-                    <label>20445</label>
-                    <onclick>Skin.ToggleSetting(Seasons_Show_Fanart)</onclick>
-                    <visible>Container.Content(Seasons)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Seasons_Show_Fanart)</selected>
-                </control>
-                <control type="radiobutton" id="106">
-                    <description>Toggle fanart episodes</description>
-                    <label>20445</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Show_Fanart)</onclick>
-                    <visible>Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Episodes_Show_Fanart)</selected>
-                </control>
-                <control type="radiobutton" id="101">
-                    <description>Toggle small fanart movies</description>
-                    <label>31386</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Small_Fanart)</onclick>
-                    <visible>!Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_Small_Fanart)</selected>
-                </control>
-                <control type="radiobutton" id="103">
-                    <description>Toggle small fanart tvshows</description>
-                    <label>31386</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Show_Small_Fanart)</onclick>
-                    <visible>[![Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + !Control.IsVisible(509)] + !Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Show_Small_Fanart)</selected>
-                </control>
-                <control type="radiobutton" id="105">
-                    <description>Toggle small fanart seasons</description>
-                    <label>31386</label>
-                    <onclick>Skin.ToggleSetting(Seasons_Show_Small_Fanart)</onclick>
-                    <visible>!Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Seasons)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Seasons_Show_Small_Fanart)</selected>
-                </control>
-                <control type="radiobutton" id="107">
-                    <description>Toggle small fanart episodes</description>
-                    <label>31386</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Show_Small_Fanart)</onclick>
-                    <visible>!Control.IsVisible(503) + !Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Episodes_Show_Small_Fanart)</selected>
-                </control>
-                <control type="radiobutton" id="108">
-                    <description>Toggle rating movies</description>
-                    <label>563</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Rating)</onclick>
-                    <visible>Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_Rating)</selected>
-                </control>
-                <control type="radiobutton" id="109">
-                    <description>Toggle rating tvshows</description>
-                    <label>563</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Show_Rating)</onclick>
-                    <visible>Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Show_Rating)</selected>
-                </control>
-                <control type="radiobutton" id="111">
-                    <description>Toggle rating episodes</description>
-                    <label>563</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Show_Rating)</onclick>
-                    <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(503) | Control.IsVisible(515)] + Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Episodes_Show_Rating)</selected>
-                </control>
-                <control type="radiobutton" id="112">
-                    <description>Toggle centered/bottom logos</description>
-                    <label>31388</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Logos_centered)</onclick>
-                    <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Logos_Centered)</selected>
-                </control>
-                <control type="radiobutton" id="113">
-                    <description>Toggle centered/bottom posters movies</description>
-                    <label>31389</label>
-                    <onclick>Skin.ToggleSetting(Movies_Posters_Bottom)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>!Skin.HasSetting(Movies_Posters_Bottom)</selected>
-                </control>
-                <control type="radiobutton" id="114">
-                    <description>Toggle centered/bottom posters seasons</description>
-                    <label>31389</label>
-                    <onclick>Skin.ToggleSetting(Seasons_Posters_Bottom)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Seasons)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>!Skin.HasSetting(Seasons_Posters_Bottom)</selected>
-                </control>
-                <control type="radiobutton" id="120">
-                    <description>Toggle centered/bottom posters tvshows</description>
-                    <label>31389</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Posters_Bottom)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>!Skin.HasSetting(TVShows_Posters_Bottom)</selected>
-                </control>
-                <control type="radiobutton" id="115">
-                    <description>Toggle centered/bottom thumbs episodes</description>
-                    <label>31391</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Thumbs_Bottom)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>!Skin.HasSetting(Episodes_Thumbs_Bottom)</selected>
-                </control>
-                <control type="radiobutton" id="116">
-                    <description>Toggle watched overlay movies</description>
-                    <label>31387</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Watched_Overlay)</onclick>
-                    <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_Watched_Overlay)</selected>
-                </control>
-                <control type="radiobutton" id="117">
-                    <description>Toggle watched overlay tvshows</description>
-                    <label>31387</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Show_Watched_Overlay)</onclick>
-                    <visible>Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Show_Watched_Overlay)</selected>
-                </control>
-                <control type="radiobutton" id="118">
-                    <description>Toggle watched overlay episodes</description>
-                    <label>31387</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Show_Watched_Overlay)</onclick>
-                    <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Episodes_Show_Watched_Overlay)</selected>
-                </control>
-                <control type="radiobutton" id="119">
-                    <description>Toggle watched overlay seasons</description>
-                    <label>31387</label>
-                    <onclick>Skin.ToggleSetting(Seasons_Show_Watched_Overlay)</onclick>
-                    <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(501)] + Container.Content(Seasons)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Seasons_Show_Watched_Overlay)</selected>
-                </control>
-                <control type="radiobutton" id="121">
-                    <description>Toggle studio flag tvshows</description>
-                    <label>31399</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Show_Studio_Flag)</onclick>
-                    <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Show_Studio_Flag)</selected>
-                </control>
-                <control type="radiobutton" id="122">
-                    <description>Toggle info tvshows</description>
-                    <label>31413</label>
-                    <onclick>Skin.ToggleSetting(TVShows_Show_Info)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(522) | Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(TVShows_Show_Info)</selected>
-                </control>
-                <control type="radiobutton" id="123">
-                    <description>Toggle info movies</description>
-                    <label>31413</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Info)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_Info)</selected>
-                </control>
-                <control type="radiobutton" id="127">
-                    <description>Toggle info episodes</description>
-                    <label>31413</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Show_Info)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Episodes_Show_Info)</selected>
-                </control>
-                <control type="radiobutton" id="124">
-                    <description>Toggle media flags movies</description>
-                    <label>31414</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Mediaflags)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_MediaFlags)</selected>
-                </control>
-                <control type="radiobutton" id="125">
-                    <description>Toggle media flags episodes</description>
-                    <label>31414</label>
-                    <onclick>Skin.ToggleSetting(Episodes_Show_Mediaflags)</onclick>
-                    <visible>[Control.IsVisible(515) | Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Episodes_Show_MediaFlags)</selected>
-                </control>
-                <control type="radiobutton" id="126">
-                    <description>Toggle cover overlays movies</description>
-                    <label>31421</label>
-                    <onclick>Skin.ToggleSetting(Movies_Show_Cover_Overlays)</onclick>
-                    <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
-                    <include>VideoLibrary_Menu_CommonTemplate</include>
-                    <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                    <selected>Skin.HasSetting(Movies_Show_Cover_Overlays)</selected>
-                </control>
-            </control>
-        </control>
-        <control type="grouplist">
-            <description>The visible part of the menu</description>
-            <visible>false</visible>
-            <posx>20</posx>
-            <posy>690</posy>
-            <orientation>horizontal</orientation>
-            <itemgap>10</itemgap>
-            <animation reversible="false" effect="slide" start="0,40" end="0,0" easing="out" time="400">visible</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="0,40" easing="out" time="400">hidden</animation>
-            <visible>ControlGroup(9000).HasFocus</visible>
-            <control type="label"> <!-- 2 -->
-                <description>Viewtype toggle unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(2)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(2)</visible>
-            </control>
-            <control type="label"> <!-- 2 -->
-                <description>Viewtype toggle focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(2)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(2)</visible>
-            </control>
-            <control type="label"> <!-- 3 -->
-                <description>Sort toggle unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(3)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(3)</visible>
-            </control>
-            <control type="label"> <!-- 3-->
-                <description>Sort toggle focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(3)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(3)</visible>
-            </control>
-            <control type="image"> <!-- 4 -->
-                <description>Sort direction arrow asc (up) focused</description>
-                <posy>4</posy>
-                <width>16</width>
-                <height>20</height>
-                <texture>special://skin/media/arrow_up.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>!Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[584])</visible>
-            </control>
-            <control type="image"> <!-- 4 -->
-                <description>Sort direction arrow asc (up) focused</description>
-                <posy>4</posy>
-                <width>16</width>
-                <height>20</height>
-                <texture>special://skin/media/arrow_up.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[584])</visible>
-            </control>
-            <control type="image"> <!-- 4 -->
-                <description>Sort direction arrow desc (down) unfocused</description>
-                <width>16</width>
-                <height>20</height>
-                <texture>special://skin/media/arrow_down.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>!Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[585])</visible>
-            </control>
-            <control type="image"> <!-- 4 -->
-                <description>Sort direction arrow desc (down) focused</description>
-                <width>16</width>
-                <height>20</height>
-                <texture>special://skin/media/arrow_down.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>Control.HasFocus(4) + StringCompare(Control.GetLabel(4),$LOCALIZE[585])</visible>
-            </control>
-            <control type="label"> <!-- 99 -->
-                <description>Library toggle unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(99)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(99)</visible>
-            </control>
-            <control type="label"> <!-- 99 -->
-                <description>Library toggle focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(99)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(99)</visible>
-            </control>
-            <control type="label"> <!-- 10 -->
-                <description>All/unwatched/watched toggle unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(10)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(10)</visible>
-            </control>
-            <control type="label"> <!-- 10 -->
-                <description>All/unwatched/watched toggle focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(10)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(10)</visible>
-            </control>
-            <control type="label"> <!-- 8 -->
-                <description>Search unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(8)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(8)</visible>
-            </control>
-            <control type="label"> <!-- 8 -->
-                <description>Search focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(8)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(8)</visible>
-            </control>
-            <control type="label"> <!-- 19 -->
-                <description>Filter unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(19)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(19)</visible>
-            </control>
-            <control type="label"> <!-- 19 -->
-                <description>Filter focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(19)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(19)</visible>
-            </control>
-            <control type="label"> <!-- 100 -->
-                <description>Fanart unfocused movies</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(100)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(100) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 100 -->
-                <description>Fanart focused movies</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(100)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(100) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 102 -->
-                <description>Fanart unfocused tvshows</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(102)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(102) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 102 -->
-                <description>Fanart focused tvshows</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(102)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(102) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 104 -->
-                <description>Fanart unfocused seasons</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(104)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(104) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 104 -->
-                <description>Fanart focused seasons</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(104)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(104) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 106 -->
-                <description>Fanart unfocused episodes</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(106)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(106) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 106 -->
-                <description>Fanart focused episodes</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(106)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(106) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="image">
-                <description>Fanart checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>![Control.HasFocus(100) | Control.HasFocus(102) | Control.HasFocus(104) | Control.HasFocus(106)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_fanart)]]</visible>
-            </control>
-            <control type="image">
-                <description>Fanart checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.HasFocus(100) | Control.HasFocus(102) | Control.HasFocus(104) | Control.HasFocus(106)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_fanart)]]</visible>
-            </control>
-            <control type="image">
-                <description>Fanart checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>![Control.HasFocus(100) | Control.HasFocus(102) | Control.HasFocus(104) | Control.HasFocus(106)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_fanart)]]</visible>
-            </control>
-            <control type="image">
-                <description>Fanart checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.HasFocus(100) | Control.HasFocus(102) | Control.HasFocus(104) | Control.HasFocus(106)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_fanart)]]</visible>
-            </control>
-            <control type="label"> <!-- 101 -->
-                <description>Small fanart unfocused movies</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(101)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.IsVisible(520) + !Control.IsVisible(521) + !Control.HasFocus(101) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 101 -->
-                <description>Small fanart focused movies</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(101)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(101) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 103 -->
-                <description>Small fanart unfocused tvshows</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(103)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[![Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + !Control.IsVisible(509)] + !Control.IsVisible(520) + !Control.IsVisible(521) + !Control.HasFocus(103) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 103 -->
-                <description>Small fanart focused tvshows</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(103)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(103) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 105 -->
-                <description>Small fanart unfocused seasons</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(105)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(105) + !Control.IsVisible(520) + !Control.IsVisible(521) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 105 -->
-                <description>Small fanart focused seasons</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(105)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(105) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 107 -->
-                <description>Small fanart unfocused episodes</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(107)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.IsVisible(503) + !Control.IsVisible(520) + !Control.IsVisible(521) + !Control.HasFocus(107) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 107 -->
-                <description>Small fanart focused episodes</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(107)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(107) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="image">
-                <description>Small fanart checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[![Control.IsVisible(508) | Control.IsVisible(509)] + !Control.IsVisible(509)] + !Control.IsVisible(503) + !Control.IsVisible(520) + !Control.IsVisible(521) + !Control.IsVisible(522) + ![Control.HasFocus(101) | Control.HasFocus(103) | Control.HasFocus(105) | Control.HasFocus(107)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Small_fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_fanart)]]</visible>
-            </control>
-            <control type="image">
-                <description>Small fanart checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[![Control.IsVisible(508) | Control.IsVisible(509)] + !Control.IsVisible(509)] + !Control.IsVisible(503) + [Control.HasFocus(101) | Control.HasFocus(103) | Control.HasFocus(105) | Control.HasFocus(107)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Small_fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_small_fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_fanart)]]</visible>
-            </control>
-            <control type="image">
-                <description>Small fanart checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[![Control.IsVisible(508) | Control.IsVisible(509)] + !Control.IsVisible(509)] + !Control.IsVisible(503) + !Control.IsVisible(520) + !Control.IsVisible(521) + !Control.IsVisible(522) + ![Control.HasFocus(101) | Control.HasFocus(103) | Control.HasFocus(105) | Control.HasFocus(107)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_fanart)]]</visible>
-            </control>
-            <control type="image">
-                <description>Small fanart checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[![Control.IsVisible(508) | Control.IsVisible(509)] + !Control.IsVisible(509)] + !Control.IsVisible(503) + [Control.HasFocus(101) | Control.HasFocus(103) | Control.HasFocus(105) | Control.HasFocus(107)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_small_fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_small_fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_small_fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_fanart)]]</visible>
-            </control>
-            <control type="label"> <!-- 108 -->
-                <description>Rating unfocused movies</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(108)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(108) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 108 -->
-                <description>Rating focused movies</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(108)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(108) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 109 -->
-                <description>Rating unfocused tvshows</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(109)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>!Control.HasFocus(109) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 109 -->
-                <description>Rating focused tvshows</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(109)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(109) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 111 -->
-                <description>Rating unfocused episodes</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(111)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(503) | Control.IsVisible(515)] + !Control.HasFocus(111) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 111 -->
-                <description>Rating focused episodes</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(111)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(111) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="image">
-                <description>Rating checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.isVisible(50) | Control.IsVisible(501) | Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)] | Control.IsVisible(503) | Control.IsVisible(515) | Control.IsVisible(522)] + ![Control.HasFocus(108) | Control.HasFocus(109) | Control.HasFocus(111)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_rating)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_rating)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_rating)]]</visible>
-            </control>
-            <control type="image">
-                <description>Rating checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.isVisible(50) | Control.IsVisible(501) | Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)] | Control.IsVisible(503) | Control.IsVisible(515) | Control.IsVisible(522)] + [Control.HasFocus(108) | Control.HasFocus(109) | Control.HasFocus(111)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_rating)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_rating)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_rating)]]</visible>
-            </control>
-            <control type="image">
-                <description>Rating checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(50) | Control.IsVisible(501) | Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)] | Control.IsVisible(503) | Control.IsVisible(515) | Control.IsVisible(522)] + ![Control.HasFocus(108) | Control.HasFocus(109) | Control.HasFocus(111)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_rating)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_rating)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_rating)]]</visible>
-            </control>
-            <control type="image">
-                <description>Rating checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(50) | Control.IsVisible(501) | Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)] | Control.IsVisible(503) | Control.IsVisible(515) | Control.IsVisible(522)] + [Control.HasFocus(108) | Control.HasFocus(109) | Control.HasFocus(111)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_rating)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_rating)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_rating)]]</visible>
-            </control>
-            <control type="label"> <!-- 112 -->
-                <description>Centered/bottom aligned logos unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(112)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + !Control.HasFocus(112) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 112 -->
-                <description>Centered/bottom aligned logos focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(112)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(112) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 113 -->
-                <description>Centered/bottom aligned posters movies unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(113)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(113) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 113 -->
-                <description>Centered/bottom aligned posters movies focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(113)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(113) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 114 -->
-                <description>Centered/bottom aligned posters seasons unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(114)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(114) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 114 -->
-                <description>Centered/bottom aligned posters seasons focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(114)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(114) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 115 -->
-                <description>Centered/bottom aligned thumbs episodes unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(115)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(115) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 115 -->
-                <description>Centered/bottom aligned thumbs episodes focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(115)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(115) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 120 -->
-                <description>Centered/bottom aligned posters tvshows unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(120)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(120) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 120 -->
-                <description>Centered/bottom aligned posters tvshows focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(120)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(120) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="image">
-                <description>Centered/bottom aligned posters checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)]] + ![Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(115) | Control.HasFocus(120)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]]</visible>
-            </control>
-            <control type="image">
-                <description>Centered/bottom aligned posters checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)]] + [Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(115) | Control.HasFocus(120)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Logos_Centered)]]</visible>
-            </control>
-            <control type="image">
-                <description>Centered/bottom aligned posters checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)]] + ![Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(115) | Control.HasFocus(120)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]]</visible>
-            </control>
-            <control type="image">
-                <description>Centered/bottom aligned posters checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)]] + [Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(115) | Control.HasFocus(120)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Logos_Centered)]]</visible>
-            </control>
-            <control type="label"> <!-- 116 -->
-                <description>Watched overlay movies unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(116)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(116) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 116 -->
-                <description>Watched overlay movies focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(116)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(116) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 117 -->
-                <description>Watched overlay tvshows unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(117)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(501) | Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | [Control.IsVisible(508) | Control.IsVisible(509)]] + !Control.HasFocus(117) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 117 -->
-                <description>Watched overlay tvshows focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(117)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(117) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 118 -->
-                <description>Watched overlay episodes unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(118)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + !Control.HasFocus(118) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 118 -->
-                <description>Watched overlay episodes focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(118)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(118) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 119 -->
-                <description>Watched overlay seasons unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(119)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(501)] + !Control.HasFocus(119) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="label"> <!-- 119 -->
-                <description>Watched overlay seasons focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(119)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.HasFocus(119) + Container.Content(Seasons)</visible>
-            </control>
-            <control type="image">
-                <description>Watched overlay checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(501) | Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515) | [Control.IsVisible(508) | Control.IsVisible(509)]] + ![Control.HasFocus(116) | Control.HasFocus(117) | Control.HasFocus(118) | Control.HasFocus(119)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_watched_Overlay)]]</visible>
-            </control>
-            <control type="image">
-                <description>Watched overlay checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(501) | Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515) | [Control.IsVisible(508) | Control.IsVisible(509)]] + [Control.HasFocus(116) | Control.HasFocus(117) | Control.HasFocus(118) | Control.HasFocus(119)] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_watched_Overlay)]]</visible>
-            </control>
-            <control type="image">
-                <description>Watched overlay checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(501) | Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515) | [Control.IsVisible(508) | Control.IsVisible(509)]] + ![Control.HasFocus(116) | Control.HasFocus(117) | Control.HasFocus(118) | Control.HasFocus(119)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Watched_Overlay)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_watched_Overlay)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_watched_Overlay)]]</visible>
-            </control>
-            <control type="image">
-                <description>Watched overlay checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(501) | Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515) | [Control.IsVisible(508) | Control.IsVisible(509)]] + [Control.HasFocus(116) | Control.HasFocus(117) | Control.HasFocus(118) | Control.HasFocus(119)] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Watched_Overlay)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Watched_Overlay)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_watched_Overlay)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_watched_Overlay)]]</visible>
-            </control>
-            <control type="label"> <!-- 121 -->
-                <description>Studio flag tvshows unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(121)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + !Control.HasFocus(121) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 121 -->
-                <description>Studio flag tvshows focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(121)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + Control.HasFocus(121) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="image">
-                <description>Studio flag checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + !Control.HasFocus(121) + [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Studio_Flag)]</visible>
-            </control>
-            <control type="image">
-                <description>Studio flag checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + Control.HasFocus(121) + [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Studio_Flag)]</visible>
-            </control>
-            <control type="image">
-                <description>Studio flag checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + !Control.HasFocus(121) + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Studio_Flag)]</visible>
-            </control>
-            <control type="image">
-                <description>Studio flag checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(522)] + Control.HasFocus(121) + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Studio_Flag)]</visible>
-            </control>
-            <control type="label"> <!-- 122 -->
-                <description>Banner view info tvshows unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(122)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.IsVisible(522) + !Control.HasFocus(122) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 122 -->
-                <description>Banner view info tvshows focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(122)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.IsVisible(522) + Control.HasFocus(122) + Container.Content(TVShows)</visible>
-            </control>
-            <control type="label"> <!-- 123 -->
-                <description>Poster2 view info movies unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(123)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(123) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 123 -->
-                <description>Poster2 view info movies focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(123)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(123) + Container.Content(Movies)</visible>
-            </control>
-            <control type="image">
-                <description>Banner/poster2 view info checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(522) + !Control.HasFocus(122) + [Container.Content(TVShows) + Skin.HasSetting(TVShows_Banner_Show_Info)]] | [[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(123) + Container.Content(Movies) + Skin.HasSetting(Movies_Show_Info)]</visible>
-            </control>
-            <control type="image">
-                <description>Banner/poster2 view info checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(522) + Control.HasFocus(122) + [Container.Content(TVShows) + Skin.HasSetting(TVShows_Banner_Show_Info)]] | [[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(123) + Container.Content(Movies) + Skin.HasSetting(Movies_Show_Info)]</visible>
-            </control>
-            <control type="image">
-                <description>Banner/poster2 view info checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(522) + !Control.HasFocus(122) + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Banner_Show_Info)]] | [[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(123) + Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Info)]</visible>
-            </control>
-            <control type="image">
-                <description>Banner/poster2 view info checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(522) + Control.HasFocus(122) + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Banner_Show_Info)]] | [[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(123) + Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Info)]</visible>
-            </control>
-            <control type="label"> <!-- 124 -->
-                <description>Media flags movies unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(124)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(124) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 124 -->
-                <description>Media flags movies focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(124)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(124) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 125 -->
-                <description>Media flags episodes unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(125)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.IsVisible(515) + !Control.HasFocus(125) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="label"> <!-- 125 -->
-                <description>Media flags episodes focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(125)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>Control.IsVisible(515) + Control.HasFocus(125) + Container.Content(Episodes)</visible>
-            </control>
-            <control type="image">
-                <description>Media flags checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + !Control.HasFocus(124) + !Control.HasFocus(125) + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Mediaflags)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_MediaFlags)]]</visible>
-            </control>
-            <control type="image">
-                <description>Media flags checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + [[Control.HasFocus(124) + Container.Content(Movies) + Skin.HasSetting(Movies_Show_Mediaflags)] | [Control.HasFocus(125) + Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_MediaFlags)]]</visible>
-            </control>
-            <control type="image">
-                <description>Media flags checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + !Control.HasFocus(124) + !Control.HasFocus(125) + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Mediaflags)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_MediaFlags)]]</visible>
-            </control>
-            <control type="image">
-                <description>Media flags checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + [[Control.HasFocus(124) + Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Mediaflags)] | [Control.HasFocus(125) + Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_MediaFlags)]]</visible>
-            </control>
-            <control type="label"> <!-- 126 -->
-                <description>Cover overlays movies unfocused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(126)]</label>
-                <textcolor>white</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(126) + Container.Content(Movies)</visible>
-            </control>
-            <control type="label"> <!-- 126 -->
-                <description>Cover overlays movies focused</description>
-                <width min="20" max="200">auto</width>
-                <label>$INFO[Control.GetLabel(126)]</label>
-                <textcolor>ff00b8f5</textcolor>
-                <font>Font_Normal_16</font>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(126) + Container.Content(Movies)</visible>
-            </control>
-            <control type="image">
-                <description>Cover overlays movies checkbox checked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(126) + [Container.Content(Movies) + Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
-            </control>
-            <control type="image">
-                <description>Cover overlays movies checkbox checked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_checked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(126) + [Container.Content(Movies) + Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
-            </control>
-            <control type="image">
-                <description>Cover overlays movies checkbox unchecked unfocused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + !Control.HasFocus(126) + [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
-            </control>
-            <control type="image">
-                <description>Cover overlays movies checkbox unchecked focused</description>
-                <width>15</width>
-                <height>20</height>
-                <texture>special://skin/media/checkbox_unchecked.png</texture>
-                <colordiffuse>ff00b8f5</colordiffuse>
-                <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Control.HasFocus(126) + [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
             </control>
         </control>
     </include>

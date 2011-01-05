@@ -23,7 +23,6 @@
     <constant name="FanartCrossfadeTime">500</constant>
     <constant name="IconCrossfadeTime">400</constant>
     <include name="Global_Time">
-        <!-- Time and date -->
         <control type="group">
             <description>Time and date</description>
             <posx>215r</posx>
@@ -55,7 +54,6 @@
         </control>
     </include>
     <include name="Global_Weather">
-        <!-- Weather -->
         <control type="group">
             <description>Weather</description>
             <posx>365r</posx>
@@ -82,8 +80,7 @@
             </control>
         </control>
     </include>
-    <include name="RSS_Feed">
-        <!-- RSS feed -->
+    <include name="Global_RSS_Feed">
         <control type="group">
             <description>RSS feed</description>
             <posx>0</posx>
@@ -291,7 +288,7 @@
     </include>
     <include name="Global_DialogDiffuser">
         <control type="image">
-            <description>Dialog diffuser</description>
+            <description>Dialog diffuser for all but movieinformation</description>
             <posx>0</posx>
             <posy>0</posy>
             <width>1280</width>
@@ -299,7 +296,18 @@
             <texture>special://skin/media/white.png</texture>
             <colordiffuse>cc000000</colordiffuse>
             <animation effect="fade" start="0" end="100" time="200" reversible="no">VisibleChange</animation>
-            <visible>Window.IsActive(Shutdownmenu) | Window.IsActive(YesNoDialog) | Window.IsActive(Contextmenu) | Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-Apple_Movie_Trailers-settings.xml) | Window.IsActive(script-Apple_Movie_Trailers-chooser.xml) | Window.IsActive(script-Apple_Movie_Trailers-search.xml) | Window.IsActive(script-Apple_Movie_Trailers-showtimes.xml) | Window.IsActive(script-XBMC_Lyrics-settings.xml) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation)</visible>
+            <visible>Window.IsActive(Shutdownmenu) | Window.IsActive(YesNoDialog) | Window.IsActive(Contextmenu) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-Apple_Movie_Trailers-settings.xml) | Window.IsActive(script-Apple_Movie_Trailers-chooser.xml) | Window.IsActive(script-Apple_Movie_Trailers-search.xml) | Window.IsActive(script-Apple_Movie_Trailers-showtimes.xml) | Window.IsActive(script-XBMC_Lyrics-settings.xml) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation)</visible>
+        </control>
+        <control type="image">
+            <description>Dialog diffuser for movieinformation</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/media/white.png</texture>
+            <colordiffuse>88000000</colordiffuse>
+            <animation effect="fade" start="0" end="100" time="200" reversible="no">VisibleChange</animation>
+            <visible>Window.IsActive(MovieInformation)</visible>
         </control>
     </include>
     <include name="Global_BackgroundDiffuser">
@@ -316,7 +324,7 @@
     <include name="MediaFlags">
         <control type="group">
             <description>Media flags</description>
-            <width>487</width>
+            <width>270</width>
             <height>38</height>
             <control type="image">
                 <description>Video res if bluray</description>
@@ -417,6 +425,30 @@
                 <font>Font_Condensed_Bold_Caps_60</font>
             </control>
         </control>
+    </include>
+    <include name="Dialog_VideoInfo_ButtonTemplate">
+        <height>40</height>
+        <width>187</width>
+        <textoffsetx>0</textoffsetx>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Condensed_Bold_Caps_20</font>
+        <focusedcolor>ff00b8f5</focusedcolor>
+        <textcolor>white</textcolor>
+        <disabledcolor>ff808080</disabledcolor>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <alttexturefocus>-</alttexturefocus>
+        <alttexturenofocus>-</alttexturenofocus>
+        <animation reversible="false" effect="zoom" center="auto" start="100" end="120" time="100">focus</animation>
+    </include>
+    <include name="Settings_Description_LabelTemplate">
+        <posx>282</posx>
+        <posy>486</posy>
+        <width>740</width>
+        <height>30</height>
+        <font>Font_Normal_Bold_Caps_24</font>
+        <textcolor>white</textcolor>
     </include>
     <include name="CommonMediaPlayingBackground">
         <control type="image">

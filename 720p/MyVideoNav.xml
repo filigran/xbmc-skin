@@ -76,20 +76,22 @@
             </control>
             <include>Global_BackgroundDiffuser</include>
             <control type="group">
+                <visible>!Window.IsVisible(MovieInformation)</visible>
+                <animation effect="fade" start="0" end="100" easing="out" time="200">VisibleChange</animation>
                 <include>Window_OpenClose_Animation</include>
                 <include>CommonRootView</include> <!-- view id = 50 -->
                 <include>Viewtype_List</include> <!-- view id = 519 -->
                 <include>Viewtype_Poster</include> <!-- view id = 520 & 521 -->
                 <include>Viewtype_Banner</include> <!-- view id = 522 -->
                 <include>Viewtype_Bobbannerlist</include> <!-- view id = 501 -->
-                <include>Viewtype_Logowrap</include> <!-- view id = 508 -->
+                <include>Viewtype_Logo</include> <!-- view id = 508 -->
                 <include>Viewtype_Episode</include> <!-- view id = 503 -->
                 <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
                 <include>Viewtype_LauncherWide</include> <!-- view id = 517 -->
                 <include>Viewtype_LauncherTall</include> <!-- view id = 518 -->
             </control>
             <include>Scrolling_Letter</include>
-            <include condition="Skin.HasSetting(Show_RSS_Everywhere)">RSS_Feed</include>
+            <include condition="Skin.HasSetting(Show_RSS_Everywhere)">Global_RSS_Feed</include>
             <include>Global_DialogDiffuser</include>
             <include>Global_Time</include>
             <include>Global_Weather</include>

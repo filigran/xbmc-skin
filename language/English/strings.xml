@@ -134,16 +134,24 @@
   <string id="31355">Movie menu</string>
   <string id="31356">Download Subtitles</string>
 
-  <!-- Description Labels  -->
-  <string id="31400">[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver</string>
-  <string id="31401">[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts</string>
-  <string id="31402">[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR]Manage your music library · Set music playback options · Change music listing options[CR]Setup song submission · Set karaoke options</string>
-  <string id="31403">[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR]Set picture listing options · Configure slideshows</string>
-  <string id="31404">[B]CONFIGURE WEATHER SETTINGS[/B][CR][CR]Set three cities to collect weather information</string>
-  <string id="31405">[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Set internet access options</string>
-  <string id="31406">[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · Setup remote controls[CR]Set power saving options · Enable debugging · Setup master lock</string>
-  <string id="31407">[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup the Confluence skin · Add and remove home menu items[CR]Change skin backgrounds</string>
-  <string id="31408">[B]CONFIGURE ADD-ONS[/B][CR][CR]Manage your installed Add-ons · Browse for and install Add-ons from xbmc.org[CR]Modify Add-on settings</string>
+  <string id="31428">Configure Appearance Settings</string>
+  <string id="31429">Configure Video Settings</string>
+  <string id="31430">Configure Music Settings</string>
+  <string id="31431">Configure Picture Settings</string>
+  <string id="31432">Configure Weather Settings</string>
+  <string id="31433">Configure Add-ons</string>
+  <string id="31434">Configure Network Settings</string>
+  <string id="31435">Configure System Settings</string>
+  <string id="31436">Configure Skin Settings</string>
+  <string id="31400">Change skin, language and region, file listing options, choose sound effects and set up a screensaver.</string>
+  <string id="31401">Manage your video library, set video playback options and adjust subtitle appearance.</string>
+  <string id="31402">Manage your music library, set music playback options, adjust track naming and settings for Last.FM, audio CDs and karaoke.</string>
+  <string id="31403">Set picture listing options, configure slideshows and adjust how XBMC should treat your images EXIF information.</string>
+  <string id="31404">Set three cities to collect weather information for.</string>
+  <string id="31408">Install new add-ons and configure the ones you already have.</string>
+  <string id="31405">Setup control of XBMC via UPnP and HTTP, configure file sharing and set internet access options.</string>
+  <string id="31406">Set your resolution and calibrate your display, configure audio output and remote controls, set power saving options, enable debugging and setup master lock.</string>
+  <string id="31407">Set Sensus up so that it looks just like you want it to. Set background paths, home menu options and much more.</string>
 
   <string id="31421">Select your XBMC user Profile[CR]to login and continue</string>
 
@@ -211,6 +219,10 @@
   <string id="31418">Apps</string>
   <string id="31419">Play random movie</string>
   <string id="31420">Play random episode</string>
-  <string id="31421">Show cover-overlays</string>
-
+  <string id="31422">General Options</string>
+  <string id="31423">Logo Wrap</string>
+  <string id="31424">Logo Fixed</string>
+  <string id="31425">Show cover-overlays</string>
+  <string id="31426">MPAA</string>
+  <string id="31427">Logo[CR][CR]Unavailable[CR][CR] Click button to set</string>
 </strings>

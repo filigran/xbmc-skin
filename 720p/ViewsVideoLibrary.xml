@@ -3,7 +3,7 @@
     <include file="Viewtype_List.xml" />
     <include file="Viewtype_Bobbannerlist.xml" />
     <include file="Viewtype_Banner.xml" />
-    <include file="Viewtype_Logowrap.xml" />
+    <include file="Viewtype_Logo.xml" />
     <include file="Viewtype_Episode.xml" />
     <include file="Viewtype_EpisodeList.xml" />
     <include name="PosterWrapView">
